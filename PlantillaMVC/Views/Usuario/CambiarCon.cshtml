@@ -1,0 +1,86 @@
+﻿@model PlantillaMVC.Models.CambioContraseña
+
+
+
+@using (Ajax.BeginForm("GuardarCambioCon", "Usuario", new { }, new AjaxOptions
+{
+    UpdateTargetId = "Principal",
+    OnBegin = "AbreCierraDilogoEspera",
+    OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()",
+    HttpMethod = "Post"
+}, new { id = "Contrasena", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken();
+
+<h2>Cambiar contraseña</h2>
+<div class="alert alert-info" role="alert">
+    La contraseña debe de contener al menos una  letra mayúscula un número y longitud mínima de <b>9</b> caracteres
+</div>
+
+
+<table>
+    <tr class="oculto">
+        <td style="min-width:10px">
+            @Html.LabelFor(m => m.Ncontrasena, new { @class = "etiqueta" }) &nbsp;
+        </td>
+        <td>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                @Html.PasswordFor(m => m.Ncontrasena, new { @class = "form-control", @placeholder = "Contraseña" })
+                @Html.ValidationMessageFor(m => m.Ncontrasena, "", new { @class = "text-danger" })
+            </div>
+
+        </td>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <td style="min-width:10px">
+            @Html.LabelFor(m => m.ConContrasena, new { @class = "etiqueta" }) &nbsp;
+        </td>
+        <td>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                @Html.PasswordFor(m => m.ConContrasena, new { @class = "form-control", @placeholder = "Contraseña" })
+                @Html.ValidationMessageFor(m => m.ConContrasena, "", new { @class = "text-danger" })
+            </div>
+        </td>
+    </tr>
+</table>
+<br />
+<button type="submit" id="enviar" class="btn btn-success fa fa-check"> Guardar</button>
+}
+<script type="text/javascript">
+
+    $("#Contrasena").validate({
+        submitHandler: function (form) {
+            var pas1 = $('#Ncontrasena').val();
+            var pas2 = $('#ConContrasena').val();
+            //alert('ps1->' + pas1 + '  pas2->' + pas2);
+            if (pas1 == pas2) {
+                return true()
+            }
+            else {
+                alert('Las contraseñas no coinciden favor de re ingresarlas');
+                return false;
+            }
+            //form.submit();
+        }
+    });
+
+    $(document).ready(function () {
+
+        //$('.DatePicker').datepicker({
+        //    format: "dd/mm/yyyy"
+        //});
+        //var objeto = $(".oculto")
+        //objeto.hide();
+        var form = $("#Contrasena");
+        $(form).removeData("validator");
+        $.validator.unobtrusive.parse(form);     
+
+            //$('.PassWord').on('click', function () {
+            // $(this).attr('type', 'password'); 
+            //});
+
+    });
+</script>

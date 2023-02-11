@@ -1,0 +1,57 @@
+12:20:25 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:20:25 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:20:31 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+12:20:42 p.m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes ingreso a nuevo usuario
+-------------------------------
+12:22:26 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+12:22:29 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:22:33 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+12:22:40 p.m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes ingreso a nuevo usuario
+-------------------------------
+12:24:10 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:24:14 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+12:24:33 p.m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes ingreso a nuevo usuario
+-------------------------------
+12:35:44 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:35:44 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:36:01 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:36:19 p.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+12:38:32 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:38:32 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:38:41 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+12:38:50 p.m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes ingreso a nuevo usuario
+-------------------------------

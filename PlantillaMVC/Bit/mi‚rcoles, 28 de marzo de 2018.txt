@@ -1,0 +1,300 @@
+08:57:43 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+08:57:43 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:00:22 a.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+09:02:46 a.m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+09:03:09 a.m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+09:04:55 a.m.
+Account/LogIn : El Usuario PALOMINOS AVALOS OSVALDO MAURICIO ingreso a su cuenta
+-------------------------------
+09:04:55 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:06:03 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:09:34 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:09:39 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:10:48 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:10:53 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:12:57 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:13:03 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:13:37 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:13:42 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:14:42 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:14:48 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:15:38 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:16:07 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:16:53 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:16:58 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:24:47 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:24:54 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:26:19 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:26:25 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:27:41 a.m.
+Evaluacion/Principal : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a Principal
+-------------------------------
+09:27:52 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+09:29:39 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: PALOMINOS AVALOS OSVALDO MAURICIO Ingreso a MiEvaluacion
+-------------------------------
+10:11:16 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+10:11:58 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+10:13:46 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+10:13:46 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+10:14:10 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:14:10 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso sin tener evaluación 
+-------------------------------
+10:14:14 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+10:14:34 a.m.
+Periodos/NuevoPeriodo : El usuario: Fernando Reyes Ingreso a nuevo periodo
+-------------------------------
+10:15:07 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+10:15:52 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:15:52 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso sin tener evaluación 
+-------------------------------
+10:16:12 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+10:18:30 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+10:18:37 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Ingreso a Historial Usuarios
+-------------------------------
+10:18:46 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+10:18:57 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+10:19:03 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+10:19:24 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+10:19:26 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+10:19:38 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+10:19:41 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+10:32:28 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+10:35:43 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:36:08 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+10:36:26 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:36:43 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+10:36:47 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:36:58 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+10:39:00 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+10:46:16 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:46:21 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+10:47:20 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes no pudo guardar la competencia 1
+-------------------------------
+10:47:20 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 1
+-------------------------------
+10:47:26 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:48:07 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+11:00:43 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+11:00:43 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+11:01:10 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+11:02:25 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+11:02:42 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+11:08:45 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+11:08:45 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+11:08:54 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+11:09:02 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+11:09:22 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 1
+-------------------------------
+11:09:22 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 1
+-------------------------------
+11:09:25 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+11:09:40 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 2
+-------------------------------
+11:09:40 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 1
+-------------------------------
+11:09:43 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+11:09:52 a.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+11:10:22 a.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+11:13:57 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+11:13:57 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+11:14:00 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+11:14:09 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+11:14:21 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 2
+-------------------------------
+11:14:21 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 1
+-------------------------------
+11:14:29 a.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+11:14:29 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 1
+-------------------------------
+11:14:35 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+11:14:52 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 3
+-------------------------------
+11:14:52 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 1
+-------------------------------
+11:19:11 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+11:19:19 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+11:25:32 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+11:31:40 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+11:32:04 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+11:32:09 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+11:32:20 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+11:33:57 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------

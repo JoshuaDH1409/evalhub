@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Principal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="Principal">
+
+</div>
+
+@if (Session["PreviousSession"] != null)
+{
+    <div class="guest">
+        <p>Está en modo vista de usuario. Para regresar a su sesión <a href="/Usuario/GetBackControl">Click aquí</a> </p>
+    </div>
+}

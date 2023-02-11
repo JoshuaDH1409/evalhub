@@ -1,0 +1,252 @@
+﻿
+@model  Modelo.Clases.CPeriodo
+@{
+    long hoy = DateTime.Today.Ticks;
+    //int Perfil = ViewBag.Perfil;
+}
+
+@if (Model.periodo != null)
+{
+    <style>
+        .Imagen {
+            max-height: 50px;
+            max-width: 50px;
+            object-fit: cover;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
+
+    <table class="display table" width="100%">
+        <thead class="thead-light">
+            <tr>
+                <th>Periodo</th>
+                <th>Estatus</th>
+                <th>País</th>
+                <th>Fecha inicio</th>
+                <th>Fecha fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.periodo.Activo == true)
+            {
+            <tr>
+                <td>@Model.periodo.Llave</td>
+                <td>@Model.periodo.EtapaDsc</td>
+                <td>@Model.periodo.PaisTempral</td>
+                @if (Model.periodo.Etapa == 0)
+                {
+                    <td>@Model.periodo.StartDateObjTemp</td>
+                    <td>@Model.periodo.FinishDateObjTemp</td>
+                }
+                @if (Model.periodo.Etapa == 1)
+                {
+                    <td>@Model.periodo.StartDateEvaTemp</td>
+                    <td>@Model.periodo.FinishDateEvaTemp</td>
+                }
+                @*@if (Model.periodo.Etapa == 2)
+        {
+            <td>@Model.periodo.StartDateCaliTemp</td>
+            <td>@Model.periodo.FinishDateCaliTemp</td>
+        }*@
+                @if (Model.periodo.Etapa == 3)
+                {
+                    <td>@Model.periodo.StartDateEva2Temp</td>
+                    <td>@Model.periodo.FinishDateEva2Temp</td>
+                }
+                @if (Model.periodo.Etapa == 4)
+                {
+                    <td>@Model.periodo.StartDateCali2Temp</td>
+                    <td>@Model.periodo.FinishDateCali2Temp</td>
+                }
+
+            </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+
+    <table id="tableEmpleados" class="table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>ID SAP</th>
+                <th>Nombre</th>
+                <th>Puesto</th>
+                <th>División</th>
+                <th>País</th>
+                <th>Estatus</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Modelo.Clases.CSessionEval item in Model.listSesion)
+            {
+                if (item.Login.Activo)
+                {
+            <tr>
+                <td>@item.Login.id_sap</td>
+                <td>@item.Login.NombreCompleto</td>
+                <td>@item.Login.Puesto</td>
+                <td>@item.Login.Division</td>
+                @*Aqui no se pudo recuperar el país item.login.paísm.descripcion porque no lo recupera*@
+                <td>@item.Login.PaisM.descripcion</td>
+                @*<td>@Model.periodo.PaisTempral</td>*@
+                <td class="font-weight-bold">
+                    @if (item.Evaluacion != null)
+                    {
+                        @item.Evaluacion.StatusDsc
+                    }
+                    else
+                    {
+                        <span>Evaluación sin iniciar</span>
+                    }
+                </td>
+                @if (item.Evaluacion != null)
+                {
+                    if (Model.periodo.Etapa == 0 && hoy >= Model.periodo.StartDateObj && hoy <= Model.periodo.FinishDateObj && item.Evaluacion.Status != 17)
+                    {
+                        <td>
+                            @if (item.Evaluacion.Status == 1)
+                            {
+                                @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 1, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit", @title = "Revisar objetivos" })
+                            }
+                        </td>
+                    }
+                    else if (Model.periodo.Etapa == 1 && hoy >= Model.periodo.StartDateEva && hoy <= Model.periodo.FinishDateEva && item.Evaluacion.Status != 17)
+                    {
+                        <td>
+                            @if (item.Evaluacion.Status == 1)
+                            {
+                                @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 1, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-edit", @title = "Revisar objetivos" })
+                            }
+                            @if (item.Evaluacion.Status == 5 || item.Evaluacion.Status == 6)
+                            {
+                                @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 1, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-edit fontIcons", @title = "Evaluar" })
+                            }
+                        </td>
+                    }
+                    @*else if (Model.periodo.Etapa == 1 && hoy >= Model.periodo.StartDateEva && hoy <= Model.periodo.FinishDateEva && item.Evaluacion.Status != 17)
+            {
+                <td>
+
+                </td>
+            }*@
+                    else if (item.Evaluacion.Status == 7)
+                    {
+                        if (ViewBag.IDSAP != item.Login.EvaluadorIdSap)
+                        {
+                            <td>@Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 2, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa  fa-lg fa-edit fontIcons", @title = "Evaluar" })</td>
+                        }
+                        else
+                        {
+                            <td>
+                                @using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                                {
+                                    <button type="submit" style="background:none; border:none"><i class="far fa-file-pdf"></i><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                                }
+                            </td>
+                        }
+                    }
+                    else if (Model.periodo.Etapa == 2 && hoy >= Model.periodo.StartDateCali && hoy <= Model.periodo.FinishDateCali && item.Evaluacion.Status != 17)
+                    {
+                        <td>
+                            @using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                            {
+                                <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                            }
+                        </td>
+                    }
+                    else if (Model.periodo.Etapa == 3 && hoy >= Model.periodo.StartDateEva2 && hoy <= Model.periodo.FinishDateEva2 && item.Evaluacion.Status != 17)
+                    {
+                        <td>
+                            @if (item.Evaluacion.Status == 5 || item.Evaluacion.Status == 6)
+                            {
+                                @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 1, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit", @title = "Evaluar" })
+                            }
+                            else if (item.Evaluacion.Status == 11 || item.Evaluacion.Status == 12)
+                            {
+                                @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 1, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit", @title = "Evaluar" })
+                            }
+                            else if (item.Evaluacion.Status == 13)
+                            {
+                                @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 2, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit fontIcons", @title = "Calibrar" })
+                            }
+                            @*else if (item.Evaluacion.Status == 15)
+                    {
+                        @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 1, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit fontIcons", @title = "Evaluar" })
+                    }*@
+                        </td>
+                    }
+                    else if (Model.periodo.Etapa == 4 && hoy >= Model.periodo.StartDateCali2 && hoy <= Model.periodo.FinishDateCali2 && item.Evaluacion.Status != 17)
+                    {
+                        <td>
+                            @using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                            {
+                                <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                            }
+                        </td>
+                    }
+                    else if (Model.periodo.Etapa <= 3 && item.Evaluacion.Status == 17) // verificar si es periodo = 3 y la fecha de hoy es menor a la de cierre
+                    {
+
+                        <td>
+                            @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 1, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit fontIcons", @title = "Evaluar" })
+                            @*@using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                    {
+                        <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                    }*@
+                        </td>
+
+                    }
+                    else if (Model.periodo.id != item.Evaluacion.periodo)
+                    {
+                        <td>
+                            @if (item.Evaluacion.Status == 5 || item.Evaluacion.Status == 11 || item.Evaluacion.Status == 12)
+                            {
+                                @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 1, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit fontIcons", @title = "Evaluar" })
+                            }
+                            else if (item.Evaluacion.Status == 13)
+                            {
+                                @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 2, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit fontIcons", @title = "Calibrar" })
+                            }
+                        </td>
+                    }
+                    <td>
+                        @if (item.Evaluacion != null)
+                        {
+                            if (item.Evaluacion.Status >= 3)
+                            {
+                                using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    <button type="submit" class="btn"><i class="fa fa-file-pdf fontIcons"></i></button>
+                                }
+                            }
+                        }
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                    <td></td>
+                }
+            </tr>
+                    
+                }
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2 class="bg-info">No se encontraron periodos activos </h2>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var tablaCliente = $('#tableEmpleados').DataTable();
+    });
+</script>

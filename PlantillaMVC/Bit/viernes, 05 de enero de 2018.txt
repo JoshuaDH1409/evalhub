@@ -1,0 +1,90 @@
+10:52:07 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+10:52:07 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+10:52:25 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+10:52:53 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+10:53:56 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+10:54:14 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+10:57:21 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+11:22:59 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+11:23:07 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+11:23:07 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:27:15 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+11:27:15 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:27:33 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+11:57:28 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:57:58 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+11:59:40 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:00:00 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:00:09 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+12:00:14 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: jose roberto perez galindo Guardo el objetivo45
+-------------------------------
+12:00:14 p.m.
+Gestion/RecargaObjetivos : El usuario: jose roberto perez galindo Actualizó la vista de objetivos en la evaluación 12
+-------------------------------
+12:01:00 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo guardo su autoevaluación 12
+-------------------------------
+12:01:00 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo notifico de su autoevaliación a: 12
+-------------------------------
+12:01:37 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:01:37 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:01:59 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+01:51:53 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+01:52:01 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+01:52:01 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+01:52:23 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+01:52:23 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------

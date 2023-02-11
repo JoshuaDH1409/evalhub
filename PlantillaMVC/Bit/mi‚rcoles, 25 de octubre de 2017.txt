@@ -1,0 +1,636 @@
+03:31:55 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:31:55 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:32:07 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+03:32:38 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:32:38 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:32:38 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:32:38 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:32:42 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:33:39 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:34:16 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:34:26 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:34:26 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:34:26 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:34:27 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:34:30 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:34:49 p.m.
+MiHistorial/Historial : se inicia el PDF de: 64000013_LUNA ROBLETO SCARLET GIOVANELLA Ingreso a Historial
+-------------------------------
+03:34:49 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 64000013_LUNA ROBLETO SCARLET GIOVANELLA Ingreso a Historial
+-------------------------------
+03:34:49 p.m.
+MiHistorial/Historial : llenado de objetivos de: 64000013_LUNA ROBLETO SCARLET GIOVANELLA Ingreso a Historial
+-------------------------------
+03:34:49 p.m.
+MiHistorial/Historial : llenado de competencias de: 64000013_LUNA ROBLETO SCARLET GIOVANELLA Ingreso a Historial
+-------------------------------
+03:34:52 p.m.
+MiHistorial/DownloadPdf : El usuario: LUNA ROBLETO SCARLET GIOVANELLA Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:34:55 p.m.
+MiHistorial/Historial : se inicia el PDF de: 64000019_MENDEZ VILLAGRAN HECTOR EMILIO Ingreso a Historial
+-------------------------------
+03:34:55 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 64000019_MENDEZ VILLAGRAN HECTOR EMILIO Ingreso a Historial
+-------------------------------
+03:34:55 p.m.
+MiHistorial/Historial : llenado de objetivos de: 64000019_MENDEZ VILLAGRAN HECTOR EMILIO Ingreso a Historial
+-------------------------------
+03:34:56 p.m.
+MiHistorial/Historial : llenado de competencias de: 64000019_MENDEZ VILLAGRAN HECTOR EMILIO Ingreso a Historial
+-------------------------------
+03:34:58 p.m.
+MiHistorial/DownloadPdf : El usuario: MENDEZ VILLAGRAN HECTOR EMILIO Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:35:15 p.m.
+MiHistorial/Historial : se inicia el PDF de: 64000088_Mabel Valeriano Ingreso a Historial
+-------------------------------
+03:35:15 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 64000088_Mabel Valeriano Ingreso a Historial
+-------------------------------
+03:35:15 p.m.
+MiHistorial/Historial : llenado de objetivos de: 64000088_Mabel Valeriano Ingreso a Historial
+-------------------------------
+03:35:15 p.m.
+MiHistorial/Historial : llenado de competencias de: 64000088_Mabel Valeriano Ingreso a Historial
+-------------------------------
+03:35:17 p.m.
+MiHistorial/DownloadPdf : El usuario: Mabel Valeriano Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:35:27 p.m.
+MiHistorial/Historial : se inicia el PDF de: 64000070_ORTIZ BYRON Ingreso a Historial
+-------------------------------
+03:35:27 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 64000070_ORTIZ BYRON Ingreso a Historial
+-------------------------------
+03:35:27 p.m.
+MiHistorial/Historial : llenado de objetivos de: 64000070_ORTIZ BYRON Ingreso a Historial
+-------------------------------
+03:35:27 p.m.
+MiHistorial/Historial : llenado de competencias de: 64000070_ORTIZ BYRON Ingreso a Historial
+-------------------------------
+03:35:29 p.m.
+MiHistorial/DownloadPdf : El usuario: ORTIZ BYRON Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:35:49 p.m.
+MiHistorial/Historial : se inicia el PDF de: 64000061_GUERRERO FRANCISCO IVAN Ingreso a Historial
+-------------------------------
+03:35:49 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 64000061_GUERRERO FRANCISCO IVAN Ingreso a Historial
+-------------------------------
+03:35:49 p.m.
+MiHistorial/Historial : llenado de objetivos de: 64000061_GUERRERO FRANCISCO IVAN Ingreso a Historial
+-------------------------------
+03:35:50 p.m.
+MiHistorial/Historial : llenado de competencias de: 64000061_GUERRERO FRANCISCO IVAN Ingreso a Historial
+-------------------------------
+03:35:53 p.m.
+MiHistorial/DownloadPdf : El usuario: GUERRERO FRANCISCO IVAN Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:35:59 p.m.
+MiHistorial/Historial : se inicia el PDF de: 64000058_Johanna Jimenez Ingreso a Historial
+-------------------------------
+03:35:59 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 64000058_Johanna Jimenez Ingreso a Historial
+-------------------------------
+03:35:59 p.m.
+MiHistorial/Historial : llenado de objetivos de: 64000058_Johanna Jimenez Ingreso a Historial
+-------------------------------
+03:35:59 p.m.
+MiHistorial/Historial : llenado de competencias de: 64000058_Johanna Jimenez Ingreso a Historial
+-------------------------------
+03:36:01 p.m.
+MiHistorial/DownloadPdf : El usuario: Johanna Jimenez Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:36:32 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:36:32 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:36:32 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:36:32 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:36:34 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:36:56 p.m.
+MiHistorial/Historial : se inicia el PDF de: 64000073_DURRANT CRYSTAL Ingreso a Historial
+-------------------------------
+03:36:56 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 64000073_DURRANT CRYSTAL Ingreso a Historial
+-------------------------------
+03:36:56 p.m.
+MiHistorial/Historial : llenado de objetivos de: 64000073_DURRANT CRYSTAL Ingreso a Historial
+-------------------------------
+03:36:57 p.m.
+MiHistorial/Historial : llenado de competencias de: 64000073_DURRANT CRYSTAL Ingreso a Historial
+-------------------------------
+03:36:58 p.m.
+MiHistorial/DownloadPdf : El usuario: DURRANT CRYSTAL Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:42:35 p.m.
+Account/LogIn : El Usuario HIRANN LOURDES SÁNCHEZ BUJAICO  ingreso a su cuenta
+-------------------------------
+03:42:36 p.m.
+Evaluacion/Principal : El usuario: HIRANN LOURDES SÁNCHEZ BUJAICO  Ingreso a Principal
+-------------------------------
+03:42:54 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: HIRANN LOURDES SÁNCHEZ BUJAICO  Ingreso a Historial Usuarios
+-------------------------------
+03:44:27 p.m.
+Account/LogIn : El Usuario HERZOVICH NICOLAS ingreso a su cuenta
+-------------------------------
+03:44:27 p.m.
+Evaluacion/Principal : El usuario: HERZOVICH NICOLAS Ingreso a Principal
+-------------------------------
+03:44:31 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: HERZOVICH NICOLAS Ingreso a Historial Usuarios
+-------------------------------
+03:44:51 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:44:51 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:44:52 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:44:52 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:44:52 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:44:57 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:45:32 p.m.
+MiHistorial/Historial : se inicia el PDF de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+03:45:32 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+03:45:33 p.m.
+MiHistorial/Historial : llenado de objetivos de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+03:45:33 p.m.
+MiHistorial/Historial : llenado de competencias de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+03:45:33 p.m.
+MiHistorial/Historial : llenado de Calificación de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+03:45:35 p.m.
+MiHistorial/DownloadPdf : El usuario: Ana Laura Viquez Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:46:34 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:46:34 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:46:34 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:46:34 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:46:34 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+03:46:38 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+04:54:32 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:54:32 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:54:42 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+04:55:00 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:55:00 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:55:00 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:55:01 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:55:01 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:55:01 p.m.
+MiHistorial/Historial : fin de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:55:01 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+04:57:10 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+04:57:10 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+04:59:42 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:59:42 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:59:42 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:59:42 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:59:43 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:59:43 p.m.
+MiHistorial/Historial : fin de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+04:59:43 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:00:26 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:00:26 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:01:45 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:01:45 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:01:49 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+05:02:05 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:02:05 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:02:06 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:02:06 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:02:06 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:02:06 p.m.
+MiHistorial/Historial : fin de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:02:06 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:05:28 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:05:28 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:05:32 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+05:05:51 p.m.
+MiHistorial/Historial : se inicia el PDF de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:05:51 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:05:51 p.m.
+MiHistorial/Historial : llenado de objetivos de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:05:51 p.m.
+MiHistorial/Historial : llenado de competencias de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:05:51 p.m.
+MiHistorial/Historial : llenado de Calificación de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:05:51 p.m.
+MiHistorial/Historial : fin de Calificación de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:05:51 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:06:19 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:06:23 p.m.
+MiHistorial/DownloadPdf : El usuario: Ana Laura Viquez Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:06:57 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:06:57 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:06:57 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:06:57 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:06:57 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:06:57 p.m.
+MiHistorial/Historial : fin de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:06:57 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:07:05 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:07:11 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:46:15 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:46:15 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:46:30 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+05:46:50 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:46:50 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:46:50 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:46:50 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:46:50 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:46:50 p.m.
+MiHistorial/Historial : fin de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:46:50 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:47:09 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:47:13 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:47:53 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:47:53 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:47:53 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:47:53 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:47:53 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:47:53 p.m.
+MiHistorial/Historial : fin de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:47:53 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:48:00 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:48:00 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:50:36 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:50:37 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:50:46 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+05:51:05 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:51:05 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:51:06 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:51:06 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:51:06 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:51:06 p.m.
+MiHistorial/Historial : fin de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:51:06 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:51:16 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:51:16 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:51:37 p.m.
+MiHistorial/Historial : se inicia el PDF de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:51:37 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:51:37 p.m.
+MiHistorial/Historial : llenado de objetivos de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:51:37 p.m.
+MiHistorial/Historial : llenado de competencias de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:51:37 p.m.
+MiHistorial/Historial : llenado de Calificación de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:51:37 p.m.
+MiHistorial/Historial : fin de Calificación de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:51:37 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:51:44 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:51:44 p.m.
+MiHistorial/DownloadPdf : El usuario: Ana Laura Viquez Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:55:13 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:55:13 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:55:22 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+05:55:47 p.m.
+MiHistorial/Historial : se inicia el PDF de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:55:47 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:55:47 p.m.
+MiHistorial/Historial : llenado de objetivos de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:55:47 p.m.
+MiHistorial/Historial : llenado de competencias de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:55:47 p.m.
+MiHistorial/Historial : llenado de Calificación de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:55:47 p.m.
+MiHistorial/Historial : fin de Calificación de: 222222_Ana Laura Viquez Ingreso a Historial
+-------------------------------
+05:55:47 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:56:07 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+05:56:07 p.m.
+MiHistorial/DownloadPdf : El usuario: Ana Laura Viquez Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:56:17 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:56:17 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:56:17 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:56:17 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:56:17 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:56:17 p.m.
+MiHistorial/Historial : fin de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:56:17 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:56:19 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+05:56:19 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:58:20 p.m.
+MiHistorial/Historial : se inicia el PDF de: 64000006_SIERRA HENRIQUEZ EDGARDO SALVADOR Ingreso a Historial
+-------------------------------
+05:58:20 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 64000006_SIERRA HENRIQUEZ EDGARDO SALVADOR Ingreso a Historial
+-------------------------------
+05:58:20 p.m.
+MiHistorial/Historial : llenado de objetivos de: 64000006_SIERRA HENRIQUEZ EDGARDO SALVADOR Ingreso a Historial
+-------------------------------
+05:58:20 p.m.
+MiHistorial/Historial : llenado de competencias de: 64000006_SIERRA HENRIQUEZ EDGARDO SALVADOR Ingreso a Historial
+-------------------------------
+05:58:20 p.m.
+MiHistorial/Historial : llenado de Calificación de: 64000006_SIERRA HENRIQUEZ EDGARDO SALVADOR Ingreso a Historial
+-------------------------------
+05:58:20 p.m.
+MiHistorial/Historial : fin de Calificación de: 64000006_SIERRA HENRIQUEZ EDGARDO SALVADOR Ingreso a Historial
+-------------------------------
+05:58:20 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:58:23 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+05:58:23 p.m.
+MiHistorial/DownloadPdf : El usuario: SIERRA HENRIQUEZ EDGARDO SALVADOR Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+05:58:39 p.m.
+MiHistorial/Historial : se inicia el PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:58:39 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:58:39 p.m.
+MiHistorial/Historial : llenado de objetivos de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:58:39 p.m.
+MiHistorial/Historial : llenado de competencias de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:58:39 p.m.
+MiHistorial/Historial : llenado de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:58:39 p.m.
+MiHistorial/Historial : fin de Calificación de: 123456_Natalia Carmona Ingreso a Historial
+-------------------------------
+05:58:39 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:58:42 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa5\EvaluacionDes5\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+05:58:42 p.m.
+MiHistorial/DownloadPdf : El usuario: Natalia Carmona Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------

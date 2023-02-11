@@ -1,0 +1,103 @@
+﻿
+@model PlantillaMVC.Models.EFlitrosDash
+<link href="~/Content/themes/css/select2.min.css" rel="stylesheet" />
+
+
+@using (Ajax.BeginForm("Consultar", "Dash", new { }, new AjaxOptions
+{
+    UpdateTargetId = "Contenedor",
+    OnBegin = "AbreCierraDilogoEspera",
+    OnComplete = "AbreCierraDilogoEspera(),VerificaSesionEnv()",
+    HttpMethod = "Post",
+}, new { id = "ConsultaDash", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken();
+
+    <table style="width:500px">
+        <tr>
+            <td width="100px">
+                @Html.LabelFor(m => m.Pais, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.Pais, (ViewData["ListaPaises"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control", multiple="multiple" })
+                @Html.ValidationMessageFor(m => m.Pais)
+            </td>
+        </tr> 
+    </table>
+    <br />
+    <div id="DetallePeriodo" style="width:500px"></div>
+    <br />
+    <div id="DetalleArea" style="width:500px"></div>
+
+
+    <br />
+    @*<button type="submit" id="enviar" class="btn btn-success glyphicon glyphicon-stats"> <x style="font-family:Arial"> Consultar</x></button>*@
+}
+
+<div id="Contenedor"></div>
+
+
+<div style="visibility:hidden; display:none;">
+    @Ajax.ActionLink("ObtenPeriodos", "_DetallePeriodo", "Dash", new { },
+new AjaxOptions { UpdateTargetId = "DetallePeriodo", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
+new { id = "_DetallePeriodo" })
+</div>
+
+<div style="visibility:hidden; display:none;">
+    @Ajax.ActionLink("ObtenAreas", "_DetalleArea", "Dash", new { },
+new AjaxOptions { UpdateTargetId = "DetalleArea", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
+new { id = "_DetalleArea" })
+</div>
+
+<script src="~/Scripts/select2.min.js"></script>
+<script type="text/javascript">
+    $("#Pais").select2();
+    //llamada ajax Periodo
+    function OpPeriodo(IdPais) {
+        //alert(IdSolicitante);
+        var a = "@Url.Action("_DetallePeriodo")";
+        a = a + "?IdPais=" + IdPais;
+        $("#_DetallePeriodo").attr("href", a);
+        $("#_DetallePeriodo").click();
+        a = '';
+        AgregaValidacion()
+        }
+
+    $("#Pais").change(function () {
+        var Valor = $(this).val();
+        //alert(Valor);
+        $("#DetalleArea").empty();
+        OpPeriodo(Valor);
+        AgregaValidacion();
+    })
+    //llamada ajax periodo
+
+
+
+    //limpiamos los Divs Con información
+    $("#Periodo").change(function () {
+        $("#DetalleArea").empty();
+        $("#Contenedor").empty();
+        $("#DetallePeriodo").empty();
+    })
+    //$("#Pais").change(function () {
+    //    $("#DetalleArea").empty();
+    //    $("#Contenedor").empty();
+    //    $("#DetallePeriodo").empty();
+    //});
+    //limpiamos los Divs Con información
+
+    $(document).ready(function () {
+        AgregaValidacion();
+        $("#Periodo").rules("remove", "required");//remover reglas
+    });
+
+    function AgregaValidacion() {
+        var form = $("#ConsultaDash");
+        $(form).removeData("validator");
+        $.validator.unobtrusive.parse(form);
+    }
+
+</script>
+
+

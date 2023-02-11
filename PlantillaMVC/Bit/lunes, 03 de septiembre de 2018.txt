@@ -1,0 +1,87 @@
+11:25:50 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:25:50 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:25:59 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:39:15 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:39:15 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:39:47 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:41:32 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:41:32 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:42:20 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:42:42 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+11:42:52 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 841
+-------------------------------
+11:45:30 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:47:17 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:47:19 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+11:47:26 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:51:00 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:58:46 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:58:49 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:59:50 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:59:52 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+12:02:39 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+12:05:25 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+12:06:33 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+12:07:54 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:07:58 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+12:08:03 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+12:11:02 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+12:12:53 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares Guardo la competencia 2283
+-------------------------------
+12:12:53 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Cázares Actualizó las competencias en la evaluación 841
+-------------------------------

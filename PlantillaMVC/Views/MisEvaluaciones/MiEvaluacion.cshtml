@@ -1,0 +1,3173 @@
+﻿
+@model Modelo.Clases.CEvaluacion
+@{
+    string statusEt = "";
+    string porcen = "0";
+
+    string panel1 = "";
+    string panel2 = "";
+
+    if (Model.periodo.Etapa <= 2)
+    {
+        panel1 = "in active";
+    }
+
+    if (Model.periodo.Etapa > 2)
+    {
+        panel2 = "in active";
+    }
+    statusEt = ViewBag.statusName;
+    porcen = ViewBag.porc + "%";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+@using (Ajax.BeginForm("GuardaClaseEvaluacion", " MisEvaluaciones", new AjaxOptions
+{
+    UpdateTargetId = "Principal",
+    OnBegin = "AbreCierraDilogoEspera",
+    OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()",
+    HttpMethod = "Post"
+}, new { id = "MiEval", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken();
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="@porcen.ToString()" aria-valuemin="0" aria-valuemax="100" style="width: @porcen.ToString()">
+            <span class="progress-value">@statusEt.ToString()</span>
+        </div>
+    </div>
+    <div class="alert alert-info">
+        @ViewBag.statusDesc
+    </div>
+    <div>
+        <h4>
+            Datos del periodo
+            <div class="btn-toolbar float-right">
+                <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseHeader" aria-expanded="false" aria-controls="collapseHeader">
+                    <i class="fa fa-compress-alt"></i>
+                </button>
+            </div>
+        </h4>
+        <div class="collapse show" id="collapseHeader">
+            <table width="100%" class="table table-bordered table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th>Etapa</th>
+                        <th>Periodo</th>
+                        <th>País</th>
+                        <th>Fecha inicio</th>
+                        <th>Fecha fin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.periodo.Activo == true)
+                    {
+                        <tr>
+                            <td><b>@Model.periodo.EtapaDsc</b></td>
+                            <td>@Model.periodo.Llave</td>
+                            <td>@Model.periodo.PaisTempral</td>
+                            @if (Model.periodo.Etapa == 0)
+                            {
+                                <td>@Model.periodo.StartDateObjTemp</td>
+                                <td>@Model.periodo.FinishDateObjTemp</td>
+                            }
+                            @if (Model.periodo.Etapa == 1)
+                            {
+                                <td>@Model.periodo.StartDateEvaTemp</td>
+                                <td>@Model.periodo.FinishDateEvaTemp</td>
+                            }
+                            @if (Model.periodo.Etapa == 2)
+                            {
+                                <td>@Model.periodo.StartDateCaliTemp</td>
+                                <td>@Model.periodo.FinishDateCaliTemp</td>
+                            }
+                            @if (Model.periodo.Etapa == 3)
+                            {
+                                <td>@Model.periodo.StartDateEva2Temp</td>
+                                <td>@Model.periodo.FinishDateEva2Temp</td>
+                            }
+                            @if (Model.periodo.Etapa == 4)
+                            {
+                                <td>@Model.periodo.StartDateCali2Temp</td>
+                                <td>@Model.periodo.FinishDateCali2Temp</td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <h4>
+            Mis datos <span style="display:none" id="idEval"></span><span style="display:none" id="correoEmpleado"></span>
+
+            <div class="btn-toolbar float-right">
+                <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseDatos" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fa fa-compress-alt"></i>
+                </button>
+            </div>
+
+        </h4>
+        <div class="collapse show" id="collapseDatos">
+            <table class="table table-bordered table-sm table-striped">
+                <thead></thead>
+                <tbody>
+
+                    <tr style="display:none">
+                        <td>
+                            @Html.LabelFor(m => m.sesion.Evaluacion.Status, new { @class = "etiqueta" })
+                        </td>
+                        <td>
+
+                            @Html.TextBoxFor(m => m.sesion.Evaluacion.Status, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.sesion.Evaluacion.Status)
+                        </td>
+                    </tr>
+                    <tr style="display:none">
+                        <td>
+                            @Html.LabelFor(m => m.sesion.Evaluacion.id, new { @class = "etiqueta" })
+                        </td>
+                        <td>
+
+                            @Html.TextBoxFor(m => m.sesion.Evaluacion.id, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.sesion.Evaluacion.id)
+                        </td>
+                    </tr>
+                    <tr style="display:none">
+                        <td>
+                            @Html.LabelFor(m => m.sesion.Login.id, new { @class = "etiqueta" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.sesion.Login.id, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.sesion.Login.id)
+                        </td>
+                    </tr>
+                    <tr style="display:none">
+                        <td>
+                            @Html.LabelFor(m => m.sesion.Evaluacion.Activo, new { @class = "etiqueta" })
+                        </td>
+                        <td>
+
+                            @Html.TextBoxFor(m => m.sesion.Evaluacion.Activo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.sesion.Evaluacion.Activo)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>
+                                Número de Empleado SAP:
+                            </strong><br />
+                            @Model.sesion.Login.id_sap
+                            <span id="numeroEmpleado"></span>
+                            <div style="visibility:hidden">
+
+                                @Html.TextBoxFor(m => m.sesion.Login.id_sap, new { @readonly = "readonly", @style = "background-color:#eeeeee" })
+                            </div>
+                        </td>
+                        <td>
+                            <strong>
+                                Nombre Completo:
+                            </strong><br />
+                            @Model.sesion.Login.NombreCompleto
+                        </td>
+                        <td>
+                            <strong>
+                                Periodo de Evaluaci&oacute;n:
+                            </strong><br />
+                            @Model.periodo.Llave
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Puesto:
+                            </strong><br />
+                            @Model.sesion.Login.Puesto
+                        </td>
+                        <td>
+                            <strong>
+                                Dirección de Personal:
+                            </strong><br />
+                            @Model.sesion.Login.Division
+                        </td>
+                        @*<td>
+                                <strong>
+                                    &Aacute;rea de Personal:
+                                </strong><br />
+                                @Model.sesion.Login.Area
+                            </td>*@
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Fecha de ingreso:
+                            </strong><br />
+                            @Model.sesion.Login.FechaIngresoTemp
+                        </td>
+                        <td>
+                            <strong>
+                                Antigüedad:
+                            </strong><br />
+                            @Model.sesion.Login.FechaAntiguedadTemp
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div class="controls">
+                                @if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 16)
+                                {
+                                    <label class="checkbox col-md-3" style="margin-top:-5px !important">
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.Nivel, "1") Director <br /> (Director con reportes directos)
+
+                                    </label>
+                                    <label class="checkbox col-md-3">
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.Nivel, "2") Gerente / Supervisor <br /> (Líder de personas)
+                                    </label>
+
+                                    <label class="checkbox col-md-3">
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.Nivel, "3") Coordinador <br /> (Líder de personas)
+                                    </label>
+
+                                    <label class="checkbox col-md-3">
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.Nivel, "4", new { Checked = "checked" }) Empleado
+                                    </label>
+                                }
+                                else
+                                {
+                                    <div class="oculto">
+                                        @Html.TextAreaFor(m => m.sesion.Evaluacion.Nivel)
+                                    </div>
+                                    if (Model.sesion.Evaluacion.Nivel == 1)
+                                    {
+                                        <b>Director (Director con reportes directos)</b>
+                                    }
+                                    else if (Model.sesion.Evaluacion.Nivel == 2)
+                                    {
+                                        <b>Gerente / Supervisor (Líder de personas) </b>
+                                    }
+                                    else if (Model.sesion.Evaluacion.Nivel == 3)
+                                    {
+                                        <b>Coordinador (Líder de personas) </b>
+                                    }
+                                    else
+                                    {
+                                        <b>Empleado</b>
+                                    }
+                                }
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Por favor considera que la Evaluación del Desempeño mide únicamente tu Desempeño en el trabajo
+            </p>
+        </div>
+    </div>
+
+
+
+    <h4>
+        Evaluador<span style="visibility:hidden" id="numEmpleadoJefe2NivelEvaluador"></span><span style="visibility:hidden" id="correoEvaluador"></span>
+        <div class="btn-toolbar float-right">
+            <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseEvaluador" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-compress-alt"></i>
+            </button>
+        </div>
+
+    </h4>
+    <div class="collapse show" id="collapseEvaluador">
+        <table class="table table-bordered table-sm table-striped">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            N&uacute;mero de Empleado SAP:
+                        </strong><br />
+                        @Model.Jefedir.id_sap
+                        <div style="visibility:hidden">
+                            @Html.TextBoxFor(m => m.Jefedir.id, new { @readonly = "readonly", @style = "background-color:#eeeeee" })
+                        </div>
+                    </td>
+                    <td>
+                        <strong>
+                            Nombre Completo:
+                        </strong><br />
+                        @Model.Jefedir.NombreCompleto
+                    </td>
+                    <td>
+                        <strong>
+                            Periodo de Evaluaci&oacute;n:
+                        </strong><br />
+                        @Model.periodo.Llave
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            Puesto:
+                        </strong><br />
+                        @Model.Jefedir.Puesto
+                    </td>
+                    <td>
+                        <strong>
+                            Dirección de Personal:
+                        </strong><br />
+                        @Model.Jefedir.Division
+                    </td>
+                    @*<td>
+                            <strong>
+                                &Aacute;rea de Personal:
+                            </strong><br />
+                            @Model.Jefedir.Area
+                        </td>*@
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            Fecha de ingreso:
+                        </strong><br />
+                        @Model.Jefedir.FechaIngresoTemp
+                    </td>
+                    <td>
+                        <strong>
+                            Fecha de antigüedad:
+                        </strong><br />
+                        @Model.Jefedir.FechaAntiguedadTemp
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <h4>
+        Objetivos
+        <div class="btn-toolbar float-right">
+            <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseObjetivos" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-compress-alt"></i>
+            </button>
+        </div>
+    </h4>
+    <div class="collapse show" id="collapseObjetivos">
+        <p>
+            Describir los objetivos y expectativas para el periodo en formato SMART con indicadores específicos de medición y tiempo de revisión. En la columna de resultados proveer los datos numéricos que permitan dar sustento a la evaluación que se asigne
+        </p>
+        <br />
+        <b>
+            Deberás agregar mínimo tres objetivos, el máximo es seis objetivos.
+        </b>
+
+        <table style="width:100%">
+            <tr>
+                <td>
+                    @Ajax.ActionLink(" Detalle", "DetalleObj", "MisEvaluaciones", new { eval = Model.sesion.Evaluacion.id }, new AjaxOptions { UpdateTargetId = "DetalleObj", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivos();VerificaSesionEnv()" }, new { @class = "btn btn-default fa fa-search-plus", @style= "color:#004b8d" })
+                </td>
+                <td style="width: 85%">
+                    @Ajax.ActionLink(" Escaleta de Calificaciones", "DetalleEscaleta", "MisEvaluaciones", new AjaxOptions { UpdateTargetId = "DetalleEscaleta", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirEscaleta" }, new { @class = "btn btn-default fa fa-file-alt", @style = "color:#004b8d" })
+                    <div style="text-align:right; float:right;">
+                        @if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 2 || Model.sesion.Evaluacion.Status == 4 || Model.sesion.Evaluacion.Status == 10 ||@*Model.sesion.Evaluacion.Status == 11 ||*@ (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+{
+//agregar validacion para maximo 6 objetivos
+//if (Model.Liobjetivos.Count < 6)
+//{
+@Ajax.ActionLink(" Nuevo Objetivo", "OperacionObjetivos", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "btn btn-default fa fa-plus", id = "btnNuevoObjetivo", @style = "background: #FEFEFE;color:#004b8d" })
+//}
+}
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <style>
+            .progress-value {
+                position: absolute;
+                right: 0;
+                left: 0;
+                color: #000;
+                font-weight: bold;
+            }
+
+            #accordion div {
+                border: 1px solid #d6d6d6;
+            }
+
+            #accordion .ui-state-default {
+                background: #337AB7;
+                color: #FFF;
+                border: 0;
+                cursor: pointer;
+            }
+
+            #accordion .ui-state-active {
+                background: #58ACFA;
+                color: #FFF;
+            }
+
+            #accordionComp div {
+                border: 1px solid #d6d6d6;
+            }
+
+            #accordionComp .ui-state-default {
+                background: #337AB7;
+                color: #FFF;
+                border: 0;
+                cursor: pointer;
+            }
+
+            #accordionComp .ui-state-active {
+                background: #58ACFA;
+                color: #FFF;
+            }
+        </style>
+
+        @*<ul class="nav nav-tabs">
+                <li class="@panel1"><a data-toggle="tab" href="#primer">Revisión de medio año</a></li>
+                <li class="@panel2"><a data-toggle="tab" href="#segundo">Calificación fin de año</a></li>
+            </ul>
+            <div class="tab-content">
+
+                <div id="primer" class="tab-pane fade @panel1">
+                    <div class="wmd-view-topscroll">
+                        <div class="scroll-div1">
+                        </div>
+                    </div>
+                    <div class="wmd-view">
+                        <div class="scroll-div2">
+
+                            <table class="table table-bordered table-striped table-colored" id="tablaObjetivos">
+                                <thead>
+                                    <tr class="bg-primary">
+                                        <th></th>
+                                        <th class="width-25" colspan="3">
+                                            Objetivos
+                                        </th>
+                                        <th class="width-25" colspan="3">
+                                            Revisión de medio año
+                                        </th>
+
+                                    </tr>
+                                    <tr class="bg-primary">
+                                        <th></th>
+                                        <th class="width-25">
+                                            Objetivo
+                                        </th>
+                                        <th class="width-25">
+                                            Descripción de Objetivo
+                                        </th>
+                                        <th class="width-25">
+                                            Métricas
+                                        </th>
+                                        <th class="width-25">
+                                            Comentario Evaluado
+                                        </th>
+                                        <th class="width-25">
+                                            Comentario Evaluador
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Liobjetivos != null)
+                                    {
+                                        foreach (Modelo.EObjetives item in Model.Liobjetivos)
+                                        {
+                                            <tr class="Objetivos">
+                                                @if (Model.sesion.Evaluacion.Status == 0 || (Model.sesion.Evaluacion.Status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (Model.sesion.Evaluacion.Status == 5 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 12 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+                                                {
+                                                    <td style="min-width: 60px;">
+                                                        <span>
+                                                            @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle();VerificaSesionEnv()" }, new { @class = "fa fa-edit", @style = "font-size: 1.2em", @title = "Editar" })
+
+                                                            @if (Model.sesion.Evaluacion.Status == 0 || (Model.sesion.Evaluacion.Status == 5 && (item.Etapa == 5 || item.Etapa == 2)) || Model.sesion.Evaluacion.Status == 11 && (item.Etapa == 10 || item.Etapa == 7) || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+                                                            {
+                                                                @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                                            }
+                                                            @if ((Model.sesion.Evaluacion.Status == 4 && item.Etapa != 5) || (Model.sesion.Evaluacion.Status == 10 && item.Etapa != 10))
+                                                            {
+                                                                @Ajax.ActionLink(" ", "EliminarObjetivosUsr", "MisEvaluaciones", new { id = item.id, Stat = Model.sesion.Evaluacion.Status }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                                            }
+
+                                                        </span>
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td> </td>
+                                                }
+                                                @if (item.titulo.Length > 55)
+                                                {
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))//ojo corregir las etapas e incluir status del jefe
+                                                    {
+                                                        <td bgcolor="#9FF781">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="##F5A9BC">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#9FF781">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#F5A9BC">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+
+                                                }
+                                                @if (item.objdesc.Length > 55)
+                                                {
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))//ojo corregir las etapas e incluir status del jefe
+                                                    {
+                                                        <td bgcolor="#9FF781">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#F5A9BC">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#9FF781">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#F5A9BC">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+
+                                                }
+                                                @if (item.objMetricas.Length > 55)
+                                                {
+
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))//ojo corregir las etapas e incluir status del jefe
+                                                    {
+                                                        <td bgcolor="#9FF781">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="##F5A9BC">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@item.objMetricas.Substring(0, 50)...</td>
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#9FF781">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#F5A9BC">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+
+                                                }
+                                                @if ((item.Etapa == 5 && Model.sesion.Evaluacion.Status == 4) || (Model.sesion.Evaluacion.Status == 10 && item.Etapa == 10))
+                                                {
+
+                                                    <td>
+                                                        @item.resultado
+                                                    </td>
+                                                    <td>
+                                                        @item.ComentariosJefeEval
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="AutoEvalCell">
+                                                        @if (Model.sesion.Evaluacion.Status == 0 || (Model.sesion.Evaluacion.Status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (Model.sesion.Evaluacion.Status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+                                                        {
+                                                            @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "font-size: 1.2em", @title = "Editar" })
+                                                        }
+                                                        @item.resultado
+                                                    </td>
+                                                    <td class="JefeEvalCell">
+                                                        @if (Model.sesion.Evaluacion.Status == 0 || (Model.sesion.Evaluacion.Status == 5 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (Model.sesion.Evaluacion.Status == 12 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+                                                        {
+                                                            @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "font-size: 1.2em", @title = "Editar" })
+                                                        }
+                                                        @item.ComentariosJefeEval
+                                                    </td>
+                                                }
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="segundo" class="tab-pane fade @panel2">
+                    <div class="wmd-view-topscroll2">
+                        <div class="scroll-div1">
+                        </div>
+                    </div>
+                    <div class="wmd-view2">
+                        <div class="scroll-div2">
+                            <table class="table table-bordered table-striped table-colored" id="tablaObjetivos">
+                                <thead>
+                                    <tr class="bg-primary">
+                                        <th></th>
+                                        <th class="width-25" colspan="3">
+                                            Objetivos
+                                        </th>
+                                        <th class="width-25" colspan="3">
+                                            Calificación fin de año
+                                        </th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr class="bg-primary">
+                                        <th></th>
+                                        <th class="width-25">
+                                            Objetivo
+                                        </th>
+                                        <th class="width-25">
+                                            Descripción de Objetivo
+                                        </th>
+                                        <th class="width-25">
+                                            Métricas
+                                        </th>
+                                        <th class="width-25">
+                                            Comentario Evaluado
+                                        </th>
+                                        <th class="width-25">
+                                            Comentario Evaluador
+                                        </th>
+                                        <th class="width-25">
+                                            Comentario final<br />
+                                        </th>
+                                        <th class="width-25">
+                                            Auto evaluación<br />(1-4)
+                                        </th>
+                                        <th class="width-25">
+                                            Calificación Evaluador<br />(1-4)
+                                        </th>
+                                        <th class="width-25">
+                                            Calificación final acordada<br />(1-4)
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Liobjetivos != null)
+                                    {
+                                        foreach (Modelo.EObjetives item in Model.Liobjetivos)
+                                        {
+                                            <tr class="Objetivos">
+
+                                                @if (Model.sesion.Evaluacion.Status == 0 || (Model.sesion.Evaluacion.Status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (Model.sesion.Evaluacion.Status == 5 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 6 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 12 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+                                                {
+                                                    <td style="min-width: 60px;">
+                                                        <span>
+                                                            @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", @style = "font-size: 1.2em", @title = "Editar" })
+
+                                                            @if (Model.sesion.Evaluacion.Status == 0 || (Model.sesion.Evaluacion.Status == 5 && (item.Etapa == 5 || item.Etapa == 2)) || Model.sesion.Evaluacion.Status == 11 && (item.Etapa == 10 || item.Etapa == 7) || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+                                                            {
+                                                                @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                                            }
+                                                            @if ((Model.sesion.Evaluacion.Status == 4 && item.Etapa != 5) || (Model.sesion.Evaluacion.Status == 10 && item.Etapa != 10))
+                                                            {
+                                                                @Ajax.ActionLink(" ", "EliminarObjetivosUsr", "MisEvaluaciones", new { id = item.id, Stat = Model.sesion.Evaluacion.Status }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                                            }
+
+                                                        </span>
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td> </td>
+                                                }
+
+                                                @if (item.titulo.Length > 55)
+                                                {
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))//ojo corregir las etapas e incluir status del jefe
+                                                    {
+                                                        <td bgcolor="#9FF781">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#F5A9BC">@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@item.titulo.Substring(0, 50) ...</td>
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#9FF781">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#F5A9BC">
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>
+                                                            @item.titulo
+                                                        </td>
+                                                    }
+
+                                                }
+                                                @if (item.objdesc.Length > 55)
+                                                {
+
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))//ojo corregir las etapas e incluir status del jefe
+                                                    {
+                                                        <td bgcolor="#9FF781">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="##F5A9BC">@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@item.objdesc.Substring(0, 50) ...</td>
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#9FF781">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#F5A9BC">
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>
+                                                            @item.objdesc
+                                                        </td>
+                                                    }
+
+                                                }
+                                                @if (item.objMetricas.Length > 55)
+                                                {
+
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))//ojo corregir las etapas e incluir status del jefe
+                                                    {
+                                                        <td bgcolor="#9FF781">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="##F5A9BC">@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@item.objMetricas.Substring(0, 50) ...</td>
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#9FF781">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#3ADF00">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#81DAF5">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 9 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#2E9AFE">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                                    {
+                                                        <td bgcolor="#F5A9BC">
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>
+                                                            @item.objMetricas
+                                                        </td>
+                                                    }
+
+                                                }
+                                                @if ((item.Etapa == 5 && Model.sesion.Evaluacion.Status >= 4 && ViewBag.status <= 9) || (Model.sesion.Evaluacion.Status == 10 && item.Etapa >= 10))
+                                                {
+                                                    <td>
+                                                        @item.Resultado2
+                                                    </td>
+                                                    <td>
+                                                        @item.ComentariosJefeEval2
+                                                    </td>
+                                                    <td>
+                                                        @item.ComentariosJefeEvalFinall2
+                                                    </td>
+                                                    <td>
+                                                        @item.AutoEval2
+                                                    </td>
+                                                    <td>
+                                                        @item.Calif2
+                                                    </td>
+                                                    <td>
+                                                        @item.CalifFinal2
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="AutoEvalCell2">
+                                                        @item.Resultado2
+                                                    </td>
+                                                    <td class="JefeEvalCell2">
+                                                        @item.ComentariosJefeEval2
+                                                    </td>
+                                                    <td class="CalFinal2">
+                                                        @item.ComentariosJefeEvalFinall2
+                                                    </td>
+                                                    <td class="AutoEvalCell2">
+                                                        @item.AutoEval2
+                                                    </td>
+                                                    <td class="JefeEvalCell2">
+                                                        @item.Calif2
+                                                    </td>
+                                                    <td class="CalFinal2">
+                                                        @item.CalifFinal2
+                                                    </td>
+                                                }
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+
+        <div id="TblObjetivos" style="overflow: hidden auto">
+            <div id="accordion">
+                @if (Model.Liobjetivos != null)
+                {
+                    foreach (Modelo.EObjetives item in Model.Liobjetivos)
+                    {
+
+                        <h3 class="Objetivos" style="position: relative;">
+                            @item.titulo
+                            <div style="position: absolute; top: 0px;right: 4px; border: 0;">
+                                @if (ViewBag.status == 0 || ViewBag.status == 2 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                                {
+                                    @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "color: #FFF;", @title = "Editar" })
+                                    @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red;", @title = "Eliminar" })
+                                }
+                            </div>
+                        </h3>
+                        <div style="padding: 10px;">
+                            <table class="table table-bordered table-striped table-sm">
+                                <tr>
+                                    <th width="25%">Descripción</th>
+                                    <td colspan="2">@item.objdesc</td>
+                                </tr>
+                                <tr>
+                                    <th>Métrica (KPI)</th>
+                                    <td colspan="2">@item.objMetricas</td>
+                                </tr>
+                                <tr>
+                                    <th>Peso ponderado %</th>
+                                    <td colspan="2">@item.ponderado</td>
+                                </tr>
+                                @if (Model.sesion.Evaluacion.Status >= 4 && Model.sesion.Evaluacion.Status < 16)
+                                {
+                                    <tr>
+                                        <td colspan="3" style="background-color: #337AB7; color: #FFF; font-weight: bold;">Evaluación de Medio año</td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th class="text-center">Comentarios</th>
+                                        <th class="text-center">Cumplimiento %</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Evaluado</th>
+                                        <td class="AutoEvalCell">@item.resultado</td>
+                                        <td>@item.cumplimientoEvaluado</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Evaluador</th>
+                                        <td class="JefeEvalCell">@item.ComentariosJefeEval</td>
+                                        <td>@item.cumplimientoEvaluador</td>
+                                    </tr>
+                                    if (Model.sesion.Evaluacion.Status >= 10 && Model.sesion.Evaluacion.Status < 16)
+                                    {
+                                        <tr>
+                                            <td colspan="3" style="background-color: #337AB7; color: #FFF; font-weight: bold;">Evaluación de Fin de año</td>
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-center">Comentarios</th>
+                                            <th class="text-center">Cumplimiento %</th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Evaluado
+                                            </th>
+                                            <td class="AutoEvalCell2">@item.Resultado2</td>
+                                            <td>@item.cumplimientoEvaluado2</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Evaluador</th>
+                                            <td class="JefeEvalCell2">@item.ComentariosJefeEval2</td>
+                                            <td>@item.cumplimientoEvaluador2 -> @item.ValorObj</td>
+
+                                        </tr>
+                                        @*<tr>
+                                                <th>Comentario Final</th>
+                                                <td>@item.ComentariosJefeEvalFinall2</td>
+                                                <td></td>
+                                            </tr>*@
+                                    }
+                                }
+                            </table>
+                        </div>
+                    }
+                }
+            </div>
+            @if (Model.sesion.Evaluacion.Status < 11 || Model.sesion.Evaluacion.Status > 15)
+            {
+                <div class="clearfix alert alert-dark mt-1">
+                    <div class="float-left"><strong>Total peso objetivos (%)</strong></div>
+                    <div class="float-right"><strong id="pesototalobjetivos">@ViewBag.PesoTotal</strong></div>
+                </div>
+            }
+            else if (Model.sesion.Evaluacion.Status < 16)
+            {
+                <div class="clearfix alert alert-success mt-1">
+                    <div class="float-left"><strong>Cumplimiento % total: @ViewBag.sum_ponderado</strong></div>
+                    @if ((Model.sesion.Evaluacion.Status != 11 && Model.sesion.Evaluacion.Status != 13 && Model.sesion.Evaluacion.Status != 15) && ViewBag.usuario == 0)
+                    {
+                        <div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+                    }
+                    @if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
+                    {
+                        <div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+                    }
+                    @if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 2)
+                    {
+                        <div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+                    }
+                </div>
+                @*if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 0)
+                    {
+                        <div class="panel-group" id="accordion_escaleta" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading active" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion_escaleta" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Escaleta de Calificaciones
+                                        </a>
+                                    </h4>
+                                    <p>Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo.</p>
+                                </div>
+
+                                <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <table class="table table-sm table-bordered table-striped">
+                                            <thead>
+                                                <tr class="bg-light">
+                                                    <th class="width-66">
+                                                        Objetivo
+                                                    </th>
+                                                    <th class="text-center">Cumplimiento<br />%</th>
+                                                    <th class="width-33 text-center">
+                                                        Calificación Final
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{
+                                                    var fondo = "";
+
+                                                    foreach (var item in Model.Escaleta)
+                                                    {
+                                                        if (item.Valor == Model.sesion.Evaluacion.CaliFinal2)
+                                                        {
+                                                            fondo = "bg-success";
+                                                        }
+                                                        else
+                                                        {
+                                                            fondo = "";
+                                                        }
+                                                                                        <tr class="@fondo">
+                                                                                            <td>@Html.Raw(item.Objetivo)</td>
+                                                                                            <td class="text-center">@item.Ponderacion</td>
+                                                                                            @if (item.Valor == Model.sesion.Evaluacion.CaliFinal2)
+                                                                                            {
+                                                                                                <td class="text-center font-weight-bold">@Model.sesion.Evaluacion.CaliFinal2</td>
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                <td></td>
+                                                                                            }
+                                                                                        </tr>
+
+                                                    }
+                                                }
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    }*@
+            }
+            <script>
+                $(function () {
+                    $("#accordion").accordion({
+                        collapsible: true,
+                        active: false,
+                        heightStyle: "content"
+                    });
+                });
+            </script>
+        </div>
+        <p><strong>Ejemplo para construir objetivos SMART:</strong></p>
+        <p style="text-align:center; color: #004b8d;">
+            <a id="fancybox-smart" href="javascript:;" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i> Referencia para creación de objetivos</a>
+        </p>
+        <div style="display: none;">
+            <a href="~/Imgs/formato_smart.png" data-options='{"caption" : "Formato Objetivo SMART" }' class="imgSmart"></a>
+            <a href="~/Imgs/objetivos_smart.jpg" data-options='{"caption" : "Objetivos SMART" }' class="imgSmart"></a>
+        </div>
+    </div>
+
+    @*<p style="text-align:center; color: #004b8d;">
+            <a data-fancybox="gallery" href="~/Imgs/objetivos_smart.jpg" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i> Referencia para creación de objetivos</a>
+            <a data-fancybox="gallery" href="~/Imgs/objetivos_smart.jpg" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i>Objetivos SMART</a>
+        </p>*@
+
+    <h4>
+        Competencias
+        <div class="btn-toolbar float-right">
+            @if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 2 || Model.sesion.Evaluacion.Status == 4 || Model.sesion.Evaluacion.Status == 10 || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+            {
+                @Ajax.ActionLink(" Agregar competencia", "OperacionCompetencias", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleCompetencias", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirCompetencias()" }, new { @class = "btn btn-default fa fa-plus", @style = "color: #004b8d;" })
+            }
+            <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseCompetencias" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-compress-alt"></i>
+            </button>
+        </div>
+    </h4>
+    <div class="collapse show" id="collapseCompetencias">
+        <div>
+            <b>
+                Deberás agregar al menos una competencia
+            </b>
+        </div>
+        <div id="TblCompetencias">
+            <div id="accordionComp" class="">
+                @if (Model.ListaCompetencias != null)
+                {
+                    foreach (Modelo.ECompetemces item in Model.ListaCompetencias)
+                    {
+                        <h3 class="Competencias" style="position: relative;">
+                            @item.tituloTemp
+                            <div style="position: absolute; top: 0px;right: 4px; border: 0;">
+                                @if (ViewBag.status == 0 || ViewBag.status == 2 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                                {
+                                    @Ajax.ActionLink(" ", "OperacionCompetencias", "MisEvaluaciones", new { id = item.id, eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleCompetencias", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirCompetencias()" }, new { @class = "fa fa-edit", @style = "color: #FFF;", @title = "Editar" })
+                                    if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 2 || (Model.sesion.Evaluacion.Status == 5 && (item.Etapa == 5 || item.Etapa == 2)) || (Model.sesion.Evaluacion.Status == 11 && (item.Etapa == 10 || item.Etapa == 7)) || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+                                    {
+                                        @Ajax.ActionLink(" ", "EliminaUnaCompetencia", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadCompetences", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red;", @title = "Eliminar" })
+                                    }
+                                    if ((Model.sesion.Evaluacion.Status == 4 && item.Etapa != 5) || (Model.sesion.Evaluacion.Status == 10 && item.Etapa != 10))
+                                    {
+                                        @Ajax.ActionLink(" ", "EliminarCompetenciasUsr", "MisEvaluaciones", new { id = item.id, Stat = Model.sesion.Evaluacion.Status }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadCompetences", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red;", @title = "Eliminar" })
+                                    }
+                                }
+                            </div>
+                        </h3>
+                        <div style="padding: 10px;">
+                            <table class="table table-sm table-bordered table-striped">
+                                <tr class="Competencias">
+                                    <td style="background-color: #F9F9F9; font-weight: bold;">Actividades</td>
+                                    <td>@item.actividades</td>
+                                </tr>
+                                @if (Model.sesion.Evaluacion.Status >= 4 && Model.sesion.Evaluacion.Status < 16)
+                                {
+                                    <tr>
+                                        <td colspan="2" style="background-color: #337AB7; color: #FFF; font-weight: bold;">Evaluación de Medio año</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Comentario evaluado</td>
+                                        <td class="ResultadoComp">@item.resultados</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Comentario evaluador</td>
+                                        <td class="ResultadoCompEval">@item.resultadosEvaluador</td>
+                                    </tr>
+                                    if (Model.sesion.Evaluacion.Status >= 10 && Model.sesion.Evaluacion.Status < 16)
+                                    {
+                                        <tr>
+                                            <td colspan="2" style="background-color: #337AB7; color: #FFF; font-weight: bold;">Evaluación fin de año</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Comentario evaluado</td>
+                                            <td class="ResultadoComp2">@item.resultados2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Comentario evaluador</td>
+                                            <td class="ResultadoComp2Eval">@item.resultados2Evaluador</td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+                        </div>
+                    }
+                }
+            </div>
+            @*<div class="collapse in" id="collapseCompetencias">*@
+            @*<table class="table table-bordered table-striped table-colored" id="tablaCompetencias">
+                    <thead>
+                        <tr class="bg-primary">
+                            <th></th>
+                            <th class="width-20">
+                                Competencias
+                            </th>
+                            <th class="width-30">
+                                Actividades
+                            </th>
+                            <th class="width-33">
+                                Resultados
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                   @if (Model.ListaCompetencias != null)
+                    {
+                        foreach (Modelo.ECompetemces item in Model.ListaCompetencias)
+                        {
+                            <tr class="Competencias">
+
+                                    @if (Model.sesion.Evaluacion.Status == 0 || (Model.sesion.Evaluacion.Status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (Model.sesion.Evaluacion.Status == 5 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 6 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)  || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0) )
+                                    {
+                                        <td style="min-width: 60px;">
+                                        @Ajax.ActionLink(" ", "OperacionCompetencias", "MisEvaluaciones", new { id = item.id, eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleCompetencias", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirCompetencias()" }, new { @class = "fa fa-edit", @style = "font-size: 1.2em", @title = "Editar" })
+
+                                        @if (Model.sesion.Evaluacion.Status == 0 || (Model.sesion.Evaluacion.Status == 5 && (item.Etapa == 5 || item.Etapa == 2)) || (Model.sesion.Evaluacion.Status == 11 && (item.Etapa == 10 || item.Etapa == 7)) || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0) )
+                                        {
+                                            @Ajax.ActionLink(" ", "EliminaUnaCompetencia", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadCompetences", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                        }
+                                        @if ((Model.sesion.Evaluacion.Status == 4 && item.Etapa != 5) || (Model.sesion.Evaluacion.Status == 10 && item.Etapa != 10))
+                                        {
+                                            @Ajax.ActionLink(" ", "EliminarCompetenciasUsr", "MisEvaluaciones", new { id = item.id, Stat = Model.sesion.Evaluacion.Status }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadCompetences", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                        }
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                    }
+
+
+                                @if ((item.Etapa == 1 && Model.periodo.Status == 1) || (item.Etapa == 6 && Model.periodo.Status == 3))
+                                {
+                                    <td bgcolor="#9FF781">@item.tituloTemp</td>
+                                    <td bgcolor="#9FF781">@item.actividades</td>
+                                    <td bgcolor="#9FF781" class="ResultadoComp">
+                                        @item.resultados
+                                    </td>
+                                }
+                                else if ((item.Etapa == 2 && Model.periodo.Status == 1) || (item.Etapa == 7 && Model.periodo.Status == 3))
+                                {
+                                    <td bgcolor="#3ADF00">@item.tituloTemp</td>
+                                    <td bgcolor="#3ADF00">@item.actividades</td>
+                                    <td bgcolor="#3ADF00" class="ResultadoComp">
+                                        @item.resultados
+                                    </td>
+                                }
+                                else if ((item.Etapa == 3 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                {
+                                    <td bgcolor="#81DAF5">@item.tituloTemp</td>
+                                    <td bgcolor="#81DAF5">@item.actividades</td>
+                                    <td bgcolor="#81DAF5" class="ResultadoComp">
+                                        @item.resultados
+                                    </td>
+                                }
+                                else if ((item.Etapa == 4 && Model.periodo.Status == 1) || (item.Etapa == 8 && Model.periodo.Status == 3))
+                                {
+                                    <td bgcolor="#2E9AFE">@item.tituloTemp</td>
+                                    <td bgcolor="#2E9AFE">@item.actividades</td>
+                                    <td bgcolor="#2E9AFE" class="ResultadoComp">
+                                        @item.resultados
+                                    </td>
+                                }
+                                else if ((item.Etapa == 5 && Model.periodo.Status == 1) || (item.Etapa == 10 && Model.periodo.Status == 3))
+                                {
+                                    <td bgcolor="#F5A9BC">@item.tituloTemp</td>
+                                    <td bgcolor="#F5A9BC">@item.actividades</td>
+                                    <td bgcolor="#F5A9BC">
+                                        @item.resultados
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>@item.tituloTemp</td>
+                                    <td>@item.actividades</td>
+                                    <td class="ResultadoComp">
+                                        @item.resultados
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                    </tbody>
+                </table>*@
+            @*</div>*@
+        </div>
+        <script>
+            $(function () {
+                $("#fancybox-smart").click(function () {
+                    $.fancybox.open($('.imgSmart'), {
+                        touch: false,
+                        infobar: true,
+                        slideShow: {
+                            autoStart: true,
+                            speed: 5000
+                        },
+                        loop: true
+                    });
+                });
+
+                $("#fancybox-smart1").on('click', function () {
+
+                    $.fancybox.open([
+                        {
+                            src: 'http://10.240.180.13:9090/Imgs/objetivos_smart.jpg',
+                            opts: {
+                                caption: 'Objetivos SMART'
+                            }
+                        },
+                        {
+                            src: 'http://10.240.180.13:9090/Imgs/formato_smart.png',
+                            opts: {
+                                caption: 'Formato SMART'
+                            }
+                        }
+                    ], {
+                        loop: true,
+                        slideShow: {
+                            autoStart: true,
+                            speed: 8000
+                        }
+                    });
+
+                });
+
+                $("#accordionComp").accordion({
+                    collapsible: true,
+                    active: false,
+                    heightStyle: "content"
+                });
+            });
+        </script>
+        <p><strong>Referencia Competencias:</strong></p>
+        <p style="text-align:center; color: #004b8d;">
+            <a href="~/Imgs/Competencias.png" data-fancybox="gallery" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i> Referencia Competencias</a>
+        </p>
+    </div>
+
+    if (Model.sesion.Evaluacion.Status >= 14 && Model.sesion.Evaluacion.Status <= 15)
+    {
+        <h3>
+            Calificación Final
+            @if (Model.sesion.Evaluacion.Status == 15)
+            {
+                <span>Calibración</span>
+            }
+            <div class="btn-toolbar float-right">
+                <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseCalificacion" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fa fa-compress-alt"></i>
+                </button>
+            </div>
+        </h3>
+        <p>Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo.</p>
+
+        <div class="collapse show" id="collapseCalificacion">
+            <table class="table table-sm table-bordered table-striped">
+                <thead>
+                    <tr class="bg-primary">
+                        <th class="align-middle width-66">
+                            Objetivo
+                        </th>
+                        <th class="align-middle text-center">Cumplimiento %</th>
+                        <th class="align-middle text-center width-33">
+                            Calificación Final
+                        </th>
+                        @if (Model.sesion.Evaluacion.Status == 15)
+                        {
+                            <th class="align-middle text-center">Calibración</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @*<tr>
+                            <td>
+                                ("Qué" se logró)<br />
+                                Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo
+                            </td>
+                            <td></td>
+                            <td>
+                            </td>
+                            @if (Model.sesion.Evaluacion.Status == 15)
+                            {
+                                <td></td>
+                            }
+                        </tr>*@
+                    @{ var fondo = ""; var fondocalibrado = "";
+
+                        foreach (var item in Model.Escaleta)
+                        {
+                            if (item.Valor == Model.sesion.Evaluacion.CaliFinal2 && Model.sesion.Evaluacion.CaliFinalCalibracion == 0)
+                            {
+                                fondo = "bg-success";
+                            }
+                            else
+                            {
+                                fondo = "";
+                            }
+                            if (Model.sesion.Evaluacion.CaliFinalCalibracion > 0)
+                            {
+                                if (item.Valor == Model.sesion.Evaluacion.CaliFinalCalibracion)
+                                {
+                                    fondocalibrado = "bg-success";
+                                }
+                                else
+                                {
+                                    fondocalibrado = "";
+                                }
+                            }
+                            <tr class="@fondo  @fondocalibrado">
+                                <td>@Html.Raw(item.Objetivo)</td>
+                                <td class="text-center">@item.Ponderacion</td>
+                                <td class="@fondo" align="center">@item.Valor</td>
+                                @if (Model.sesion.Evaluacion.Status == 15)
+                                {
+                                    <td align="center">@item.Valor</td>
+                                }
+
+                                @*@if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1 || (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2))
+                                    {
+                                        <td>
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new {   }) 4<br />
+                                                </label>
+                                            </div>
+                                        </td>
+                                    }*@
+                                @*else if (Model.sesion.Evaluacion.Status > 11 && Model.sesion.Evaluacion.Status <= 15)
+                                    {
+                                        <td>
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new { disabled = "disabled" }) 4<br />
+                                                </label>
+                                            </div>
+                                        </td>
+                                    }*@
+                                @*else
+                                    {
+                                        <td>
+                                            @if (Model.sesion.Evaluacion.CaliFinal2 == 4)
+                                            {
+                                            <label>@Model.sesion.Evaluacion.CaliFinal2</label>
+                                            }
+                                        </td>
+                                    }*@
+                            </tr>
+                        }
+                    }
+                    <!--<tr>
+                        <td>
+                            Cumple con los Objetivos<br />
+                            Cumplió al 100% con los objetivos, responsabilidades y expectativas
+                        </td>
+
+
+                        @if ((Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2))
+                        {
+                            <td>
+                                <div class="radio">
+                                    <label>
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "3") 3<br />
+                                    </label>
+                                </div>
+                            </td>
+                        }-->
+                    @*else if (Model.sesion.Evaluacion.Status > 12)
+                        {
+                            <td>
+                                <div class="radio">
+                                    <label>
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "3", new { disabled = "disabled" }) 3<br />
+                                    </label>
+                                </div>
+                            </td>
+                        }*@
+                    <!--else
+                        {
+                    <td>
+                        @if (Model.sesion.Evaluacion.CaliFinal2 == 3)
+                        {
+                            <label>@Model.sesion.Evaluacion.CaliFinal2</label>
+                        }
+                                            </td>
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            Cumple parcialmente los Objetivos <br />
+                            No cumplió del todo con los objetivos clave, responsabilidades y expectativas o no los cumplió con la calidad o en el tiempo comprometido.
+                        </td>
+
+
+                        @if ((Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2))
+                        {
+                            <td>
+                                <div class="radio">
+                                    <label>
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "2") 2<br />
+                                    </label>
+                                </div>
+                            </td>
+                        }-->
+                    @*else if (Model.sesion.Evaluacion.Status > 12)
+                        {
+                            <td>
+                                <div class="radio">
+                                    <label>
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "2", new { disabled = "disabled" }) 2<br />
+                                    </label>
+                                </div>
+                            </td>
+                        }*@
+                    <!--else
+                        {
+                    <td>
+                        @if (Model.sesion.Evaluacion.CaliFinal2 == 2)
+                        {
+                            <label>@Model.sesion.Evaluacion.CaliFinal2</label>
+                        }
+                                            </td>
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            No cumple con los Objetivos<br />
+                            No cumplió con la mayoría de sus objetivos, responsabilidades y expectativas.
+                        </td>
+
+                        @if ((Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1) || (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2))
+                        {
+                            <td>
+                                <div class="radio">
+                                    <label>
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "1") 1<br />
+                                    </label>
+                                </div>
+                            </td>
+                        }-->
+                    @*else if (Model.sesion.Evaluacion.Status > 12)
+                        {
+                            <td>
+                                <div class="radio">
+                                    <label>
+                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "1", new { disabled = "disabled" }) 1<br />
+                                    </label>
+                                </div>
+                            </td>
+                        }*@
+                    <!--else
+                        {
+                    <td>
+                        @if (Model.sesion.Evaluacion.CaliFinal2 == 1)
+                        {
+                            <label>@Model.sesion.Evaluacion.CaliFinal2</label>
+                        }
+                                            </td>
+                        }
+
+                    </tr>-->
+                </tbody>
+            </table>
+
+        </div>
+        if (Model.sesion.Evaluacion.Status == 15)
+        {
+            <div id="PanelComentariosCalibración">
+                <hr>
+                <h4>
+                    Comentarios calibración
+                    <div class="btn-toolbar float-right">
+                        <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosCalibracion">
+                            <i class="fa fa-compress-alt"></i>
+                        </button>
+                    </div>
+                </h4>
+                <div class="collapse show" id="collapseComentariosCalibracion">
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+    //ViewBag.usuario ***************************
+    //usuario
+    //0 =evaluado
+    //1= evaluador
+    //2=jefelv2
+    //ViewBag.usuario ***************************
+
+    if (Model.sesion.Evaluacion.Status >= 4 && Model.sesion.Evaluacion.Status <= 15)
+    {
+        <!-- Comentarios evaluado. cuando realiza su evaluación -->
+        <div id="PanelComentariosEvaluado">
+            <hr>
+            <h4>
+                Comentarios evaluado
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosEvaluado">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h4>
+            <div class="collapse show" id="collapseComentariosEvaluado">
+                @if (Model.sesion.Evaluacion.Status == 4 && ViewBag.usuario == 0)
+                {
+                    <h5>Primer semestre</h5>
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComEvaluado, new { @class = "form-control" })
+                    </div>
+                }
+                else
+                {
+                    <h5>Primer semestre</h5>
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComEvaluado, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    </div>
+                }
+            </div>
+        </div>
+        if (Model.sesion.Evaluacion.Status == 4 && ViewBag.usuario == 0)
+        {
+            if (Model.sesion.Evaluacion.MotivoRechazoObj2 != "")
+            {
+                <div id="pnlComentariosJefeSupervisor">
+                    <hr>
+                    <h4>
+                        Comentarios rechazo
+                        <div class="btn-toolbar float-right">
+                            <button name="button" class="btn btn-default" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosJS">
+                                <i class="fa fa-compress-alt"></i>
+                            </button>
+                        </div>
+                    </h4>
+                    <div class="collapse show" id="collapseComentariosJS">
+                        <div class="form-group">
+                            @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj2, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                        </div>
+                    </div>
+                </div>
+            }
+            if (Model.sesion.Evaluacion.RechazosMitad < 3)
+            {
+                <div style="text-align:center;">
+                    <button class="btn btn-primary" id="EnviarAutoeval" name="submitButton" type="submit" value="EnviarAutoeval"><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar comentarios</button>
+                </div>
+            }
+            else
+            {
+                <h5 class="alert-danger">Su evaluación de mitad de año ha alcanzado el número máximo de rechazos.</h5>
+            }
+        }
+    }
+
+    if (Model.sesion.Evaluacion.Status >= 5 && Model.sesion.Evaluacion.Status <= 15)
+    {
+        <!-- Comentarios evaluador o jefe directo. cuando emite su evaluación -->
+        <div id="PanelComentariosEvaluador">
+            <hr>
+            <h4>
+                Comentarios evaluador
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosEvaluador">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h4>
+            <div class="collapse show" id="collapseComentariosEvaluador">
+
+                @if (Model.sesion.Evaluacion.Status == 5 && ViewBag.usuario == 1)
+                {
+
+                    <h5>Primer semestre </h5>
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComEvaluador, new { @class = "form-control" })
+                    </div>
+                    //if (Model.sesion.Evaluacion.RechazosMitad > 0)
+                    //{
+                    <h5>Motivo de rechazo</h5>
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj2, new { @class = "form-control" })
+                    </div>
+                    //}
+
+                }
+                else if (Model.sesion.Evaluacion.Status > 5)
+                {
+                    <h5>Primer semestre </h5>
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComEvaluador, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    </div>
+
+                }
+
+
+            </div>
+        </div>
+        if (Model.sesion.Evaluacion.Status == 5 && ViewBag.usuario == 1)
+        {
+            <div style="text-align:center;">
+                @if (Model.sesion.Evaluacion.RechazosMitad < 3)
+                {
+                    <button class="btn btn-danger" id="RechazarObjetivosMitad" name="submitButton" type="submit" value="RechazarObjetivosMitad"><i class="fa fa-ban" aria-hidden="true"></i> Rechazar</button>
+                }
+                <button class="btn btn-primary" id="EnviarAutoevalJefe" name="submitButton" type="submit" value="EnviarAutoevalJefe"><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar comentarios</button>
+            </div>
+
+        }
+
+    }
+    <!-- Etapa 1 : del lado del empleado -->
+    if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 2)
+    {
+        if (Model.sesion.Evaluacion.MotivoRechazoObj != "")
+        {
+            <div id="pnlComentariosJefeSupervisor">
+                <hr>
+                <h4>
+                    Comentarios rechazo objetivos
+                    <div class="btn-toolbar float-right">
+                        <button name="button" class="btn btn-default" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosJS">
+                            <i class="fa fa-compress-alt"></i>
+                        </button>
+                    </div>
+                </h4>
+                <div class="collapse show" id="collapseComentariosJS">
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    </div>
+                </div>
+            </div>
+        }
+        if (Model.sesion.Evaluacion.Rechazos < 3)
+        {
+            <div style="text-align: center;">
+                <button class="btn btn-primary" id="CagraObjetivos" name="submitButton" type="submit" value="CagraObjetivos"><i class="fa fa-paper-plane"></i> Enviar objetivos para aprobación</button>
+            </div>
+        }
+        else
+        {
+            <h5 class="alert-danger">Sus objetivos han alcanzado el número máximo de rechazos.</h5>
+        }
+    }
+    else if (Model.sesion.Evaluacion.Status == 1 && ViewBag.usuario == 1)
+    {
+        <div id="pnlComentariosJefeSupervisor">
+            <hr>
+            <h4>
+                Comentarios rechazo objetivos
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoObj">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h4>
+            <div class="collapse show" id="collapseComentariosRechazoObj">
+                <div class="form-group">
+                    @if (Model.sesion.Evaluacion.Rechazos < 3)
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control" })
+                    }
+                    else
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    }
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center">
+            <input type="text" id="TemporalObj" name="TemporalObj" class="oculto">
+            <button class="btn btn-success" id="AceptarObjetivos" name="submitButton" type="submit" value="AceptarObjetivos"><i class="fa fa-check-square-o" aria-hidden="true"></i> Aceptar objetivos</button>
+            @if (Model.sesion.Evaluacion.Rechazos < 3)
+            {
+                <button class="btn btn-danger" id="RechazarObjetivos" name="submitButton" type="submit" value="RechazarObjetivos"><i class="fa fa-ban" aria-hidden="true"></i> Rechazar objetivos</button>
+            }
+        </div>
+    }
+
+
+    if (Model.sesion.Evaluacion.Status == 6)
+    {
+        if (Model.sesion.Evaluacion.ComentariosSegundoNivel != "")
+        {
+            <div id="pnlComentariosJefeSupervisor">
+                <hr>
+                <h3>
+                    Rechazo evaluación
+                    <div class="btn-toolbar float-right">
+                        <button name="button" class="btn btn-default" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoJS">
+                            <i class="fa fa-compress-alt"></i>
+                        </button>
+                    </div>
+                </h3>
+                <div class="collapse in" id="collapseComentariosRechazoJS">
+
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComentariosSegundoNivel, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    </div>
+
+
+                </div>
+            </div>
+        }
+
+    }
+    else if (Model.sesion.Evaluacion.Status == 7 && ViewBag.usuario == 2)
+    {
+        <div id="pnlComentariosJefeSupervisor">
+            <hr>
+            <h3>
+                Rechazo evaluación
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoEval">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h3>
+            <div class="collapse in" id="collapseComentariosRechazoEval">
+                <div class="form-group">
+                    @if (Model.sesion.Evaluacion.ComentariosSegundoNivel == "")
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComentariosSegundoNivel, new { @class = "form-control" })
+                    }
+                    else
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComentariosSegundoNivel, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    }
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <input type="text" id="TemporalCalif" name="TemporalCalif" class="oculto">
+            <button class="btn btn-success" id="AceptarCalificacion" name="submitButton" type="submit" value="AceptarCalificacion"><i class="fa fa-check-square-o"></i>Aceptar evaluación </button>
+            @if (Model.sesion.Evaluacion.ComentariosSegundoNivel == "")
+            {
+                <button class="btn btn-danger" id="RechazarCalificacion" name="submitButton" type="submit" value="RechazarCalificacion">Rechazar evaluación</button>
+            }
+        </div>
+    }
+
+    if (Model.sesion.Evaluacion.Status == 9 && ViewBag.usuario == 2)
+    {
+        <div id="pnlComentariosJefeSupervisor">
+            <hr>
+            <h3>
+                Motivo calibración
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosCalibra">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h3>
+            <div class="collapse in" id="collapseComentariosCalibra">
+                <div class="form-group">
+                    @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="btn btn-success" id="Calibracion" name="submitButton" type="submit" value="Calibracion"><i class="fa fa-paper-plane" aria-hidden="true"></i> Calibrar </button>
+        </div>
+    }
+
+    if (Model.sesion.Evaluacion.Status == 6 && ViewBag.usuario == 1)
+    {
+        <div style="text-align: center;">
+            <button class="btn btn-success" id="CerrarEval" name="submitButton" type="submit" value="CerrarEval">Cerrar evaluación </button>
+            @if (Model.sesion.Evaluacion.ComentariosSegundoNivel == "")
+            {
+                <button class="btn btn-primary" id="EnvioSuperior" name="submitButton" type="submit" value="EnvioSuperior">Enviar evaluación a superior</button>
+            }
+        </div>
+    }
+
+    if (Model.sesion.Evaluacion.Status >= 10 && Model.sesion.Evaluacion.Status <= 15)
+    {
+        <!-- Comentarios evaluado. cuando realiza su evaluación -->
+        <div id="PanelComentariosEvaluado">
+            <hr>
+            <h4>
+                Comentarios evaluado
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosEvaluado2">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h4>
+            <div class="collapse show" id="collapseComentariosEvaluado2">
+                @if (Model.sesion.Evaluacion.Status == 10 && ViewBag.usuario == 0)
+                {
+
+                    <h5>Segundo semestre</h5>
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComEvaluado2, new { @class = "form-control" })
+                    </div>
+
+                }
+                else
+                {
+                    <h5>Segundo semestre</h5>
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComEvaluado2, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    </div>
+                }
+            </div>
+        </div>
+        if (Model.sesion.Evaluacion.Status == 10 && ViewBag.usuario == 0)
+        {
+            if (Model.sesion.Evaluacion.MotivoRechazoObjFin != "")
+            {
+                <div id="pnlComentariosJefeSupervisor">
+                    <hr>
+                    <h4>
+                        Comentarios rechazo auto-evaluación
+                        <div class="btn-toolbar float-right">
+                            <button name="button" class="btn btn-default" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosJS">
+                                <i class="fa fa-compress-alt"></i>
+                            </button>
+                        </div>
+                    </h4>
+                    <div class="collapse show" id="collapseComentariosJS">
+                        <div class="form-group">
+                            @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObjFin, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                        </div>
+                    </div>
+                </div>
+            }
+
+            if (Model.sesion.Evaluacion.RechazosFin < 3 && Model.sesion.Evaluacion.Status == 10 && ViewBag.usuario == 0)
+            {
+                <div style="text-align:center;">
+                    <button class="btn btn-success" id="EnviarAutoeval2" name="submitButton" type="submit" value="EnviarAutoeval2"><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar comentario</button>
+                </div>
+            }
+            else
+            {
+                <h5 class="alert-danger">Su auto-evaluación de fin de año ha alcanzado el número máximo de rechazos.</h5>
+            }
+        }
+    }
+
+    if (Model.sesion.Evaluacion.Status >= 11 && Model.sesion.Evaluacion.Status <= 15)
+    {
+        <!-- Comentarios evaluador o jefe directo. cuando emite su evaluación -->
+        <div id="PanelComentariosEvaluador">
+            <hr>
+            <h4>
+                Comentarios evaluador
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosEvaluador2">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h4>
+            <div class="collapse show" id="collapseComentariosEvaluador2">
+
+                @if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
+                {
+
+                    <h5>Segundo semestre </h5>
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComEvaluador2, new { @class = "form-control" })
+                    </div>
+
+                }
+                else if (Model.sesion.Evaluacion.Status > 5)
+                {
+                    <h5>Segundo semestre </h5>
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComEvaluador2, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    </div>
+                }
+
+
+            </div>
+        </div>
+                            if (Model.sesion.Evaluacion.Status == 11 && ViewBag.Usuario == 1)
+                            {
+        <div id="pnlComentariosJefeSupervisor">
+            <hr>
+            <h4>
+                Comentarios rechazo auto-evaluación
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoObj">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h4>
+            <div class="collapse show" id="collapseComentariosRechazoObj">
+                <div class="form-group">
+                    @if (Model.sesion.Evaluacion.RechazosFin < 3 && ViewBag.Usuario == 1)
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObjFin, new { @class = "form-control" })
+                    }
+                    @*else
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObjFin, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    }*@
+                </div>
+            </div>
+        </div>
+                            }
+                            if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
+                            {
+            <div style="text-align: center;">
+                <button class="btn btn-danger" id="RechazarAutoevalFinal" name="submitButton" type="submit" value="RechazarEvalFinal"><i class="fa fa-ban" aria-hidden="true"></i> Rechazar autoevaluación</button>
+                @if (!Model.sesion.Login.calibracion)
+                {
+                    <button class="btn btn-success" id="EnviarAutoevalJefe2" name="submitButton" type="submit" value="CerrarEval2"><i class="fa fa-paper-plane" aria-hidden="true"></i> Cerrar evaluación</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary" id="EnvioSuperior2" name="submitButton" type="submit" value="EnviarAutoevalJefe2">Enviar evaluación a Calibración</button>
+                }
+            </div>
+        }
+
+    }
+
+
+    if (Model.sesion.Evaluacion.Status == 12)
+    {
+        if (Model.sesion.Evaluacion.ComentariosSegundoNivel2 != "")
+        {
+            <div id="pnlComentariosJefeSupervisor">
+                <hr>
+                <h3>
+                    Rechazo evaluación
+                    <div class="btn-toolbar float-right">
+                        <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoEval2">
+                            <i class="fa fa-compress-alt"></i>
+                        </button>
+                    </div>
+                </h3>
+                <div class="collapse in" id="collapseComentariosRechazoEval2">
+
+
+
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.ComentariosSegundoNivel2, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+    else if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 2)
+    {
+        <hr />
+        <div class="panel-group" id="accordion_calibracion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading active" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion_calibracion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Calificación por Calibración
+                        </a>
+                    </h4>
+                </div>
+                <p>Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo.</p>
+                <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <table class="table table-sm table-bordered table-striped">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="width-66">
+                                        Objetivo
+                                    </th>
+                                    <th class="text-center width-33">
+                                        Calificación Final
+                                    </th>
+                                    <th class="text-center width-33">
+                                        Calificación Calibración
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @*<tr>
+                                        <td>
+                                            ("Qué" se logró)<br />
+                                            Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td></td>
+                                    </tr>*@
+                                @{ var fondo = "";
+
+                                    foreach (var item in Model.Escaleta)
+                                    {
+                                        if (item.Valor == Model.sesion.Evaluacion.CaliFinal2)
+                                        {
+                                            fondo = "bg-success";
+                                        }
+                                        else
+                                        {
+                                            fondo = "";
+                                        }
+                                        <tr class="@fondo">
+                                            <td>@Html.Raw(item.Objetivo)</td>
+                                            @if (item.Valor == Model.sesion.Evaluacion.CaliFinal2)
+                                            {
+                                                <td class="text-center font-weight-bold">@Model.sesion.Evaluacion.CaliFinal2</td>
+                                            }
+                                            else
+                                            {
+                                                <td></td>
+                                            }
+                                            <td class="text-center font-weight-bold">
+                                                <div class="radio">
+                                                    <label>
+                                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, item.Valor, new { }) @item.Valor<br />
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            @*else if (Model.sesion.Evaluacion.Status > 11 && Model.sesion.Evaluacion.Status <= 15)
+                                                {
+                                                    <td>
+                                                        <div class="radio">
+                                                            <label>
+                                                                @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new { disabled = "disabled" }) 4<br />
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                }*@
+                                            @*else
+                                                {
+                                                    <td>
+                                                        @if (Model.sesion.Evaluacion.CaliFinal2 == 4)
+                                                        {
+                                                        <label>@Model.sesion.Evaluacion.CaliFinal2</label>
+                                                        }
+                                                    </td>
+                                                }*@
+                                        </tr>
+
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="pnlComentariosJefeSupervisor">
+            <hr>
+            <h3>
+                Motivo de calibración
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoJS2">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h3>
+            <div class="collapse show" id="collapseComentariosRechazoJS2">
+
+                <div class="form-group">
+                    @if (Model.sesion.Evaluacion.Status == 13 && ViewBag.Usuario == 2)
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control" })
+                    }
+                    else
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    }
+                </div>
+
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <input type="text" id="TemporalCalif2" name="TemporalCalif2" class="oculto">
+            <button class="btn btn-success" id="Calibracion2" name="submitButton" type="submit" value="Calibracion2">Calibrar/Cerrar evaluación </button>
+        </div>
+    }
+
+    @*if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
+            {
+                <div style="text-align: center;">
+                    <button class="btn btn-success" id="CerrarEval2" name="submitButton" type="submit" value="CerrarEval2">Cerrar evaluacón </button>
+                    @if (Model.sesion.Evaluacion.ComentariosSegundoNivel == "")
+        {
+                        <button class="btn btn-primary" id="EnvioSuperior2" name="submitButton" type="submit" value="EnvioSuperior2">Enviar evaluación a superior</button>
+                    }
+                </div>
+            }*@
+
+    if (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2)
+    {
+        <div id="pnlComentariosJefeSupervisor">
+            <hr>
+            <h3>
+                Motivo calibración Etapa 2
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosCalibra2">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h3>
+            <div class="collapse in" id="collapseComentariosCalibra2">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control" })
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="btn btn-success" id="Calibracion2" name="submitButton" type="submit" value="Calibracion2">Calibrar </button>
+        </div>
+    }
+
+    <!-- Etapa 1 : del lado del empleado -->
+    if (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0)
+    {
+        if (Model.sesion.Evaluacion.MotivoRechazoObj != "")
+        {
+            <div id="pnlComentariosJefeSupervisor">
+                <hr>
+                <h3>
+                    Comentarios rechazo objetivos
+                    <div class="btn-toolbar float-right">
+                        <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosJS">
+                            <i class="fa fa-compress-alt"></i>
+                        </button>
+                    </div>
+                </h3>
+                <div class="collapse show" id="collapseComentariosJS">
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    </div>
+                </div>
+            </div>
+        }
+        <div style="text-align: center;">
+            <button class="btn btn-primary" id="CagraObjetivosEx" name="submitButton" type="submit" value="CagraObjetivosEx"><i class="fa fa-paper-plane"></i> Enviar objetivos para aprobación</button>
+        </div>
+    }
+    else if (Model.sesion.Evaluacion.Status == 17 && ViewBag.usuario == 1)
+    {
+        <div id="pnlComentariosJefeSupervisor">
+            <hr>
+            <h3>
+                Comentarios rechazo objetivos
+                <div class="btn-toolbar float-right">
+                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoObj">
+                        <i class="fa fa-compress-alt"></i>
+                    </button>
+                </div>
+            </h3>
+            <div class="collapse show" id="collapseComentariosRechazoObj">
+                <div class="form-group">
+                    @if (Model.sesion.Evaluacion.Rechazos < 3)
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control" })
+                    }
+                    else
+                    {
+                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    }
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center">
+            <input type="text" id="TemporalObj" name="TemporalObj" class="oculto">
+            <button class="btn btn-success" id="AceptarObjetivosEx" name="submitButton" type="submit" value="AceptarObjetivosEx"><i class="fa fa-check-square-o" aria-hidden="true"></i> Aceptar objetivos</button>
+            @if (Model.sesion.Evaluacion.Rechazos < 3)
+            {
+                <button class="btn btn-danger" id="RechazarObjetivos" name="submitButton" type="submit" value="RechazarObjetivosEx"><i class="fa fa-ban" aria-hidden="true"></i> Rechazar objetivos</button>
+            }
+        </div>
+    }
+}
+
+@*@if (Model.sesion.Evaluacion.Status > 1)
+    {
+        using (Html.BeginForm("DownloadPdfDetailed", "MiHistorial", new { Id = Model.sesion.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+        {
+            <button type="submit" class="btn btn-default">Descargar <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+        }
+    }*@
+@if (Model.sesion.Evaluacion.Status != 13)
+{
+    using (Html.BeginForm("DownloadPdfDetailed", "MiHistorial", new { Id = Model.sesion.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+    {
+        <button type="submit" class="btn btn-default">Descargar <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+    }
+}
+
+<div style="visibility:hidden; display:none;">
+    @Ajax.ActionLink("RecargaTabla", "RecargaObjetivos", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
+new AjaxOptions { UpdateTargetId = "TblObjetivos", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
+new { id = "RecargaTabla" })
+</div>
+
+<div style="visibility:hidden; display:none;">
+    @Ajax.ActionLink("Competencias", "RecargaCompetencias", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
+new AjaxOptions { UpdateTargetId = "TblCompetencias", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
+new { id = "Competencias" })
+</div>
+<input type="text" id="TemporalObj" name="TemporalObj" class="oculto">
+
+<div class="modal fade" id="ModalDetalle" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                <h4 class="modal-title">Objetivos</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="Detalle"> </div> @*se llena con el ajax*@
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="ModalCompetencias" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <!-- Modal content-->
+            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                <h4 class="modal-title">Competencias</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="DetalleCompetencias" style="width:100%;"></div> @*se llena con el ajax*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ModalDetalleObj" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <!-- Modal content-->
+            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                <h5 class="modal-title">Objetivos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="DetalleObj"></div> @*se llena con el ajax*@
+            </div>
+            <div class="modal-footer" style="padding-bottom: 0px;">
+                <p style="text-align:right;">
+                    <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal">  <x style="font-family:Arial"> Cerrar</x></button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="txtPesoTotal" />
+<div class="modal fade" id="ModalEscaleta" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                <h4 class="modal-title">Escaleta de Calificaciones</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="DetalleEscaleta"></div> @*se llena con el ajax*@
+            </div>
+            <div class="modal-footer" style="padding-bottom: 0px;">
+                <p style="text-align:right;">
+                    <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal">  <x style="font-family:Arial"> Cerrar</x></button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Fragmento de codigo para implementar doble Scroll*@
+<style>
+    .wmd-view-topscroll, .wmd-view {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 300px;
+        border: none 0px RED;
+    }
+
+    .wmd-view-topscroll {
+        height: 18px;
+        width: 100%;
+    }
+
+    .wmd-view {
+        /*height: 200px;*/
+        width: 100%;
+    }
+
+    .wmd-view-topscroll2, .wmd-view2 {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 300px;
+        border: none 0px RED;
+    }
+
+    .wmd-view-topscroll2 {
+        height: 18px;
+        width: 100%;
+    }
+
+    .wmd-view2 {
+        /*height: 200px;*/
+        width: 100%;
+    }
+
+
+
+    .scroll-div1 {
+        width: 1000px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .scroll-div2 {
+        width: 1000px;
+        /*height: 20px;*/
+    }
+</style>
+@*Fragmento de codigo para implementar doble Scroll*@
+
+
+
+<script type="text/javascript">
+
+   @*Fragmento de codigo para implementar doble Scroll*@
+            $(function () {
+            $(".wmd-view-topscroll").scroll(function () {
+                $(".wmd-view")
+                    .scrollLeft($(".wmd-view-topscroll").scrollLeft());
+            });
+        $(".wmd-view").scroll(function () {
+            $(".wmd-view-topscroll")
+                .scrollLeft($(".wmd-view").scrollLeft());
+        });
+            });
+
+            $(function () {
+            $(".wmd-view-topscroll2").scroll(function () {
+                $(".wmd-view2")
+                    .scrollLeft($(".wmd-view-topscroll2").scrollLeft());
+            });
+        $(".wmd-view2").scroll(function () {
+            $(".wmd-view-topscroll2")
+                .scrollLeft($(".wmd-view2").scrollLeft());
+                });
+            });
+
+    @*Fragmento de codigo para implementar doble Scroll*@
+
+
+    $("#RechazarObjetivos").click(function () {
+        $("#TemporalObj").val('1');
+    });
+            $("#RechazarObjetivosMitad").click(function () {
+                $("#TemporalObj").val('1');
+            });
+
+        $("#RechazarAutoevalFinal").click(function () {
+            $("#TemporalObj").val('1');
+        });
+    
+    $("#EnviarAutoevalJefe2").click(function () {
+        $("#TemporalObj").val('0');
+    });
+        $("#EnvioSuperior2").click(function () {
+            $("#TemporalObj").val('0');
+        });
+        $("#EnviarAutoevalJefe").click(function () {
+            $("#TemporalObj").val('0');
+        });
+    $("#AceptarObjetivos").click(function () {
+        $("#TemporalObj").val('0');
+    });
+
+
+    $("#RechazarObjetivosEx").click(function () {
+        $("#TemporalObj").val('1');
+    });
+    $("#AceptarObjetivosEx").click(function () {
+        $("#TemporalObj").val('0');
+    });
+
+    $("#RechazarCalificacion").click(function () {
+        $("#TemporalCalif").val('1');
+    });
+    $("#AceptarCalificacion").click(function () {
+        $("#TemporalCalif").val('0');
+    });
+
+        $("#MiEval").validate({  // initialize the plugin
+        submitHandler: function (form) {  // fires on valid form
+
+            var status = $('#sesion_Evaluacion_Status').val();
+
+            //alert('Status->'+status);
+            if (status == 0 || status==2) {
+                var Objetivo = 0;
+                $('.Objetivos').each(function (index, value) {
+                    Objetivo = Objetivo + 1;
+                });
+                //alert(Objetivo);
+                if (Objetivo < 3 || Objetivo>6) {
+                    alert('Debe ingresar mínimo 3 objetivos, máximo 6. \n Objetivos actuales->' + Objetivo);
+                    return false;
+                }
+                Objetivo = 0;
+                var pesototal = $("#txtPesoTotal").val();
+                //alert(pesototal);
+                if (pesototal != 100) {
+                    alert('La suma total del peso de los objetivos debe ser 100.\nValor actual: ' + pesototal);
+                    return false;
+                }
+
+                var Competencias = 0;
+                $('.Competencias').each(function (index, value) {
+                    Competencias = Competencias + 1;
+                });
+                if (Competencias <= 0) {
+                    alert('Debe de ingresar por lo menos una Competencia')
+                    return false;
+                }
+                Competencias = 0;
+                return true;
+            }
+            else if (status == 1) {
+                var temp= $("#sesion_Evaluacion_MotivoRechazoObj").val();
+                var aux= $("#TemporalObj").val();
+                if (temp == "" && aux == 1)
+                {
+                    alert("Tiene que ingresar comentario de rechazo");
+                    return false;
+                }
+                return true;
+            }
+            else if (status == 4)
+            {
+                var Objetivo = 0;
+                $('.Objetivos').each(function (index, value) {
+                    Objetivo = Objetivo + 1;
+                });
+                if (Objetivo < 3 || Objetivo > 6) {
+                    alert('Debe ingresar mínimo 3 objetivos, máximo 6. \n Objetivos actuales->' + Objetivo);
+                    return false;
+                }
+                Objetivo = 0;
+                var pesototal = $("#txtPesoTotal").val();
+                //alert(pesototal);
+                if (pesototal != 100) {
+                    alert('La suma total del peso de los objetivos debe ser 100.\nValor actual: ' + pesototal);
+                    return false;
+                }
+                var aux = 0;
+                var auxres = 0;
+                var TotalObj = 0;
+                var TotalComp = 0;
+                $('.AutoEvalCell').each(function (index, value) {
+                    TotalObj = TotalObj + 1;
+                    var cellText = $(this).html();
+                    cellText = $.trim(cellText);
+                    //alert(cellText);
+                    if (cellText != '') {
+                        aux = aux + 1;
+                    }
+
+                });
+
+                if (TotalObj > aux) {
+                    alert('Se requiere comentar todos los objetivos a evaluar');
+                    return false;
+                }
+                if (aux < 3) {
+                    alert('Se debe de ingresar al menos 3 objetivos activos');
+                    return false;
+                }
+
+
+                $('.ResultadoComp').each(function (index, value) {
+                    TotalComp = TotalComp + 1;
+                    var cellRes = $(this).html();
+                    //alert(cellRes);
+                    cellRes = $.trim(cellRes);
+                    if (cellRes != '')
+                    {
+                        auxres = auxres + 1;
+                    }
+                });
+                if ($("#sesion_Evaluacion_ComEvaluado").val().trim() == "") {
+                    alert('Se requiere que agregue un comentario');
+                    return false;
+                }
+                //alert(auxres + '<>' + TotalComp);
+                if (TotalComp > auxres)
+                {
+                    alert('Se requiere los resultados de todas las competencias');
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else if (status == 5) {
+                var aux = 0;
+                var auxres = 0;
+                var TotalComp = 0;
+                var ContadorPart = 0;
+                $('.JefeEvalCell').each(function (index, value) {
+                    var secondElementeInTable = $(this).prev().prev().prev();
+                    var attr = secondElementeInTable.attr('bgcolor');
+
+                    if (attr !== "#F5A9BC") {
+                        var cellTemp = $(this).html();
+                        cellTemp = $.trim(cellTemp);
+                        if (cellTemp == '') {
+                            aux = 1;
+                            return false;
+                        }
+                        ContadorPart = ContadorPart + 1;
+                    }
+                });
+                $('.ResultadoCompEval').each(function (index, value) {
+                    TotalComp = TotalComp + 1;
+                    var cellRes = $(this).html();
+                    //alert(cellRes);
+                    cellRes = $.trim(cellRes);
+                    if (cellRes != '') {
+                        auxres = auxres + 1;
+                    }
+                });
+                var auxiliar = $("#TemporalObj").val();
+                //alert(auxiliar);
+                var temp = $("#sesion_Evaluacion_MotivoRechazoObj2").val();
+                if (temp.trim() == "" && auxiliar == 1) {
+                    alert("Tiene que ingresar comentario de rechazo");
+                    return false;
+                }
+                else if ($("#sesion_Evaluacion_ComEvaluador").val() == "" && auxiliar==0) {
+                    alert('Se requiere que agregue un comentario');
+                    return false;
+                }
+                var pesototal = $("#txtPesoTotal").val();
+                //alert(pesototal);
+                if (pesototal != 100) {
+                    alert('La suma total del peso de los objetivos debe ser 100.\nValor actual: ' + pesototal);
+                    return false;
+                }
+                if (aux == 1) {
+                    alert('Se requiere agregar un comentario por cada objetivo actualizado');
+                    aux = 0;
+                    return false;
+                }
+                if (TotalComp > auxres) {
+                    alert('Se requiere los comentarios de todas las competencias');
+                    return false;
+                }
+                else {
+                    return true;
+                }
+
+            }
+            else if (status == 6)
+            {
+                var ContadorGen = 0;
+                $('.JefeEvalCell').each(function (index, value) {
+                    var cellText = $(this).html();
+                    cellText = $.trim(cellText);
+
+                    if (cellText != '0') {
+                        var ContadorPart = 0;
+                        $('.CalFinal').each(function (index, value) {
+                            var cellTemp = $(this).html();
+                            cellTemp = $.trim(cellTemp);
+                            //alert('¡¡¡¡ cellText->' + cellText + '(1)  cellTemp->' + cellTemp);
+                            if (ContadorPart == ContadorGen && cellTemp == '0'){
+                                aux = 1;
+                                return false;
+                            }
+                            ContadorPart = ContadorPart + 1;
+                        });
+                    }
+                    ContadorGen = ContadorGen + 1;
+                });
+
+                if (aux == 1) {
+                    alert('Ingrese la calificación acordada que requiere');
+                    aux = 0;
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            if (status == 7) {
+                var temp = $("#Sesion_Evaluacion_ComentariosSegundoNivel").val();
+                var aux = $("#TemporalCalif").val();
+                if (temp == "" && aux == 1) {
+                    alert("Tiene que ingresar comentario de rechazo");
+                    return false;
+                }
+                return true;
+            }
+            if (status == 9) {
+                var temp = $("#Sesion_Evaluacion_MotivoCalibracion").val();
+                if (temp == "") {
+                    alert("Tiene que ingresar un comentario para calibrar");
+                    return false;
+                }
+                return true;
+            }
+            if (status == 10) {
+                //alert('entra');
+                if ($("#sesion_Evaluacion_ComEvaluado2").val() == "") {
+                    alert('Se requiere que agregue un comentario');
+                    return false;
+                }
+                var aux = 0;
+                var auxres = 0;
+                $('.AutoEvalCell2').each(function (index, value) {
+                    var cellText = $(this).html();
+                    cellText = $.trim(cellText);
+                    //alert(cellText);
+                    if (cellText == '') {
+                        aux = 1;
+                    }
+                });
+
+                if (aux == 1) {
+                    alert('Es necesario que ingrese calificación como comentario de todos los objetivos');
+                    return false;
+                }
+
+
+                $('.ResultadoComp2').each(function (index, value) {
+                    var cellRes = $(this).html();
+                    cellRes = $.trim(cellRes);
+                    if (cellRes == '') {
+                        //alert('celda->' + cellRes);
+                        auxres = 1;
+                    }
+                });
+
+                if (auxres == 1) {
+                    alert('Es necesario evaluar todas las competencias');
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+
+            }
+            if (status == 11) {
+                var aux = 0;
+                var auxres = 0;
+                $('.JefeEvalCell2').each(function (index, value) {
+                    var cellText = $(this).html();
+                    cellText = $.trim(cellText);
+                    //alert(cellText);
+                    if (cellText == '') {
+                        aux = 1;
+                    }
+                });
+                $('.ponderadoJefeEvalCell2').each(function (index, value) {
+                    var cellText = $(this).html();
+                    cellText = $.trim(cellText);
+                    //alert(cellText);
+                    if (cellText == '') {
+                        aux = 1;
+                    }
+                });
+                $('.ResultadoComp2Eval').each(function (index, value) {
+                    var cellText = $(this).html();
+                    cellText = $.trim(cellText);
+                    //alert(cellText);
+                    if (cellText == '') {
+                        aux = 1;
+                    }
+                });
+                //var radioValue = $("input[name='Sesion.Evaluacion.CaliFinal2']:checked").val();
+
+                //if (!radioValue) {
+                //    alert("Seleccione una calificación final");
+                //    return false;
+                //}
+                var auxiliar = $("#TemporalObj").val();
+                //alert(auxiliar);
+                var temp = $("#sesion_Evaluacion_MotivoRechazoObjFin").val();
+                if (temp.trim() == "" && auxiliar == 1) {
+                    alert("Tiene que ingresar comentario de rechazo");
+                    return false;
+                }
+                else if ($("#sesion_Evaluacion_ComEvaluador2").val() == "" && auxiliar == 0) {
+                    alert('Se requiere que agregue un comentario');
+                    return false;
+                }
+                if (aux == 1) {
+                    alert('Es necesario que ingrese cumplimiento, así como comentario de todos los objetivos y competencias');
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+            if (status == 12) {
+                var aux = 0;
+                var auxres = 0;
+                $('.CalFinal2').each(function (index, value) {
+                    var cellText = $(this).html();
+                    cellText = $.trim(cellText);
+                    //alert(cellText);
+                    if (cellText == '') {
+                        aux = 1;
+                    }
+
+                });
+
+                if (aux == 1) {
+                    alert('Es necesario que ingrese calificación como comentario de todos los objetivos');
+                    return false;
+                } else {
+                    return true;
+                }
+
+            }
+            if (status == 13) {
+                var temp = $("#sesion_Evaluacion_MotivoCalibracion2").val();
+                if (temp == "") {
+                    alert("Tiene que ingresar un comentario de calibración");
+                    return false;
+                }
+                return true;
+            }
+            if (status == 15) {
+                var temp = $("#Sesion_Evaluacion_MotivoCalibracion2").val();
+                if (temp == "") {
+                    alert("Tiene que ingresar un comentario para calibrar");
+                    return false;
+                }
+                return true;
+            }
+            if (status == 16) {// agregado para manejar los extemporaneos
+                var Objetivo = 0;
+                $('.Objetivos').each(function (index, value) {
+                    Objetivo = Objetivo + 1;
+                });
+                if (Objetivo < 3) {
+                    alert('debe de ingresar por lo menos 3 objetivos \n actuales->' + Objetivo );
+                    return false;
+                }
+                Objetivo = 0;
+
+                var Competencias = 0;
+                $('.Competencias').each(function (index, value) {
+                    Competencias = Competencias + 1;
+                });
+                if (Competencias <= 0) {
+                    alert('debe de ingresar por lo menos una Competencia')
+                    return false;
+                }
+                Competencias = 0;
+                return true;
+            }
+            else if (status == 17) {
+                var temp = $("#sesion_Evaluacion_MotivoRechazoObj").val();
+                var aux = $("#TemporalObj").val();
+                if (temp.trim() == "" && aux == 1) {
+                    alert("Tiene que ingresar comentario de rechazo");
+                    return false;
+                }
+                return true;
+            }
+
+            return false;
+        }
+    });
+
+    $(document).ready(function () {
+        $('.panel-collapse').on('show.bs.collapse', function () {
+            $(this).siblings('.panel-heading').addClass('active');
+        });
+
+        $('.panel-collapse').on('hide.bs.collapse', function () {
+            $(this).siblings('.panel-heading').removeClass('active');
+        });
+            var pesototal = '@ViewBag.PesoTotal';
+            $("#txtPesoTotal").val(pesototal);
+            var nobjetivos = '@ViewBag.nObjetivos';
+        //alert(nobjetivos);
+        if (parseInt(nobjetivos) >= 6) {
+            $("#btnNuevoObjetivo").hide();
+        }
+        else {
+            $("#btnNuevoObjetivo").show();
+        }
+            var Auxiliar = $(".oculto")
+            Auxiliar.hide();
+            //var form = $("#MiEval");
+            //$(form).removeData("validator");
+            //$.validator.unobtrusive.parse(form);
+        });
+
+        function loadTable() {
+            var a = "@Url.Action("RecargaTabla")";
+            @*a = a + "?Eval="+@Model.sesion.Evaluacion.id ;
+                $("#RecargaTabla").attr("href", a);*@
+            $("#RecargaTabla").click();
+            a = '';
+        }
+
+        function loadCompetences() {
+            //alert('competencias');
+            var temp = "@Url.Action("Competencias")";
+            @*a = a + "?Eval="+@Model.sesion.Evaluacion.id ;
+            $("#RecargaTabla").attr("href", a);*@
+            $("#Competencias").click();
+            temp = '';
+        }
+
+
+
+        function AbrirDetalle() {
+            $('#ModalDetalle').modal({ backdrop: 'static', keyboard: false }).modal('show');
+        }
+
+        function AbrirCompetencias() {
+            $('#ModalCompetencias').modal({ backdrop: 'static', keyboard: false }).modal('show');
+        }
+
+        function AbrirObjetivos() {
+            $('#ModalDetalleObj').modal('show');
+        }
+
+        function AbrirEscaleta() {
+            $('#ModalEscaleta').modal('show');
+        }
+
+        function CerrarEscaleta() {
+            $('#ModalEScaleta').modal('hide');
+            $('.modal-backdrop').remove();
+        }
+
+        function CerrarObjetivos() {
+            $('#ModalCompetencias').modal('hide');
+            $('.modal-backdrop').remove();
+        }
+
+        function CerrarCompetencias() {
+            $('#ModalCompetencias').modal('hide');
+            $('.modal-backdrop').remove();
+        }
+
+        function CerrarDetalle() {
+            $('#ModalDetalle').modal('hide');
+            $('.modal-backdrop').remove();
+        }
+</script>
+<script>
+    /* Evento para cuando el usuario libera la tecla escrita dentro del input */
+    $('input,textarea').keyup(function () {
+        /* Obtengo el valor contenido dentro del input */
+        var value = $(this).val();
+
+        /* Elimino todos los espacios en blanco que tenga la cadena delante y detrás */
+        var value_without_space = value.trimStart();
+
+        /* Muestro una alerta al usuario */
+        //alert('El texto que ha ingresado contiene espacios y serán eliminados');
+
+        /* Cambio el valor contenido por el valor sin espacios */
+        $(this).val(value_without_space);
+    });
+</script>
+

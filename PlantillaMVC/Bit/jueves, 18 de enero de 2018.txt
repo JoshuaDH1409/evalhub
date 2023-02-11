@@ -1,0 +1,57 @@
+02:02:29 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+02:02:37 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+02:02:37 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+02:05:49 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:17:47 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+03:17:47 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+03:17:51 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:18:01 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+03:35:53 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+03:35:53 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+03:36:23 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:37:01 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+03:43:13 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+03:43:14 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+03:44:26 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:45:06 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+03:45:41 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+03:46:05 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:46:20 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------

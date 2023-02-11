@@ -1,0 +1,122 @@
+11:57:54 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+11:57:54 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+11:58:32 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:06:45 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:10:02 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:10:02 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:10:18 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:11:52 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:12:06 p.m.
+Account/LogIn : intento fallido de entrar a karla.chavez@aspenlatam.com
+-------------------------------
+12:12:10 p.m.
+Account/LogIn : intento fallido de entrar a karla.chavez@aspenlatam.com
+-------------------------------
+12:13:02 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+12:13:02 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+12:14:14 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+12:14:14 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso sin tener evaluación 
+-------------------------------
+12:32:02 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+12:43:54 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+12:43:54 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+01:22:33 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+01:22:33 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+01:22:47 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+01:22:47 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+02:35:10 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+02:35:10 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+02:38:05 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+02:39:36 p.m.
+MiHistorial/Historial : *****exception:System.NullReferenceException: Object reference not set to an instance of an object.
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdf(Int32 Id) in C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 64
+-------------------------------
+02:40:42 p.m.
+MiHistorial/Historial : *****exception:System.NullReferenceException: Object reference not set to an instance of an object.
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdf(Int32 Id) in C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 64
+-------------------------------
+02:49:26 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+02:49:26 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+02:50:19 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+02:51:01 p.m.
+MiHistorial/Historial : se inicia el PDF de: 333_Fernando Reyes Ingreso a Historial
+-------------------------------
+02:51:01 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 333_Fernando Reyes Ingreso a Historial
+-------------------------------
+02:51:01 p.m.
+MiHistorial/Historial : llenado de objetivos de: 333_Fernando Reyes Ingreso a Historial
+-------------------------------
+02:51:01 p.m.
+MiHistorial/Historial : llenado de competencias de: 333_Fernando Reyes Ingreso a Historial
+-------------------------------
+02:51:01 p.m.
+MiHistorial/Historial : llenado de Calificación de: 333_Fernando Reyes Ingreso a Historial
+-------------------------------
+02:51:01 p.m.
+MiHistorial/Historial : fin de Calificación de: 333_Fernando Reyes Ingreso a Historial
+-------------------------------
+02:51:01 p.m.
+MiHistorial/Historial : path:C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+02:51:06 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+02:51:06 p.m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Logro descargar su  evaluación del periodo México
+-------------------------------
+03:00:33 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+03:00:33 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso sin tener evaluación 
+-------------------------------

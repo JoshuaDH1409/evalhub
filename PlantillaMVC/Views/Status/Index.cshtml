@@ -1,0 +1,157 @@
+﻿@model List<Modelo.EStatus>
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Estatus
+        @Ajax.ActionLink("+", "Create", "Status", new { }, new AjaxOptions { UpdateTargetId = "form-create-status", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera()", OnSuccess = "openDialog" })
+    </h1>
+</section>
+
+<section class="content">
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-body">
+            <table id="table-status" class="table-status">
+                <thead>
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Estatus
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+            Footer
+        </div><!-- /.box-footer-->
+    </div><!-- /.box -->
+</section><!-- /.content -->
+<!-- Modal -->
+<div id="status-modal-add" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Nuevo Estatus</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div id="form-create-status" class="modal-body">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Modal -->
+<div id="status-modal-edit" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Editar Estatus</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div id="form-edit-status" class="modal-body">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Modal -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var t = $('#table-status').DataTable({
+            "ajax": '/Status/AjaxStatus',
+            "columns": [
+            { "data": "Id" },
+            { "data": "Name" },
+            { "data": "Active" },
+            { "data": null, defaultContent: "<a class='edit' href='#'><i aria-hidden='true' class='fa fa-edit'></i></a>" }
+            ],
+            "createdRow": function (row, dataRow, dataIndex) {
+                $(row).attr('id', 'row-' + dataRow.Id);
+            },
+            'columnDefs': [
+                {
+                    'targets': 2,
+                    'createdCell': function (td, cellData, rowData, row, col) {
+                        if (cellData)
+                            $(td).text("Activo");
+                        else 
+                            $(td).text("Activo");
+                    }
+                },
+                {
+                'targets': 3,
+                'createdCell': function (td, cellData, rowData, row, col) {
+                    $(td).attr('id', 'action-' + rowData.Id);
+                 }
+                }
+            ]
+        });
+        $("#table-status tbody").on("click", '.edit', function (e) {
+            e.preventDefault();
+
+            var statRow = t.row($(this).parent().parent()).node();
+            var statId = statRow.id;
+
+            AbreCierraDilogoEspera();
+
+            /*var formData = new FormData();
+            formData.append('Id', statId.substr(4));*/
+            $.ajax({
+                url: "/Status/Edit/" + statId.substr(4),
+                method: "GET",
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function () {
+
+                },
+                success: function (respuesta) {
+                    $('#form-edit-status').html(respuesta);
+                    $('#status-modal-edit').modal('toggle');
+                    AbreCierraDilogoEspera();
+                },
+                error: function (respuesta) {
+                    console.log("error: " + respuesta);
+                }
+            });
+
+            /*$.get("/Status/Edit", { Id: statId.substr(4) })
+            .done(function (data) {
+                //$('#DomiciliTemp').val( data.Address );
+                $('#form-edit-status').html(data);
+                $('#status-modal-edit').modal('toggle');
+                AbreCierraDilogoEspera();
+            });*/
+        });
+    });
+
+    function openDialog() {
+        $('#status-modal-add').modal('toggle');
+
+    }
+    function closeDialog() {
+        $('#status-modal-add').modal('toggle');
+        $('.modal-backdrop').remove();
+    }
+    $(document).ready(function () {
+        var form = $("#create-status");
+        $(form).removeData("validator");
+        $.validator.unobtrusive.parse(form);
+    });
+</script>
+

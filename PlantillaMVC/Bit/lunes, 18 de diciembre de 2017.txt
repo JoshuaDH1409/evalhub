@@ -1,0 +1,846 @@
+07:50:58 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+07:51:16 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+07:51:16 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+07:51:35 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:04:05 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:04:05 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:04:20 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:05:13 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+08:05:34 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+08:06:32 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:16:43 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+08:16:48 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:16:48 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:17:00 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:17:35 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+08:17:53 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+08:20:30 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+08:21:25 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+08:23:35 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+08:34:15 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:34:15 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:34:51 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:35:40 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+08:40:35 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+08:41:41 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+08:42:36 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+08:46:00 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+08:46:52 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+08:47:08 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+08:47:19 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+08:53:08 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+08:53:15 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:53:15 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:53:36 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:54:41 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+08:55:00 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+09:02:05 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+09:02:05 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+09:02:18 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+09:03:16 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+09:05:44 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+09:05:44 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+09:06:17 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+09:08:56 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+09:09:41 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+09:11:35 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+09:12:50 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+09:13:14 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+09:19:46 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+09:19:53 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+09:19:53 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+09:20:43 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+09:21:25 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+09:21:56 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+09:30:04 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+09:30:15 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+09:30:15 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+09:30:31 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+09:31:18 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+10:47:11 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+10:47:17 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+10:47:17 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+10:50:21 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:04:33 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+11:16:34 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+11:16:34 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:17:02 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:18:07 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+11:21:44 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+11:21:51 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+11:21:51 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:22:07 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:22:41 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+11:22:58 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 6
+-------------------------------
+11:22:58 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+11:25:51 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+11:26:27 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 7
+-------------------------------
+11:26:28 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+11:29:57 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+11:29:57 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:30:04 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:33:35 a.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: jose roberto perez galindo ingreso a eliminar objetivos 
+-------------------------------
+11:33:36 a.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: jose roberto perez galindoelimino el objetivo 5
+-------------------------------
+11:33:36 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+11:34:28 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:40:55 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:45:58 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:48:28 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+11:48:40 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+11:49:09 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 4
+-------------------------------
+11:49:09 a.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:01:29 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+12:01:29 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:01:45 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:02:07 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:02:58 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 4
+-------------------------------
+12:03:05 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:07:07 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:07:34 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:07:45 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 4
+-------------------------------
+12:07:47 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:15:02 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+12:15:10 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+12:15:10 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:15:26 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:15:47 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:16:11 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 4
+-------------------------------
+12:16:11 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:16:24 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:16:35 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 8
+-------------------------------
+12:16:35 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:22:42 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:23:28 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:23:48 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 8
+-------------------------------
+12:23:48 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:24:41 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:28:18 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+12:28:18 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:28:35 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:29:02 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:29:14 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 6
+-------------------------------
+12:29:14 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:31:36 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:32:18 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:32:28 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 6
+-------------------------------
+12:32:28 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:32:36 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:32:41 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 7
+-------------------------------
+12:32:42 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:32:50 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: jose roberto perez galindo ingreso a eliminar objetivos 
+-------------------------------
+12:32:50 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: jose roberto perez galindoelimino el objetivo 6
+-------------------------------
+12:32:50 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:32:56 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:33:03 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 3
+-------------------------------
+12:33:03 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:33:05 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:33:10 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 3
+-------------------------------
+12:33:10 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:34:46 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:34:51 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 8
+-------------------------------
+12:34:51 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:34:56 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+12:35:02 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo Guardo la competencia 8
+-------------------------------
+12:35:02 p.m.
+Gestion/RecargaCompetencias : El usuario: jose roberto perez galindo Actualizó las competencias en la evaluación 1
+-------------------------------
+12:38:50 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:38:50 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:38:56 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:41:12 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+12:41:23 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+12:42:03 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+12:42:04 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 11
+-------------------------------
+12:42:04 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+12:42:26 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+12:42:34 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 9
+-------------------------------
+12:42:34 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 2
+-------------------------------
+12:53:30 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+12:53:30 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:53:50 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:54:32 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:54:32 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:54:37 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:54:50 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+12:54:51 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 9
+-------------------------------
+12:54:52 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 2
+-------------------------------
+12:55:01 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+12:55:01 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 9
+-------------------------------
+12:55:01 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 2
+-------------------------------
+12:55:41 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+12:55:55 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+12:56:19 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+12:56:19 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 12
+-------------------------------
+12:56:19 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+01:20:51 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+01:20:51 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+01:21:14 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+01:31:32 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+01:31:32 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+01:32:10 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+01:33:35 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+01:33:35 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 9
+-------------------------------
+01:33:36 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+01:33:47 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+01:33:47 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 9
+-------------------------------
+01:33:47 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+01:34:12 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+01:34:12 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 3
+-------------------------------
+01:34:12 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+01:34:59 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+01:35:06 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 10
+-------------------------------
+01:35:06 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 2
+-------------------------------
+01:35:17 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+01:35:22 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 2
+-------------------------------
+01:35:22 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 2
+-------------------------------
+01:35:31 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+01:35:40 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+01:42:14 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:43:05 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+01:45:03 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:53:06 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+01:53:47 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:55:35 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:07:10 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+04:07:10 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+04:07:14 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:07:47 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+04:07:47 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 13
+-------------------------------
+04:07:47 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+04:08:13 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+04:08:13 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 10
+-------------------------------
+04:08:13 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 2
+-------------------------------
+04:08:34 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyes ingreso a eliminar objetivos 
+-------------------------------
+04:08:34 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Fernando Reyeselimino el objetivo 2
+-------------------------------
+04:08:35 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 2
+-------------------------------
+04:19:34 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:20:30 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:24:08 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:24:34 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+04:24:43 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+04:25:00 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+04:25:08 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo2
+-------------------------------
+04:25:09 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+04:28:39 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:29:07 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes guardo su autoevaluación 2
+-------------------------------
+04:29:07 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes notifico de su autoevaliación a: 2
+-------------------------------
+04:31:03 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:32:05 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:33:02 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes guardo su autoevaluación 2
+-------------------------------
+04:33:03 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes notifico de su autoevaliación a: 2
+-------------------------------
+04:33:22 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:34:30 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:36:45 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:36:50 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 1
+-------------------------------
+04:36:50 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 2
+-------------------------------
+04:36:57 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:37:01 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 1
+-------------------------------
+04:37:01 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 2
+-------------------------------
+04:37:18 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes guardo su autoevaluación 2
+-------------------------------
+04:37:19 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes notifico de su autoevaliación a: 2
+-------------------------------
+04:38:06 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:38:43 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+04:38:43 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+04:38:45 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:38:46 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso sin tener evaluación 
+-------------------------------
+04:39:01 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:39:09 p.m.
+MisEvaluaciones/EliminaUnObjetivos : El usuario: Karla Chavez Elimino objetivo 3
+-------------------------------
+04:39:09 p.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+04:39:21 p.m.
+MisEvaluaciones/EliminaUnObjetivos : El usuario: Karla Chavez Elimino objetivo 9
+-------------------------------
+04:39:21 p.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+04:40:10 p.m.
+Gestion/EliminaUnaCompetencia : El usuario: Karla Chavez Ingreso a eliminar objetivos
+-------------------------------
+04:40:10 p.m.
+Gestion/EliminaUnaCompetencia : El usuario: Karla Chavez Elimino el objetivo 9
+-------------------------------
+04:40:10 p.m.
+Gestion/RecargaCompetencias : El usuario: Karla Chavez Actualizó las competencias en la evaluación 2
+-------------------------------
+04:40:36 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+04:40:46 p.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+04:41:23 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+04:41:33 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Karla Chavez Guardo el objetivo1
+-------------------------------
+04:41:33 p.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 2
+-------------------------------
+04:41:45 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+04:41:50 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez Guardo la competencia 2
+-------------------------------
+04:41:50 p.m.
+Gestion/RecargaCompetencias : El usuario: Karla Chavez Actualizó las competencias en la evaluación 2
+-------------------------------
+04:41:59 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+04:42:03 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez Guardo la competencia 2
+-------------------------------
+04:42:03 p.m.
+Gestion/RecargaCompetencias : El usuario: Karla Chavez Actualizó las competencias en la evaluación 2
+-------------------------------
+04:42:10 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:42:10 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso sin tener evaluación 
+-------------------------------
+04:42:22 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+04:42:22 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+04:42:25 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:45:52 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+04:45:52 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+04:46:12 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:46:28 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+04:49:10 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez Guardo la competencia 2
+-------------------------------
+04:49:10 p.m.
+Gestion/RecargaCompetencias : El usuario: Karla Chavez Actualizó las competencias en la evaluación 2
+-------------------------------
+04:57:03 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:57:03 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso sin tener evaluación 
+-------------------------------
+04:57:11 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:57:40 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+04:57:54 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez Guardo la competencia 2
+-------------------------------
+04:57:54 p.m.
+Gestion/RecargaCompetencias : El usuario: Karla Chavez Actualizó las competencias en la evaluación 2
+-------------------------------
+04:58:16 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+04:58:25 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez Guardo la competencia 10
+-------------------------------
+04:58:26 p.m.
+Gestion/RecargaCompetencias : El usuario: Karla Chavez Actualizó las competencias en la evaluación 2
+-------------------------------

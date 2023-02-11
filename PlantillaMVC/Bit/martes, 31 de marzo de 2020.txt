@@ -1,0 +1,183 @@
+09:22:02 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+09:22:02 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:29:58 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+09:31:13 a. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+09:31:33 a. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+09:32:54 a. m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+09:33:19 a. m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+09:33:37 a. m.
+Correo/Correo : El usuario: Fernando Reyes Cázares Ingreso a correo
+-------------------------------
+09:33:41 a. m.
+MiHistorial/Historial : El usuario: Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+09:33:51 a. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+09:42:35 a. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+09:42:50 a. m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+09:42:52 a. m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+09:43:20 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+09:44:26 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+09:49:50 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+09:54:36 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+09:56:15 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+10:06:14 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+10:11:48 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+10:21:07 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:21:07 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:21:16 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+10:26:33 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:26:33 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:26:49 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+10:43:47 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+10:50:14 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:50:15 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:50:23 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+10:52:22 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+10:55:23 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:55:23 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:55:37 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+11:07:33 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:07:33 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:07:39 a. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+11:49:41 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:49:41 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:49:53 a. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+11:50:11 a. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+12:00:17 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:00:17 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:09:00 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+12:09:12 p. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+12:10:32 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+12:11:20 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:11:22 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+12:15:29 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+12:45:06 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:45:06 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:45:09 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+01:21:59 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:21:59 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+07:33:56 p. m.
+Account/LogIn : El Usuario Fernando ingreso a su cuenta
+-------------------------------
+07:33:56 p. m.
+Evaluacion/Principal : El usuario: Fernando Ingreso a Principal
+-------------------------------
+07:37:19 p. m.
+Usuario/Usuarios : El Usuario Fernando ingreso a usuarios
+-------------------------------
+07:37:53 p. m.
+Usuario/NuevoUsuario : El Usuario Fernando ingreso a nuevo usuario
+-------------------------------
+07:38:47 p. m.
+Usuario/Usuarios : El Usuario Fernando ingreso a usuarios
+-------------------------------
+07:42:13 p. m.
+Usuario/Usuarios : El Usuario Fernando ingreso a usuarios
+-------------------------------
+07:42:52 p. m.
+Usuario/NuevoUsuario : El Usuario Fernando ingreso a nuevo usuario
+-------------------------------

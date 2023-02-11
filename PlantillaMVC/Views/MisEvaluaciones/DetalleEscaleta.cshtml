@@ -1,0 +1,69 @@
+﻿@model List<Modelo.EEscaleta>
+<div id="pnlCalificacionFinal">
+
+    <div id="EscaletaCompleta">
+        <table class="table table-bordered table-sm table-striped">
+            <thead class="bg-primary">
+                <tr>
+                    <th align="center">
+                        Objetivo
+                    </th>
+                    <th class="text-center">Cumplimiento<br />%</th>
+                    <th class="text-center">Calificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var e in Model)
+                {
+                <tr>
+                    <td>@Html.Raw(e.Objetivo)</td>
+                    <td align="center">@e.Ponderacion</td>
+                    <td align="center">@e.Valor</td>
+                </tr>
+                }
+                @*<tr>
+                    <td>
+                        Excede los Objetivos (Desempeño Excepcional)<br>
+                        Excedió los objetivos, responsabilidades, estándares y expectativas
+                    </td>
+                    <td>
+                        4
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cumple con los Objetivos<br>
+                        Cumplió al 100% con los objetivos, responsabilidades y expectativas
+                    </td>
+                    <td>
+                        3
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cumple parcialmente los Objetivos <br>
+                        No cumplió del todo con los objetivos clave, responsabilidades y expectativas o no los cumplió con la calidad o en el tiempo comprometido.
+                    </td>
+                    <td>
+                        2
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        No cumple con los Objetivos<br>
+                        No cumplió con la mayoría de sus objetivos, responsabilidades y expectativas.
+                    </td>
+                    <td>
+                        1
+                    </td>
+                </tr>*@
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //$("#EscaletaCompleta").scrollTop(350);
+
+
+</script>

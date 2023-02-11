@@ -1,0 +1,117 @@
+09:14:18 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+09:14:18 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:16:35 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+09:17:39 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+09:17:39 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+09:17:39 a.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.TableCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 617
+-------------------------------
+09:18:15 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+09:18:56 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+09:19:02 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+10:56:22 a.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.TableCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 617
+-------------------------------
+10:56:23 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+10:56:25 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+10:56:25 a.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.TableCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 617
+-------------------------------
+10:56:42 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:56:42 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:56:55 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+10:58:07 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+10:58:15 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+05:35:13 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:35:13 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:35:22 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:36:57 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:37:52 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:42:55 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:43:54 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:44:59 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:46:22 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:46:48 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:49:45 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:49:45 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:49:48 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:51:09 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------

@@ -1,0 +1,163 @@
+﻿@model Modelo.Clases.CPeriodo
+
+
+    @{
+        int total = Model.listSesion.Count;
+
+        int inicio = (from CSessionEval in Model.listSesion
+                      where CSessionEval.Evaluacion.Status == 0
+                      select CSessionEval).ToList().Count;
+
+        int Cargados = (from CSessionEval in Model.listSesion
+                        where CSessionEval.Evaluacion.Status == 1
+                        select CSessionEval).ToList().Count;
+
+        int rechazados = (from CSessionEval in Model.listSesion
+                          where CSessionEval.Evaluacion.Status == 2
+                          select CSessionEval).ToList().Count;
+
+
+        int aprobados = (from CSessionEval in Model.listSesion
+                         where CSessionEval.Evaluacion.Status == 3
+                         select CSessionEval).ToList().Count;
+
+
+        int Pendiente = (from CSessionEval in Model.listSesion
+                         where CSessionEval.Evaluacion.Status == 4
+                         select CSessionEval).ToList().Count;
+
+        int autoEval = (from CSessionEval in Model.listSesion
+                        where CSessionEval.Evaluacion.Status == 5
+                        select CSessionEval).ToList().Count;
+
+        int evalJefe = (from CSessionEval in Model.listSesion
+                        where CSessionEval.Evaluacion.Status == 6
+                        select CSessionEval).ToList().Count;
+
+
+        int evalN2 = (from CSessionEval in Model.listSesion
+                      where CSessionEval.Evaluacion.Status == 7
+                      select CSessionEval).ToList().Count;
+
+        int cerrado = (from CSessionEval in Model.listSesion
+                       where CSessionEval.Evaluacion.Status == 8
+                       select CSessionEval).ToList().Count;
+
+        int Calib = (from CSessionEval in Model.listSesion
+                     where CSessionEval.Evaluacion.Status == 9
+                     select CSessionEval).ToList().Count;
+
+
+        int Pendiente2 = (from CSessionEval in Model.listSesion
+                          where CSessionEval.Evaluacion.Status == 10
+                          select CSessionEval).ToList().Count;
+
+        int autoEval2 = (from CSessionEval in Model.listSesion
+                         where CSessionEval.Evaluacion.Status == 11
+                         select CSessionEval).ToList().Count;
+
+        int evalJefe2 = (from CSessionEval in Model.listSesion
+                         where CSessionEval.Evaluacion.Status == 12
+                         select CSessionEval).ToList().Count;
+
+
+        int evalN22 = (from CSessionEval in Model.listSesion
+                       where CSessionEval.Evaluacion.Status == 13
+                       select CSessionEval).ToList().Count;
+
+        int cerrado2 = (from CSessionEval in Model.listSesion
+                        where CSessionEval.Evaluacion.Status == 14
+                        select CSessionEval).ToList().Count;
+
+        int calib12 = (from CSessionEval in Model.listSesion
+                       where CSessionEval.Evaluacion.Status == 14
+                       select CSessionEval).ToList().Count;
+
+    }
+
+
+@if (Model.periodo.Etapa == 0)
+{
+            <table class="table table-bordered table-striped" id="detalleAvance">
+                <thead>
+                    <tr>
+                        <td>Estado (Pct. avance)</td>
+                        <td>Cantidad de evaluaciones</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Iniciado :</td><td> @inicio </td></tr>
+                    <tr><td>Objetivos cargados :</td><td>@Cargados</td></tr>
+                    <tr><td>Objetivos rechazados :</td><td>@rechazados</td></tr>
+                    <tr><td>Objetivos aprobados :</td><td>@aprobados</td></tr>
+                    <tr><td><strong>Total de evaluaciones:</strong></td><td>@total</td></tr>
+                </tbody>
+            </table>
+
+
+}
+else if (Model.periodo.Etapa == 1)
+{
+               <table class="table table-bordered table-striped" id="detalleAvance">
+                <thead>
+                    <tr>
+                        <td>Estado (Pct. avance)</td>
+                        <td>Cantidad de evaluaciones</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Objetivos autoevaluados :</td><td>@autoEval</td></tr>
+                    <tr><td>Objetivos evaluados :</td><td>@evalJefe</td></tr>
+                    <tr><td>Validando segundo nivel :</td><td>@evalN2</td></tr>
+                    <tr><td>Cerradas :</td><td>@cerrado</td></tr>
+                    <tr><td><strong>Total de evaluaciones:</strong></td><td>@total</td></tr>
+                </tbody>
+            </table>
+}
+else if (Model.periodo.Etapa == 2)
+{
+    <table class="table table-bordered table-striped" id="detalleAvance">
+        <thead>
+            <tr>
+                <td>Estado (Pct. avance)</td>
+                <td>Cantidad de evaluaciones</td>
+            </tr>
+        </thead>
+        <tbody><tr><td>Finalizadas (100%):</td><td>@total</td></tr><tr><td><strong>Total de evaluaciones:</strong></td><td>@total</td></tr></tbody>
+    </table>
+}
+else if (Model.periodo.Etapa == 3)
+{
+    <table class="table table-bordered table-striped" id="detalleAvance">
+        <thead>
+            <tr>
+                <td>Estado (Pct. avance)</td>
+                <td>Cantidad de evaluaciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Inicio Evaluación :</td><td>@Pendiente2</td></tr>
+            <tr><td>Objetivos autoevaluados :</td><td>@autoEval2</td></tr>
+            <tr><td>Objetivos evaluados :</td><td>@evalJefe2</td></tr>
+            <tr><td>Validando segundo nivel :</td><td>@evalN22</td></tr>
+            <tr><td>Cerradas :</td><td>@cerrado2</td></tr>
+            <tr><td><strong>Total de evaluaciones:</strong></td><td>@total</td></tr>
+        </tbody>
+    </table> 
+}
+else if (Model.periodo.Etapa == 4)
+{
+    <table class="table table-bordered table-striped" id="detalleAvance">
+        <thead>
+            <tr>
+                <td>Estado (Pct. avance)</td>
+                <td>Cantidad de evaluaciones</td>
+            </tr>
+        </thead>
+        <tbody><tr><td>Finalizadas (100%):</td><td>@total</td></tr><tr><td><strong>Total de evaluaciones:</strong></td><td>@total</td></tr></tbody>
+    </table>
+}
+
+<div class="ui-dialog-buttonset">
+    <button type="button" class="btn btn-default ui" style="background-color: #e6e6e6" data-dismiss="modal">Cerrar</button>
+</div>

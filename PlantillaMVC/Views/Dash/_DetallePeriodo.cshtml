@@ -1,0 +1,41 @@
+﻿@model PlantillaMVC.Models.EFlitrosDash
+
+<table style="width:100%">
+    <tr>
+        <td width="100px">
+            @Html.LabelFor(m => m.Periodo, new { @class = "etiqueta" })
+        </td>
+        <td>
+            @Html.DropDownListFor(m => m.Periodo, (ViewData["ListaPeriodos"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Periodo)
+        </td>
+    </tr>
+</table>
+<div style="visibility:hidden; display:none;">
+    @Ajax.ActionLink("ObtenAreas", "_DetalleArea", "Dash", new { },
+new AjaxOptions { UpdateTargetId = "DetalleArea", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET",OnSuccess = "VerificaSesionEnv" },
+new { id = "_DetalleArea" })
+</div>
+
+<script type="text/javascript">
+
+         //llamada ajax Área
+      function OpArea(IdPeriodo) {
+        //alert(IdSolicitante);
+        var a = "@Url.Action("_DetalleArea")";
+        a = a + "?IdPeriodo=" + IdPeriodo;
+        $("#_DetalleArea").attr("href", a);
+        $("#_DetalleArea").click();
+        a = '';
+        AgregaValidacion()
+        }
+
+    $("#Periodo").change(function () {
+        var Valor = $(this).val();
+        //alert(Valor);
+        OpArea(Valor);
+        AgregaValidacion();
+    })
+    //llamada ajax Área
+
+</script>

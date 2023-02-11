@@ -1,0 +1,360 @@
+09:39:55 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+09:39:55 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:39:56 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+09:45:40 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+09:49:37 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:10:43 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+10:10:52 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+10:10:57 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+10:11:36 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+10:12:30 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+10:12:33 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+10:15:52 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:15:52 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:16:38 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+10:16:51 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+10:19:12 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+10:19:25 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:19:47 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+10:20:08 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+10:22:41 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+10:26:52 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+10:33:44 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:33:44 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso sin tener evaluación 
+-------------------------------
+10:45:28 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:45:28 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso sin tener evaluación 
+-------------------------------
+10:45:35 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+10:53:10 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:56:22 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:56:53 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:56:59 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:57:42 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:58:13 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:58:13 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso sin tener evaluación 
+-------------------------------
+11:13:37 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:14:26 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:20:56 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+11:21:00 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+11:21:06 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+11:25:03 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+01:28:26 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:28:26 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:28:37 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:28:48 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:28:54 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:29:20 p.m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+01:46:14 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:46:14 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:46:21 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:46:28 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:46:50 p.m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+01:48:02 p.m.
+MisEvaluaciones/OperacionCompetencias : Object reference not set to an instance of an object.
+-------------------------------
+01:48:45 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:48:57 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:49:23 p.m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+01:52:42 p.m.
+MisEvaluaciones/OperacionCompetencias : Object reference not set to an instance of an object.
+-------------------------------
+03:06:58 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:06:58 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:07:02 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:07:10 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:07:17 p.m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+03:12:36 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:12:36 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:12:41 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:12:49 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:13:21 p.m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+03:14:16 p.m.
+MisEvaluaciones/OperacionCompetencias : Object reference not set to an instance of an object.
+-------------------------------
+03:30:38 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:30:38 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:30:47 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:30:56 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:31:20 p.m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+04:35:01 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:35:01 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:35:14 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+04:36:40 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:36:40 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:36:48 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+04:37:34 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+04:37:34 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso sin tener evaluación 
+-------------------------------
+04:42:21 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+04:45:20 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:45:20 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:45:49 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+04:48:14 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:48:14 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:48:30 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+04:54:58 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:54:58 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:55:49 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+04:57:26 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:20:48 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:20:48 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:20:55 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:29:34 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:29:34 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:29:38 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:30:45 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:30:53 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo477
+-------------------------------
+05:30:53 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 224
+-------------------------------
+05:31:00 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:31:06 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo3064
+-------------------------------
+05:31:06 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 224
+-------------------------------
+05:31:10 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:31:26 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:31:33 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo3845
+-------------------------------
+05:31:34 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 224
+-------------------------------
+05:31:41 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:31:47 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo3065
+-------------------------------
+05:31:47 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 224
+-------------------------------
+05:31:48 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:33:43 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:34:29 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:34:32 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo3845
+-------------------------------
+05:34:32 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 224
+-------------------------------
+05:39:07 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:39:08 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso sin tener evaluación 
+-------------------------------
+05:39:10 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:40:03 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:40:07 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo3064
+-------------------------------
+05:40:07 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 224
+-------------------------------

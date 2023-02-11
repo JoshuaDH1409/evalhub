@@ -1,0 +1,30 @@
+08:48:43 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+08:48:48 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:48:48 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:48:55 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+08:49:53 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+08:53:25 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+08:54:51 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+08:55:50 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+08:57:42 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+09:00:25 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------

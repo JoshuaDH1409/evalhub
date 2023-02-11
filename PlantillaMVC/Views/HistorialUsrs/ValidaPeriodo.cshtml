@@ -1,0 +1,24 @@
+﻿
+
+@model PlantillaMVC.Models.EPeriodosDash
+
+@Html.LabelFor(m => m.Periodo, new { @class = "etiqueta" })
+@Html.DropDownListFor(m => m.Periodo, (ViewData["ListaPeriodos"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })
+@Html.ValidationMessageFor(m => m.Periodo)
+
+
+<br />
+
+
+<script type="text/javascript">
+    $("#Periodo").change(function () {
+        var singleValues = $("#Periodo").val();
+       // alert(singleValues);
+        if (singleValues > 0) {
+            $("#boton").css('visibility', 'visible');
+        }
+        else {
+            $("#boton").css('visibility', 'collapse');
+        }
+    });
+</script>

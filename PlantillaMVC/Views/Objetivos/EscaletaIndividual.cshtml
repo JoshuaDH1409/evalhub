@@ -1,0 +1,27 @@
+﻿@model List<Modelo.EEscaleta>
+<div id="pnlCalificacionFinal">
+
+    <div id="EscaletaCompleta">
+        <table class="table table-bordered table-sm table-striped">
+            <thead class="bg-primary">
+                <tr>
+                    <th>
+                        Individual Performance target achieved
+                    </th>
+                    <th class="text-center">Criteria</th>
+                    <th class="text-center">Performance score</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var e in Model.OrderByDescending(t=>t.Id))
+                {
+                    <tr>
+                        <td>@e.Ponderacion</td>
+                        <td align="center">@e.Bono%</td>
+                        <td align="center">@e.Valor</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

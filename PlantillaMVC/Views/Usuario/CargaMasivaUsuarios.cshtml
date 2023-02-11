@@ -1,0 +1,28 @@
+﻿
+
+
+<h2>Carga masiva usuarios</h2>
+
+
+
+
+<h3 style="color:red">@ViewBag.Message</h3>
+
+
+@using (Html.BeginForm("Subir", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+      
+        <input type="file" name="file" ,class="form-control" />
+       
+        <br />
+        <br />
+        <button type="submit" id="enviar" class="btn btn-primary fas fa-file-upload"> <x style="font-family:Arial"> Procesar</x></button>
+}
+
+<p></p>
+@using (Html.BeginForm("Download", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <button type="submit" id="enviar" class="btn btn-info fas fa-file-download"> <x style="font-family:Arial"> Obtener Plantilla</x></button>
+}
+
+

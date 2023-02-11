@@ -1,0 +1,51 @@
+﻿
+@model List<Modelo.Clases.CSessionEval>
+
+
+<table id="tableEmpleados" class="table display">
+    <thead class="thead-light">
+        <tr>
+
+            <th>Num Sap</th>
+            <th>Nombre Completo</th>
+            <th>Puesto</th>
+            <th>División</th>
+            @*<th>Area</th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+            {
+                foreach (Modelo.Clases.CSessionEval item in Model)
+                {
+                <tr>
+                    <td>@item.Login.id_sap</td>
+                    <td>@item.Login.NombreCompleto</td>
+                    <td>@item.Login.Puesto</td>
+                    <td>@item.Login.Division</td>
+                    @*<td>@item.login.Area</td>*@
+                    <td>
+                        @*@using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                        {
+                            <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                        }*@
+                        @using (Html.BeginForm("DownloadPdfDetailed", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                        {
+                            <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var tablaCliente = $('#tableEmpleados').DataTable();
+    });
+</script>

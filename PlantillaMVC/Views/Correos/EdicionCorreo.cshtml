@@ -1,0 +1,150 @@
+﻿
+@model  Modelo.ECorreos
+
+
+@using (Ajax.BeginForm("SaveEmail", "Correos", null, new AjaxOptions
+{
+    UpdateTargetId = "Principal",
+    OnBegin = "AbreCierraDilogoEspera",
+    OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv();CerrarNcorreo()",
+    HttpMethod = "post"
+}, new { id = "Emails" }))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.asunto, new { @class = "etiqueta" })
+            </td>
+            <td style="width:100%">
+                @Html.TextBoxFor(m => m.asunto, new { @class = "form-control", @style = "width: 325px " })
+                @Html.ValidationMessageFor(m => m.asunto)
+            </td>
+        </tr>
+    </table>
+    <p></p>
+
+
+    <div class="row">
+        <div class="dragitems col-3">
+            <h3>
+                <span>Etiquetas habilitadas</span>
+            </h3>
+            <ul id="allfields" runat="server">
+                @*<li id="node1">Nombre</li>
+                    <li id="node2">Puesto</li>
+                    <li id="node3">Jefe</li>
+                    <li id="node4">Calif</li>
+                    <li id="node5">Link</li>*@
+                @Html.Raw(ViewBag.Nodos)
+
+            </ul>
+        </div>
+        <div class="dropitems col">
+            @Html.LabelFor(m => m.Mensaje, new { @class = "etiqueta" })
+            @Html.TextAreaFor(m => m.Mensaje, new { @id = "TextArea1", @cols = "50", @name = "S1", @rows = "20" })
+            @Html.ValidationMessageFor(m => m.Mensaje)
+        </div>
+        <div style="visibility:hidden">
+            @Html.LabelFor(m => m.id, new { @class = "etiqueta" })
+            @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.id)
+        </div>
+
+        <div style="visibility:hidden">
+            @Html.LabelFor(m => m.Paso, new { @class = "etiqueta" })
+            @Html.TextBoxFor(m => m.Paso, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Paso)
+        </div>
+    </div>
+
+
+    <div class="modal-footer" style="padding-bottom: 0px;">
+        <p style="text-align:left;">
+            <button type="submit" id="enviar" class="btn btn-success fa fa-check"> Guardar</button>  <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal"> Cerrar</button>
+        </p>
+    </div>
+}
+
+
+<style>
+    .textarea {
+        background: #fff;
+    }
+
+    .dragitems {
+        width: 20%;
+        float: left;
+        background: #f1f1f1;
+    }
+
+    .dropitems {
+        width: 70%;
+        float: left;
+        background: #f1f1f1;
+        margin-left: 20px;
+        padding: 5px 5px 5px 5px;
+    }
+
+    .dragitems ul {
+        list-style-type: none;
+        padding-left: 5px;
+        display: block;
+    }
+
+    #content {
+        height: 400px;
+        width: 650px;
+    }
+</style>
+<script language="javascript" type="text/javascript">
+            $(function () {
+                $("#allfields li").draggable({
+                    appendTo: "body",
+                    helper: "clone",
+                    cursor: "select",
+                    revert: "invalid"
+                });
+                initDroppable($("#TextArea1"));
+                function initDroppable($elements) {
+                    $elements.droppable({
+                        hoverClass: "textarea",
+                        accept: ":not(.ui-sortable-helper)",
+                        drop: function (event, ui) {
+                            var $this = $(this);
+
+                            var tempid = ui.draggable.text();
+                            var dropText;
+                            dropText = "#" + tempid +"#";
+                            var droparea = document.getElementById('TextArea1');
+                            var range1 = droparea.selectionStart;
+                            var range2 = droparea.selectionEnd;
+                            var val = droparea.value;
+                            var str1 = val.substring(0, range1);
+                            var str3 = val.substring(range1, val.length);
+                            droparea.value = str1 + dropText + str3;
+                        }
+                    });
+                }
+            });
+</script>
+
+
+
+<script type="text/javascript">
+
+
+            $(document).ready(function () {
+                $('#Mensaje').scrollTop($('#Mensaje')[0].scrollHeight);
+
+                var Auxiliar = $(".oculto")
+                Auxiliar.hide();
+
+                var form = $("#Emails");
+                $(form).removeData("validator");
+                $.validator.unobtrusive.parse(form);
+
+                $("#asunto").rules("remove");
+                $("#Mensaje").rules("remove");
+            });
+</script>

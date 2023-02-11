@@ -1,0 +1,264 @@
+09:39:33 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+09:39:33 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:57:24 a. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:02:19 a. m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+10:02:19 a. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+10:02:21 a. m.
+MiHistorial/Historial : llenado de competencias de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+10:02:21 a. m.
+MiHistorial/Historial : llenado de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+10:02:21 a. m.
+MiHistorial/Historial : fin de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+10:02:21 a. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+10:02:31 a. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+10:02:31 a. m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Cázares Logro descargar su  evaluación del periodo Administración del Desempeño 2020
+-------------------------------
+10:13:09 a. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:50:23 a. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+11:51:07 a. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+11:51:41 a. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+11:52:19 a. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+11:54:07 a. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+12:32:24 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:32:24 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:50:11 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:50:11 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:56:18 p. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+12:58:41 p. m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+12:58:41 p. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+12:58:41 p. m.
+MiHistorial/Historial : llenado de competencias de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+12:58:41 p. m.
+MiHistorial/Historial : llenado de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+12:58:41 p. m.
+MiHistorial/Historial : fin de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+12:58:41 p. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:58:43 p. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:58:43 p. m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Cázares Logro descargar su  evaluación del periodo Administración del Desempeño 2020
+-------------------------------
+01:01:51 p. m.
+MiHistorial/Historial : El usuario: Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+01:02:46 p. m.
+MiHistorial/Historial : El usuario: Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+01:04:52 p. m.
+MiHistorial/Historial : El usuario: Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+01:06:42 p. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+01:30:08 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:30:08 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:30:17 p. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+01:30:25 p. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+01:38:40 p. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+03:06:24 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:06:24 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:06:38 p. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+03:16:08 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:16:08 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:20:30 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:20:30 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:20:32 p. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+03:26:51 p. m.
+MiHistorial/Historial : se inicia el PDF de: 777887_Aspen Contigo  Ingreso a Historial
+-------------------------------
+03:26:51 p. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 777887_Aspen Contigo  Ingreso a Historial
+-------------------------------
+03:26:51 p. m.
+MiHistorial/Historial : llenado de objetivos de: 777887_Aspen Contigo  Ingreso a Historial
+-------------------------------
+03:26:51 p. m.
+MiHistorial/Historial : llenado de competencias de: 777887_Aspen Contigo  Ingreso a Historial
+-------------------------------
+03:26:51 p. m.
+MiHistorial/Historial : llenado de Calificación de: 777887_Aspen Contigo  Ingreso a Historial
+-------------------------------
+03:26:51 p. m.
+MiHistorial/Historial : fin de Calificación de: 777887_Aspen Contigo Ingreso a Historial
+-------------------------------
+03:26:51 p. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+03:26:56 p. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+03:26:56 p. m.
+MiHistorial/DownloadPdf : El usuario: Aspen Contigo  Logro descargar su  evaluación del periodo Administración del Desempeño 2020
+-------------------------------
+03:28:04 p. m.
+MiHistorial/Historial : El usuario: Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:53:44 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:53:45 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:20:57 p. m.
+Account/LogIn : El Usuario Karla Chavez Meneses   ingreso a su cuenta
+-------------------------------
+04:20:57 p. m.
+Evaluacion/Principal : El usuario: Karla Chavez Meneses   Ingreso a Principal
+-------------------------------
+04:21:15 p. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Meneses   Ingreso a MiEvaluacion
+-------------------------------
+04:27:09 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:27:10 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:27:14 p. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+04:30:08 p. m.
+MiHistorial/Historial : El usuario: Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:31:05 p. m.
+Correo/Correo : El usuario: Fernando Reyes Cázares Ingreso a correo
+-------------------------------
+04:31:13 p. m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+04:31:56 p. m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+04:32:52 p. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:35:20 p. m.
+DashBoard/DashObjetives : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+04:35:32 p. m.
+DashBoard/DashObjetives : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+04:35:59 p. m.
+DashBoard/DashObjetives : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+05:02:46 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:02:47 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:04:27 p. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:48:23 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:48:23 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:48:32 p. m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+05:49:20 p. m.
+MiHistorial/Historial : se inicia el PDF de: 777887_Aspen Contigo  Ingreso a Historial
+-------------------------------
+05:49:20 p. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 777887_Aspen Contigo  Ingreso a Historial
+-------------------------------
+05:49:20 p. m.
+MiHistorial/Historial : llenado de competencias de: 777887_Aspen Contigo  Ingreso a Historial
+-------------------------------
+05:49:20 p. m.
+MiHistorial/Historial : llenado de Calificación de: 777887_Aspen Contigo  Ingreso a Historial
+-------------------------------
+05:49:20 p. m.
+MiHistorial/Historial : fin de Calificación de: 777887_Aspen Contigo Ingreso a Historial
+-------------------------------
+05:49:20 p. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+05:49:24 p. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+05:49:24 p. m.
+MiHistorial/DownloadPdf : El usuario: Aspen Contigo  Logro descargar su  evaluación del periodo Administración del Desempeño 2019
+-------------------------------
+05:50:34 p. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------

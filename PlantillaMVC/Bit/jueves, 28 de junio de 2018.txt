@@ -1,0 +1,153 @@
+03:21:21 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:21:21 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:22:27 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+03:23:55 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:23:55 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:24:50 p.m.
+MiHistorial/Historial : llenado de competencias de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:24:56 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:24:56 p.m.
+MiHistorial/Historial : fin de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:24:56 p.m.
+MiHistorial/Historial : path:C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+03:24:59 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+03:24:59 p.m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Cázares Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:33:03 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:33:03 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:33:36 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+03:34:39 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:34:39 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:34:57 p.m.
+MiHistorial/Historial : llenado de competencias de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:34:57 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:34:57 p.m.
+MiHistorial/Historial : fin de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:34:57 p.m.
+MiHistorial/Historial : path:C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+03:35:00 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+03:35:00 p.m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Cázares Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+04:13:30 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:13:30 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:13:39 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:15:58 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:15:58 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:15:58 p.m.
+MiHistorial/Historial : *****exception:System.NullReferenceException: Object reference not set to an instance of an object.
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 607
+-------------------------------
+04:16:23 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:16:23 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:16:26 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:17:20 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:17:20 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:17:20 p.m.
+MiHistorial/Historial : *****exception:System.NullReferenceException: Object reference not set to an instance of an object.
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 607
+-------------------------------
+04:18:04 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:19:10 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:19:29 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:22:39 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:22:39 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:22:49 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:23:50 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:23:50 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:27:39 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:27:39 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:27:42 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:28:29 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:28:29 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+05:17:15 p.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.TableCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\reyesfe\Documents\Visual Studio 2015\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 617
+-------------------------------

@@ -1,0 +1,66 @@
+10:11:32 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+10:11:33 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+10:11:35 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:47:29 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:47:29 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:47:46 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:51:26 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:55:07 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+12:55:19 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+12:55:26 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo2
+-------------------------------
+12:55:27 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 1
+-------------------------------
+12:57:14 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+12:57:43 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:57:49 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+12:57:54 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo2
+-------------------------------
+12:57:54 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 1
+-------------------------------
+12:58:01 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+01:00:25 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+01:00:25 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+01:02:42 p.m.
+Periodos/Periodos : El usuario: Karla Chavez Ingreso a periodos
+-------------------------------
+01:03:01 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+01:06:47 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------

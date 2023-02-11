@@ -1,0 +1,799 @@
+﻿@model List<Modelo.EObjetives>
+
+@*<ul class="nav nav-tabs">
+        <li class="@ViewBag.panel1" style="border-color:black; color:black"><a data-toggle="tab" href="#primer">Revisión de medio año</a></li>
+        <li class="@ViewBag.panel2" style="border-color:black; color:black"><a data-toggle="tab" href="#segundo">Calificación fin de año</a></li>
+    </ul>
+    <div class="tab-content">
+
+        <div id="primer" class="tab-pane fade @ViewBag.panel1">
+            <div class="wmd-view-topscroll">
+                <div class="scroll-div1">
+                </div>
+            </div>
+            <div class="wmd-view">
+                <div class="scroll-div2">
+                    <table class="table table-bordered table-striped table-colored" id="tablaObjetivos">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th></th>
+                                <th class="width-25" colspan="3">
+                                    Objetivos
+                                </th>
+                                <th class="width-25" colspan="3">
+                                    Revisión de medio año
+                                </th>
+                            </tr>
+                            <tr class="bg-primary">
+                                <th></th>
+                                <th class="width-25">
+                                    Objetivo
+                                </th>
+                                <th class="width-25">
+                                    Descripción de Objetivo
+                                </th>
+                                <th class="width-25">
+                                    Métricas
+                                </th>
+                                <th class="width-25">
+                                    Comentario Evaluado
+                                </th>
+                                <th class="width-25">
+                                    Comentario Evaluador
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (Modelo.EObjetives item in Model)
+                                {
+                                    <tr class="Objetivos">
+                                        @if (ViewBag.status == 0 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                                        {
+                                            <td style="min-width: 60px;">
+                                                @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "font-size: 1.2em", @title = "Editar" })
+                                                @if (ViewBag.status == 0 || (ViewBag.status == 5 && (item.Etapa == 5 || item.Etapa == 2)) || ViewBag.status == 11 && (item.Etapa == 10 || item.Etapa == 7) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                                                {
+                                                    @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "loadTable", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                                }
+                                                @if ((ViewBag.status == 4 && item.Etapa != 5) || (ViewBag.status == 10 && item.Etapa != 10))
+                                                {
+                                                    @Ajax.ActionLink(" ", "EliminarObjetivosUsr", "MisEvaluaciones", new { id = item.id, Stat = ViewBag.status }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+
+                                                }
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td> </td>
+                                        }
+                                        @if (item.titulo.Length > 55)
+                                        {
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))//ojo corregir las etapas e incluir status del jefe
+                                            {
+                                                <td bgcolor="#9FF781">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@item.titulo.Substring(0, 50) ...</td>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#9FF781">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    @item.titulo
+                                                </td>
+                                            }
+
+                                        }
+                                        @if (item.objdesc.Length > 55)
+                                        {
+
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))//ojo corregir las etapas e incluir status del jefe
+                                            {
+                                                <td bgcolor="#9FF781">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#9FF781">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    @item.objdesc
+                                                </td>
+                                            }
+
+                                        }
+                                        @if (item.objMetricas.Length > 55)
+                                        {
+
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))//ojo corregir las etapas e incluir status del jefe
+                                            {
+                                                <td bgcolor="#9FF781">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#9FF781">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+
+                                        }
+                                        @if ((item.Etapa == 5 && ViewBag.status == 4) || (ViewBag.status == 10 && item.Etapa == 10))
+                                        {
+                                            <td>
+                                                @item.resultado
+                                            </td>
+                                            <td>
+                                                @item.ComentariosJefeEval
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td class="AutoEvalCell">
+                                                @if (ViewBag.status == 0 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                                                {
+                                                    @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "font-size: 1.2em", @title = "Editar" })
+                                                }
+                                                @item.resultado
+                                            </td>
+                                            <td class="JefeEvalCell">
+                                                @item.ComentariosJefeEval
+                                            </td>
+                                        }
+                                    </tr>
+
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="segundo" class="tab-pane fade @ViewBag.panel2">
+            <div class="wmd-view-topscroll2">
+                <div class="scroll-div1">
+                </div>
+            </div>
+            <div class="wmd-view2">
+                <div class="scroll-div2">
+                    <table class="table table-bordered table-striped table-colored" id="tablaObjetivos">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th></th>
+                                <th class="width-25" colspan="3">
+                                    Objetivos
+                                </th>
+                                <th class="width-25" colspan="3">
+                                    Segundo Semestre
+                                </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr class="bg-primary">
+                                <th></th>
+                                <th class="width-25">
+                                    Objetivo
+                                </th>
+                                <th class="width-25">
+                                    Descripción de Objetivo
+                                </th>
+                                <th class="width-25">
+                                    Métricas
+                                </th>
+                                <th class="width-25">
+                                    Comentario Evaluado
+                                </th>
+                                <th class="width-25">
+                                    Comentario Evaluador
+                                </th>
+                                <th class="width-25">
+                                    Comentario final<br />
+                                </th>
+                                <th class="width-25">
+                                    Auto evaluación<br />(1-4)
+                                </th>
+                                <th class="width-25">
+                                    Calificación Evaluador<br />(1-4)
+                                </th>
+                                <th class="width-25">
+                                    Calificación final acordada<br />(1-4)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (Modelo.EObjetives item in Model)
+                                {
+                                    <tr class="Objetivos">
+                                        @if (ViewBag.status == 0 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                                        {
+                                            <td style="min-width: 60px;">
+                                                @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "font-size: 1.2em", @title = "Editar" })
+                                                @if (ViewBag.status == 0 || (ViewBag.status == 5 && (item.Etapa == 5 || item.Etapa == 2)) || ViewBag.status == 11 && (item.Etapa == 10 || item.Etapa == 7) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                                                {
+                                                    @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "loadTable", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                                }
+                                                @if ((ViewBag.status == 4 && item.Etapa != 5) || (ViewBag.status == 10 && item.Etapa != 10))
+                                                {
+                                                    @Ajax.ActionLink(" ", "EliminarObjetivosUsr", "MisEvaluaciones", new { id = item.id, Stat = ViewBag.status }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+
+                                                }
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td> </td>
+                                        }
+                                        @if (item.titulo.Length > 55)
+                                        {
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))//ojo corregir las etapas e incluir status del jefe
+                                            {
+                                                <td bgcolor="#9FF781">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">@item.titulo.Substring(0, 50) ...</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@item.titulo.Substring(0, 50) ...</td>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#9FF781">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">
+                                                    @item.titulo
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    @item.titulo
+                                                </td>
+                                            }
+
+                                        }
+                                        @if (item.objdesc.Length > 55)
+                                        {
+
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))//ojo corregir las etapas e incluir status del jefe
+                                            {
+                                                <td bgcolor="#9FF781">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@item.objdesc.Substring(0, 50) ...</td>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#9FF781">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">
+                                                    @item.objdesc
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    @item.objdesc
+                                                </td>
+                                            }
+
+                                        }
+                                        @if (item.objMetricas.Length > 55)
+                                        {
+
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))//ojo corregir las etapas e incluir status del jefe
+                                            {
+                                                <td bgcolor="#9FF781">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@item.objMetricas.Substring(0, 50) ...</td>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#9FF781">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#3ADF00">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#81DAF5">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 9 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#2E9AFE">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                                            {
+                                                <td bgcolor="#F5A9BC">
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    @item.objMetricas
+                                                </td>
+                                            }
+
+                                        }
+                                        @if ((item.Etapa == 5 && ViewBag.status == 4) || (ViewBag.status == 10 && item.Etapa == 10))
+                                        {
+                                            <td>
+                                                @item.Resultado2
+                                            </td>
+                                            <td>
+                                                @item.ComentariosJefeEval2
+                                            </td>
+                                            <td>
+                                                @item.ComentariosJefeEvalFinall2
+                                            </td>
+                                            <td>
+                                                @item.AutoEval2
+                                            </td>
+                                                    <td>
+                                                        @item.Calif2
+                                                    </td>
+                                                    <td>
+                                                        @item.CalifFinal2
+                                                    </td>
+                                        }
+                                        else
+                                        {
+                                            <td class="AutoEvalCell2">
+                                                @item.Resultado2
+                                            </td>
+                                            <td class="JefeEvalCell2">
+                                                @item.ComentariosJefeEval2
+                                            </td>
+                                            <td class="CalFinal2">
+                                                @item.ComentariosJefeEvalFinall2
+                                            </td>
+                                            <td class="AutoEvalCell2">
+                                                @item.AutoEval2
+                                            </td>
+                                            <td class="JefeEvalCell2">
+                                                @item.Calif2
+                                            </td>
+                                            <td class="CalFinal2">
+                                                @item.CalifFinal2
+                                            </td>
+                                        }
+
+                                    </tr>
+
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+<script>
+    $(function () {
+        $(".wmd-view-topscroll").scroll(function () {
+            $(".wmd-view")
+                .scrollLeft($(".wmd-view-topscroll").scrollLeft());
+        });
+        $(".wmd-view").scroll(function () {
+            $(".wmd-view-topscroll")
+                .scrollLeft($(".wmd-view").scrollLeft());
+        });
+    });
+
+    $(function () {
+        $(".wmd-view-topscroll2").scroll(function () {
+            $(".wmd-view2")
+                .scrollLeft($(".wmd-view-topscroll2").scrollLeft());
+        });
+        $(".wmd-view2").scroll(function () {
+            $(".wmd-view-topscroll2")
+                .scrollLeft($(".wmd-view2").scrollLeft());
+        });
+    });
+</script>
+<style>
+    #accordion div {
+        border: 1px solid #d6d6d6;
+    }
+</style>
+
+
+
+<div id="accordion">
+    @if (Model != null)
+    {
+        foreach (Modelo.EObjetives item in Model)
+        {
+            <h3 class="Objetivos" style="position:relative;">
+                @item.titulo
+                <div style="position: absolute; top: 0px;right: 4px; border: 0;">
+                    @if (ViewBag.status == 0 || ViewBag.status == 2 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                    {
+                        @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = ViewBag.status, Usr = ViewBag.usuario, tot = ViewBag.PesoTotal }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "color: #FFF;", @title = "Editar" })
+                        @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red;", @title = "Eliminar" })
+                    }
+                </div>
+            </h3>
+            <div style="padding: 10px;">
+                <table class="table table-sm table-bordered table-striped">
+                    <thead><tr></tr></thead>
+                    <tbody>
+                        <tr>
+                            <th width="25%">Descripción</th>
+                            <td colspan="2">@item.objdesc</td>
+                        </tr>
+                        <tr>
+                            <th>Métrica (KPI)</th>
+                            <td colspan="2">@item.objMetricas</td>
+                        </tr>
+                        <tr>
+                            <th>Peso ponderado %</th>
+                            <td colspan="2">@item.ponderado</td>
+                        </tr>
+                        @if (ViewBag.status >= 4 && ViewBag.status < 16)
+                        {
+                            <tr>
+                                <td colspan="3" style="background-color: #337AB7; color: #FFF; font-weight: bold;">Evaluación de Medio año</td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th>Comentarios</th>
+                                <th>Cumplimiento %</th>
+                            </tr>
+                            <tr>
+                                <th>Evaluado</th>
+                                <td class="AutoEvalCell">@item.resultado</td>
+                                <td>@item.cumplimientoEvaluado</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Evaluador</th>
+                                <td class="JefeEvalCell">@item.ComentariosJefeEval</td>
+                                <td>@item.cumplimientoEvaluador</td>
+                            </tr>
+                            if (ViewBag.status >= 10 && ViewBag.status < 16)
+                            {
+                                <tr>
+                                    <td colspan="3" style="background-color: #337AB7; color: #FFF; font-weight: bold;">Evaluación de Fin de año</td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th>Comentarios</th>
+                                    <th>Cumplimiento %</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Evaluado
+                                    </th>
+                                    <td class="AutoEvalCell2">@item.Resultado2</td>
+                                    <td>@item.cumplimientoEvaluado2</td>
+                                </tr>
+                                <tr>
+                                    <th>Evaluador</th>
+                                    <td class="JefeEvalCell2">@item.ComentariosJefeEval2</td>
+                                    <td>@item.cumplimientoEvaluador2 ->@item.ValorObj</td>
+                                </tr>
+                                @*<tr>
+                                        <th>Comentario Final</th>
+                                        <td>@item.ComentariosJefeEvalFinall2</td>
+                                        <td></td>
+                                    </tr>*@
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+</div>
+        @if (ViewBag.status < 11 || ViewBag.Status>15)
+        {
+<div class="clearfix alert alert-dark mt-1">
+    <div class="float-left"><strong>Total peso objetivos (%)</strong></div>
+    <div class="float-right"><strong id="pesototalobjetivos">@ViewBag.PesoTotal</strong></div>
+</div>
+        }
+        else
+        {
+<div class="clearfix alert alert-success mt-1">
+    <div class="float-left"><strong>Cumplimiento % total: @Model.Sum(m => m.ValorObj)</strong></div>
+    <div class="float-right"><strong id="">Calificación: @ViewBag.CalFinalTemp </strong></div>
+</div>
+        }
+
+<script>
+    $(function () {
+        $("#accordion").accordion({
+            active: false,
+            collapsible: true,
+            heightStyle: "content"
+        });
+        var pesototal = '@ViewBag.PesoTotal';
+        var nobjetivos = '@ViewBag.nObjetivos';
+        //alert(nobjetivos);
+        if (parseInt(nobjetivos) >= 6) {
+            $("#btnNuevoObjetivo").hide();
+        }
+        else {
+            $("#btnNuevoObjetivo").show();
+        }
+        $("#txtPesoTotal").val(pesototal);
+        $("#pesototalobjetivos").html(pesototal);
+    });
+</script>

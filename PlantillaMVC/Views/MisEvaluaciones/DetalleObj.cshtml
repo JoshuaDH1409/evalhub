@@ -1,0 +1,54 @@
+﻿@model List<Modelo.EObjetives>
+
+<table id="ObjetivosTbl" class="table table-bordered" style="width:100%;height:100% ">
+    <thead class="bg-light">
+        <tr>
+            <th>
+                Objetivo
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Métrica (KPI)
+            </th>
+            <th class="text-center">
+                Peso ponderado %
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (Modelo.EObjetives item in Model)
+            {
+        <tr>
+            <td>
+                @item.titulo
+            </td>
+            <td>
+                @item.objdesc
+            </td>
+            <td>
+                @item.objMetricas
+            </td>
+            <td class="text-center">
+                @item.ponderado
+            </td>
+        </tr>
+            }
+        }
+
+    </tbody>
+</table>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //var tablaCliente = $('#ObjetivosTbl').DataTable({
+        //     "lengthMenu": [[10, 15], [10, 15]]
+        //});
+    });
+</script>

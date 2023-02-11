@@ -1,0 +1,41 @@
+﻿
+@model PlantillaMVC.Models.EFlitrosDash
+
+<table style="width:100%">
+    <tr>
+        <td width="100px">
+            @Html.LabelFor(m => m.Division, new { @class = "etiqueta" })
+        </td>
+        <td>
+            @Html.DropDownListFor(m => m.Division, (ViewData["ListaAreas"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Division)
+        </td>
+    </tr>
+
+    @if (ViewBag.PerActivo)
+    {
+        <tr>
+            <td>
+                <br />
+            </td>
+        </tr>
+    <tr>
+        <td width="100px">
+            @Html.LabelFor(m => m.PeriodoActivo, new { @class = "etiqueta" })
+        </td>
+        <td>
+            @Html.CheckBoxFor(m => m.PeriodoActivo)        
+         </td>      
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <div class="alert alert-info" role="alert">
+                <i> <b>Ejemplo:</b> carga de objetivos, autoevaluación, cerrado</i>
+            </div>
+        </td>
+    </tr>
+    }
+</table>
+<br />
+<button type="submit" id="enviar" class="btn btn-success fa fa-chart-bar"> <x style="font-family:Arial"> Consultar</x></button>

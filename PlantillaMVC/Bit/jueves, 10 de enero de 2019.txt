@@ -1,0 +1,36 @@
+08:41:13 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+08:41:13 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+08:42:28 a.m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+08:46:31 a.m.
+Periodos/NuevoPeriodo : El usuario: Fernando Reyes Cázares Ingreso a nuevo periodo
+-------------------------------
+08:46:46 a.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+08:49:24 a.m.
+Evaluacion/Principal : El usuario: Melissa Acosta Ingreso a Principal
+-------------------------------
+08:49:27 a.m.
+Gestion/GestionEvaluacion : El usuario: Melissa Acosta Ingreso a gestion de evaluaciones
+-------------------------------
+09:27:49 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+09:27:49 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:27:54 a.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+09:31:26 a.m.
+Evaluacion/Principal : El usuario: Melissa Acosta Ingreso a Principal
+-------------------------------
+09:31:28 a.m.
+Gestion/GestionEvaluacion : El usuario: Melissa Acosta Ingreso a gestion de evaluaciones
+-------------------------------

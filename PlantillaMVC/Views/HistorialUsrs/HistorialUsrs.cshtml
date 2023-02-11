@@ -1,0 +1,89 @@
+﻿
+@model PlantillaMVC.Models.EPeriodosDash
+
+
+
+<center><h2>Historial usuarios</h2></center>
+<br />
+
+@using (Ajax.BeginForm("ConsultarUsuarios", "HistorialUsrs", new { }, new AjaxOptions
+{
+    UpdateTargetId = "Contenedor",
+    OnBegin = "AbreCierraDilogoEspera",
+    OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()",    
+    HttpMethod = "Post"
+}, new { id = "ConsultaEvaluaciones", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken();
+
+
+
+    <table>
+        <tr>
+            <td style="text-align: left">
+                @Html.LabelFor(m => m.pais, new { @class = "etiqueta" })
+                @Html.DropDownListFor(m => m.pais, (ViewData["ListaPais"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.pais)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="Per"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="boton" , style="visibility:collapse">
+                    <button type="submit" id="enviar" class="btn btn-success fa fa-search"> <x style="font-family:Arial"> Consultar</x></button>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+
+    <br />
+}
+
+<div id="Contenedor"></div>
+
+
+<div style="visibility:hidden; display:none;">
+    @Ajax.ActionLink("BuscaPeriodos", "ValidaPeriodo", "HistorialUsrs", new { },
+            new AjaxOptions { UpdateTargetId = "Per", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET", OnSuccess = "VerificaSesionEnv" },
+    new { id = "ValidaPeriodo" })
+</div>
+
+
+<script type="text/javascript">
+    function BuscaPeriodos(id) {
+        var a = "@Url.Action("ValidaPeriodo")";
+        a = a + "?id=" + id;
+        $("#ValidaPeriodo").attr("href", a);
+        $("#ValidaPeriodo").click();
+        a = '';
+    }
+
+
+    $("#pais").change(function () {
+        if ($(this).val() > 0)
+        {
+            BuscaPeriodos($(this).val());
+        }
+    });
+
+
+
+    $("#ConsultaEvaluaciones").validate({  // initialize the plugin
+        submitHandler: function (form) {  // fires on valid form
+            if ($("#Periodo").val() > 0) {
+                return true;
+            }
+            else
+            {
+                alert('Seleccione un periodo');
+                return false;
+            }
+        }
+     });
+</script>
+

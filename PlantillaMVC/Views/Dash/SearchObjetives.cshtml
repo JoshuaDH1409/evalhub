@@ -1,0 +1,21 @@
+﻿@model List<Modelo.VEvalObj>
+
+<div>
+    <table id="tblObjSearchResult">
+        <thead>
+            <tr>
+                <th>No emp</th>
+                <th>Nombre</th>
+                <th>Puesto</th>
+                <th>Division</th>
+                <th>Objetive</th>
+            </tr>
+        </thead>
+        
+    </table>
+</div>
+<script>
+    $(document).ready(function(){
+        $("#tblObjSearchResult").DataTables();
+    });
+</script>

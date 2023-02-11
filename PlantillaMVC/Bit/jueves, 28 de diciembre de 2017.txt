@@ -1,0 +1,510 @@
+08:47:59 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+08:47:59 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+08:53:40 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+08:54:05 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:54:38 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+08:54:58 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+08:55:09 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+08:55:14 a.m.
+Gestion/NuevaGestion : El usuario: Fernando Reyes envió el correo 13 a fernando.reyes@aspenlatam.com
+-------------------------------
+08:55:17 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+08:55:23 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:55:28 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+08:55:47 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:55:52 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo67
+-------------------------------
+08:55:52 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+09:14:07 a.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+09:26:11 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+09:33:43 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+09:45:43 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+09:45:53 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+09:48:42 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+09:48:46 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo68
+-------------------------------
+09:48:46 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+09:52:12 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+09:55:44 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+09:55:53 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+09:55:53 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+09:56:16 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+09:56:16 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+09:56:18 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+09:56:35 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+09:56:55 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+09:57:16 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:01:02 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+10:01:02 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+10:01:18 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:01:39 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:01:47 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo69
+-------------------------------
+10:01:47 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+10:02:09 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:02:16 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo69
+-------------------------------
+10:02:16 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+10:02:41 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:02:51 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo69
+-------------------------------
+10:02:51 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+10:02:53 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:03:32 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:03:36 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:03:42 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo69
+-------------------------------
+10:03:42 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+10:03:59 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:04:02 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+10:04:06 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:04:13 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo69
+-------------------------------
+10:04:13 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+10:04:50 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:07:57 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+10:08:01 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+10:08:01 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+10:08:20 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+10:08:20 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+10:08:29 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:08:44 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:31:43 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+10:31:47 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+10:31:47 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+10:31:57 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:32:11 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+10:32:42 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 40
+-------------------------------
+10:32:42 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 16
+-------------------------------
+10:32:50 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:34:34 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+10:34:34 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+10:34:38 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+10:34:55 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:35:10 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo69
+-------------------------------
+10:35:10 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+10:35:20 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+10:35:47 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo70
+-------------------------------
+10:35:47 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 16
+-------------------------------
+10:35:52 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+10:36:07 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 40
+-------------------------------
+10:36:07 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 16
+-------------------------------
+10:38:14 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+10:45:37 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+11:00:28 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+11:00:33 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+11:00:33 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:00:44 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:01:03 a.m.
+MiHistorial/Historial : El usuario: jose roberto perez galindo Ingreso a Historial
+-------------------------------
+11:01:12 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:01:16 a.m.
+Correo/Correo : El usuario: jose roberto perez galindo Ingreso a correo
+-------------------------------
+11:01:20 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: jose roberto perez galindo Ingreso a Historial Usuarios
+-------------------------------
+11:01:23 a.m.
+Gestion/GestionEvaluacion : El usuario: jose roberto perez galindo Ingreso a gestion de evaluaciones
+-------------------------------
+11:01:28 a.m.
+Usuario/Usuarios : El Usuario jose roberto perez galindo ingreso a usuarios
+-------------------------------
+11:01:31 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:01:37 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: jose roberto perez galindo Ingreso a Historial Usuarios
+-------------------------------
+11:01:42 a.m.
+Gestion/GestionEvaluacion : El usuario: jose roberto perez galindo Ingreso a gestion de evaluaciones
+-------------------------------
+11:02:22 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:02:40 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:02:47 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+11:02:59 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+11:03:02 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: jose roberto perez galindo Ingreso a Historial Usuarios
+-------------------------------
+11:03:05 a.m.
+Correo/Correo : El usuario: jose roberto perez galindo Ingreso a correo
+-------------------------------
+11:03:07 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: jose roberto perez galindo Ingreso a Historial Usuarios
+-------------------------------
+11:03:09 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:03:12 a.m.
+Correo/Correo : El usuario: jose roberto perez galindo Ingreso a correo
+-------------------------------
+11:03:20 a.m.
+Usuario/Usuarios : El Usuario jose roberto perez galindo ingreso a usuarios
+-------------------------------
+11:03:23 a.m.
+Usuario/NuevoUsuario : El Usuario jose roberto perez galindo ingreso a nuevo usuario
+-------------------------------
+11:10:45 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+11:10:45 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+11:10:47 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+11:11:40 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+11:11:40 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+11:11:44 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+11:13:41 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+11:13:56 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Karla Chavez Guardo el objetivo61
+-------------------------------
+11:13:56 a.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 13
+-------------------------------
+11:14:17 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+11:19:24 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Karla Chavez Guardo el objetivo62
+-------------------------------
+11:19:24 a.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 13
+-------------------------------
+12:29:00 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+12:29:00 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:29:12 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:29:34 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:29:34 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:29:45 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:29:52 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+12:30:00 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:30:05 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+12:30:11 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+12:31:57 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+12:33:25 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+12:35:39 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+12:36:45 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+01:43:23 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+01:43:23 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+01:43:52 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+01:44:32 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+01:52:10 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+01:52:10 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+01:52:18 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+01:52:26 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+01:53:51 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes no pudo guardar la competencia 43
+-------------------------------
+01:53:51 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 17
+-------------------------------
+01:54:29 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:01:02 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+04:01:02 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+04:01:18 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:02:31 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:04:10 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:04:46 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 48
+-------------------------------
+04:04:46 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 17
+-------------------------------
+04:07:45 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+04:07:45 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:08:02 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:09:01 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+04:09:01 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+04:09:09 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:09:21 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+04:09:35 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:09:44 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:10:22 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:13:09 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+04:13:09 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+04:13:21 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+04:13:36 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:14:20 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+04:14:41 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 49
+-------------------------------
+04:14:41 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 17
+-------------------------------
+04:15:07 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------

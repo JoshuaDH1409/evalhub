@@ -1,0 +1,111 @@
+09:17:02 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+09:17:02 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:17:18 a. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+09:17:42 a. m.
+MiHistorial/Historial : se inicia el PDF de: 32000312_Maria De Los Angeles Munive Campos Ingreso a Historial
+-------------------------------
+09:17:43 a. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000312_Maria De Los Angeles Munive Campos Ingreso a Historial
+-------------------------------
+09:17:43 a. m.
+MiHistorial/Historial : llenado de objetivos de: 32000312_Maria De Los Angeles Munive Campos Ingreso a Historial
+-------------------------------
+09:17:43 a. m.
+MiHistorial/Historial : llenado de competencias de: 32000312_Maria De Los Angeles Munive Campos Ingreso a Historial
+-------------------------------
+09:17:43 a. m.
+MiHistorial/Historial : llenado de Calificación de: 32000312_Maria De Los Angeles Munive Campos Ingreso a Historial
+-------------------------------
+09:17:43 a. m.
+MiHistorial/Historial : fin de Calificación de: 32000312_Maria De Los Angeles Munive Campos Ingreso a Historial
+-------------------------------
+09:17:43 a. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+09:17:50 a. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+09:17:50 a. m.
+MiHistorial/DownloadPdf : El usuario: Maria De Los Angeles Munive Campos Logro descargar su  evaluación del periodo Administración del Desempeño 2020
+-------------------------------
+09:23:23 a. m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+09:23:48 a. m.
+MiHistorial/Historial : se inicia el PDF de: 32000300_Almanza Gonzalez Bladiantonio   Ingreso a Historial
+-------------------------------
+09:23:48 a. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000300_Almanza Gonzalez Bladiantonio   Ingreso a Historial
+-------------------------------
+09:23:48 a. m.
+MiHistorial/Historial : llenado de competencias de: 32000300_Almanza Gonzalez Bladiantonio   Ingreso a Historial
+-------------------------------
+09:23:48 a. m.
+MiHistorial/Historial : llenado de Calificación de: 32000300_Almanza Gonzalez Bladiantonio   Ingreso a Historial
+-------------------------------
+09:23:48 a. m.
+MiHistorial/Historial : fin de Calificación de: 32000300_Almanza Gonzalez Bladiantonio Ingreso a Historial
+-------------------------------
+09:23:49 a. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+09:23:50 a. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+09:23:50 a. m.
+MiHistorial/DownloadPdf : El usuario: Almanza Gonzalez Bladiantonio   Logro descargar su  evaluación del periodo Administración del Desempeño 2019
+-------------------------------
+09:24:04 a. m.
+MiHistorial/Historial : se inicia el PDF de: 32000300_Almanza Gonzalez Bladiantonio   Ingreso a Historial
+-------------------------------
+09:24:04 a. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000300_Almanza Gonzalez Bladiantonio   Ingreso a Historial
+-------------------------------
+09:24:04 a. m.
+MiHistorial/Historial : llenado de competencias de: 32000300_Almanza Gonzalez Bladiantonio   Ingreso a Historial
+-------------------------------
+09:24:04 a. m.
+MiHistorial/Historial : llenado de Calificación de: 32000300_Almanza Gonzalez Bladiantonio   Ingreso a Historial
+-------------------------------
+09:24:04 a. m.
+MiHistorial/Historial : fin de Calificación de: 32000300_Almanza Gonzalez Bladiantonio Ingreso a Historial
+-------------------------------
+09:24:04 a. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+09:24:05 a. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+09:24:05 a. m.
+MiHistorial/DownloadPdf : El usuario: Almanza Gonzalez Bladiantonio   Logro descargar su  evaluación del periodo Administración del Desempeño 2019
+-------------------------------
+11:53:42 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:53:47 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:54:20 a. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+01:07:19 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:07:19 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:07:26 p. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+01:15:00 p. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+01:22:32 p. m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------

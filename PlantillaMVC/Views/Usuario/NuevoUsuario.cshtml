@@ -1,0 +1,372 @@
+﻿@model Modelo.ELogin
+
+<h4 style="margin-top:0px;">Nuevo Usuario</h4>
+<label class="alert-info">Captura con mayúsculas y minúsculas ciudando acentos.</label>
+@{
+    string UsuariosLi = "";
+    foreach (string str in ViewData["Evaluadores"] as List<String>)
+    {
+        UsuariosLi = UsuariosLi + " \"" + str + "\"" + ", ";
+    }
+    UsuariosLi = UsuariosLi.Substring(0, UsuariosLi.LastIndexOf(","));
+}
+
+
+@using (Ajax.BeginForm("GuardaUsuario", "Usuario", new { }, new AjaxOptions
+{
+    UpdateTargetId = "Principal",
+    OnBegin = "AbreCierraDilogoEspera",
+    OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv();CerrarPantalla()",
+    HttpMethod = "Post"
+}, new { id = "Usuario", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken();
+
+    <div style="color:#FF0000;"> @ViewBag.Error </div>
+
+    <table class="table-pop">
+        <tr class="oculto">
+            <td>
+                @Html.LabelFor(m => m.id, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.id)
+            </td>
+        </tr>
+        <tr class="oculto">
+            <td>
+                @Html.LabelFor(m => m.Password, new { @class = "etiqueta" })
+            </td>
+            <td>
+
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.id_sap, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.id_sap, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.id_sap, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Nombre, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @style = "text-transform:capitalize", @placeholder = "" })
+                @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.ApellidoPat, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.ApellidoPat, new { @class = "form-control", @style = "text-transform:capitalize", @placeholder = "" })
+                @Html.ValidationMessageFor(m => m.ApellidoPat, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.ApellidoMat, new { @class = "etiqueta" })
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(m => m.ApellidoMat, new { @class = "form-control", @placeholder = "", @style = "text-transform:capitalize" })
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                    @Html.CheckBoxFor(m => m.NoAplica) No Aplica
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">@Html.ValidationMessageFor(m => m.ApellidoMat, "", new { @class = "text-danger" })</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Puesto, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Puesto, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Puesto, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Division, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Division, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Division, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.FechaIngresoTemp, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.FechaIngresoTemp, new { @class = "DatePicker form-control" })
+                @Html.ValidationMessageFor(m => m.FechaIngresoTemp, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.perfil, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.perfil, (ViewData["ListaPerfiles"] as List<SelectListItem>), "Selecciona...", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.perfil, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Pais, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.Pais, (ViewData["ListaPaises"] as List<SelectListItem>), "Selecciona...", new { @class = "form-control", @id = "country" })
+                @Html.ValidationMessageFor(m => m.Pais, "", new { @class = "text-danger" })
+                <input id="changecountry" name="changecountry" type="hidden" value="0" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.EvaluadorNombre, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.EvaluadorNombre, new { @class = "evaluador form-control" })
+                @Html.ValidationMessageFor(m => m.EvaluadorNombre, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table width="100%">
+                    <tr>
+                        <td>
+                            @Html.Label("Bono Anual", new { @class = "etiqueta" })
+                        </td>
+                        <td>
+                            @Html.CheckBoxFor(m => m.bonoAnual, new { @class = "checkbox" })
+                        </td>
+                        <td>
+                            @Html.Label("Calibración", new { @class = "etiqueta" })
+                        </td>
+                        <td>
+                            @Html.CheckBoxFor(m => m.calibracion, new { @class = "checkbox" })
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Email, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Notificar, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => m.Notificar, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Notificar)
+            </td>
+        </tr>
+    </table>
+
+    <p style="text-align: right; padding-top: 20px;">
+        <button type="submit" id="enviar" class="btn btn-success fa fa-check"> <x style="font-family:Arial"> Guardar</x> </button>  <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal">  <x style="font-family:Arial"> Cerrar</x></button>
+    </p>
+}
+
+
+<script>
+  $( function() {
+    var availableTags = [
+       @Html.Raw(UsuariosLi)];
+    $(".evaluador").autocomplete({
+        source: availableTags,
+        appendTo: "#ModalUsiarios"
+    });
+      $("#Division").autocomplete({
+          appendTo: "#ModalUsiarios",
+          source: function (request, response) {
+              $.ajax({
+                  url: "/Usuario/getDivision",
+                  dataType: "json",
+                  data: {
+                      term: request.term
+                  },
+                  success: function (data) {
+                      response(data);
+                  }
+              });
+          },
+          minLength: 2,
+          select: function (event, ui) {
+              //alert("Selected: " + ui.item.value + " aka " + ui.item.value);
+          }
+      });
+});
+
+    $(document).ready(function () {
+        $("#country").change(function () {
+            $("#changecountry").val("1");
+        });
+        $("#NoAplica").change(function (e) {
+            if ($(this).prop("checked") == true) {
+                $("#ApellidoMat").val("NA");
+            }
+            else {
+                $("#ApellidoMat").val("");
+            }
+        });
+        $("#bonoAnual").change(function (e) {
+            if ($(this).prop("checked") == true) {
+                $("#calibracion").prop("checked", true);
+                alert("Los usuarios con bono anual están sujetos a calibración de manera obligatoria");
+            }
+        });
+        //$('input').on('keyup', function (event) {
+        //    var $t = $(this);
+        //    $t.val(toTitleCase($t.val()));
+        //});
+    });
+    function toTitleCase(str) {
+        return str.split(/\s+/).map(s => s.charAt(0).toUpperCase() + s.substring(1).toLowerCase()).join(" ");
+    }
+</script>
+
+
+<div style="visibility:hidden; display:none;">
+    @Ajax.ActionLink("Verifica encabezados", "ValidaUsuario", "Usuario", new { },
+            new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", HttpMethod = "GET", OnSuccess = "RespuestaCurp(data, status, xhr)" },
+    new { id = "ValidaUsuario" })
+</div>
+
+
+<div style="visibility:hidden; display:none;">
+    @Ajax.ActionLink("Verifica SAP", "ValidaUsuarioSap", "Usuario", new { },
+            new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", HttpMethod = "GET", OnSuccess = "RespuestaSap(data, status, xhr)" },
+    new { id = "ValidaUsuarioSap" })
+</div>
+
+<script type="text/javascript">
+    function VerificaUsr(Usr,id) {
+        var a = "@Url.Action("ValidaUsuario")";
+        a = a + "?Correo=" + Usr + "&id=" + id;
+        $("#ValidaUsuario").attr("href", a);
+        $("#ValidaUsuario").click();
+        a = '';
+    }
+
+
+    $("#Email").focusout(function () {
+        var Email = $("#Email").val();
+        //alert(Email);
+        var id = $("#id").val();
+        //alert(Usr);
+
+
+        if (Email != '')
+        {
+            if (validateEmail(Email))
+            {
+
+                VerificaUsr(Email, id);
+            }
+        }
+        id = '';
+        per = '';
+    });
+
+    function EsNumero(num) {
+        var pattern = new RegExp(/^[0-9]+$/);
+        return pattern.test(num);
+    }
+
+  function validateEmail(email) {
+      var pattern = new RegExp(/^([\w-\.]+@@([\w-]+\.)+[\w-]{2,4})?$/);      
+      return pattern.test(email); 
+   }
+
+    function RespuestaCurp(data, status, xhr)
+    {
+        //alert(data);
+        if (data != '')
+        {
+            if (data[0].Aux == 1)
+            {
+                var r = confirm("¡este usuario ya existe! \n ingrese otro usuario");
+                $("#Email").val('');
+            }
+        }
+    }
+
+    function VerificaSap(Usr, id)
+    {
+        var a = "@Url.Action("ValidaUsuarioSap")";
+        a = a + "?idSap=" + Usr + "&id=" + id;
+        $("#ValidaUsuarioSap").attr("href", a);
+        $("#ValidaUsuarioSap").click();
+        a = '';
+    }
+
+
+    $("#id_sap").focusout(function () {
+        var IdSap = $("#id_sap").val();
+        var id = $("#id").val();
+        //alert(Usr);
+        if (IdSap != '')
+        {
+            if (EsNumero(IdSap))
+            {
+                VerificaSap(IdSap, id);
+            }
+        }
+        IdSap = '';
+        id = '';
+    });
+
+    function RespuestaSap(data, status, xhr) {
+        //alert('entra');
+        if (data != "") {
+            if (data[0].Aux == 1) {
+                var r = confirm("¡este usuario ya existe! \n ingrese otro usuario");
+                $("#usuario").val('');
+            }
+        }
+    }
+    $(document).ready(function () {
+        $('.DatePicker').datepicker({
+            format: "dd/mm/yyyy"
+        });
+
+        var objeto = $(".oculto")
+        objeto.hide();
+        var form = $("#Usuario");
+        $(form).removeData("validator");
+        $.validator.unobtrusive.parse(form);
+    });
+</script>

@@ -1,0 +1,69 @@
+12:06:18 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:06:18 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:07:59 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+03:45:19 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:45:20 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:45:26 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+03:46:03 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:46:13 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:46:28 p.m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+03:49:25 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:53:18 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:53:18 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:53:21 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:53:29 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:53:41 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:53:52 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+03:59:49 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+04:00:04 p.m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+04:00:27 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+04:00:33 p.m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+04:04:15 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:07:57 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+04:20:14 p.m.
+Evaluacion/Principal : El usuario: Vega Mancera Maria Del Rocio Ingreso a Principal
+-------------------------------

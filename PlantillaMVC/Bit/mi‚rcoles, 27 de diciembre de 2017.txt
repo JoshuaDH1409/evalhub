@@ -1,0 +1,408 @@
+07:41:10 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+07:41:10 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+07:41:16 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+07:41:48 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+07:41:59 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+07:47:14 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+07:47:14 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+07:47:19 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+07:47:44 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+07:47:56 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+07:48:07 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+07:53:33 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+07:53:33 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+07:53:38 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+07:53:46 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+07:54:47 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+07:54:51 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+07:54:59 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+07:55:47 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+08:00:47 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+08:01:51 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+08:02:04 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez Guardo la competencia 31
+-------------------------------
+08:02:04 a.m.
+Gestion/RecargaCompetencias : El usuario: Karla Chavez Actualizó las competencias en la evaluación 10
+-------------------------------
+08:02:12 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+08:02:31 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez Guardo la competencia 31
+-------------------------------
+08:02:31 a.m.
+Gestion/RecargaCompetencias : El usuario: Karla Chavez Actualizó las competencias en la evaluación 10
+-------------------------------
+08:02:43 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+08:03:00 a.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 10
+-------------------------------
+08:03:35 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez guardo su autoevaluacion2 10
+-------------------------------
+08:03:36 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez notificó de su autoevaluación de segundo semestre a jose.perez_becloud@aspenlatam.com
+-------------------------------
+08:03:50 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:03:50 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:03:58 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:04:05 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+08:04:14 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: jose roberto perez galindo Guardo el objetivo51
+-------------------------------
+08:04:14 a.m.
+Gestion/RecargaObjetivos : El usuario: jose roberto perez galindo Actualizó la vista de objetivos en la evaluación 10
+-------------------------------
+08:04:22 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+08:04:26 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: jose roberto perez galindo Guardo el objetivo51
+-------------------------------
+08:04:26 a.m.
+Gestion/RecargaObjetivos : El usuario: jose roberto perez galindo Actualizó la vista de objetivos en la evaluación 10
+-------------------------------
+08:04:36 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo guardo su evaluacion de segundo semestre. Evaluación: 10
+-------------------------------
+08:04:36 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo notificó de su evaluación a jose.perez_becloud@aspenlatam.com
+-------------------------------
+08:04:36 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo notificó de su evaluación a karla.chavez@aspenlatam.com
+-------------------------------
+08:04:46 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:04:54 a.m.
+MiHistorial/Historial : El usuario: jose roberto perez galindo Ingreso a Historial
+-------------------------------
+08:05:05 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:11:38 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:12:01 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:12:32 a.m.
+MiHistorial/Historial : se inicia el PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:12:32 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:12:32 a.m.
+MiHistorial/Historial : llenado de objetivos de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:12:32 a.m.
+MiHistorial/Historial : llenado de competencias de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:12:32 a.m.
+MiHistorial/Historial : llenado de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:12:32 a.m.
+MiHistorial/Historial : fin de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:12:32 a.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+08:12:36 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+08:12:36 a.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------
+08:13:34 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+08:17:06 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:18:15 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:18:28 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+08:18:40 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: jose roberto perez galindo Guardo el objetivo51
+-------------------------------
+08:18:40 a.m.
+Gestion/RecargaObjetivos : El usuario: jose roberto perez galindo Actualizó la vista de objetivos en la evaluación 10
+-------------------------------
+08:19:45 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+08:19:51 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:20:01 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:20:07 a.m.
+MiHistorial/Historial : se inicia el PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:20:07 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:20:08 a.m.
+MiHistorial/Historial : llenado de objetivos de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:20:08 a.m.
+MiHistorial/Historial : llenado de competencias de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:20:08 a.m.
+MiHistorial/Historial : llenado de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:20:08 a.m.
+MiHistorial/Historial : fin de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+08:20:08 a.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+08:20:10 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+08:20:10 a.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------
+08:20:38 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:25:03 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:25:36 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:28:54 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:28:54 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:29:02 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:31:07 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:31:07 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:31:18 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:32:48 a.m.
+Account/LogIn : intento fallido de entrar a karla.chavez@aspenlatam.com
+-------------------------------
+08:33:00 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+08:33:00 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+08:33:17 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+08:33:55 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez guardo su autoevaluacion2 10
+-------------------------------
+08:33:56 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez notificó de su autoevaluación de segundo semestre a jose.perez_becloud@aspenlatam.com
+-------------------------------
+08:34:11 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:34:11 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:34:24 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:35:24 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+08:36:41 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:36:59 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:37:26 a.m.
+MiHistorial/Historial : El usuario: jose roberto perez galindo Ingreso a Historial
+-------------------------------
+08:37:51 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:43:29 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:43:45 a.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+08:43:51 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:43:51 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:44:14 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:44:36 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+08:44:36 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+08:44:48 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+08:44:56 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+08:47:30 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+08:49:03 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:49:04 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:49:09 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+08:50:47 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo guardo su autoevaluacion2 1
+-------------------------------
+08:50:47 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo notificó de su autoevaluación de segundo semestre a karla.chavez@aspenlatam.com
+-------------------------------
+08:50:57 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+08:50:57 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+08:51:03 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+08:51:14 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez guardo su evaluacion de segundo semestre. Evaluación: 1
+-------------------------------
+08:51:15 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez notificó de su evaluación a karla.chavez@aspenlatam.com
+-------------------------------
+08:51:15 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez notificó de su evaluación a jose.perez_becloud@aspenlatam.com
+-------------------------------
+08:51:21 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+08:51:39 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+08:53:53 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+09:00:31 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+09:01:49 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+09:02:01 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Karla Chavez Guardo el objetivo31
+-------------------------------
+09:02:02 a.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 1
+-------------------------------
+09:02:31 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez guardo su calificacion final2 1
+-------------------------------
+09:02:31 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez notifico de su evaluación2 a jose.perez_becloud@aspenlatam.com
+-------------------------------
+09:02:47 a.m.
+MiHistorial/Historial : se inicia el PDF de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+09:02:47 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+09:02:47 a.m.
+MiHistorial/Historial : llenado de objetivos de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+09:02:47 a.m.
+MiHistorial/Historial : llenado de competencias de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+09:02:47 a.m.
+MiHistorial/Historial : llenado de Calificación de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+09:02:47 a.m.
+MiHistorial/Historial : fin de Calificación de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+09:02:47 a.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+09:02:50 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+09:02:50 a.m.
+MiHistorial/DownloadPdf : El usuario: jose roberto perez galindo Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------

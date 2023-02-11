@@ -1,0 +1,111 @@
+03:18:32 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+03:18:32 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+03:18:37 p.m.
+MiHistorial/Historial : El usuario: Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:18:44 p.m.
+MiHistorial/Historial : se inicia el PDF de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:18:44 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:18:44 p.m.
+MiHistorial/Historial : llenado de competencias de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:18:44 p.m.
+MiHistorial/Historial : llenado de Calificación de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:18:44 p.m.
+MiHistorial/Historial : fin de Calificación de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:18:44 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+03:18:47 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+03:18:47 p.m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Cázares Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+03:19:05 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+03:19:17 p.m.
+MiHistorial/Historial : se inicia el PDF de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:19:17 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:19:18 p.m.
+MiHistorial/Historial : llenado de competencias de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:19:18 p.m.
+MiHistorial/Historial : llenado de Calificación de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:19:18 p.m.
+MiHistorial/Historial : fin de Calificación de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:19:18 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+03:19:19 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+03:19:19 p.m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Cázares Logro descargar su  evaluación del periodo Ejemplo
+-------------------------------
+03:19:45 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+03:25:21 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+03:27:29 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+03:27:42 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+03:27:50 p.m.
+MiHistorial/Historial : se inicia el PDF de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:27:50 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:27:50 p.m.
+MiHistorial/Historial : llenado de competencias de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:27:50 p.m.
+MiHistorial/Historial : llenado de Calificación de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:27:50 p.m.
+MiHistorial/Historial : fin de Calificación de: 333_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+03:27:50 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+03:27:51 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+03:27:51 p.m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Cázares Logro descargar su  evaluación del periodo Ejemplo
+-------------------------------
+03:33:44 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+03:33:50 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares Guardo la competencia 2284
+-------------------------------
+03:33:50 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Cázares Actualizó las competencias en la evaluación 842
+-------------------------------
+03:40:01 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+03:45:57 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------

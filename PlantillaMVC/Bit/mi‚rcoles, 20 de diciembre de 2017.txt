@@ -1,0 +1,708 @@
+08:34:16 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+08:34:16 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:34:30 a.m.
+Gestion/GestionEvaluacion : El usuario: jose roberto perez galindo Ingreso a gestion de evaluaciones
+-------------------------------
+08:34:55 a.m.
+Gestion/GestionEvaluacion : El usuario: jose roberto perez galindo Ingreso a gestion de evaluaciones
+-------------------------------
+08:35:10 a.m.
+Gestion/NuevaGestion : El usuario: jose roberto perez galindo envió el correo 13 a fernando.reyes@aspenlatam.com
+-------------------------------
+08:35:44 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+08:35:44 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+08:35:47 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+08:36:13 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:36:21 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 7
+-------------------------------
+08:36:57 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:37:04 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo25
+-------------------------------
+08:37:05 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 7
+-------------------------------
+08:37:18 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:37:38 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 7
+-------------------------------
+08:37:40 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:37:45 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 7
+-------------------------------
+08:37:50 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+08:37:59 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 17
+-------------------------------
+08:37:59 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 7
+-------------------------------
+08:38:23 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes Guardo su carga de objetivos 7
+-------------------------------
+08:38:23 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes Notifico de la carga de sus objetivos a:karla.chavez@aspenlatam.com
+-------------------------------
+08:38:37 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+08:38:37 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+08:39:02 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+08:39:45 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez Rechazo los objetivos de la evaluación 7
+-------------------------------
+08:39:45 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez Notifico de su rechazo de objetivos a:fernando.reyes@aspenlatam.com
+-------------------------------
+08:40:05 a.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+08:40:09 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+08:40:09 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+08:40:12 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+08:40:22 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes Guardo su carga de objetivos 7
+-------------------------------
+08:40:22 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes Notifico de la carga de sus objetivos a:karla.chavez@aspenlatam.com
+-------------------------------
+08:40:34 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+08:40:34 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+08:40:38 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+08:40:43 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez Acepto los objetivos de la evaluación 7
+-------------------------------
+08:40:43 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez Notifico de su aprobación de objetivos a:fernando.reyes@aspenlatam.com
+-------------------------------
+08:41:11 a.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+08:41:11 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+08:41:13 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+08:41:21 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:41:28 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 7
+-------------------------------
+08:41:36 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:41:41 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo26
+-------------------------------
+08:41:41 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 7
+-------------------------------
+08:41:45 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo26
+-------------------------------
+08:41:46 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 7
+-------------------------------
+08:41:57 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes ingreso a crear/modificar un objetivo 
+-------------------------------
+08:42:02 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Guardo el objetivo26
+-------------------------------
+08:42:02 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Actualizó la vista de objetivos en la evaluación 7
+-------------------------------
+08:42:08 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes ingreso a cargar/modificar una competencia 
+-------------------------------
+08:42:14 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Guardo la competencia 18
+-------------------------------
+08:42:14 a.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Actualizó las competencias en la evaluación 7
+-------------------------------
+08:46:52 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+11:11:46 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+11:11:47 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:12:11 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:12:27 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:13:41 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:15:36 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+11:17:43 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+11:18:20 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:18:49 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:19:03 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:19:20 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:19:53 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:20:09 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:22:15 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:22:38 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:23:11 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:23:19 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:23:44 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:25:56 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:27:31 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+11:27:33 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:27:54 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:27:57 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:28:14 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:35:11 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:35:28 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: jose roberto perez galindo Guardo el objetivo21
+-------------------------------
+11:35:28 a.m.
+Gestion/RecargaObjetivos : El usuario: jose roberto perez galindo Actualizó la vista de objetivos en la evaluación 6
+-------------------------------
+11:36:07 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:36:15 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: jose roberto perez galindo Guardo el objetivo22
+-------------------------------
+11:36:16 a.m.
+Gestion/RecargaObjetivos : El usuario: jose roberto perez galindo Actualizó la vista de objetivos en la evaluación 6
+-------------------------------
+11:40:10 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:40:40 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+11:41:26 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+11:41:33 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: jose roberto perez galindo Guardo el objetivo23
+-------------------------------
+11:41:33 a.m.
+Gestion/RecargaObjetivos : El usuario: jose roberto perez galindo Actualizó la vista de objetivos en la evaluación 6
+-------------------------------
+11:42:52 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo guardo su Calificación final de 6
+-------------------------------
+11:43:14 a.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo notifico de su calificacion final a karla.chavez@aspenlatam.com
+-------------------------------
+11:46:02 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio la descarga de su evaluación Periodo Test
+-------------------------------
+11:46:02 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio El procesamiento de su pdf- objetivos 
+-------------------------------
+11:46:02 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio El procesamiento de su pdf- competencias 
+-------------------------------
+11:46:02 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio El procesamiento de su pdf- Calificación 
+-------------------------------
+11:46:02 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio El procesamiento de su pdf- Comentarios 
+-------------------------------
+11:46:09 a.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------
+11:51:41 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio la descarga de su evaluación Periodo Test
+-------------------------------
+11:51:41 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio El procesamiento de su pdf- objetivos 
+-------------------------------
+11:51:41 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio El procesamiento de su pdf- competencias 
+-------------------------------
+11:51:41 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio El procesamiento de su pdf- Calificación 
+-------------------------------
+11:51:41 a.m.
+Objetivos/DownloadPdf : El usuario: Karla Chavez Inicio El procesamiento de su pdf- Comentarios 
+-------------------------------
+11:51:42 a.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------
+11:56:43 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: jose roberto perez galindo Ingreso a Historial Usuarios
+-------------------------------
+11:57:33 a.m.
+MiHistorial/Historial : se inicia el PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+11:57:33 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+11:57:33 a.m.
+MiHistorial/Historial : llenado de objetivos de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+11:57:33 a.m.
+MiHistorial/Historial : llenado de competencias de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+11:57:33 a.m.
+MiHistorial/Historial : llenado de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+11:57:33 a.m.
+MiHistorial/Historial : fin de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+11:57:33 a.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+11:57:35 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+11:57:35 a.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------
+12:04:30 p.m.
+MiHistorial/Historial : se inicia el PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:04:30 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:04:30 p.m.
+MiHistorial/Historial : llenado de objetivos de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:04:30 p.m.
+MiHistorial/Historial : llenado de competencias de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:04:30 p.m.
+MiHistorial/Historial : llenado de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:04:30 p.m.
+MiHistorial/Historial : fin de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:04:30 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:04:31 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:04:31 p.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------
+12:04:56 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:04:59 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:05:32 p.m.
+MiHistorial/Historial : se inicia el PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:05:32 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:05:32 p.m.
+MiHistorial/Historial : llenado de objetivos de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:05:32 p.m.
+MiHistorial/Historial : llenado de competencias de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:05:32 p.m.
+MiHistorial/Historial : llenado de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:05:32 p.m.
+MiHistorial/Historial : fin de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:05:32 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:05:33 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:05:33 p.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------
+12:08:41 p.m.
+MiHistorial/Historial : se inicia el PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:08:41 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:08:41 p.m.
+MiHistorial/Historial : llenado de objetivos de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:08:41 p.m.
+MiHistorial/Historial : llenado de competencias de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:08:41 p.m.
+MiHistorial/Historial : llenado de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:08:42 p.m.
+MiHistorial/Historial : fin de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:08:42 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:08:43 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:08:43 p.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------
+12:09:11 p.m.
+MiHistorial/Historial : El usuario: jose roberto perez galindo Ingreso a Historial
+-------------------------------
+12:14:44 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+12:14:44 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+12:15:15 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+12:15:15 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:17:53 p.m.
+MiHistorial/Historial : se inicia el PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:17:53 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:17:54 p.m.
+MiHistorial/Historial : llenado de objetivos de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:17:54 p.m.
+MiHistorial/Historial : llenado de competencias de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:17:54 p.m.
+MiHistorial/Historial : llenado de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:17:54 p.m.
+MiHistorial/Historial : fin de Calificación de: 19262443_Karla Chavez Ingreso a Historial
+-------------------------------
+12:17:54 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:17:58 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:17:58 p.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Logro descargar su  evaluación del periodo Periodo Test
+-------------------------------
+12:36:48 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+12:37:26 p.m.
+Gestion/EliminaUnaCompetencia : El usuario: jose roberto perez galindo descargo su evaluacion 1
+-------------------------------
+01:09:39 p.m.
+Account/LogIn : intento fallido de entrar a karla.chavez@aspenlatam.com
+-------------------------------
+01:10:07 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+01:10:07 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+01:10:34 p.m.
+Gestion/GestionEvaluacion : El usuario: Karla Chavez Ingreso a gestion de evaluaciones
+-------------------------------
+01:11:03 p.m.
+Gestion/GestionEvaluacion : El usuario: Karla Chavez Ingreso a gestion de evaluaciones
+-------------------------------
+01:11:30 p.m.
+Gestion/NuevaGestion : El usuario: Karla Chavez envió el correo 13 a karla.chavez@aspenlatam.com
+-------------------------------
+01:12:02 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+01:15:29 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+01:15:29 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+01:17:00 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+01:17:27 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo Rechazo los objetivos de la evaluación 8
+-------------------------------
+01:17:27 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo Notifico de su rechazo de objetivos a:karla.chavez@aspenlatam.com
+-------------------------------
+01:19:12 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+01:19:44 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo Acepto los objetivos de la evaluación 8
+-------------------------------
+01:19:44 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: jose roberto perez galindo Notifico de su aprobación de objetivos a:karla.chavez@aspenlatam.com
+-------------------------------
+01:39:14 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+01:39:14 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+01:39:25 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+01:39:41 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: jose roberto perez galindo ingreso a cargar/modificar una competencia 
+-------------------------------
+01:40:30 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+03:33:48 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+03:33:52 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+03:33:52 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+03:33:56 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:34:28 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:39:06 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:43:54 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:58:10 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:58:53 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+03:59:35 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:01:38 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+04:01:38 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:01:42 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:11:50 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+04:12:15 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: jose roberto perez galindo ingreso a crear/modificar un objetivo 
+-------------------------------
+04:12:22 p.m.
+Gestion/RecargaObjetivos : El usuario: jose roberto perez galindo Actualizó la vista de objetivos en la evaluación 1
+-------------------------------
+04:13:25 p.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+04:13:25 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+04:13:27 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:14:24 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+04:15:02 p.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 8
+-------------------------------
+04:15:19 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+04:15:52 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Karla Chavez ingreso a eliminar objetivos 
+-------------------------------
+04:15:52 p.m.
+MisEvaluaciones/EliminarObjetivosUsr : El usuario: Karla Chavezelimino el objetivo 32
+-------------------------------
+04:15:52 p.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 8
+-------------------------------
+04:16:37 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:16:57 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Karla Chavez Ingreso a Historial Usuarios
+-------------------------------
+04:17:06 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:17:20 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+04:17:26 p.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 8
+-------------------------------
+04:24:30 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Karla Chavez ingreso a crear/modificar un objetivo 
+-------------------------------
+04:24:56 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Karla Chavez Guardo el objetivo30
+-------------------------------
+04:24:56 p.m.
+Gestion/RecargaObjetivos : El usuario: Karla Chavez Actualizó la vista de objetivos en la evaluación 8
+-------------------------------
+04:28:41 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:31:38 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:44:30 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:44:56 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:46:12 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:46:56 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+04:47:13 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez guardo su autoevaluación 8
+-------------------------------
+04:47:13 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Karla Chavez notifico de su autoevaliación a: 8
+-------------------------------
+04:48:01 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+04:48:07 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+04:48:08 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:48:14 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:48:22 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:53:45 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:54:17 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:55:34 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:55:36 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:55:55 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:57:09 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:58:19 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:58:26 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+05:16:06 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+05:16:35 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+05:18:30 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------

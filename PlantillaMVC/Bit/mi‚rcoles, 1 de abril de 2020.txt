@@ -1,0 +1,168 @@
+01:04:00 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:04:00 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:34:37 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:34:37 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:35:27 p. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:35:50 p. m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:36:15 p. m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+01:43:38 p. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:43:49 p. m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:49:59 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:49:59 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:50:06 p. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:50:24 p. m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:59:31 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:59:31 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:59:39 p. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:59:51 p. m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+02:01:48 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+02:02:11 p. m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+02:03:45 p. m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+02:04:30 p. m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina  Ingreso a Historial
+-------------------------------
+02:04:30 p. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina  Ingreso a Historial
+-------------------------------
+02:04:30 p. m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina  Ingreso a Historial
+-------------------------------
+02:04:30 p. m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina  Ingreso a Historial
+-------------------------------
+02:04:30 p. m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina  Ingreso a Historial
+-------------------------------
+02:04:30 p. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+02:04:32 p. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+02:04:32 p. m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina  Logro descargar su  evaluación del periodo Administración del Desempeño 2019
+-------------------------------
+02:05:18 p. m.
+MiHistorial/Historial : se inicia el PDF de: 32000308_Maria Del Socorro Rivera Treviño Ingreso a Historial
+-------------------------------
+02:05:18 p. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000308_Maria Del Socorro Rivera Treviño Ingreso a Historial
+-------------------------------
+02:05:32 p. m.
+MiHistorial/Historial : llenado de competencias de: 32000308_Maria Del Socorro Rivera Treviño Ingreso a Historial
+-------------------------------
+02:05:32 p. m.
+MiHistorial/Historial : llenado de Calificación de: 32000308_Maria Del Socorro Rivera Treviño Ingreso a Historial
+-------------------------------
+02:05:32 p. m.
+MiHistorial/Historial : fin de Calificación de: 32000308_Maria Del Socorro Rivera Treviño Ingreso a Historial
+-------------------------------
+02:05:32 p. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+02:05:34 p. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+02:05:34 p. m.
+MiHistorial/DownloadPdf : El usuario: Maria Del Socorro Rivera Treviño Logro descargar su  evaluación del periodo Administración del Desempeño 2019
+-------------------------------
+02:06:21 p. m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+04:30:28 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:30:28 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:39:53 p. m.
+Correo/Correo : El usuario: Fernando Reyes Cázares Ingreso a correo
+-------------------------------
+04:40:52 p. m.
+MiHistorial/Historial : El usuario: Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:41:21 p. m.
+MiHistorial/Historial : se inicia el PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:41:21 p. m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:41:22 p. m.
+MiHistorial/Historial : llenado de competencias de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:41:22 p. m.
+MiHistorial/Historial : llenado de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:41:22 p. m.
+MiHistorial/Historial : fin de Calificación de: 32001328_Fernando Reyes Cázares Ingreso a Historial
+-------------------------------
+04:41:22 p. m.
+MiHistorial/Historial : path:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+04:41:24 p. m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Felipe.Vargas\Documents\Proyectos\Aspen\Evaluacion Desempeño\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+04:41:24 p. m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Cázares Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+04:42:15 p. m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+04:52:25 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+04:52:56 p. m.
+Evaluacion/Principal : El usuario: Hezzard Herbe Contreras Acosta Ingreso a Principal
+-------------------------------
+04:53:08 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:53:14 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+04:53:36 p. m.
+Evaluacion/Principal : El usuario: Giselle Dominguez Maldonado Ingreso a Principal
+-------------------------------
+04:53:51 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------

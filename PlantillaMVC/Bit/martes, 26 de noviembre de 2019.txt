@@ -1,0 +1,109 @@
+10:18:35 p.m.
+Account/LogIn : El Usuario Karla Chavez Meneses ingreso a su cuenta
+-------------------------------
+10:18:35 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Meneses Ingreso a Principal
+-------------------------------
+10:18:52 p.m.
+MiHistorial/Historial : El usuario: Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:20:28 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:21:06 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:22:11 p.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.ParagraphCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\chavek\OneDrive - Aspen Labs SA de CV\Proyectos desarrollo Fer\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 690
+-------------------------------
+10:22:22 p.m.
+MiHistorial/Historial : El usuario: Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:22:28 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:22:28 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:23:53 p.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.ParagraphCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\chavek\OneDrive - Aspen Labs SA de CV\Proyectos desarrollo Fer\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 690
+-------------------------------
+10:23:58 p.m.
+MiHistorial/Historial : El usuario: Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:24:02 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:24:02 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:24:50 p.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.ParagraphCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\chavek\OneDrive - Aspen Labs SA de CV\Proyectos desarrollo Fer\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 690
+-------------------------------
+10:24:55 p.m.
+MiHistorial/Historial : El usuario: Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:25:00 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:25:00 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:25:08 p.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.ParagraphCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\chavek\OneDrive - Aspen Labs SA de CV\Proyectos desarrollo Fer\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 690
+-------------------------------
+10:25:12 p.m.
+MiHistorial/Historial : El usuario: Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:25:21 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:25:21 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:27:19 p.m.
+MiHistorial/Historial : llenado de competencias de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:27:19 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:27:19 p.m.
+MiHistorial/Historial : fin de Calificación de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+10:27:19 p.m.
+MiHistorial/Historial : path:C:\Users\chavek\OneDrive - Aspen Labs SA de CV\Proyectos desarrollo Fer\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+10:27:22 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\chavek\OneDrive - Aspen Labs SA de CV\Proyectos desarrollo Fer\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+10:27:22 p.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Meneses Logro descargar su  evaluación del periodo Administración del Desempeño 2019
+-------------------------------

@@ -1,0 +1,49 @@
+﻿@model string
+
+
+
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="navbar navbar-inverse navbar-fixed-top head-style">
+            <table>
+                <tr>
+                    <td width="10%">
+                        <img src="~/Imgs/Logo_Aspen.jpg" />
+                    </td>
+                    <td width="90%" style="color:#004b8d;font-weight: bold" align="right">
+                        <h1>Evaluación de Desempeño</h1>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <p></p>
+        <p></p>
+        <div style="width:100%">
+            <table style="width:100%">
+                <tr>
+                    <td width="20%">
+                       
+                    </td>
+
+                    <td width="80%" align="center" style="vertical-align:top">
+                        <h1> @Model </h1>
+
+                        @using (Html.BeginForm("Principal", "Evaluacion", FormMethod.Post ))
+                        {
+
+                            <input type="submit" value="Regresar"/>
+                        }
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+    <footer class="col-md-12 foot-style">
+        <p>&copy; @DateTime.Now.Year - Evaluación de Desempeño </p>
+    </footer>
+
+
+   

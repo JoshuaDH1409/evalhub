@@ -1,0 +1,97 @@
+﻿@model List<Modelo.VEvaluacion>
+
+<table id="gestion" class="dataTable display" style="width:100%">
+    <thead>
+        <tr>
+            <th>País</th>
+            <th>N° Empleado</th>
+            <th>Nombre Completo</th>
+            <th>Puesto</th>
+            <th>Dirección</th>
+            @*<th>Area</th>*@
+            <th>Estatus</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Modelo.VEvaluacion item in Model)
+        {
+        <tr>
+            <td>@item.PaisName</td>
+            <td>@item.UsuarioSap</td>
+            <td>@item.UsuarioNombre</td>
+            <td>@item.Puesto</td>
+            <td>@item.Division</td>
+            @*<td>@item.Area</td>*@
+            <td><b>@item.statusName</b></td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span class="fa fa-gear"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li>
+                            @Ajax.ActionLink("Iniciar proceso", "NuevaGestion", "Gestion", new { status = 0, proceso = 0, Id = item.UsuarioId }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "", @title = "Iniciar proceso" })
+                        </li>
+                        @if (item.Status == 0 || item.Status == 10)
+                        {
+                            <li>
+                                @Ajax.ActionLink("Enviar recordatorio", "Recordatorio", "Gestion", new { status = 0, Id = item.UsuarioId }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "", @title = "Enviar recordatorio" })
+                            </li>
+                        }
+                        <li>
+                            @Ajax.ActionLink("Eliminar", "NuevaGestion", "Gestion", new { status = 0, proceso = 1, Id = item.UsuarioId }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿Seguro desea eliminar esta evaluación?" }, new { @class = "", @title = "Eliminar" })
+                        </li>
+                        @if (ViewBag.Perfil == 1)
+                        {
+                            <li>
+                                @Ajax.ActionLink(" ", "RegresarEvaluacion", "Gestion", new { Id = item.Id, lvl = 0 }, new AjaxOptions { UpdateTargetId = "respuesta", Confirm = "¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" }, new { @class = "fa fa-retweet" })
+                            </li>
+                            <li>
+                                @Ajax.ActionLink(" ", "RegresarEvaluacion", "Gestion", new { Id = item.Id, lvl = 1 }, new AjaxOptions { UpdateTargetId = "respuesta", Confirm = "¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" }, new { @class = "fa fa-user-plus" })
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>País</th>
+            <th>No Empleado</th>
+            <th>Nombre Completo</th>
+            <th>Puesto</th>
+            <th>Dirección</th>
+            <th>Area</th>
+            <th>Estatus</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>
+
+<script>
+    $(document).ready(function () {
+        // Setup - add a text input to each footer cell
+        $('#gestion tfoot th').each(function () {
+            var title = $(this).text();
+            $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+        });
+
+        var table = $("#gestion").DataTable();
+
+        // Apply the search
+        table.columns().every(function () {
+            var that = this;
+
+            $('input', this.footer()).on('keyup change', function () {
+                if (that.search() !== this.value) {
+                    that
+                        .search(this.value)
+                        .draw();
+                }
+            });
+        });
+    });
+</script>

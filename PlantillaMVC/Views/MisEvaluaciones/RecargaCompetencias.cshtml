@@ -1,0 +1,172 @@
+﻿@model  List<Modelo.ECompetemces>
+
+@*<div class="collapse in" id="collapseCompetencias">
+        <table class="table table-bordered table-striped table-colored" id="tablaCompetencias">
+            <thead>
+                <tr class="bg-primary">
+                    <th></th>
+                    <th class="width-20">
+                        Competencias
+                    </th>
+                    <th class="width-30">
+                        Actividades
+                    </th>
+                    <th class="width-33">
+                        Resultados
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (Modelo.ECompetemces item in Model)
+                    {
+                        <tr class="Competencias" >
+                           @if (ViewBag.status == 0 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1)|| (ViewBag.status == 16 && ViewBag.usuario == 0))
+                           {
+                            <td>
+                                @Ajax.ActionLink(" ", "OperacionCompetencias", "MisEvaluaciones", new { id = item.id, eval = ViewBag.Eval, status=ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleCompetencias", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirCompetencias()" }, new { @class = "fa fa-edit", @style = "font-size: 1.2em", @title = "Editar" })
+
+                                @if (ViewBag.status == 0 || ViewBag.status == 5 && (item.Etapa == 5 || item.Etapa == 2) || ViewBag.status == 11 && (item.Etapa == 10 || item.Etapa == 7) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                                {
+                                  @Ajax.ActionLink(" ", "EliminaUnaCompetencia", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadCompetences", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                }
+                                @if ((ViewBag.status == 4 && item.Etapa != 5) || (ViewBag.status == 10 && item.Etapa != 10))
+                                {
+                                    @Ajax.ActionLink(" ", "EliminarCompetenciasUsr", "MisEvaluaciones", new { id = item.id, Stat = ViewBag.status }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadCompetences", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "glyphicon glyphicon-remove", @style = "color: red; font-size: 1.2em", @title = "Eliminar" })
+                                }
+
+                            </td>
+                           }
+                           else
+                           {
+                               <td></td>
+                           }
+                            @if ((item.Etapa == 1 && ViewBag.StatusPer == 1) || (item.Etapa == 6 && ViewBag.StatusPer == 3))
+                            {
+                                <td bgcolor="#9FF781">@item.tituloTemp</td>
+                                <td bgcolor="#9FF781">@item.actividades</td>
+                                <td bgcolor="#9FF781" class="ResultadoComp">
+                                    @item.resultados
+                                </td>
+                            }
+                            else if ((item.Etapa == 2 && ViewBag.StatusPer == 1) || (item.Etapa == 7 && ViewBag.StatusPer == 3))
+                            {
+                                <td bgcolor="#3ADF00">@item.tituloTemp</td>
+                                <td bgcolor="#3ADF00">@item.actividades</td>
+                                <td bgcolor="#3ADF00" class="ResultadoComp">
+                                    @item.resultados
+                                </td>
+                            }
+                            else if ((item.Etapa == 3 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                            {
+                                <td bgcolor="#81DAF5">@item.tituloTemp</td>
+                                <td bgcolor="#81DAF5">@item.actividades</td>
+                                <td bgcolor="#81DAF5" class="ResultadoComp">
+                                    @item.resultados
+                                </td>
+                            }
+                            else if ((item.Etapa == 4 && ViewBag.StatusPer == 1) || (item.Etapa == 8 && ViewBag.StatusPer == 3))
+                            {
+                                <td bgcolor="#2E9AFE">@item.tituloTemp</td>
+                                <td bgcolor="#2E9AFE">@item.actividades</td>
+                                <td bgcolor="#2E9AFE" class="ResultadoComp">
+                                    @item.resultados
+                                </td>
+                            }
+                            else if ((item.Etapa == 5 && ViewBag.StatusPer == 1) || (item.Etapa == 10 && ViewBag.StatusPer == 3))
+                            {
+                                <td bgcolor="#F5A9BC">@item.tituloTemp</td>
+                                <td bgcolor="#F5A9BC">@item.actividades</td>
+                                <td bgcolor="#F5A9BC">
+                                    @item.resultados
+                                </td>
+                            }
+                            else
+                            {
+                                <td>@item.tituloTemp</td>
+                                <td>@item.actividades</td>
+                                <td class="ResultadoComp">
+                                    @item.resultados
+                                </td>
+                            }
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>*@
+
+<div id="TblCompetencias">
+    <div id="accordionComp" class="">
+        @if (Model != null)
+        {
+            foreach (Modelo.ECompetemces item in Model)
+            {
+                <h3 class="Competencias" style="position: relative;">
+                    @item.tituloTemp
+                    <div style="position: absolute; top: 0px;right: 4px; border: 0;">
+                        @if (ViewBag.status == 0 || ViewBag.status == 2 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                        {
+                            @Ajax.ActionLink(" ", "OperacionCompetencias", "MisEvaluaciones", new { id = item.id, eval = ViewBag.Eval, status = ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleCompetencias", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirCompetencias()" }, new { @class = "fa fa-edit", @style = "color: #FFF;", @title = "Editar" })
+                            if(ViewBag.status == 0 || ViewBag.status == 2 || ViewBag.status == 5 && (item.Etapa == 5 || item.Etapa == 2) || ViewBag.status == 11 && (item.Etapa == 10 || item.Etapa == 7) || (ViewBag.status == 16 && ViewBag.usuario == 0))
+                            {
+                                @Ajax.ActionLink(" ", "EliminaUnaCompetencia", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadCompetences", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red; ", @title = "Eliminar" })
+                            }
+                            if((ViewBag.status == 4 && item.Etapa != 5) || (ViewBag.status == 10 && item.Etapa != 10))
+                            {
+                                @Ajax.ActionLink(" ", "EliminarCompetenciasUsr", "MisEvaluaciones", new { id = item.id, Stat = ViewBag.status }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadCompetences", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red; ", @title = "Eliminar" })
+                            }
+                        }
+                    </div>
+                </h3>
+                <div style="padding: 10px;">
+                    <table class="table table-sm table-bordered table-striped">
+                        <tr class="Competencias">
+                            <td style="background-color: #F9F9F9; font-weight: bold;">Actividades</td>
+                            <td>@item.actividades</td>
+                        </tr>
+                        @if (ViewBag.status >= 4 && ViewBag.status < 16)
+                        {
+                            <tr>
+                                <td colspan="2" style="background-color: #337AB7; color: #FFF; font-weight: bold;">Evaluación de Medio año</td>
+                            </tr>
+                            <tr>
+                                <td>Comentario evaluado</td>
+                                <td class="ResultadoComp">@item.resultados</td>
+                            </tr>
+                            <tr>
+                                <td>Comentario evaluador</td>
+                                <td class="ResultadoCompEval">@item.resultadosEvaluador</td>
+                            </tr>
+                            if (ViewBag.status >= 10 && ViewBag.status < 16)
+                            {
+                                <tr>
+                                    <td colspan="2" style="background-color: #337AB7; color: #FFF; font-weight: bold;">Evaluación fin de año</td>
+                                </tr>
+                                <tr>
+                                    <td>Comentario evaluado</td>
+                                    <td class="ResultadoComp2">@item.resultados2</td>
+                                </tr>
+                                <tr>
+                                    <td>Comentario evaluador</td>
+                                    <td class="ResultadoComp2Eval">@item.resultados2Evaluador</td>
+                                </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            }
+        }
+    </div>
+</div>
+<script>
+        $(function () {
+            $("#accordionComp").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content"
+            });
+        });
+</script>

@@ -1,0 +1,115 @@
+﻿@model PlantillaMVC.Models.EFlitrosDash
+
+<h2>Buscar objetivos</h2>
+
+@*@using (Ajax.BeginForm("DashObjetivesViewResult", "Dash", new { }, new AjaxOptions
+    {
+        UpdateTargetId = "searchResult",
+        HttpMethod = "Post"
+    }, new { id = "dash-search-content" }))*@
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(model => model.Pais, "País", htmlAttributes: new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.Pais, null, "--Seleccionar--", htmlAttributes: new { @class = "form-control", @id = "Country", required=true })
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Periodo, "Periodo", htmlAttributes: new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.Periodo, null, "--Seleccionar--", htmlAttributes: new { @class = "form-control", @id = "Period", required=true })
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Division, "Dirección", htmlAttributes: new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.Division, htmlAttributes: new { @class = "form-control", @id = "Division", required=true })
+        @*@Html.DropDownListFor(model => model.Division, null, "--Seleccionar--", htmlAttributes: new { @class = "form-control" })*@
+    </div>
+    <div>
+        @*<button id="search" type="button" class="btn btn-primary"><i class="fa fa-search"></i> Buscar</button>*@
+        <button type="submit" class="btn btn-primary"><i class="fa fa-file-excel"></i> Descargar objetivos</button>
+    </div>
+}
+@*<div id="searchResult" class="">
+        <table id="searchTableResult">
+            <thead>
+                <tr>
+                    <td>Evaluado</td>
+                    <td>Division</td>
+                </tr>
+            </thead>
+        </table>
+    </div>*@
+
+<script>
+    $(document).ready(function(){
+        /*$("#searchTableResult").DataTable({
+            "ajax": "/Dash/ListObjetives"
+        });*/
+        $("#search").click(function () {
+            $("#searchTableResult").DataTable({
+                "ajax": {
+                    "url" : "/Dash/GetListObjetives",
+                    "type" :"POST",
+                    "data": { cou: $("#Country").val(), per: $("#Period").val(), div: $("#Division").val() }
+                },
+                "columns": [
+                    { "data": "Evaluated" },
+                    { "data": "Division" }
+                ]
+            });
+        });
+
+        $("#Country").change(function () {
+            $("#Period").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetListPeriods")', // we are calling json method
+
+                dataType: 'json',
+
+                data: { cou: $("#Country").val() },
+                // here we are get value of selected country and passing same value as inputto json method GetStates.
+
+                    success: function(states) {
+                        // states contains the JSON formatted list
+                        // of states passed from the controller
+
+                        $.each(states, function (i, state) {
+                            $("#Period").append('<option value="' + state.Value + '">' +
+                                state.Text + '</option>');
+                            // here we are adding option for States
+
+                        });
+
+                        $("#Division").autocomplete({
+                            source: function (request, response) {
+                                $.ajax({
+                                    url: '@Url.Action("GetListDivisions", "Dash")',
+                                    data: {
+                                        cou: $("#Country").val(),
+                                        prefix: request.term
+                                    },
+                                    success: function (data) {
+                                        response($.map(data, function (obj) {
+                                            return {
+                                                label: obj,
+                                                value: obj
+                                            };
+                                        }));
+                                    }
+                                });
+                            },
+                            minLength: 2,
+                            select: function (event, ui) {
+                                $("#Division").val(ui.item.value);
+                            }
+                        });
+                    },
+                error: function (ex) {
+                    alert('Failed to retrieve periods.' + ex);
+                }
+            });
+            return false;
+        });
+
+
+    });
+</script>

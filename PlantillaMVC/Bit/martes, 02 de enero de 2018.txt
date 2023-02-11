@@ -1,0 +1,186 @@
+10:26:36 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+10:26:36 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+10:26:50 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+10:27:19 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+10:28:13 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+10:28:55 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+10:29:16 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+10:34:36 a.m.
+Account/LogIn : El Usuario Karla Chavez ingreso a su cuenta
+-------------------------------
+10:34:36 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Ingreso a Principal
+-------------------------------
+10:35:09 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Ingreso a MiEvaluacion
+-------------------------------
+10:35:44 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Karla Chavez ingreso a cargar/modificar una competencia 
+-------------------------------
+12:44:36 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+12:44:36 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:48:15 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:48:26 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+12:54:08 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:55:19 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+12:56:02 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+12:58:30 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:36:22 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+03:36:22 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+03:37:03 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+03:37:15 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:39:48 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+03:40:00 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:53:12 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+03:53:19 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+03:53:19 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+03:54:06 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+03:54:36 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:59:31 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:00:54 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:01:42 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:03:20 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:04:41 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:05:05 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:05:26 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:07:52 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:18:47 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+04:18:47 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:20:22 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:20:52 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:21:22 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:21:43 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:22:36 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+04:23:31 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:24:31 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:32:37 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+04:32:37 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:33:19 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:33:31 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:35:52 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:37:06 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:37:09 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:37:33 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:42:31 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+04:42:31 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:43:02 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:43:36 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:43:58 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:45:08 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:45:12 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------

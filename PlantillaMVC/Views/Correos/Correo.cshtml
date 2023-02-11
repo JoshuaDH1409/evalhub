@@ -1,0 +1,75 @@
+﻿@model List<Modelo.ECorreos>
+
+<table id="tableCorreos" class="display">
+    <thead>
+        <tr>
+            <th>No°</th>
+            <th>Asunto</th>
+            <th>Mensaje</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (Modelo.ECorreos item in Model)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.asunto</td>
+                    <td>@item.Mensaje</td>
+                    <td>@Ajax.ActionLink(" ", "EdicionCorreo", "Correos", new { Id = @item.id }, new AjaxOptions { UpdateTargetId = "correo", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirNcorreo" }, new { @class = "fa fa-edit fontIcons", @title = "Editar" })</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+
+<div class="modal fade" id="ModalCorreos" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                <h4 class="modal-title">Correo</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="correo"></div> @*se llena con el ajax*@
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    function AbrirNcorreo() {
+        $('#ModalCorreos').modal('show');
+    }
+
+    function CerrarNcorreo() {
+        $('#ModalCorreos').modal('hide');
+        $('.modal-backdrop').remove();
+    }
+
+
+
+
+    $(document).ready(function () {
+        var tablaCliente = $('#tableCorreos').DataTable({
+            "lengthMenu": [[5, 10, 15], [5, 10, 15]]
+        });
+    });
+
+
+</script>

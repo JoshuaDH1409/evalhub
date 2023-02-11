@@ -1,0 +1,156 @@
+09:39:27 a. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+09:39:27 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:43:37 a. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+09:45:25 a. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+09:48:04 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:48:11 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:48:26 a. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+09:49:29 a. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+09:54:59 a. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:55:12 a. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+09:55:52 a. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+09:56:54 a. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+09:58:15 a. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+09:59:16 a. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares ingreso a nuevo usuario
+-------------------------------
+12:20:11 p. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+12:20:18 p. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+12:20:32 p. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+12:20:53 p. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+12:27:39 p. m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+12:35:35 p. m.
+Account/LogIn : El Usuario    Reyes ingreso a su cuenta
+-------------------------------
+12:35:35 p. m.
+Evaluacion/Principal : El usuario:    Reyes Ingreso a Principal
+-------------------------------
+12:37:28 p. m.
+Evaluacion/Principal : El usuario:    Reyes Ingreso a Principal
+-------------------------------
+12:38:20 p. m.
+Evaluacion/Principal : El usuario:    Reyes Ingreso a Principal
+-------------------------------
+12:39:37 p. m.
+Evaluacion/Principal : El usuario:    Reyes Ingreso a Principal
+-------------------------------
+12:53:23 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares Reyes ingreso a su cuenta
+-------------------------------
+12:53:25 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Reyes Ingreso a Principal
+-------------------------------
+12:53:49 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Reyes Ingreso a Principal
+-------------------------------
+12:53:54 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Reyes Ingreso a Principal
+-------------------------------
+12:53:56 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Reyes Ingreso a Principal
+-------------------------------
+12:54:09 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Reyes Ingreso a Principal
+-------------------------------
+12:54:12 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares Reyes ingreso a usuarios
+-------------------------------
+12:57:57 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares Reyes ingreso a usuarios
+-------------------------------
+01:01:45 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares Reyes ingreso a usuarios
+-------------------------------
+01:07:13 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares Reyes ingreso a usuarios
+-------------------------------
+01:08:14 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares Reyes ingreso a usuarios
+-------------------------------
+01:14:32 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Reyes Ingreso a Principal
+-------------------------------
+01:14:59 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares Reyes ingreso a usuarios
+-------------------------------
+01:15:17 p. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares Reyes ingreso a nuevo usuario
+-------------------------------
+01:15:55 p. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares Reyes ingreso a nuevo usuario
+-------------------------------
+01:17:01 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares Reyes ingreso a usuarios
+-------------------------------
+01:17:34 p. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares Reyes ingreso a nuevo usuario
+-------------------------------
+01:18:25 p. m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares Reyes ingreso a usuarios
+-------------------------------
+01:18:38 p. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares Reyes ingreso a nuevo usuario
+-------------------------------
+01:18:49 p. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares Reyes ingreso a nuevo usuario
+-------------------------------
+01:19:28 p. m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes Cázares Reyes ingreso a nuevo usuario
+-------------------------------
+02:03:30 p. m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+02:03:33 p. m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+02:05:04 p. m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+02:05:13 p. m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+02:06:04 p. m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+02:09:59 p. m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------
+02:11:53 p. m.
+DashBoard/Create : El usuario: Fernando Reyes Cázares Ingreso a crear documento
+-------------------------------

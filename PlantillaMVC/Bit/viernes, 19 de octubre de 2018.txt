@@ -1,0 +1,913 @@
+10:34:20 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:34:20 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:34:32 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+10:35:16 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:35:16 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:35:16 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:35:16 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:35:16 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:35:16 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+10:35:19 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+10:35:19 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+10:35:57 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+10:41:54 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:41:54 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:41:59 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+10:42:31 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:42:31 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:42:31 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:42:31 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:42:31 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:42:31 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+10:42:34 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+10:42:34 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+10:49:36 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:49:36 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:49:41 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+10:51:11 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:51:11 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:51:11 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:51:11 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:51:11 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:51:11 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+10:51:14 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+10:51:14 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+10:55:12 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:55:12 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:55:16 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+10:55:46 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:55:46 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:55:46 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:55:46 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:55:46 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+10:55:46 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+10:55:49 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+10:55:49 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+11:06:37 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:06:37 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:06:40 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+11:07:09 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:07:09 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:07:09 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:07:09 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:07:09 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:07:09 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+11:07:12 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+11:07:12 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+11:16:35 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:16:35 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:16:39 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+11:17:09 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:17:09 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:17:09 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:17:09 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:17:09 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:17:09 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+11:17:12 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+11:17:12 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+11:20:24 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:20:24 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:20:31 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+11:21:43 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:21:43 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:21:43 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:21:43 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:21:43 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:21:43 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+11:21:46 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+11:21:46 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+11:23:52 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:23:52 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:23:55 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+11:24:51 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:24:51 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:24:51 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:24:51 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:24:51 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:24:51 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+11:24:53 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+11:24:54 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+11:37:27 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:37:27 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:37:31 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+11:38:00 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:38:00 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:38:01 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:38:01 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:38:01 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:38:01 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+11:38:03 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+11:38:03 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+11:41:39 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:41:39 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:41:43 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+11:42:21 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:42:21 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:42:22 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:42:22 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:42:22 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:42:22 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+11:42:24 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+11:42:24 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+11:47:07 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:47:07 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:47:15 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+11:48:07 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:48:07 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:48:08 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:48:08 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:48:08 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:48:08 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+11:48:10 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+11:48:10 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+11:56:13 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:56:13 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:56:18 a.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+11:57:12 a.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:57:12 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:57:12 a.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:57:12 a.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:57:12 a.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+11:57:12 a.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+11:57:15 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+11:57:15 a.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+12:01:56 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:01:56 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:02:41 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+12:03:19 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:03:19 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:03:19 p.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.ParagraphCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 645
+-------------------------------
+12:04:29 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:04:29 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:04:34 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+12:05:03 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:05:03 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:05:03 p.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentObjectCollection.get_Item(Int32 index)
+   at Spire.Doc.Collections.DocumentSubsetCollection.GetByIndex(Int32 index)
+   at Spire.Doc.Collections.ParagraphCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 645
+-------------------------------
+12:07:14 p.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+12:07:17 p.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+12:07:22 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:07:23 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:07:26 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+12:07:56 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:07:56 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:07:56 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:07:56 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:07:56 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:07:56 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:07:59 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:07:59 p.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+12:09:45 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:09:45 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:09:49 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+12:10:22 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:10:22 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:10:22 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:10:22 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:10:22 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:10:22 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:10:25 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:10:25 p.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+12:49:51 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:49:51 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:49:55 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+12:50:25 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:50:25 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:50:25 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:50:25 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:50:25 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:50:25 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:50:29 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:50:29 p.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+12:52:19 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:52:19 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:52:22 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+12:52:49 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:52:49 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:52:50 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:52:50 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:52:50 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:52:50 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:52:53 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:52:53 p.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+12:55:17 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+12:55:17 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+12:55:21 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+12:55:53 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:55:53 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:55:53 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:55:53 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:55:53 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+12:55:53 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:55:56 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:55:56 p.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+01:05:26 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:05:26 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:05:32 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+01:06:04 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:06:04 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:06:05 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:06:05 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:06:05 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:06:05 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:06:07 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:06:07 p.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+01:15:40 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:15:40 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:16:01 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+01:16:37 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:16:37 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:16:37 p.m.
+MiHistorial/Historial : *****exception:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Spire.Doc.Collections.CellCollection.get_Item(Int32 index)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdfDetailed(Int32 Id) in C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\Controllers\MiHistorialController.cs:line 675
+-------------------------------
+01:18:03 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:18:03 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:18:06 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+01:18:59 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:18:59 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:18:59 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:18:59 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:19:00 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:19:00 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:19:02 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:19:02 p.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+01:21:08 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:21:08 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:21:12 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+01:21:43 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:21:43 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:21:43 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:21:44 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:21:44 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:21:44 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:21:46 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:21:46 p.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+01:26:17 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:26:17 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:26:22 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+01:27:11 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:27:11 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:27:12 p.m.
+MiHistorial/Historial : llenado de competencias de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:27:12 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:27:12 p.m.
+MiHistorial/Historial : fin de Calificación de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:27:12 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:27:14 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:27:14 p.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Meneses Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+01:33:19 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:33:19 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:33:24 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+01:33:55 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:33:55 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:33:56 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:33:56 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:33:56 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000022_Mina Hid Guillermina Ingreso a Historial
+-------------------------------
+01:33:56 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:33:59 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:33:59 p.m.
+MiHistorial/DownloadPdf : El usuario: Mina Hid Guillermina Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+01:37:49 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:37:49 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:38:00 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+01:38:33 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:38:33 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:38:34 p.m.
+MiHistorial/Historial : llenado de competencias de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:38:34 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:38:34 p.m.
+MiHistorial/Historial : fin de Calificación de: 32001329_Karla Chavez Meneses Ingreso a Historial
+-------------------------------
+01:38:34 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:38:37 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:38:37 p.m.
+MiHistorial/DownloadPdf : El usuario: Karla Chavez Meneses Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------
+01:49:29 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:49:29 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:49:34 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+01:49:40 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+01:52:24 p.m.
+DashBoard/DashBoard : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:52:32 p.m.
+DashBoard/Consultar : El usuario: Fernando Reyes Cázares Ingreso a dash board
+-------------------------------
+01:53:23 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:53:23 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:53:23 p.m.
+MiHistorial/Historial : llenado de objetivos de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:53:23 p.m.
+MiHistorial/Historial : llenado de competencias de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:53:23 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:53:23 p.m.
+MiHistorial/Historial : fin de Calificación de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:53:23 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:53:25 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:53:25 p.m.
+MiHistorial/DownloadPdf : El usuario: Reyes Saavedra Fernando Logro descargar su  evaluación del periodo Administración del Desempeño 2019
+-------------------------------
+01:53:44 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+01:54:17 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:54:18 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:54:18 p.m.
+MiHistorial/Historial : llenado de competencias de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:54:18 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:54:18 p.m.
+MiHistorial/Historial : fin de Calificación de: 32001110_Reyes Saavedra Fernando Ingreso a Historial
+-------------------------------
+01:54:18 p.m.
+MiHistorial/Historial : path:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:54:19 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\Reyesfe\Documents\Visual Studio 2017\Projects\EvaluacionDesempeno\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:54:19 p.m.
+MiHistorial/DownloadPdf : El usuario: Reyes Saavedra Fernando Logro descargar su  evaluación del periodo Administración del Desempeño 2019
+-------------------------------

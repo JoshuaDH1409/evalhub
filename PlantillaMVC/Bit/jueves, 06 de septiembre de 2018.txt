@@ -1,0 +1,168 @@
+09:29:09 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+09:29:09 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+09:29:30 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+09:31:15 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+10:49:19 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+10:49:19 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:49:20 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:52:03 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:52:10 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+10:52:13 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+10:53:22 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:02:30 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:02:30 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:02:33 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:02:41 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+11:04:05 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:04:14 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+11:04:21 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo4193
+-------------------------------
+11:04:21 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+11:04:29 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+11:04:34 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo4193
+-------------------------------
+11:04:34 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+11:12:57 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+11:13:02 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+11:13:09 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo4193
+-------------------------------
+11:13:09 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+11:16:33 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:16:35 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+11:16:49 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:17:05 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:17:11 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:17:34 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:17:37 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:17:38 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:18:32 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:18:34 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:18:59 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:19:01 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+11:19:02 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:21:21 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:21:23 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+11:21:26 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:22:17 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:22:20 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:26:36 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:26:40 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:27:03 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+11:28:55 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:28:57 a.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+11:28:59 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:30:51 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:30:57 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+11:31:11 a.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+11:31:15 a.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo4193
+-------------------------------
+11:31:15 a.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+11:32:49 a.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------

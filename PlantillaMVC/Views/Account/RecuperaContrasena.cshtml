@@ -1,0 +1,36 @@
+﻿@model PlantillaMVC.Models.RecuperarContraseña
+
+
+<div id="Respuesta">
+    @using (Ajax.BeginForm("EnviarCorreoPass", "Account", new { }, new AjaxOptions
+    {
+        UpdateTargetId = "Respuesta",
+        OnBegin = "AbreCierraDilogoEspera",
+        OnComplete = "AbreCierraDilogoEspera",
+        HttpMethod = "Get"
+    }, new { id = "Usuario", novalidate = "novalidate" }))
+    {
+
+        
+        <table style="width:100%">
+            <tr>
+                
+                <td>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email", required = true })
+                    </div>
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+        </table>
+        <br />
+        <div class="modal-footer">
+            <button type="submit" id="enviar" class="btn btn-success fa fa-check"> Enviar</button>
+            <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal"> Cerrar</button>
+        </div>
+        
+    }
+</div>

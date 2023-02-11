@@ -1,0 +1,222 @@
+04:45:54 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:45:54 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:45:59 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:51:19 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:52:07 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:53:21 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:02:19 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:02:30 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:02:48 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+05:04:53 p.m.
+Evaluacion/Principal : El usuario: MELISSA DANIELA MUÑOZ YÉPEZ Ingreso a Principal
+-------------------------------
+05:05:16 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:05:50 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:06:08 p.m.
+MisEvaluaciones/EliminaUnObjetivos : El usuario: Fernando Reyes Cázares Elimino objetivo 4195
+-------------------------------
+05:06:08 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+05:06:13 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:06:39 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+05:06:53 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:06:57 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo4193
+-------------------------------
+05:06:57 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+05:07:05 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+05:07:27 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares Guardo la competencia 2284
+-------------------------------
+05:07:27 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Cázares Actualizó las competencias en la evaluación 842
+-------------------------------
+05:07:56 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:08:02 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:08:15 p.m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+05:09:49 p.m.
+Periodos/NuevoPeriodo : El usuario: Fernando Reyes Cázares Ingreso a nuevo periodo
+-------------------------------
+05:10:14 p.m.
+Periodos/TerminarPeriodo : El usuario: Fernando Reyes Cázares Finaliza etapa de carga de objetivos del periodo Ejemplo
+-------------------------------
+05:10:29 p.m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+05:12:01 p.m.
+Periodos/NuevoPeriodo : El usuario: Fernando Reyes Cázares Ingreso a nuevo periodo
+-------------------------------
+05:12:20 p.m.
+Periodos/GuardaPeriodo : El usuario: Fernando Reyes Cázares Ingresó a nuevo periodo
+-------------------------------
+05:12:20 p.m.
+Periodos/GuardaPeriodo : El usuario: Fernando Reyes Cázares Guardo  el nuevo periodoEjemplo
+-------------------------------
+05:12:39 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:12:41 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:12:49 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:12:59 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo4193
+-------------------------------
+05:13:00 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+05:13:44 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:14:07 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo4194
+-------------------------------
+05:14:07 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+05:14:12 p.m.
+MisEvaluaciones/OperacionObjetivos : El usuario: Fernando Reyes Cázares ingreso a crear/modificar un objetivo 
+-------------------------------
+05:14:27 p.m.
+MisEvaluaciones/GuardaObjetivos : El usuario: Fernando Reyes Cázares Guardo el objetivo4195
+-------------------------------
+05:14:27 p.m.
+Gestion/RecargaObjetivos : El usuario: Fernando Reyes Cázares Actualizó la vista de objetivos en la evaluación 842
+-------------------------------
+05:14:37 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares ingreso a cargar/modificar una competencia 
+-------------------------------
+05:14:51 p.m.
+MisEvaluaciones/OperacionCompetencias : El usuario: Fernando Reyes Cázares Guardo la competencia 2284
+-------------------------------
+05:14:51 p.m.
+Gestion/RecargaCompetencias : El usuario: Fernando Reyes Cázares Actualizó las competencias en la evaluación 842
+-------------------------------
+05:15:38 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+05:17:41 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Meneses Ingreso a Principal
+-------------------------------
+05:18:13 p.m.
+Periodos/Periodos : El usuario: Karla Chavez Meneses Ingreso a periodos
+-------------------------------
+05:19:45 p.m.
+Usuario/Usuarios : El Usuario Karla Chavez Meneses ingreso a usuarios
+-------------------------------
+05:21:58 p.m.
+Usuario/NuevoUsuario : El Usuario Karla Chavez Meneses ingreso a nuevo usuario
+-------------------------------
+05:22:26 p.m.
+Gestion/GestionEvaluacion : El usuario: Karla Chavez Meneses Ingreso a gestion de evaluaciones
+-------------------------------
+05:22:51 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:22:56 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+05:23:13 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+05:25:42 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Meneses Ingreso a Principal
+-------------------------------
+05:28:08 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:28:10 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:32:31 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:37:57 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:37:58 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:39:18 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:39:21 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:39:43 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes Cázares guardo su autoevaluación 842
+-------------------------------
+05:39:43 p.m.
+MisEvaluaciones/GuardaClaseEvaluacion : El usuario: Fernando Reyes Cázares notifico de su autoevaliación a: 842
+-------------------------------
+05:39:45 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a MiEvaluacion
+-------------------------------
+05:39:52 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+05:41:53 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Meneses Ingreso a Principal
+-------------------------------
+05:41:57 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Meneses Ingreso a MiEvaluacion
+-------------------------------
+05:42:20 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Meneses Ingreso a MiEvaluacion
+-------------------------------
+05:44:17 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Meneses Ingreso a Principal
+-------------------------------
+05:44:19 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Meneses Ingreso a MiEvaluacion
+-------------------------------
+05:48:27 p.m.
+Evaluacion/Principal : El usuario: Karla Chavez Meneses Ingreso a Principal
+-------------------------------
+05:48:29 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Meneses Ingreso a MiEvaluacion
+-------------------------------
+06:01:47 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------

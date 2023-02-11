@@ -1,0 +1,111 @@
+07:32:26 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+07:32:27 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+07:32:38 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+07:33:10 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+07:35:58 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+07:36:05 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+07:36:22 a.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+07:36:23 a.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Guardo  el nuevo periodoMX EVALUACIÓN DEL DESEMPEÑO 2018
+-------------------------------
+07:38:22 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+07:38:42 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+07:42:00 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+07:42:04 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+07:42:15 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+07:43:23 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: jose roberto perez galindo Ingreso a MiEvaluacion
+-------------------------------
+07:44:50 a.m.
+MiHistorial/Historial : se inicia el PDF de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+07:44:52 a.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+07:45:17 a.m.
+MiHistorial/Historial : llenado de objetivos de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+07:45:17 a.m.
+MiHistorial/Historial : llenado de competencias de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+07:45:17 a.m.
+MiHistorial/Historial : llenado de Calificación de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+07:45:17 a.m.
+MiHistorial/Historial : fin de Calificación de: 001_jose roberto perez galindo Ingreso a Historial
+-------------------------------
+07:45:17 a.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+07:45:28 a.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+07:45:28 a.m.
+MiHistorial/DownloadPdf : El usuario: jose roberto perez galindo Logro descargar su  evaluación del periodo MX EVALUACIÓN DEL DESEMPEÑO 2018
+-------------------------------
+07:45:28 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+07:46:00 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+07:50:05 a.m.
+Usuario/Usuarios : El Usuario jose roberto perez galindo ingreso a usuarios
+-------------------------------
+07:50:33 a.m.
+Usuario/NuevoUsuario : El Usuario jose roberto perez galindo ingreso a nuevo usuario
+-------------------------------
+07:59:20 a.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+07:59:20 a.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+08:00:05 a.m.
+Usuario/Usuarios : El Usuario jose roberto perez galindo ingreso a usuarios
+-------------------------------
+08:01:04 a.m.
+Usuario/NuevoUsuario : El Usuario jose roberto perez galindo ingreso a nuevo usuario
+-------------------------------
+08:03:25 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+08:03:56 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+08:04:23 a.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+08:04:23 a.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Guardo  el nuevo periodoMX EVALUACIÓN DEL DESEMPEÑO 2018
+-------------------------------
+08:04:29 a.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+08:04:31 a.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------

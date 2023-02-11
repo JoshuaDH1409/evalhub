@@ -1,0 +1,60 @@
+04:19:53 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+04:20:02 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+04:21:02 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+04:21:02 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+04:21:20 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: Fernando Reyes Cázares Ingreso a Historial Usuarios
+-------------------------------
+04:21:54 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+04:22:12 p.m.
+Periodos/Periodos : El usuario: Fernando Reyes Cázares Ingreso a periodos
+-------------------------------
+04:47:39 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+04:47:39 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:47:49 p.m.
+MiHistorial/Historial : El usuario: jose roberto perez galindo Ingreso a Historial
+-------------------------------
+04:47:59 p.m.
+HistorialUsrs/HistorialUsrs : El usuario: jose roberto perez galindo Ingreso a Historial Usuarios
+-------------------------------
+04:48:16 p.m.
+MiHistorial/Historial : se inicia el PDF de: 32000824_Gomez Pinto Tomas Enrique Ingreso a Historial
+-------------------------------
+04:48:16 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 32000824_Gomez Pinto Tomas Enrique Ingreso a Historial
+-------------------------------
+04:48:16 p.m.
+MiHistorial/Historial : llenado de objetivos de: 32000824_Gomez Pinto Tomas Enrique Ingreso a Historial
+-------------------------------
+04:48:16 p.m.
+MiHistorial/Historial : llenado de competencias de: 32000824_Gomez Pinto Tomas Enrique Ingreso a Historial
+-------------------------------
+04:48:16 p.m.
+MiHistorial/Historial : llenado de Calificación de: 32000824_Gomez Pinto Tomas Enrique Ingreso a Historial
+-------------------------------
+04:48:16 p.m.
+MiHistorial/Historial : fin de Calificación de: 32000824_Gomez Pinto Tomas Enrique Ingreso a Historial
+-------------------------------
+04:48:16 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+04:48:21 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+04:48:21 p.m.
+MiHistorial/DownloadPdf : El usuario: Gomez Pinto Tomas Enrique Logro descargar su  evaluación del periodo Administración del Desempeño 2018
+-------------------------------

@@ -1,0 +1,28 @@
+﻿@model List<Modelo.EEscaletaEmpresa>
+<div id="pnlCalificacionFinal">
+
+    <div id="EscaletaCompleta">
+        <table class="table table-bordered table-sm table-striped">
+            <thead class="bg-primary">
+                <tr>
+                    <th align="center">
+                        Employer Company Performance<br />target achieved
+                    </th>
+                    <th>Criteria</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var e in Model)
+                {
+                    <tr>
+                        <td>@e.Performance</td>
+                        <td align="center">@e.Criteria%</td>
+                        <td align="center">@e.Score%</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

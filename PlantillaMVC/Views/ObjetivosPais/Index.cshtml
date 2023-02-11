@@ -1,0 +1,190 @@
+﻿@model IEnumerable<Modelo.EObjetivoPais>
+<div class="modal fade" id="ModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-light">
+                <h4 class="modal-title">Objetivos</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="NuevoItem"></div> @*se llena con el ajax*@
+            </div>
+        </div>
+    </div>
+</div>
+<center><h3>KPI´s Spanish Latam - @ViewBag.Pais </h3></center>
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <p>@TempData["Mensaje"]</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+@if (!Convert.ToBoolean(ViewBag.Cerrados))
+{
+    <p>
+        @Ajax.ActionLink("Nuevo Objetivo", "Nuevo", "ObjetivosPais", new { Id = "0" },
+            new AjaxOptions { UpdateTargetId = "NuevoItem", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirModal" },
+            new { @class = "btn btn-primary" })
+    </p>
+}
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Objetivo_Dsc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Objetivo_Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Objetivo_Cumplimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Objetivo_Dsc)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Objetivo_Peso)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Objetivo_Cumplimiento)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @if (!item.Objetivo_Cerrado)
+                    {
+                        @Ajax.ActionLink("Editar", "Nuevo", "ObjetivosPais", new { Id = @item.ID }, new AjaxOptions { UpdateTargetId = "NuevoItem", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirModal" }, new { @class = "fa fa-edit", @title = "Editar" })
+                        @Ajax.ActionLink("Eliminar", "Eliminar", "ObjetivosPais", new { Id = @item.ID }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "confirma();", OnComplete = "VerificaSesionEnv()", OnSuccess = "VerificaSesionEnv()" }, new { @class = "fa fa-times eliminar", @style = "color:red", @title = "Eliminar" })
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot class="thead-dark">
+        <tr>
+            <th colspan="2">Total</th>
+            <th style="text-align: center !important"></th>
+            <th style="text-align: center !important"></th>
+            <th style="text-align: center !important"></th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>
+<hr />
+@if (Convert.ToInt32(ViewBag.PesoTotal) == 100 && Convert.ToInt32(ViewBag.EtapaPeriodo) == 3 && !Convert.ToBoolean(ViewBag.Cerrados))
+{
+    <center>
+        <p>
+            @Ajax.ActionLink("Cerrar Objetivos", "Cerrar", "ObjetivosPais", new { },
+             new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "confirmaCierre();AbreCierraDilogoEspera", OnComplete = "VerificaSesionEnv()" },
+             new { @class = "btn btn-danger" })
+        </p>
+    </center>
+}
+else if (Convert.ToBoolean(ViewBag.Cerrados))
+{
+    <center><h4 class="bg-info">Los objetivos han sido cerrados.</h4></center>
+}
+<script type="text/javascript">
+    function AbrirModal() {
+        $('#ModalForm').modal('show');
+    }
+
+    function CerrarPantalla() {
+        $('#ModalForm').modal('hide');
+        $('.modal-backdrop').remove();
+    }
+    function confirma(e) {
+        var resp = confirm("Está a punto de eliminar el objetivo, ¿está seguro?");
+        if (resp) {
+            return;
+        }
+        else {
+            e.preventDefault();
+        }
+    }
+    function confirmaCierre(e) {
+        var resp = confirm("Está a punto de cerrar los objetivos, ¿está seguro?");
+        if (resp) {
+            return;
+        }
+        else {
+            e.preventDefault();
+        }
+    }
+    $(document).ready(function () {
+        $('.table').DataTable(
+            {
+                "paging": false,
+                "ordering": false,
+                "info": false,
+                "columnDefs": [
+                    {
+                        "targets": [0],
+                        "visible": false,
+                        "searchable": false
+                    }],
+                "footerCallback": function (row, data, start, end, display) {
+                    var api = this.api(), data;
+
+                    // Remove the formatting to get integer data for summation
+                    var intVal = function (i) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '') * 1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+
+                    // Total over this page
+                    pesoTotal = api
+                        .column(2, { page: 'current' })
+                        .data()
+                        .reduce(function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0);
+                    cumplimientoTotal = api
+                        .column(3, { page: 'current' })
+                        .data()
+                        .reduce(function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0);
+                    valorTotal = api
+                        .column(4, { page: 'current' })
+                        .data()
+                        .reduce(function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0);
+                    // Update footer
+                    $(api.column(2).footer()).html(
+                        pesoTotal
+                    );
+                    $(api.column(3).footer()).html(
+                        cumplimientoTotal
+                    );
+                    $(api.column(4).footer()).html(
+                        valorTotal.toFixed(1)
+                    );
+                }
+            });
+
+    });
+</script>

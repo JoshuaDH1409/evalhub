@@ -1,0 +1,104 @@
+﻿
+
+
+
+@model Modelo.ELogin
+
+
+@{
+    ViewBag.Title = "Inicio de sesión";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table style="width:100%">
+    <tr>
+        <td>
+            <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                    @Html.AntiForgeryToken()
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        <br />
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                            </div>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Contraseña" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="input-group">
+
+                                    @*<span class="input-group-addon"><i class="glyphicon glyphicon-log-in"></i></span>
+                    <input type="submit" value=" Iniciar sesión" style="font-family:inherit" class="btn btn-success"/>*@
+
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fa fa-sign-in-alt"></i> Iniciar sesión
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div style="color:#FF0000;"> @ViewBag.Error </div>
+                }
+            </section>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center">
+            <div class="col-md-offset-2 col-md-10">
+                @Ajax.ActionLink(" Recuperar contraseña", "RecuperaContrasena", "Account", new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { Class = "btn btn-info fa fa-envelope" })
+            </div>
+        </td>
+    </tr>
+</table>
+        
+
+
+<div class="modal fade" id="ModalDetalle" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                <h4 class="modal-title">Recupera contraseña</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="Detalle"> </div> @*se llena con el ajax*@
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+function AbrirDetalle(){
+    $('#ModalDetalle').modal('show');
+}
+
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

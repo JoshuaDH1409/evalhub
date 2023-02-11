@@ -1,0 +1,393 @@
+12:01:02 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+12:01:08 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+12:01:08 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:01:25 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:02:03 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:02:15 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:02:22 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+12:02:31 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+12:02:32 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Guardo  el nuevo periodoMX EVALUACIÓN DEL DESEMPEÑO 2018
+-------------------------------
+12:02:45 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:03:06 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+12:05:36 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:05:42 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+12:05:51 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+12:07:05 p.m.
+Correo/Correo : El usuario: jose roberto perez galindo Ingreso a correo
+-------------------------------
+12:07:17 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:08:39 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+12:10:50 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+12:10:55 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+12:40:59 p.m.
+Account/LogIn : El Usuario Nestor Cano ingreso a su cuenta
+-------------------------------
+12:41:00 p.m.
+Evaluacion/Principal : El usuario: Nestor Cano Ingreso a Principal
+-------------------------------
+12:41:40 p.m.
+MiHistorial/Historial : se inicia el PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:41:40 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:41:40 p.m.
+MiHistorial/Historial : llenado de objetivos de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:41:40 p.m.
+MiHistorial/Historial : llenado de competencias de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:41:40 p.m.
+MiHistorial/Historial : llenado de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:41:40 p.m.
+MiHistorial/Historial : fin de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:41:40 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:41:46 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:41:46 p.m.
+MiHistorial/DownloadPdf : El usuario: Cesar Peña Logro descargar su  evaluación del periodo Periodo Mexico
+-------------------------------
+12:43:25 p.m.
+MiHistorial/Historial : se inicia el PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:25 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:25 p.m.
+MiHistorial/Historial : llenado de objetivos de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:25 p.m.
+MiHistorial/Historial : llenado de competencias de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:25 p.m.
+MiHistorial/Historial : llenado de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:25 p.m.
+MiHistorial/Historial : fin de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:25 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:43:32 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:43:32 p.m.
+MiHistorial/DownloadPdf : El usuario: Cesar Peña Logro descargar su  evaluación del periodo Periodo Mexico
+-------------------------------
+12:43:38 p.m.
+MiHistorial/Historial : se inicia el PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:38 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:38 p.m.
+MiHistorial/Historial : llenado de objetivos de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:39 p.m.
+MiHistorial/Historial : llenado de competencias de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:39 p.m.
+MiHistorial/Historial : llenado de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:39 p.m.
+MiHistorial/Historial : fin de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:43:39 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:43:45 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:43:45 p.m.
+MiHistorial/DownloadPdf : El usuario: Cesar Peña Logro descargar su  evaluación del periodo Periodo Mexico
+-------------------------------
+12:51:26 p.m.
+MiHistorial/Historial : se inicia el PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:51:26 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:51:26 p.m.
+MiHistorial/Historial : llenado de objetivos de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:51:26 p.m.
+MiHistorial/Historial : llenado de competencias de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:51:30 p.m.
+MiHistorial/Historial : llenado de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:51:30 p.m.
+MiHistorial/Historial : fin de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:51:30 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+12:51:35 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+12:51:35 p.m.
+MiHistorial/DownloadPdf : El usuario: Cesar Peña Logro descargar su  evaluación del periodo Periodo Mexico
+-------------------------------
+12:55:41 p.m.
+MiHistorial/Historial : se inicia el PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:55:41 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:56:44 p.m.
+MiHistorial/Historial : llenado de objetivos de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:56:47 p.m.
+MiHistorial/Historial : llenado de competencias de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:56:53 p.m.
+MiHistorial/Historial : se inicia el PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:56:58 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:59:00 p.m.
+MiHistorial/Historial : llenado de objetivos de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:59:23 p.m.
+MiHistorial/Historial : llenado de competencias de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+12:59:40 p.m.
+MiHistorial/Historial : llenado de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:00:06 p.m.
+MiHistorial/Historial : llenado de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:02:41 p.m.
+MiHistorial/Historial : fin de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:02:41 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:02:41 p.m.
+MiHistorial/Historial : fin de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:02:41 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:02:43 p.m.
+MiHistorial/Historial : se inicia el PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:02:43 p.m.
+MiHistorial/Historial : se llena Cabecera del PDF de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:02:45 p.m.
+MiHistorial/Historial : llenado de objetivos de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:03:04 p.m.
+MiHistorial/Historial : llenado de competencias de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:03:10 p.m.
+MiHistorial/Historial : llenado de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:03:10 p.m.
+MiHistorial/Historial : fin de Calificación de: 2121_Cesar Peña Ingreso a Historial
+-------------------------------
+01:03:10 p.m.
+MiHistorial/Historial : path:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.docx Ingreso a Historial
+-------------------------------
+01:03:19 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:03:19 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:03:19 p.m.
+MiHistorial/DownloadPdf : El usuario: Cesar Peña Logro descargar su  evaluación del periodo Periodo Mexico
+-------------------------------
+01:03:19 p.m.
+MiHistorial/Historial : *****exception:System.IO.IOException: The process cannot access the file 'C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   at System.IO.File.ReadAllBytes(String path)
+   at PlantillaMVC.Controllers.MiHistorialController.DownloadPdf(Int32 Id) in C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\Controllers\MiHistorialController.cs:line 536
+-------------------------------
+01:03:20 p.m.
+MiHistorial/Historial : Se guardo el archivo:C:\Users\perezjo\Documents\EvalDesv2\Evaluacion etapa7\PlantillaMVC\PlantillaMVC\PlantillasReportes\Resp.pdf Ingreso a Historial
+-------------------------------
+01:03:20 p.m.
+MiHistorial/DownloadPdf : El usuario: Cesar Peña Logro descargar su  evaluación del periodo Periodo Mexico
+-------------------------------
+03:41:24 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+03:41:24 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+03:42:02 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+03:42:13 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:42:17 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:49:39 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:52:42 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+03:52:42 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+03:53:54 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+03:54:07 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:56:56 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+03:56:56 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+03:57:38 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+03:57:50 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+03:58:38 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+03:58:38 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Guardo  el nuevo periodoPeriodo Mexico
+-------------------------------
+04:01:59 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:05:50 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:06:11 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:06:11 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Guardo  el nuevo periodoPeriodo México
+-------------------------------
+04:07:37 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:15:33 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:36:04 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+04:36:04 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:36:29 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:36:43 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:37:02 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:37:02 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Guardo  el nuevo periodoMX EVALUACIÓN DEL DESEMPEÑO 2018
+-------------------------------
+04:37:06 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:37:08 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:37:15 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:37:15 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Guardo  el nuevo periodoPeriodo México
+-------------------------------
+04:38:33 p.m.
+Account/LogIn : intento fallido de entrar a jose.perez_becloud@aspenlatam.com
+-------------------------------
+04:38:38 p.m.
+Account/LogIn : El Usuario jose roberto perez galindo ingreso a su cuenta
+-------------------------------
+04:38:38 p.m.
+Evaluacion/Principal : El usuario: jose roberto perez galindo Ingreso a Principal
+-------------------------------
+04:39:27 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:39:32 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:39:40 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:39:40 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Guardo  el nuevo periodoPeriodo México
+-------------------------------
+04:39:43 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:39:46 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------
+04:39:51 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Ingresó a nuevo periodo
+-------------------------------
+04:39:51 p.m.
+Periodos/GuardaPeriodo : El usuario: jose roberto perez galindo Guardo  el nuevo periodoMX EVALUACIÓN DEL DESEMPEÑO 2018
+-------------------------------
+04:46:00 p.m.
+Periodos/Periodos : El usuario: jose roberto perez galindo Ingreso a periodos
+-------------------------------
+04:46:04 p.m.
+Periodos/NuevoPeriodo : El usuario: jose roberto perez galindo Ingreso a nuevo periodo
+-------------------------------

@@ -1,0 +1,181 @@
+﻿
+@model  List<Modelo.EPeriodos>
+
+<center><h2>Periodos activos</h2></center>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <p>@TempData["Message"]</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<div style="text-align:left; font-size:20px">
+    @Ajax.ActionLink("Nuevo Periodo", "NuevoPeriodo", "Periodos", new { Id = "0" }, new AjaxOptions { UpdateTargetId = "NuevoItem", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "btn btn-primary" })
+</div>
+
+
+<style>
+
+    .Imagen {
+        max-height: 50px;
+        max-width: 50px;
+        object-fit: cover;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+</style>
+
+<br />
+
+<table id="tableCliente" class="table display">
+    <thead class="thead-light">
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Id</th>
+            <th>Periodo</th>
+            <th>Etapa</th>
+            <th>País</th>
+            <th>Inicio </th>
+            <th>Fin</th>
+            <th>Avance(%)</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (Modelo.EPeriodos item in Model)
+            {
+                <tr>
+                    <td>@item.Grupo</td>
+                    <td>@item.porcentaje</td>
+                    @*@switch (item.Status)
+                        {
+                            case 0:
+                                <td>Carga de objetivos</td>
+                                break;
+                            case 1:
+                                <td>Evaluación primer periodo</td>
+                                break;
+                            case 2:
+                                <td>Calibración primer periodo</td>
+                                break;
+                            case 3:
+                                <td>Evaluación segundo periodo</td>
+                                break;
+                            case 4:
+                                <td>Calibración segundo periodo</td>
+                                break;
+                        }*@
+                    <td>@item.id</td>
+                    <td>@item.Llave</td>
+                    <td>@item.EtapaDsc</td>
+                    <td>@item.PaisTempral</td>
+                    <td>@item.StartDateObjTemp</td>
+                    <td>@item.FinishDateObjTemp</td>
+
+                    <td>
+                        <div class="progress" style="margin:auto">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="@item.porcentaje.ToString()%" aria-valuemin="0" aria-valuemax="100" style="text-align: center; width: @item.porcentaje.ToString()%">
+                                <div style="color:black">
+                                    @Ajax.ActionLink(@item.porcentaje + "%", "Detalle", "Periodos", new { pais = @item.Country }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle()" }, new { @title = "Editar Periodo", @style = "color:black; text-decoration:none; " })
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td style="min-width: 90px;">
+                        @Ajax.ActionLink(" ", "NuevoPeriodo", "Periodos", new { Id = @item.id }, new AjaxOptions { UpdateTargetId = "NuevoItem", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "fa fa-edit fontIcons", @title = "Editar Periodo", @style = "font-size: 1.3em" })
+                        | @Ajax.ActionLink(" ", "EliminarPeriodo", "Periodos", new { Id = @item.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", Confirm = "¿Está seguro de eliminar el periodo?" }, new { @class = "fa fa-times fontIcons", @title = "Eliminar", @style = "color: red; font-size: 1.3em" }) |
+                        @using (Html.BeginForm("Download", "Periodos", new { pais = @item.Country }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "display:inline-block" }))
+                        {
+                            <button type="submit" class="fa fa-file-excel" style="background: none; border:none;color:#428bca; font-size: 1.3em"></button>
+                        }
+                    </td>
+                    <td>
+                        @if (item.Etapa == 0 || item.Etapa == 1 || item.Etapa == 3)
+                        {
+                            @Ajax.ActionLink(" ", "EjecutarRecordatorio", "Periodos", new { Id = @item.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "fa fa-envelope", @title = "Recordatorios", @style = "font-size: 1.3em" })
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+<div id="NuevoItem">
+</div>
+
+
+<div class="modal fade" id="ModalDetalle" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                <h4 class="modal-title">Objetivos</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="Detalle"> </div> @*se llena con el ajax*@
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    function AbrirDetalle() {
+        $('#ModalDetalle').modal('show');
+    }
+
+    function CerrarDetalle() {
+        $('#ModalDetalle').modal('hide');
+        $('.modal-backdrop').remove();
+    }
+
+    $(document).ready(function () {
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+        $(".fa-edit, .btn-primary").on("click", function (e) {
+            $("html, body").animate({ scrollTop: $("#NuevoItem").offset().top }, 1000);
+        });
+        var tablaCliente = $('#tableCliente').DataTable({
+            order: [[0, 'des']],
+            columnDefs: [
+                { targets: [0, 1], visible: false }
+            ],
+            rowGroup: {
+                endRender: null,
+                startRender: function (rows, group) {
+                    if (group != "") {
+                        var percentAvg = rows
+                            .data()
+                            .pluck(1)
+                            .reduce(function (a, b) {
+                                return a + b * 1;
+                            }, 0) / rows.count();
+                        percentAvg = $.fn.dataTable.render.number(',', '.', 2, '').display(percentAvg);
+
+                        return $('<tr/>')
+                            .append('<td colspan="6">Porcentaje de avance para ' + group + '</td>')
+                            .append('<td colspan="3">' + percentAvg + '</td>');
+                    }
+                },
+                dataSrc: 0
+            }
+
+        });
+    });
+</script>
+
+
+
+

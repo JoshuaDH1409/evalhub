@@ -1,0 +1,87 @@
+﻿
+
+@model List<Modelo.Clases.CHistorial>
+
+
+@if (Model != null)
+{
+    <div id="chart_div" style="width: 70%; height: 200px; text-align:center"></div>
+
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Periodo', 'Calificación'],
+                ['Inicio', 0],
+               @Html.Raw(ViewBag.Graf)
+            ]);
+
+            var options = {
+                title: 'Historial',
+                hAxis: { title: 'Periodo', titleTextStyle: { color: '#333' } },
+                vAxis: { minValue: 0 }
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+}
+
+<table id="tableHistorial" class="display">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Periodo</th>
+            <th>País</th>
+            <th>Puesto</th>
+            <th>División</th>
+            @*<th>Área</th>*@
+            <th>Calificación final</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (Modelo.Clases.CHistorial item in Model)
+            {
+                if (!item.Evaluacion.Activo)
+                {
+        <tr>
+            <td style="text-align:center">@item.Periodo.id</td>
+            <td style="text-align:center">@item.Periodo.Llave</td>
+            <td style="text-align:center">@item.Periodo.PaisTempral</td>
+            <td style="text-align:center">@item.Evaluacion.Puesto</td>
+            <td style="text-align:center">@item.Evaluacion.Division</td>
+            @*<td style="text-align:center">@item.Evaluacion.Area</td>*@
+            @if (item.Evaluacion.CaliFinalCalibracion > 0)
+            {
+                <td style="text-align:center">@item.Evaluacion.CaliFinalCalibracion</td>
+            }
+            else
+            {
+                <td style="text-align:center">@item.Evaluacion.CaliFinal2</td>
+            }
+            <td style="text-align:center">
+                @using (Html.BeginForm("DownloadPdfDetailed", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                {
+                    <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                }
+            </td>
+        </tr>
+                }
+            }
+        }
+
+    </tbody>
+</table>
+
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            var tablaCliente = $('#tableHistorial').DataTable();
+        });
+</script>

@@ -1,0 +1,476 @@
+﻿
+@model  Modelo.Clases.CPeriodo
+
+@{
+    long hoy = DateTime.Now.Ticks;
+    int Perfil = ViewBag.Perfil;
+}
+
+@if (Model.periodo != null)
+{
+    <style>
+        .Imagen {
+            max-height: 50px;
+            max-width: 50px;
+            object-fit: cover;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
+
+    <table class="table table-striped" width="100%">
+        <thead class="thead-light">
+            <tr>
+                <th>Etapa</th>
+                <th>Periodo</th>
+                <th>País</th>
+                <th>Fecha inicio</th>
+                <th>Fecha fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.periodo.Activo == true)
+            {
+                <tr>
+                    <td>@Model.periodo.EtapaDsc</td>
+                    @*@if (Model.periodo.Status == 0)
+                    {
+                        <td><b>Carga de objetivos</b></td>
+                    }
+                    else if (Model.periodo.Status == 1)
+                    {
+
+                        <td><b>Periodo evaluación 1</b></td>
+                    }
+                    else if (Model.periodo.Status == 2)
+                    {
+
+                        <td><b>Calibración 1er periodo</b></td>
+                    }
+                    else if (Model.periodo.Status == 3)
+                    {
+                        <td><b>Evaluación 2do periodo</b></td>
+                    }
+                    else if (Model.periodo.Status == 4)
+                    {
+                        <td><b>Calibración 2do periodo</b></td>
+                    }*@
+
+
+                    <td>@Model.periodo.Llave</td>
+                    <td>@Model.periodo.PaisTempral</td>
+                    @if (Model.periodo.Etapa == 0)
+                    {
+                        <td>@Model.periodo.StartDateObjTemp</td>
+                        <td>@Model.periodo.FinishDateObjTemp</td>
+                    }
+                    @if (Model.periodo.Etapa == 1)
+                    {
+                        <td>@Model.periodo.StartDateEvaTemp</td>
+                        <td>@Model.periodo.FinishDateEvaTemp</td>
+                    }
+                    @if (Model.periodo.Etapa == 2)
+                    {
+                        <td>@Model.periodo.StartDateCaliTemp</td>
+                        <td>@Model.periodo.FinishDateCaliTemp</td>
+                    }
+                    @if (Model.periodo.Etapa == 3)
+                    {
+                        <td>@Model.periodo.StartDateEva2Temp</td>
+                        <td>@Model.periodo.FinishDateEva2Temp</td>
+                    }
+                    @if (Model.periodo.Etapa == 4)
+                    {
+                        <td>@Model.periodo.StartDateCali2Temp</td>
+                        <td>@Model.periodo.FinishDateCali2Temp</td>
+                    }
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <br />
+    using (Html.BeginForm("Download", "Periodos", new { pais = @Model.periodo.Country }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "display:inline-block" }))
+    {
+        <button type="submit" class="fa fa-file-excel" style="background: none; border:none;color:#428bca; font-size: 2.3em"></button>
+    }
+    <br />
+    <div id=respuesta></div>    
+    <table id="tableEmpleados" class="table display">
+        <thead class="thead-light">
+            <tr>
+
+                <th>ID SAP</th>
+                <th>Nombre</th>
+                <th>Puesto</th>
+                <th>División</th>
+                <th>Estatus</th>
+                <th></th>
+                <th>
+                    @if (Model.periodo.Etapa == 0)
+                    {
+                        @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 0, Id = 0 }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-play fontIcons", @title = "Iniciar proceso para todos" })
+                    }
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Modelo.Clases.CSessionEval item in Model.listSesion)
+            {
+                if (item.Login.Activo)
+                {
+            <tr>
+                <td>@item.Login.id_sap</td>
+                <td>@item.Login.NombreCompleto</td>
+                <td>@item.Login.Puesto</td>
+                <td>@item.Login.Division</td>
+                <td>
+                    @if (item.Evaluacion == null)
+                    {
+                    <b>--</b>
+                    }
+                    else
+                    {
+                <b>@item.Evaluacion.StatusDsc</b>
+                        //switch (item.Evaluacion.Status)
+                        //{
+                        //    case 0:
+                        //        <td><b> Iniciado</b></td>
+                        //        break;
+                        //    case 1:
+                        //        <td><b>Objetivos cargados</b></td>
+                        //        break;
+                        //    case 2:
+                        //        <td><b>Objetivos rechazados</b></td>
+                        //        break;
+                        //    case 3:
+                        //        <td><b>Objetivos aprobados</b></td>
+                        //        break;
+                        //    case 4:
+                        //        <td><b>Inicio evaluación</b></td>
+                        //        break;
+                        //    case 5:
+                        //        <td><b>Objetivos autoevaluados</b></td>
+                        //        break;
+                        //    case 6:
+                        //        <td><b>Objetivos evaluados</b></td>
+                        //        break;
+                        //    case 7:
+                        //        <td><b>Evaluación segundo nivel</b></td>
+                        //        break;
+                        //    case 8:
+                        //        <td><b>Cerrada</b></td>
+                        //        break;
+                        //    case 9:
+                        //        <td><b>Calibración</b></td>
+                        //        break;
+                        //    case 10:
+                        //        <td><b>Inicio evaluación</b></td>
+                        //        break;
+                        //    case 11:
+                        //        <td><b>Objetivos autoevaluados</b></td>
+                        //        break;
+                        //    case 12:
+                        //        <td><b>Objetivos evaluados</b></td>
+                        //        break;
+                        //    case 13:
+                        //        <td><b>Evaluación segundo nivel</b></td>
+                        //        break;
+                        //    case 14:
+                        //        <td><b>Cerrada</b></td>
+                        //        break;
+                        //    case 15:
+                        //        <td><b>Calibración</b></td>
+                        //        break;
+                        //    case 16:
+                        //        <td><b>Pendiente carga de objetivos (extemporáneo)</b></td>
+                        //        break;
+                        //    case 17:
+                        //        <td><b>Objetivos cargados (extemporáneo)</b></td>
+                        //        break;
+                        //    case 18:
+                        //        <td><b>Objetivos rechazados (extemporáneo)</b></td>
+                        //        break;
+                        //    case 19:
+                        //        <td><b>Objetivos cerrados</b></td>
+                        //        break;
+                        //    default:
+                        //        <td></td>
+                        //        break;
+                        //}
+                    }
+                    </td>
+                    @if (Perfil == 1 || Perfil == 2 || Perfil == 3)
+                    {
+                        if (Model.periodo.Etapa == 0 && hoy >= Model.periodo.StartDateObj && hoy <= Model.periodo.FinishDateObj)
+                        {
+                            if (item.Evaluacion == null)
+                            {
+                                <td>
+                                    @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 0, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-cog fontIcons", @title = "Iniciar proceso" })
+                                </td>
+                                <td></td>
+                                <td></td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @if (item.Evaluacion.Status >= 0)
+                                    {
+                                        //@Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 99, Id = item.login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿está seguro de reiniciar los objetivos de este empleado?" }, new { @class = "fa fa-history fontIcons", @style = "color: blue", @title = "" })
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                                <i class="fa fa-cog"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <h6 class="dropdown-header">Carga de objetivos</h6>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=0">Carga/Modificación de objetivos</a>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=1">Objetivos cargados</a>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=3">Objetivos aprobados</a>
+                                                <h6 class="dropdown-header">Evaluación de medio año</h6>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=4">Cambiar inicio de evaluación</a>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=5">Cambiar evaluación de jefe</a>
+                                                <h6 class="dropdown-header">Evaluación de fin año</h6>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=10">Cambiar inicio de evaluación</a>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=11">Cambiar evaluación de jefe</a>
+                                            </div>
+                                        </div>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Evaluacion.Status == 0)
+                                    {
+                                        @Ajax.ActionLink(" ", "Recordatorio", "Gestion", new { status = 0, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-envelope-open fontIcons", @title = "Enviar recordatorio" })
+                                    }
+                                </td>
+
+                                <td>
+                                    @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 1, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times fontIcons", @style = "color: red", @title = "Eliminar" })
+                                </td>
+                            }
+                        }
+                        else if (Model.periodo.Etapa == 1 && hoy >= Model.periodo.StartDateEva && hoy <= Model.periodo.FinishDateEva)
+                        {
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 1, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times fontIcons", @style = "color: red", @title = "Eliminar" })
+                                }
+                                else
+                                {
+                                    @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 200, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿Está seguro de iniciar la carga de objetivos para esta persona?" }, new { @class = "fa fa-level-up-alt", @style = "font-size: 20px;color: green", @title = "Iniciar carga de objetivos" })
+                                }
+                            </td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    if (item.Evaluacion.Status == 4)
+                                    {
+                                        @Ajax.ActionLink(" ", "Recordatorio", "Gestion", new { status = 4, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-envelope-open fontIcons", @title = "Enviar recordatorio" })
+                                    }
+                                }
+                            </td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    /*f (Perfil == 1 || Perfil==2 || Perfil==3)
+                                    {*/
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                                <i class="fa fa-cog"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <h6 class="dropdown-header">Carga de objetivos</h6>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=0">Carga/Modificación de objetivos</a>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=1">Objetivos cargados</a>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=3">Objetivos aprobados</a>
+                                                <h6 class="dropdown-header">Evaluación de medio año</h6>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=4">Cambiar inicio de evaluación</a>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=5">Cambiar evaluación de jefe</a>
+                                                <h6 class="dropdown-header">Evaluación de fin año</h6>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=10">Cambiar inicio de evaluación</a>
+                                                <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=11">Cambiar evaluación de jefe</a>
+                                            </div>
+                                        </div>
+                                        //}
+                                        using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                                        {
+                                        <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                                    }
+                                }
+                            </td>
+                        }
+                        else if (Model.periodo.Etapa == 2 && hoy >= Model.periodo.StartDateCali && hoy <= Model.periodo.FinishDateCali)
+                        {
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 1, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times fontIcons", @style = "color: red", @title = "Eliminar" })
+                                }
+                                else
+                                {
+                                    @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 200, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿Está seguro de iniciar la carga de objetivos para esta persona?" }, new { @class = "fa fa-level-up-alt", @style = "font-size: 20px;color: green", @title = "Iniciar carga de objetivos" })
+                                }
+                            </td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    if (item.Evaluacion.Status == 9 && ViewBag.Perfil == 3)
+                                    {
+                                        @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 2, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-eye", @style = "font-size: 20px", @title = "Calibrar" })
+                                    }
+                                }
+                            </td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                                    {
+                                        <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                                    }
+                                }
+                            </td>
+                        }
+                        else if (Model.periodo.Etapa == 3 && hoy >= Model.periodo.StartDateEva2 && hoy <= Model.periodo.FinishDateEva2)
+                        {
+
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 1, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times fontIcons", @style = "color: red", @title = "Eliminar" })
+                                }
+                                else
+                                {
+                                    @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 200, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿Está seguro de iniciar la carga de objetivos para esta persona?" }, new { @class = "fa fa-level-up-alt", @style = "font-size: 20px;color: green", @title = "Iniciar carga de objetivos" })
+                                }
+                            </td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    if (item.Evaluacion.Status == 10)
+                                    {
+                                        @Ajax.ActionLink(" ", "Recordatorio", "Gestion", new { status = 10, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-envelope-open fontIcons", @title = "Enviar recordatorio" })
+                                    }
+                                }
+                            </td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    //if (Perfil == 1)
+                                    //{
+                                        @Html.ActionLink(" ", "RegresarEvaluacion", "Gestion", new { Id = item.Evaluacion.id }, new { @class = "fa fa-retweet" })
+                                    //}
+                                    using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                                    {
+                                        <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                                    }
+                                    @*@Ajax.ActionLink(" ", "Evaluacion", "MisEvaluaciones", new { id = item.login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-gear" })*@
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">
+                                            <i class="fa fa-cog"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <h6 class="dropdown-header">Carga de objetivos</h6>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=0">Carga/Modificación de objetivos</a>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=1">Objetivos cargados</a>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=3"> Objetivos aprobados</a>
+                                            <h6 class="dropdown-header">Evaluación de medio año</h6>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=4"> Cambiar inicio de evaluación</a>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=5"> Cambiar evaluación de jefe</a>
+                                            <h6 class="dropdown-header">Evaluación de fin año</h6>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=10"> Cambiar inicio de evaluación</a>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=11"> Cambiar evaluación de jefe</a>
+                                        </div>
+                                    </div>
+                                }
+                            </td>
+                        }
+                        else if (Model.periodo.Etapa == 4 && hoy >= Model.periodo.StartDateCali2 && hoy <= Model.periodo.FinishDateCali2)
+                        {
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    @Ajax.ActionLink(" ", "NuevaGestion", "Gestion", new { status = 0, proceso = 1, Id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times fontIcons", @style = "color: red", @title = "Eliminar" })
+                                }
+                            </td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    if (item.Evaluacion.Status == 15 && ViewBag.Perfil == 3)
+                                    {
+                                        @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 2, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-eye", @style = "font-size: 20px", @title = "Calibrar" })
+                                    }
+                                }
+                            </td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                                    {
+                                        <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                                    }
+                                }
+                            </td>
+                        }
+                        else
+                        {
+                            <td></td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <i class="fa fa-cog"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <h6 class="dropdown-header">Carga de objetivos</h6>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=0">Carga/Modificación de objetivos</a>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=1">Objetivos cargados</a>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=3">Objetivos aprobados</a>
+                                            <h6 class="dropdown-header">Evaluación de medio año</h6>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=4">Cambiar inicio de evaluación</a>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=5">Cambiar evaluación de jefe</a>
+                                            <h6 class="dropdown-header">Evaluación de fin año</h6>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=10">Cambiar inicio de evaluación</a>
+                                            <a class="dropdown-item" data-ajax="true" data-ajax-confirm="¿Está seguro que desea regresar la evaluación? Tenga en cuenta los tiempos por favor" data-ajax-mode="replace" data-ajax-update="#Principal" href="/Gestion/CambiarStatus/@item.Evaluacion.id?status=11">Cambiar evaluación de jefe</a>
+                                        </div>
+                                    </div>
+                                }
+                            </td>
+                            <td>
+                                @if (item.Evaluacion != null)
+                                {
+                                    using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                                    {
+                                        <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                                    }
+                                }
+                            </td>
+                        }
+                    }
+                    else
+                    {
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    }
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1>No se encontraron periodos activos </h1>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+                    var tablaCliente = $('#tableEmpleados').DataTable();
+                });
+</script>

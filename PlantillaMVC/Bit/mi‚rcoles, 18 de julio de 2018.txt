@@ -1,0 +1,30 @@
+11:42:05 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:42:05 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:42:17 a.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+11:47:21 a.m.
+Evaluacion/Principal : El usuario: Karla Chavez Meneses Ingreso a Principal
+-------------------------------
+11:47:27 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Karla Chavez Meneses Ingreso a MiEvaluacion
+-------------------------------
+11:52:43 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:52:43 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:52:50 a.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+11:56:05 a.m.
+Evaluacion/Principal : El usuario: MELISSA DANIELA MUÑOZ YÉPEZ Ingreso a Principal
+-------------------------------
+11:56:09 a.m.
+Usuario/Usuarios : El Usuario MELISSA DANIELA MUÑOZ YÉPEZ ingreso a usuarios
+-------------------------------

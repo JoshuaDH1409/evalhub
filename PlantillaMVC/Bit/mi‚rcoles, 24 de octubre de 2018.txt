@@ -1,0 +1,39 @@
+08:47:36 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+08:47:36 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+08:47:43 a.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+08:50:16 a.m.
+Evaluacion/Principal : El usuario: Giselle Dominguez Maldonado Ingreso a Principal
+-------------------------------
+08:50:19 a.m.
+Gestion/GestionEvaluacion : El usuario: Giselle Dominguez Maldonado Ingreso a gestion de evaluaciones
+-------------------------------
+08:53:47 a.m.
+Gestion/GestionEvaluacion : El usuario: Giselle Dominguez Maldonado Ingreso a gestion de evaluaciones
+-------------------------------
+08:58:06 a.m.
+Evaluacion/Principal : El usuario: Giselle Dominguez Maldonado Ingreso a Principal
+-------------------------------
+08:58:12 a.m.
+Gestion/GestionEvaluacion : El usuario: Giselle Dominguez Maldonado Ingreso a gestion de evaluaciones
+-------------------------------
+09:11:40 a.m.
+Gestion/GestionEvaluacion : El usuario: Giselle Dominguez Maldonado Ingreso a gestion de evaluaciones
+-------------------------------
+05:22:01 p.m.
+Account/LogIn : intento fallido de entrar a fenando.reyes@aspenlatam.com
+-------------------------------
+05:22:09 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+05:22:10 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+05:22:25 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------

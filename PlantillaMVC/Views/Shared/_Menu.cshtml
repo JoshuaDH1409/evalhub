@@ -1,0 +1,324 @@
+﻿@if (ViewBag.Paginas != null)
+{
+    <nav class="navbar navbar-expand-md navbar-light" style="background: rgb(238, 238, 238)">
+        <div>
+            <span class="navbar-brand mb-0 h1">Menú</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav flex-column nav-pills main-nav-left" style="padding:0px;">
+                    @if (ViewBag.Rol != 5)
+                    {
+                        <li class="nav-item" role="presentation">
+                            @Ajax.ActionLink("Mi evaluación", "MiEvaluacion", "MisEvaluaciones", new { user = 0, id = 0 }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                        if (ViewBag.Rol != 6)
+                        {
+                            <li class="nav-item">
+                                @Ajax.ActionLink("Revisar objetivos de empleados", "RevisarObjetivos", "Objetivos", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                            </li>
+                        }
+                        else if (ViewBag.Rol == 6)
+                        {
+                            <li class="nav-item">
+                                @Ajax.ActionLink("Revisar Objetivos Reportes Directos", "RevisarObjetivos", "Objetivos", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                            </li>
+                            <li>
+                                @Ajax.ActionLink("Revisar Objetivos Empleados", "DashObjetivesEmpleados", "Dash", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                            </li>
+                        }
+                        if (ViewBag.Rol == 1 || ViewBag.Rol == 2 || ViewBag.Rol == 3)
+                        {
+                            <li class="nav-item">
+                                @Ajax.ActionLink("Carga KPI's Spanish Latam", "Index", "ObjetivosPais", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                            </li>
+
+                            if (ViewBag.UserBono)
+                            {
+                                <li class="nav-item">
+                                    @Ajax.ActionLink("KPI's Spanish Latam", "Resumen", "Objetivos", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                                </li>
+                            }
+                        }
+                        else if (ViewBag.UserBono)
+                        {
+                            <li class="nav-item">
+                                @Ajax.ActionLink("KPI's Spanish Latam", "Resumen", "Objetivos", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                            </li>
+                        }
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Historial", "Historial", "MiHistorial", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                    }
+
+                    @if (ViewBag.Rol == 1)
+                    {
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Carga de empleados", "CargaMasivaUsuarios", "Usuario", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "VerificaSesionEnv();AbreCierraDilogoEspera()" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Edición de correos", "Correo", "Correos", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Estatus", "Index", "Status", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                    }
+                    @if (ViewBag.Rol == 1)
+                    {
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Periodos", "Periodos", "Periodos", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                    }
+                    @if (ViewBag.Rol == 1 || ViewBag.Rol == 2 || ViewBag.Rol == 3)
+                    {
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Historial de usuarios", "HistorialUsrs", "HistorialUsrs", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "VerificaSesionEnv();AbreCierraDilogoEspera()" }, new { @class = "nav-link" })
+                        </li>
+                    }
+
+                    @if (ViewBag.Rol != 4 && ViewBag.Rol != 6)
+                    {
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Gestión de evaluaciones", "GestionEvaluacion", "Gestion", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Usuarios", "Usuarios", "Usuario", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Reportes", "DashBoard", "Dash", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Ajax.ActionLink("Tablero", "Index", "Dash", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                        <li>
+                            @Ajax.ActionLink("Objetivos", "DashObjetivesView", "Dash", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                        </li>
+                    }
+                    <li>
+                        @Ajax.ActionLink("Cambiar contraseña", "CambiarCon", "Usuario", new { }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()" }, new { @class = "nav-link" })
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <br />
+    using (Html.BeginForm("LogOff", "Usuario", FormMethod.Post, new { id = "logoutForm", @class = "" }))
+    {
+        @Html.AntiForgeryToken()
+        <a id="Cerrarsession" class="btn btn-primary" href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-out-alt"></i> Cerrar sesión</a>
+    }
+    //estilo del menu desplegable
+
+
+    <div style="visibility:hidden; display:none;">
+        @Ajax.ActionLink("VerificaSesion", "ValidaSesion", "Account", new { },
+            new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", HttpMethod = "GET", OnSuccess = "RespuestaSesionValida(data, status, xhr)" },
+    new { id = "VerificaSesionLink" })
+    </div>
+
+    <script>
+        function VerificaSesionEnv()
+        {
+        //alert("Entra a verifica");
+        //var a = "@Url.Action("ValidaUsuario")";
+        //a = a + "?Correo=" + Usr + "&id=" + id;
+        //$("#ValidaUsuario").attr("href", a);
+            $("#VerificaSesionLink").click();
+        a = '';
+        }
+
+
+        function RespuestaSesionValida(data, status, xhr)
+        {
+            if (data != '')
+            {
+                //alert(data[0].Aux);
+                if (data[0].Aux == 0)
+                {
+                    $("#Cerrarsession").trigger("click");
+                    document.getElementById("Cerrarsession").click();
+                    alert('Su sesión expiró. Será redirigido a la pantalla de inicio.');
+                }
+            }
+        }
+    </script>
+
+
+
+    <style>
+        .navbar-header {
+            max-height: 60px;
+        }
+
+        ul.nav.main-nav-left {
+            float: left;
+        }
+
+        ul.nav.main-nav-left {
+            background: #eee;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+            ul.nav.main-nav-left li {
+                border-bottom: 1px solid #D6D6D6;
+            }
+
+                ul.nav.main-nav-left li:after {
+                    border-bottom: 1px solid #fff;
+                    content: "";
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    display: block;
+                    bottom: -2px;
+                }
+
+        .nav > li > a:focus, .nav > li > a:hover {
+            background: rgba(0,75,141,0.5);
+            /*color: #fff;*/
+        }
+
+        #menu {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+            #menu ul, li {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            #menu ul {
+                position: relative;
+                z-index: 597;
+                float: left;
+            }
+
+                #menu ul li {
+                    float: left;
+                    min-height: 1px;
+                    line-height: 1em;
+                    vertical-align: middle;
+                }
+
+                    #menu ul li.hover,
+                    #menu ul li:hover {
+                        position: relative;
+                        z-index: 599;
+                        cursor: default;
+                    }
+
+                #menu ul ul {
+                    visibility: hidden;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    z-index: 598;
+                    width: 100%;
+                }
+
+                    #menu ul ul li {
+                        float: none;
+                    }
+
+                #menu ul li:hover > ul {
+                    visibility: visible;
+                }
+
+                #menu ul ul {
+                    top: 0;
+                    left: 100%;
+                }
+
+                #menu ul li {
+                    float: none;
+                }
+
+        #menu {
+            width: 200px;
+        }
+
+            #menu span, #menu a {
+                display: inline-block;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                text-decoration: none;
+            }
+
+            #menu:after, #menu ul:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            #menu ul, #menu li {
+                width: 100%;
+            }
+
+            #menu li {
+                background: transparent;
+            }
+
+                #menu li:hover {
+                    background: #7d7fec;
+                }
+
+            #menu a {
+                color: white;
+                line-height: 160%;
+                padding: 11px 28px 11px 28px;
+                width: 100%;
+            }
+
+            #menu ul ul li {
+                background: #004b8d;
+            }
+
+                #menu ul ul li:hover {
+                    background: #7d7fec;
+                }
+
+                    #menu ul ul li:hover a {
+                        color: white;
+                    }
+
+                #menu ul ul li ul li {
+                    background: #004b8d;
+                }
+
+                    #menu ul ul li ul li:hover {
+                        background: #7d7fec;
+                    }
+
+        .nav a {
+            color: #337ab7;
+        }
+
+        #menu .has-sub {
+            position: relative;
+        }
+
+            #menu .has-sub:after, #menu .has-sub > ul > .has-sub:hover:after {
+                content: '';
+                display: block;
+                width: 10px;
+                height: 9px;
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                margin-top: -5px;
+                background-image: url('../../Imgs/right.png');
+            }
+
+            #menu .has-sub > ul > .has-sub:after, #menu .has-sub:hover:after {
+                background-image: url('../../Imgs/right.png');
+            }
+    </style>
+
+}

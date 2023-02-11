@@ -1,0 +1,30 @@
+11:16:55 a.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+11:16:55 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:16:59 a.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+11:20:02 a.m.
+Evaluacion/Principal : El usuario: Paula Yolanda Milagros Sanchez Gonzalez Ingreso a Principal
+-------------------------------
+11:20:04 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Paula Yolanda Milagros Sanchez Gonzalez Ingreso a MiEvaluacion
+-------------------------------
+11:20:35 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Paula Yolanda Milagros Sanchez Gonzalez Ingreso a MiEvaluacion
+-------------------------------
+11:20:39 a.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+11:20:43 a.m.
+Usuario/Usuarios : El Usuario Fernando Reyes Cázares ingreso a usuarios
+-------------------------------
+11:23:42 a.m.
+Evaluacion/Principal : El usuario: Paula Yolanda Milagros Sanchez Gonzalez Ingreso a Principal
+-------------------------------
+11:23:45 a.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Paula Yolanda Milagros Sanchez Gonzalez Ingreso a MiEvaluacion
+-------------------------------

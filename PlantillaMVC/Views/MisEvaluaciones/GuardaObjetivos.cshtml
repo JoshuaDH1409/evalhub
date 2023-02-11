@@ -1,0 +1,67 @@
+﻿@model List<Modelo.EObjetives>
+<table class="table table-bordered table-striped" id="tablaObjetivos">
+    <thead>
+        <tr class="bg-primary">
+            <th class="width-25" colspan="3">
+                Objetivos
+            </th>
+            <th class="width-25" colspan="3">
+                Primer Semestre
+            </th>
+            <th class="width-25" colspan="3">
+                Segundo Semestre
+            </th>
+            <th></th>
+        </tr>
+        <tr class="bg-primary">
+            <th class="width-25">
+                Objetivo
+            </th>
+            <th class="width-25">
+                Descripción de Objetivo
+            </th>
+            <th class="width-25">
+                Métricas
+            </th>
+            <th class="width-25">
+                Auto evaluación<br />(1-4)
+            </th>
+            <th class="width-25">
+                Calificación Evaluador<br />(1-4)
+            </th>
+            <th class="width-25">
+                Calificación final acordada<br />(1-4)
+            </th>
+            <th class="width-25">
+                Auto evaluación<br />(1-4)
+            </th>
+            <th class="width-25">
+                Calificación Evaluador<br />(1-4)
+            </th>
+            <th class="width-25">
+                Calificación final acordada<br />(1-4)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (Modelo.EObjetives item in Model)
+            {
+                <tr>
+                    <td>@item.titulo</td>
+                    <td>@item.objdesc</td>
+                    <td>@item.objMetricas</td>
+                    <td>@item.autoeval</td>
+                    <td>@item.calif</td>
+                    <td>@item.califFinal</td>
+                    <td>@item.AutoEval2</td>
+                    <td>@item.Calif2</td>
+                    <td>@item.CalifFinal2</td>
+                    <td></td>  @*opciones validar*@
+                </tr>
+            }
+        }
+    </tbody>
+</table>

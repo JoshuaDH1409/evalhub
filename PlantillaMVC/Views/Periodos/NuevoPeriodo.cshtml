@@ -1,0 +1,450 @@
+﻿@model Modelo.EPeriodos
+
+<h2>Nuevo Periodo</h2>
+@*@using(Html.BeginForm("GuardaPeriodo","Periodos",FormMethod.Post, new {id="Periodo", novalidate="novalidate" }))*@
+@using (Ajax.BeginForm("GuardaPeriodo", "Periodos", new { }, new AjaxOptions
+{
+    UpdateTargetId = "Principal",
+    OnBegin = "AbreCierraDilogoEspera",
+    OnComplete = "AbreCierraDilogoEspera",
+    HttpMethod = "Post",
+    OnSuccess = "VerificaSesionEnv"
+}, new { id = "Periodo", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken();
+
+    <div class="col-md-8 form-group">
+        <!-- objetos ocultos -->
+        <div class="oculto">
+            @*@Html.LabelFor(m => m.id, new { @class = "etiqueta" })*@
+            @Html.HiddenFor(m => m.id, new { @class = "form-control" })
+            @*@Html.LabelFor(m => m.Status, new { @class = "etiqueta" })*@
+            @Html.HiddenFor(m => m.Etapa, new { @class = "form-control" })
+        </div>
+        @Html.LabelFor(m => m.Llave, new { @class = "etiqueta" })
+        @Html.TextBoxFor(m => m.Llave, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Llave)
+    </div>
+    <div class="col-md-4 form-group">
+        @Html.LabelFor(m => m.Country, new { @class = "etiqueta" })
+        @if (Model.id == 0)
+        {
+            @Html.DropDownListFor(m => m.Country, (ViewData["ListaPaises"] as List<SelectListItem>), "Seleccione...", new { @class = "form-control" })
+        }
+        else
+        {
+            @Html.DropDownListFor(m => m.Country, (ViewData["ListaPaises"] as List<SelectListItem>), "--Todos--", new { @class = "form-control", disabled = "disabled", @style = "background-color:#eeeeee" })
+        }
+        @Html.ValidationMessageFor(m => m.Country)
+    </div>
+    <h3>Primer semestre</h3>
+    if (Model.Etapa == 0)
+    {
+        <h4>1. @Model.EtapaDsc</h4>
+        <div class="row form-group">
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.StartDateObjTemp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.StartDateObjTemp, new { @class = "DatePicker form-control" })
+                @Html.ValidationMessageFor(m => m.StartDateObjTemp)
+            </div>
+
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.FinishDateObjTemp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.FinishDateObjTemp, new { @class = "DatePicker form-control" })
+                @Html.ValidationMessageFor(m => m.FinishDateObjTemp)
+            </div>
+
+            @*<div class="col-sm-3" >
+                     @Html.LabelFor(m => m.HoraAct1, new { })
+                     <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true" id="Clock1">
+                         @Html.TextBoxFor(m => m.HoraAct1, new { CLASS = "form-control" })
+                         <span class="input-group-addon">
+                             <span class="glyphicon glyphicon-time"></span>
+                         </span>
+                     </div>
+                 </div>
+
+                <div class="col-sm-3" >
+                    @Html.LabelFor(m => m.NotAct1, new { @class = "etiqueta", @style = "align-content:center" })
+                    @Html.CheckBoxFor(m => m.NotAct1, new { @class = "form-control", @style = "align-content:flex-start" })
+                    @Html.ValidationMessageFor(m => m.NotAct1)
+                </div>*@
+
+            <div class="col-md-2">
+                @if (Model.FinishDateObj > 0)
+                {
+                    @Ajax.ActionLink(" Terminar", "TerminarPeriodo", "Periodos", new { Id = Model.id, status = 1 }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", Confirm = "¿Estás seguro de terminar la etapa del periodo? \n Recuerda que se excluirán a los usuarios que no terminaron su proceso correctamente y no se puede regresar a esta etapa" }, new { Class = " btn btn-danger  fas fa-ban", style = "font-size: 120%" })
+
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <h4>1. Carga de Objetivos</h4>
+        <div class="row form-group">
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.StartDateObjTemp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.StartDateObjTemp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                @Html.ValidationMessageFor(m => m.StartDateObjTemp)
+            </div>
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.FinishDateObjTemp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.FinishDateObjTemp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                @Html.ValidationMessageFor(m => m.FinishDateObjTemp)
+            </div>
+            @*<div class="col-sm-3">
+                    @Html.LabelFor(m => m.HoraAct1, new { @class = "etiqueta" })
+                    @Model.HoraAct1
+                </div>*@
+
+
+        </div>
+    }
+
+    if (Model.Etapa == 1)
+    {
+        <h4>2. @Model.EtapaDsc</h4>
+        <div class="row form-group">
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.StartDateEvaTemp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.StartDateEvaTemp, new { @class = "DatePicker form-control" })
+                @Html.ValidationMessageFor(m => m.StartDateEvaTemp)
+            </div>
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.FinishDateEvaTemp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.FinishDateEvaTemp, new { @class = "DatePicker form-control" })
+                @Html.ValidationMessageFor(m => m.FinishDateEvaTemp)
+            </div>
+
+            @*<div class="col-sm-3">
+                    @Html.LabelFor(m => m.HoraAct2, new { })
+                    <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true" id="Clock2">
+                        @Html.TextBoxFor(m => m.HoraAct2, new { CLASS = "form-control" })
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    @Html.LabelFor(m => m.NotAct2, new { @class = "etiqueta", @style = "align-content:center" })
+                    @Html.CheckBoxFor(m => m.NotAct2, new { @class = "form-control", @style = "align-content:flex-start" })
+                    @Html.ValidationMessageFor(m => m.NotAct2)
+                </div>*@
+
+            <div class="col-md-2">
+                @if (Model.FinishDateEva > 0)
+                {
+                    @Ajax.ActionLink(" Terminar", "TerminarPeriodo", "Periodos", new { Id = Model.id, status = 3 }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", Confirm = "¿Estás seguro de terminar la etapa del periodo? \n Recuerda que se excluirán a los usuarios que no terminaron su proceso correctamente y no se puede regresar a esta etapa" }, new { @class = " btn btn-danger  fas fa-ban", style = "font-size: 120%" })
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <h4>2. Evaluación de Mitad de Año</h4>
+        <div class="row form-group">
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.StartDateEvaTemp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.StartDateEvaTemp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                @Html.ValidationMessageFor(m => m.StartDateEvaTemp)
+            </div>
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.FinishDateEvaTemp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.FinishDateEvaTemp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                @Html.ValidationMessageFor(m => m.FinishDateEvaTemp)
+            </div>
+            @*<div class="col-sm-3">
+                        @Html.LabelFor(m => m.HoraAct2, new { @class = "etiqueta" })
+                        @Model.HoraAct2
+                </div>*@
+
+        </div>
+
+    }
+    // Calibracion de medio año - nandarek se quita
+    @*if (Model.Status == 2)
+        {
+            <div class="row form-group">
+                <h4>3. Calibración</h4>
+                <div class="col-sm-3">
+                    @Html.LabelFor(m => m.StartDateCaliTemp, new { @class = "etiqueta" })
+                    @Html.TextBoxFor(m => m.StartDateCaliTemp, new { @class = "DatePicker form-control" })
+                    @Html.ValidationMessageFor(m => m.StartDateCaliTemp)
+                </div>
+                <div class="col-sm-3">
+                    @Html.LabelFor(m => m.FinishDateCaliTemp, new { @class = "etiqueta" })
+                    @Html.TextBoxFor(m => m.FinishDateCaliTemp, new { @class = "DatePicker form-control" })
+                    @Html.ValidationMessageFor(m => m.FinishDateCaliTemp)
+                </div>
+                <div class="col-sm-3">
+                    @Ajax.ActionLink(" Terminar", "TerminarPeriodo", "Periodos", new { Id = Model.id, status = 3 }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", Confirm = "¿Estás seguro de terminar la etapa del periodo? \n Recuerda que se excluirán a los usuarios que no terminaron su proceso correctamente y no se puede regresar a esta etapa" }, new { @class = " btn btn-danger  glyphicon glyphicon-ban-circle", style = "font-size: 120%" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <h4>3. Calibración</h4>
+                <div class="col-sm-3 ">
+                    @Html.LabelFor(m => m.StartDateCaliTemp, new { @class = "etiqueta" })
+                    @Html.TextBoxFor(m => m.StartDateCaliTemp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    @Html.ValidationMessageFor(m => m.StartDateCaliTemp)
+                </div>
+                <div class="col-sm-3 ">
+                    @Html.LabelFor(m => m.FinishDateCaliTemp, new { @class = "etiqueta" })
+                    @Html.TextBoxFor(m => m.FinishDateCaliTemp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    @Html.ValidationMessageFor(m => m.FinishDateCaliTemp)
+                </div>
+                <div class="col-md-2 ">
+                </div>
+            </div>
+        }*@
+    // Calibracion de medio año
+    <h3>Segundo semestre</h3>
+    if (Model.Etapa == 3)
+    {
+        <h4>3. Evaluación de Fin de Año</h4>
+        <div class="row form-group">
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.StartDateEva2Temp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.StartDateEva2Temp, new { @class = "DatePicker form-control" })
+                @Html.ValidationMessageFor(m => m.StartDateEva2Temp)
+            </div>
+
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.FinishDateEva2Temp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.FinishDateEva2Temp, new { @class = "DatePicker form-control" })
+                @Html.ValidationMessageFor(m => m.FinishDateEva2Temp)
+            </div>
+
+            @*<div class="col-sm-3">
+                    @Html.LabelFor(m => m.HoraAct3, new { })
+                    <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true" id="Clock3">
+                        @Html.TextBoxFor(m => m.HoraAct3, new { CLASS = "form-control" })
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    @Html.LabelFor(m => m.NotAct3, new { @class = "etiqueta", @style = "align-content:center" })
+                    @Html.CheckBoxFor(m => m.NotAct3, new { @class = "form-control", @style = "align-content:flex-start" })
+                    @Html.ValidationMessageFor(m => m.NotAct3)
+                </div>*@
+            <div class="col-md-2">
+                @if (Model.FinishDateEva2 > 0)
+                {
+                    @Ajax.ActionLink(" Terminar", "TerminarPeriodo", "Periodos", new { Id = Model.id, status = 5 }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", Confirm = "¿Estás seguro de terminar la etapa del periodo? \n Recuerda que se excluirán a los usuarios que no terminaron su proceso correctamente y no se puede regresar a esta etapa" }, new { @class = " btn btn-danger  fas fa-ban", style = "font-size: 120%" })
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <h4>3. Evaluación de Fin de Año</h4>
+        <div class="row form-group">
+            <div class="col-sm-3 form-group">
+                @Html.LabelFor(m => m.StartDateEva2Temp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.StartDateEva2Temp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                @Html.ValidationMessageFor(m => m.StartDateEva2Temp)
+            </div>
+            <div class="col-sm-3 form-group">
+                @Html.LabelFor(m => m.FinishDateEva2Temp, new { @class = "etiqueta" })
+                @Html.TextBoxFor(m => m.FinishDateEva2Temp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                @Html.ValidationMessageFor(m => m.FinishDateEva2Temp)
+            </div>
+            @*<div class="col-sm-3">
+                    @Html.LabelFor(m => m.HoraAct3, new { @class = "etiqueta" })
+                    @Model.HoraAct3
+
+                </div>*@
+        </div>
+    }
+
+    @*if (Model.Status == 4)
+        {
+            <div class="row form-group">
+                <h4>4. Calibración</h4>
+                <div class="col-sm-3 form-group">
+                    @Html.LabelFor(m => m.StartDateCali2Temp, new { @class = "etiqueta" })
+                    @Html.TextBoxFor(m => m.StartDateCali2Temp, new { @class = "DatePicker form-control" })
+                    @Html.ValidationMessageFor(m => m.StartDateCali2Temp)
+                </div>
+                <div class="col-sm-3 form-group">
+                    @Html.LabelFor(m => m.FinishDateCali2Temp, new { @class = "etiqueta" })
+                    @Html.TextBoxFor(m => m.FinishDateCali2Temp, new { @class = "DatePicker form-control" })
+                    @Html.ValidationMessageFor(m => m.FinishDateCali2Temp)
+                </div>
+                <div class="col-sm-3 form-group">
+                    @Ajax.ActionLink(" Terminar", "TerminarPeriodo", "Periodos", new { Id = Model.id, status = 5 }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", Confirm = "¿Estás seguro de terminar la etapa del periodo? \n Recuerda que se excluirán a los usuarios que no terminaron su proceso correctamente y no se puede regresar a esta etapa" }, new { @class = " btn btn-danger  glyphicon glyphicon-ban-circle ", style = "font-size: 120%" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row form-group">
+                <h4>4. Calibración</h4>
+                <div class="col-sm-3 form-group">
+                    @Html.LabelFor(m => m.StartDateCali2Temp, new { @class = "etiqueta" })
+                    @Html.TextBoxFor(m => m.StartDateCali2Temp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    @Html.ValidationMessageFor(m => m.StartDateCali2Temp)
+                </div>
+                <div class="col-sm-3 form-group">
+                    @Html.LabelFor(m => m.FinishDateCali2Temp, new { @class = "etiqueta" })
+                    @Html.TextBoxFor(m => m.FinishDateCali2Temp, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                    @Html.ValidationMessageFor(m => m.FinishDateCali2Temp)
+                </div>
+                <div class="col-md-2 form-group">
+                </div>
+            </div>
+        }*@
+
+    <p></p>
+    <button type="submit" id="enviar" class="btn btn-success glyphicon glyphicon-ok"> <x style="font-family:Arial"> Guardar</x> </button>
+}
+
+
+<script type="text/javascript">
+    $('#Clock1').clockpicker();
+    $('#Clock2').clockpicker();
+    $('#Clock3').clockpicker();
+    $(document).ready(function () {
+
+
+        var objeto = $(".oculto")
+        objeto.hide();
+
+        //$('.datetimepickerTime').datetimepicker({
+        //    pickDate: false,
+        //    pickSeconds: false
+        //});
+        //$(".datetimepickerTime").datetimepicker().on("changeDate", function (e) {
+        //    e.date = new Date(e.date.setMinutes(0));
+        //});
+
+        $('.DatePicker').datepicker({
+            format: "dd/mm/yyyy"
+        });
+
+        var form = $("#Periodo");
+        $(form).removeData("validator");
+        $.validator.unobtrusive.parse(form);
+        $("#Country").rules("remove", "required");//remover reglas
+
+        $("#StartDateObjTemp").rules("remove");//remover reglas
+        $("#FinishDateObjTemp").rules("remove");//remover reglas
+
+        $("#StartDateEvaTemp").rules("remove");//remover reglas
+        $("#FinishDateEvaTemp").rules("remove");//remover reglas
+
+        $("#StartDateCaliTemp").rules("remove");//remover reglas
+        $("#FinishDateCaliTemp").rules("remove");//remover reglas
+
+        $("#StartDateEva2Temp").rules("remove");//remover reglas
+        $("#FinishDateEva2Temp").rules("remove");//remover reglas
+
+        $("#StartDateCali2Temp").rules("remove");//remover reglas
+        $("#FinishDateCali2Temp").rules("remove");//remover reglas
+        //var Temp = $("#id").val();
+
+    });
+
+    $("#MiEval").validate({  // initialize the plugin
+        submitHandler: function (form) {  // fires on valid form
+
+            var Objetivosinicio = $("#StartDateObjTemp").val();
+            var ObjetivosFin = $("#FinishDateObjTemp").val();
+
+            var Eval1inicio = $("#StartDateEvaTemp").val();
+            var Eval1fin = $("#FinishDateEvaTemp").val();
+
+            var Calib1inicio = $("#StartDateCaliTemp").val();
+            var Calib1fin = $("#FinishDateCaliTemp").val();
+
+            var Eval2inicio = $("#StartDateEva2Temp").val();
+            var Eval2fin = $("#FinishDateEva2Temp").val();
+
+            var Calib2Inicio = $("#StartDateCali2Temp").val();
+            var Calib2Fin = $("#FinishDateCali2Temp").val();
+
+            var Bandera = false;
+
+            if (Objetivosinicio = !'') {
+                if (!$("#StartDateObjTemp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+            if (ObjetivosFin = !'') {
+                if (!$("#FinishDateObjTemp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+
+
+            if (Eval1inicio = !'') {
+                if (!$("#StartDateEvaTemp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+            if (Eval1fin = !'') {
+                if (!$("#FinishDateEvaTemp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+
+
+
+
+            if (Calib1inicio = !'') {
+                if (!$("#StartDateCaliTemp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+            if (Calib1fin = !'') {
+                if (!$("#FinishDateCaliTemp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+
+
+
+            if (Eval2inicio = !'') {
+                if (!$("#StartDateEva2Temp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+            if (Eval2fin = !'') {
+                if (!$("#FinishDateEva2Temp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+
+
+
+
+            if (Calib2Inicio = !'') {
+                if (!$("#StartDateEva2Temp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+            if (Calib2Fin = !'') {
+                if (!$("#FinishDateEva2Temp").attr("value").match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/)) {
+                    Bandera = true;
+                }
+            }
+
+            if (Bandera) {
+                return false;
+            } else {
+                alert('verifique el formato de las fechas');
+                return true;
+            }
+
+        }
+    });
+
+
+</script>

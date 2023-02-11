@@ -1,0 +1,166 @@
+﻿@model Modelo.Clases.CPeriodoUserKPI
+<center>
+    <h3 class="justify-content-center">
+        KPI´s Spanish Latam - @Model.Periodo.PaisTempral
+    </h3>
+</center>
+@if (!Convert.ToBoolean(ViewBag.Cerrados))
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <h4 class="alert-heading">Objetivos de Empresa</h4>
+        <p>Los objetivos de empresa aún no han sido cerrados, por lo cual su resultado es parcial al momento.</p>
+    </div>
+}
+    <table class="table table-sm">
+        <tbody>
+            <tr><th class="bg-light">Company</th><td>Aspen Labs</td><th class="bg-light">Period</th><td>@Model.Periodo.Llave</td></tr>
+            <tr><th class="bg-light">Country</th><td>@Model.Periodo.PaisTempral</td><th class="bg-light">Employee Name</th><td>@Model.Login.NombreCompleto</td></tr>
+            <tr>
+                <th class="bg-light">
+                    Job Title
+                </th>
+                <td>@Model.Login.Puesto</td>
+                <th class="bg-light">
+                    Manager Name
+                </th>
+                <td>@Model.Login.EvaluadorNombre</td>
+            </tr>
+            <tr>
+                <th class="bg-light">
+                    Job Grade
+                </th>
+                <td></td>
+                <th class="bg-light">
+                    Department
+                </th>
+                <td>@Model.Login.Division</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr class="bg-primary">
+                <th scope="col" rowspan="2" class="align-middle text-center">
+                    COMPONENTS & KPIs / KPAs
+                </th>
+                <th scope="col" colspan="3" class="bg-info text-center">
+                    KPI / KPA
+                </th>
+                <th scope="col" rowspan="2" class="align-middle text-center">Component Score</th>
+                <th scope="col" colspan="2" class="bg-info text-center">Final Incentive Score</th>
+            </tr>
+            <tr class="bg-info">
+                <th scope="col">
+                    Weighting
+                </th>
+                <th scope="col">
+                    Achievement
+                </th>
+                <th scope="col">Total</th>
+                <th scope="col">Weighting</th>
+                <th scope="col">Score</th>
+            </tr>
+            <tr class="bg-primary">
+                <th>
+                    COMPONENT B: Employer Company KPIs
+                </th>
+                <th class="text-center">@Model.ObjetivoPais.Sum(t => t.Objetivo_Peso)%</th>
+                <th class="text-center">@*@Model.ObjetivoPais.Sum(t => t.Objetivo_Cumplimiento)%*@</th>
+                <th class="text-center">@Model.ObjetivoPais.Sum(t => t.Valor)%</th>
+                <th class="text-center">@Model.Results.CompB_Score%</th>
+                <th class="text-center">@Model.Results.CompB_Weighting%</th>
+                <th class="text-center">@Model.Results.CompB_FinalScore%</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ObjetivoPais)
+            {
+                <tr>
+                    <td>@item.Objetivo_Dsc</td>
+                    <td align="center">@item.Objetivo_Peso</td>
+                    <td align="center">@item.Objetivo_Cumplimiento%</td>
+                    <td align="center">@item.Valor</td>
+                    <td colspan="3"></td>
+                </tr>
+            }
+
+            <tr class="bg-primary">
+                <th>
+                    COMPONENT C: Individual KPAs
+                </th>
+                <th class="text-center">
+                    @Model.Results.CompC_SumaPonderados%
+                </th>
+                <th class="text-center">
+                    @*@Model.Results.CompC_SumaCumplimiento%*@
+                </th>
+                <th class="text-center">
+                    @Model.Results.CompC_SumaValor%
+                </th>
+                <th class="text-center">@Model.Results.CompC_Score%</th>
+                <th class="text-center">@Model.Results.CompC_Weighting%</th>
+                <th class="text-center">@Model.Results.CompC_FinalScore%</th>
+            </tr>
+            @foreach (var item in Model.Objetives)
+            {
+                <tr>
+                    <td>@item.titulo</td>
+                    <td align="center">@item.ponderado</td>
+                    @if (Model.Periodo.Etapa < 2)//Mitad de año o antes
+                    {
+                        <td align="center">@item.cumplimientoEvaluador%</td>
+                        <td align="center">@item.ValorObj_MA</td>
+                    }
+                    else if (Model.Periodo.Etapa > 2)//Fin de año
+                    {
+                        <td align="center">@item.cumplimientoEvaluador2%</td>
+                        <td align="center">@item.ValorObj</td>
+                    }
+                    <td colspan="3"></td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr class="bg-success">
+                <th colspan="5">
+                    CALCULATED PERCENTAGE OF INCENTIVE AWARDED
+                </th>
+                <th class="text-center">@Model.Results.Total_Weighting%</th>
+                <th class="text-center">@Model.Results.Total_Score%</th>
+            </tr>
+        </tfoot>
+    </table>
+    @*<div class="clearfix">
+        @Ajax.ActionLink("  Employer Company KPIs Score", "EscaletaEmpresa", "Objetivos", new { }, new AjaxOptions { UpdateTargetId = "DetalleEscaleta", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirEscaleta" }, new { @class = "float-start btn btn-secondary fa fa-file-alt" })
+        <a class="btn btn-danger mx-auto" href="/Objetivos/DownloadResumenPdf/@ViewBag.IdEval"><i class="fa fa-file-pdf"> Descargar a PDF</i></a>
+        @Ajax.ActionLink("  Individual Performance Score", "EscaletaIndividual", "Objetivos", new { }, new AjaxOptions { UpdateTargetId = "DetalleEscaleta", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirEscaleta" }, new { @class = "float-right btn btn-secondary fa fa-file-alt" })
+    </div>*@
+    <div class="mx-auto">
+
+    </div>
+    <div class="modal fade" id="ModalEscaleta" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title">Escaleta de Calificaciones</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="DetalleEscaleta"></div> @*se llena con el ajax*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times">   Cerrar</i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function AbrirEscaleta() {
+            $('#ModalEscaleta').modal('show');
+        }
+    </script>
+
+
+

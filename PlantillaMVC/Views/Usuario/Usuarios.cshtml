@@ -1,0 +1,88 @@
+﻿@model List<Modelo.Clases.CSession>
+<div class="modal fade" id="ModalUsiarios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                    <h4 class="modal-title">Usuarios</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="NuevoItem"></div> @*se llena con el ajax*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div style="text-align:left; font-size:20px">
+    @Ajax.ActionLink("Nuevo Usuario", "NuevoUsuario", "Usuario", new { Id = "0" }, new AjaxOptions { UpdateTargetId = "NuevoItem", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirModal" }, new { @class="btn btn-primary"})
+</div>
+
+<table id="tableCliente" class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th>ID</th>
+            <th>Num Sap</th>
+            <th>Nombre Completo</th>
+            <th>Puesto</th>
+            <th>División</th>
+            <th>País</th>
+            <th>Perfil</th>            
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Modelo.Clases.CSession item in Model)
+        {
+        <tr>
+            <td>@item.Login.id</td>
+            <td>@item.Login.id_sap</td>
+            <td>@item.Login.NombreCompleto</td>
+            <td>@item.Login.Puesto</td>
+            <td>@item.Login.Division</td>
+            <td>@item.Pais.descripcion</td>
+            <td>@item.Perfil.descripcion</td>
+            <td>@Ajax.ActionLink(" ", "NuevoUsuario", "Usuario", new { Id = @item.Login.id }, new AjaxOptions { UpdateTargetId = "NuevoItem", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirModal" }, new { @class = "fa fa-edit fontIcons", @title = "Editar" })</td>
+            <td>@Ajax.ActionLink(" ", "EliminarUsuario", "Usuario", new { Id = @item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "confirma();AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "VerificaSesionEnv()" }, new { @class = "fa fa-times eliminar", @style = "color:red", @title = "Eliminar" })</td>
+            <td>
+                @if (ViewBag.rol == 1 || ViewBag.rol == 2 || ViewBag.rol == 3)
+                {
+                <a href="/Usuario/TakeControl/@item.Login.id"><i class="fa fa-lg fa-eye" aria-hidden="true"></i></a>
+                }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*<div id="NuevoItem"></div>*@
+
+<script type="text/javascript">
+    function AbrirModal() {
+        $('#ModalUsiarios').modal('show');
+    }
+
+    function CerrarPantalla() {
+        $('#ModalUsiarios').modal('hide');
+        $('.modal-backdrop').remove();
+    }
+    function confirma(e) {
+        var resp= confirm("Está a punto de eliminar el usuario, ¿está seguro?");
+        if (resp) {
+            return;
+        }
+        else {
+            e.preventDefault();
+        }
+    }
+    $(document).ready(function () {
+        var tablaCliente = $('#tableCliente').DataTable();
+
+    });
+</script>
+
+

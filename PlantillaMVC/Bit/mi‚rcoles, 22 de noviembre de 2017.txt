@@ -1,0 +1,171 @@
+01:03:53 p.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+01:04:00 p.m.
+Account/LogIn : El Usuario Fernando Reyes Cázares ingreso a su cuenta
+-------------------------------
+01:04:00 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Cázares Ingreso a Principal
+-------------------------------
+01:04:31 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Cázares Ingreso a gestion de evaluaciones
+-------------------------------
+01:18:05 p.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+01:18:21 p.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+01:20:46 p.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+01:20:51 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+01:20:51 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+01:21:22 p.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+01:21:39 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:22:01 p.m.
+Objetivos/DownloadPdf : El usuario: Fernando Reyes Inicio la descarga de su evaluación test
+-------------------------------
+01:22:01 p.m.
+Objetivos/DownloadPdf : El usuario: Fernando Reyes Inicio El procesamiento de su pdf- objetivos 
+-------------------------------
+01:22:01 p.m.
+Objetivos/DownloadPdf : El usuario: Fernando Reyes Inicio El procesamiento de su pdf- competencias 
+-------------------------------
+01:22:02 p.m.
+Objetivos/DownloadPdf : El usuario: Fernando Reyes Inicio El procesamiento de su pdf- Calificación 
+-------------------------------
+01:22:02 p.m.
+Objetivos/DownloadPdf : El usuario: Fernando Reyes Inicio El procesamiento de su pdf- Comentarios 
+-------------------------------
+01:22:07 p.m.
+MiHistorial/DownloadPdf : El usuario: Fernando Reyes Logro descargar su  evaluación del periodo test
+-------------------------------
+01:32:04 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:35:11 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:35:53 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:38:11 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:39:30 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:40:42 p.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+01:40:49 p.m.
+Periodos/NuevoPeriodo : El usuario: Fernando Reyes Ingreso a nuevo periodo
+-------------------------------
+01:41:02 p.m.
+Periodos/GuardaPeriodo : El usuario: Fernando Reyes Ingresó a nuevo periodo
+-------------------------------
+01:41:03 p.m.
+Periodos/GuardaPeriodo : El usuario: Fernando Reyes Guardo  el nuevo periodotest
+-------------------------------
+01:41:14 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:42:28 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:47:36 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:48:53 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+01:51:03 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+01:51:24 p.m.
+Gestion/GestionEvaluacion : El usuario: Fernando Reyes Ingreso a gestion de evaluaciones
+-------------------------------
+03:36:32 p.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+03:36:54 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+03:36:54 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+03:37:01 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+03:38:17 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+03:38:17 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+03:38:20 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+03:38:39 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+03:38:53 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+03:39:04 p.m.
+Account/LogIn : intento fallido de entrar a fernando.reyes@aspenlatam.com
+-------------------------------
+03:39:21 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+03:39:21 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+03:39:48 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+03:40:02 p.m.
+Periodos/Periodos : El usuario: Fernando Reyes Ingreso a periodos
+-------------------------------
+03:40:07 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+03:42:07 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+03:43:01 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+03:43:01 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+03:43:03 p.m.
+MisEvaluaciones/MiEvaluacion : El usuario: Fernando Reyes Ingreso a MiEvaluacion
+-------------------------------
+03:46:14 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+03:46:18 p.m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes ingreso a nuevo usuario
+-------------------------------
+04:18:24 p.m.
+Account/LogIn : El Usuario Fernando Reyes ingreso a su cuenta
+-------------------------------
+04:18:24 p.m.
+Evaluacion/Principal : El usuario: Fernando Reyes Ingreso a Principal
+-------------------------------
+04:19:23 p.m.
+Usuario/Usuarios : El Usuario Fernando Reyes ingreso a usuarios
+-------------------------------
+04:19:27 p.m.
+Usuario/NuevoUsuario : El Usuario Fernando Reyes ingreso a nuevo usuario
+-------------------------------

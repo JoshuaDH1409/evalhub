@@ -75,7 +75,7 @@ namespace PlantillaMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(ELogin model)
         {
-            model.Password = General.Encrypt.DesCifarado(model.Password);
+            //model.Password = General.Encrypt.DesCifarado(model.Password);
             model.Password = General.Encrypt.Cifrado(model.Password.Trim());
             int usr = Utilidades.negocio.ValidaAcceso(model.Email, model.Password);
             if (usr == 1)

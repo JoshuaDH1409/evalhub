@@ -16,6 +16,7 @@ using Spire.Doc;
 using Spire.Doc.Documents;
 using System.Drawing;
 using Spire.Doc.Fields;
+using static Spire.Pdf.General.Render.Decode.Jpeg2000.j2k.codestream.HeaderInfo;
 
 namespace PlantillaMVC.Controllers
 {
@@ -464,7 +465,11 @@ namespace PlantillaMVC.Controllers
                     foreach (ECompetemces Competencia in liCompetencias)
                     {
                         ECatComp temp = Utilidades.negocio.RecuperaUnaCatCompetencias(Competencia.titulo);
-                        Competencia.tituloTemp = temp.descripcion;
+                        ECatSubComp subComp = new ECatSubComp();
+                        if (Competencia.Subtitulo != 0)
+                            subComp = Utilidades.negocio.RecuperaCatSubCompetencia(Competencia.Subtitulo);
+                        subComp.SubCompetencia = subComp.SubCompetencia != null ? subComp.SubCompetencia : string.Empty;
+                        Competencia.tituloTemp = $"{temp.descripcion} | {subComp.SubCompetencia}";
                         data[i] = new string[4];
                         data[i][0] = Competencia.tituloTemp;
                         data[i][1] = Competencia.actividades;

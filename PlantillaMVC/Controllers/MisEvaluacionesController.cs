@@ -12,7 +12,8 @@ using CapaLogica.Funciones;
 using PlantillaMVC.Filters;
 using System.Web.Security;
 using System.IO;
-
+using DocumentFormat.OpenXml.Wordprocessing;
+using static Spire.Pdf.General.Render.Decode.Jpeg2000.j2k.codestream.HeaderInfo;
 
 namespace PlantillaMVC.Controllers
 {
@@ -82,8 +83,13 @@ namespace PlantillaMVC.Controllers
                 if (eval.ListaCompetencias != null)
                 {
                     foreach (ECompetemces item in eval.ListaCompetencias) {
-                        ECatComp temp = Utilidades.negocio.RecuperaUnaCatCompetencias(item.titulo);
-                        item.tituloTemp = temp.descripcion;
+                        ECatComp Comp = Utilidades.negocio.RecuperaUnaCatCompetencias(item.titulo);
+                        ECatSubComp subComp = new ECatSubComp();
+                        if(item.Subtitulo != 0)
+                            subComp = Utilidades.negocio.RecuperaCatSubCompetencia(item.Subtitulo) ;
+                        subComp.SubCompetencia = subComp.SubCompetencia != null ? subComp.SubCompetencia : string.Empty;
+                        item.tituloTemp = $"{Comp.descripcion} | {subComp.SubCompetencia}";
+
                     }
                 }
 
@@ -426,6 +432,11 @@ namespace PlantillaMVC.Controllers
             {
                 ViewData["Competencias"] = DropCatComp(eval, 0);
             }
+            if (id != 0)
+                ViewData["Editar"] = true;
+            else
+                ViewData["Editar"] = false;
+            ViewData["Subcompetencias"] = SubCompsCat();
             return PartialView(model);
         }
 
@@ -1530,7 +1541,12 @@ namespace PlantillaMVC.Controllers
                 foreach (ECompetemces item in liCompetencias)
                 {
                     ECatComp temp = Utilidades.negocio.RecuperaUnaCatCompetencias(item.titulo);
-                    item.tituloTemp = temp.descripcion;
+                    ECatSubComp subComp = new ECatSubComp();
+                    if (item.Subtitulo != 0)
+                        subComp = Utilidades.negocio.RecuperaCatSubCompetencia(item.Subtitulo);
+                    subComp.SubCompetencia = subComp.SubCompetencia != null ? subComp.SubCompetencia : string.Empty;
+                    item.tituloTemp = $"{temp.descripcion} | {subComp.SubCompetencia}";
+                    //item.tituloTemp = temp.descripcion;
                 }
             }
             ViewBag.status = status;
@@ -1793,7 +1809,12 @@ namespace PlantillaMVC.Controllers
                     foreach (ECompetemces Competencia in liCompetencias)
                     {
                         ECatComp temp = Utilidades.negocio.RecuperaUnaCatCompetencias(Competencia.titulo);
-                        Competencia.tituloTemp = temp.descripcion;
+                        ECatSubComp subComp = new ECatSubComp();
+                        if (Competencia.Subtitulo != 0)
+                            subComp = Utilidades.negocio.RecuperaCatSubCompetencia(Competencia.Subtitulo);
+                        subComp.SubCompetencia = subComp.SubCompetencia != null ? subComp.SubCompetencia : string.Empty;
+                        Competencia.tituloTemp = $"{temp.descripcion} | {subComp.SubCompetencia}";
+                        //Competencia.tituloTemp = temp.descripcion;
                         data[i] = new string[3];
                         data[i][0] = Competencia.tituloTemp;
                         data[i][1] = Competencia.actividades;
@@ -2015,7 +2036,12 @@ namespace PlantillaMVC.Controllers
                     foreach (ECompetemces item in eval.ListaCompetencias)
                     {
                         ECatComp temp = Utilidades.negocio.RecuperaUnaCatCompetencias(item.titulo);
-                        item.tituloTemp = temp.descripcion;
+                        ECatSubComp subComp = new ECatSubComp();
+                        if (item.Subtitulo != 0)
+                            subComp = Utilidades.negocio.RecuperaCatSubCompetencia(item.Subtitulo);
+                        subComp.SubCompetencia = subComp.SubCompetencia != null ? subComp.SubCompetencia : string.Empty;
+                        item.tituloTemp = $"{temp.descripcion} | {subComp.SubCompetencia}";
+                        //item.tituloTemp = temp.descripcion;
                     }
                 }
 
@@ -2152,6 +2178,11 @@ namespace PlantillaMVC.Controllers
                         ((from item in Respuesta where item.Text.Contains("Negocio") select item).ToList()).ToList();
 
             return Respuesta;
+        }
+
+        public List<ECatSubComp> SubCompsCat() {
+            var Lista = Utilidades.negocio.RecuperaCatSubCompetencias();
+            return Lista;
         }
         #endregion
         

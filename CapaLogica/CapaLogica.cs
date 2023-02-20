@@ -751,12 +751,40 @@ namespace CapaLogica
             }
         }
 
+        public List<ECatSubComp> RecuperaCatSubCompetencias()
+        {
+            try
+            {
+                return CatCompe.ClsCatComp.RecuperaCatSubCompetencias();
+            }
+            catch (ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return null;
+            }
+        }
 
+
+
+        
         public ECatComp RecuperaUnaCatCompetencias(int id)
         {
             try
             {
                 return CatCompe.ClsCatComp.RecuperaUnaCompetencia(id);
+            }
+            catch (ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return null;
+            }
+        }
+
+        public ECatSubComp RecuperaCatSubCompetencia(int Id)
+        {
+            try
+            {
+                return CatCompe.ClsCatComp.RecuperaUnaSubCompetencia(Id);
             }
             catch (ListErrores ex)
             {

@@ -24,6 +24,12 @@ namespace Modelo
         [AttributeDataMember("titulo", SQLTypeBasic.INTEGER)]
         public int titulo { get; set; }
 
+        [DataMember]
+        [Required(ErrorMessage = "Subtitulo requerido")]
+        [Display(Name = "Sub Título")]
+        [AttributeDataMember("Subtitulo", SQLTypeBasic.INTEGER)]
+        public int Subtitulo { get; set; }
+
         public string tituloTemp { get; set; }
 
         [DataMember]

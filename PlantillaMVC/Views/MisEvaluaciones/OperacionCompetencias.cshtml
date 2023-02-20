@@ -10,8 +10,11 @@
         OnComplete = "AbreCierraDilogoEspera(); loadCompetences(); CerrarCompetencias();",
         HttpMethod = "Post"
     }, new { id = "FormCompetencias", novalidate = "novalidate" }))
+
     {
         @Html.AntiForgeryToken();
+
+        var List = new SelectList(ViewBag.Subcompetencias, "id", "SubCompetencia");
 
         <div style="color:#FF0000;"> @ViewBag.Error </div>
 
@@ -47,7 +50,7 @@
 
 
             @*@if (ViewBag.status == 0)
-        {*@
+                {*@
 
             @if ((ViewBag.status == 0 && Model.Etapa == 3) || (ViewBag.status == 5 && Model.Etapa != 2) || (ViewBag.status == 10 && Model.Etapa != 6) || (ViewBag.status == 11 && Model.Etapa != 7))
             {
@@ -56,8 +59,25 @@
                         @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                     </td>
                     <td style="text-align: left">
-                        @Html.DropDownListFor(m => m.titulo, (ViewData["Competencias"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control", @style = "background-color:#eeeeee", @readonly = "readonly" })
+                        @Html.DropDownListFor(m => m.titulo, (ViewData["Competencias"] as List<SelectListItem>), "--SELECCIONA--", new { @id = "CatCompList", @onchange = "FillCatSubCompList(0)", @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.titulo)
+                        <br />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td style="text-align: left">
+                        @if (ViewBag.Editar == false)
+                        {
+                            @Html.DropDownListFor(m => m.Subtitulo, (List), "--SELECCIONA--", new { @id = "CatSubCompList", @class = "form-control", @hidden = "" });
+                        }
+                        else
+                        {
+                            @Html.DropDownListFor(m => m.Subtitulo, (List), "--SELECCIONA--", new { @id = "CatSubCompList", @class = "form-control" });
+                        }
+                        @Html.ValidationMessageFor(m => m.Subtitulo)
                         <br />
                     </td>
                 </tr>
@@ -80,8 +100,27 @@
                         @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                     </td>
                     <td style="text-align: left">
-                        @Html.DropDownListFor(m => m.titulo, (ViewData["Competencias"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.titulo, (ViewData["Competencias"] as List<SelectListItem>), "--SELECCIONA--", new { @id = "CatCompList", @onchange = "FillCatSubCompList(0)", @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.titulo)
+                        <br />
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td>
+                        @*@Html.LabelFor(m => m.Subtitulo, new { @hidden = "", @id = "lblSubComp", @class = "etiqueta" })*@
+                    </td>
+                    <td style="text-align: left">
+                        @if (ViewBag.Editar == false)
+                        {
+                            @Html.DropDownListFor(m => m.Subtitulo, (List), "--SELECCIONA--", new { @id = "CatSubCompList", @class = "form-control", @hidden = "" });
+                        }
+                        else
+                        {
+                            @Html.DropDownListFor(m => m.Subtitulo, (List), "--SELECCIONA--", new { @id = "CatSubCompList", @class = "form-control" });
+                        }
+                        @Html.ValidationMessageFor(m => m.Subtitulo)
                         <br />
                     </td>
                 </tr>
@@ -196,6 +235,96 @@
     }
 </div>
 
+@{
+    var ListValues = "[";
+    var ListText = "[";
+    var ListId = "[";
+    var SubComp = (List<Modelo.ECatSubComp>)ViewBag.Subcompetencias;
+    foreach (var item in SubComp)
+    {
+        ListValues = $"{ListValues}\"{item.id}\", ";
+        ListText = $"{ListText}\"{item.SubCompetencia}\",";
+        ListId = $"{ListId}\"{item.idCatComp}\",";
+    }
+    ListValues = ListValues.TrimEnd(',');
+    ListText = ListText.TrimEnd(',');
+    ListId = ListId.TrimEnd(',');
+    ListValues = string.Concat(ListValues, "]");
+    ListText = string.Concat(ListText, "]");
+    ListId = string.Concat(ListId, "]");
+}
+
+
+
+<script type="text/javascript">
+    /*var lblSubComp = document.getElementById("lblSubComp")*/
+    var CatCompList = document.getElementById("CatCompList")
+    var CatSubCompList = document.getElementById("CatSubCompList")
+    var arrayValues = @Html.Raw(ListValues);
+    var arrayText = @Html.Raw(ListText);
+    var arrayId = @Html.Raw(ListId);
+
+    CatCompListStyle()
+
+        @if(Model.Subtitulo != 0)
+    {
+        @Html.Raw($"FillCatSubCompList({Model.Subtitulo})")
+    }
+
+    function CatCompListStyle() {
+        Array.from(CatCompList.children).forEach(function (item, index) {
+
+            if (item.text.indexOf("Individuales |") >= 0) {
+                item.style.color = "#F8CB53"
+            }
+            if (item.text.indexOf("Gente |") >= 0) {
+                item.style.color = "#5AA767"
+            }
+            if (item.text.indexOf("Negocio |") >= 0) {
+                item.style.color = "#00B2E9"
+            }
+        })
+
+
+
+    }
+
+
+    function FillCatSubCompList(Id) {
+        var color = Array.from(CatCompList.children)[CatCompList.selectedIndex].style.color
+        CatCompList.style.color = color
+
+        var PlaceHolder = document.createElement("option")
+        PlaceHolder.text = "--SELECCIONA--"
+        PlaceHolder.value = ""
+        PlaceHolder.style.color = color
+
+        CatSubCompList.innerHTML = ""
+        CatSubCompList.style.color = color
+        CatSubCompList.add(PlaceHolder)
+
+        arrayId.forEach(function (idcomp, index) {
+            if (idcomp === CatCompList.value) {
+                var option = document.createElement("option")
+                option.text = arrayText[index]
+                option.value = arrayValues[index]
+                option.style.color = color
+                CatSubCompList.add(option)
+            }
+        })
+        if (CatSubCompList.hasAttribute("hidden", "")) {
+            CatSubCompList.removeAttribute("hidden")
+            //lblSubComp.removeAttribute("hidden")
+        }
+        if (Id != 0) {
+            CatSubCompList.value = Id
+        }
+        else {
+            CatSubCompList.value = ""
+        }
+        }
+</script>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $('.DatePicker').datepicker({
@@ -211,18 +340,19 @@
 
         $("#titulo option").each(function () {
 
-           // alert("index->" + $(this).text().indexOf("Individuales |"));
-            if ($(this).text().indexOf("Individuales |") >= 0 ) {
-                $(this).css('color','#F8CB53');
+            // alert("index->" + $(this).text().indexOf("Individuales |"));
+            if ($(this).text().indexOf("Individuales |") >= 0) {
+                $(this).css('color', '#F8CB53');
             }
-            else if ($(this).text().indexOf("Gente |") >= 0 ) {
+            else if ($(this).text().indexOf("Gente |") >= 0) {
                 $(this).css('color', '#5AA767');
             }
-            else if ($(this).text().indexOf("Negocio |") >= 0 ) {
+            else if ($(this).text().indexOf("Negocio |") >= 0) {
                 $(this).css('color', '#00B2E9');
             }
         });
     });
+
 </script>
 <script>
     /* Evento para cuando el usuario libera la tecla escrita dentro del input */

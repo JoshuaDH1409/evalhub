@@ -180,7 +180,13 @@ namespace CapaLogica.Interface
         List<ECatComp> RecuperaCatCompetencias();
 
         [OperationContract]
+        List<ECatSubComp> RecuperaCatSubCompetencias();
+
+        [OperationContract]
         ECatComp RecuperaUnaCatCompetencias(int id);
+
+        [OperationContract]
+        ECatSubComp RecuperaCatSubCompetencia(int Id);
         #endregion
 
         #region Log

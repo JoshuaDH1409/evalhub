@@ -31,11 +31,48 @@ namespace CapaLogica.CatCompe
             }
         }
 
+        public static List<ECatSubComp> RecuperaCatSubCompetencias()
+        {
+            try
+            {
+                return AccesoDB.ReadAll(new ECatSubComp());
+            }
+            catch (Exception ex)
+            {
+                throw GeneraException.AddException(ex, System.Reflection.MethodInfo.GetCurrentMethod(),
+                                             new string[] { string.Format("Error: {0}", ex.Message),
+                                                            string.Format("InnerException: {0}", ex.InnerException)});
+            }
+        }
+
         public static ECatComp RecuperaUnaCompetencia(int idComp)
         {
             try
             {
                 List<ECatComp> LiCompetencias= AccesoDB.Read(new ECatComp(), new List<Cliterio>()
+                {
+                    new Cliterio(typeof(ECatComp).GetProperty("id"), OperadoresRelacionales.IGUAL,idComp, TipoValor.Numero)
+                });
+
+                if (LiCompetencias.Count > 0)
+                    return LiCompetencias[0];
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                throw GeneraException.AddException(ex, System.Reflection.MethodInfo.GetCurrentMethod(),
+                                           new string[] { string.Format("Error: {0}", ex.Message),
+                                                            string.Format("InnerException: {0}", ex.InnerException)});
+                throw;
+            }
+        }
+
+        public static ECatSubComp RecuperaUnaSubCompetencia(int idComp)
+        {
+            try
+            {
+                List<ECatSubComp> LiCompetencias = AccesoDB.Read(new ECatSubComp(), new List<Cliterio>()
                 {
                     new Cliterio(typeof(ECatComp).GetProperty("id"), OperadoresRelacionales.IGUAL,idComp, TipoValor.Numero)
                 });

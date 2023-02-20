@@ -59,6 +59,7 @@
     <Compile Include="Clases\CHistorial.cs" />
     <Compile Include="Clases\CSessionEval.cs" />
     <Compile Include="Clases\CSession.cs" />
+    <Compile Include="Entidades\ECatSucComp.cs" />
     <Compile Include="Entidades\EDivision.cs" />
     <Compile Include="Entidades\EEscaletaEmpresa.cs" />
     <Compile Include="Entidades\EObjetivoPais.cs" />

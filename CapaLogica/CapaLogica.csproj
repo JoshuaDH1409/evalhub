@@ -57,6 +57,8 @@
     <Compile Include="Interface\IService1.cs" />
     <Compile Include="Log\Log.cs" />
     <Compile Include="ObjetivoPais\ClsObjetivosPais.cs" />
+    <Compile Include="ObjetivosPDP\ClsEObjetivesPersonalDP.cs" />
+    <Compile Include="ObjetivosPTP\ClsEObjetivesPersonalTP.cs" />
     <Compile Include="Objetivos\ClsObjetivos.cs" />
     <Compile Include="Pais\ClsPais.cs" />
     <Compile Include="Periodo\ClsPeriodo.cs" />
@@ -83,7 +85,9 @@
       <Name>Modelo</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

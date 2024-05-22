@@ -1,0 +1,94 @@
+﻿@model List<Modelo.EPersonalDP>
+
+<script>
+    $(function () {
+        $(".wmd-view-topscroll").scroll(function () {
+            $(".wmd-view")
+                .scrollLeft($(".wmd-view-topscroll").scrollLeft());
+        });
+        $(".wmd-view").scroll(function () {
+            $(".wmd-view-topscroll")
+                .scrollLeft($(".wmd-view").scrollLeft());
+        });
+    });
+
+    $(function () {
+        $(".wmd-view-topscroll2").scroll(function () {
+            $(".wmd-view2")
+                .scrollLeft($(".wmd-view-topscroll2").scrollLeft());
+        });
+        $(".wmd-view2").scroll(function () {
+            $(".wmd-view-topscroll2")
+                .scrollLeft($(".wmd-view2").scrollLeft());
+        });
+    });
+</script>
+<style>
+    #accordion div {
+        border: 1px solid #d6d6d6;
+    }
+
+    #accordionObjetivosPDP div {
+        border: 1px solid #d6d6d6;
+    }
+
+    #accordionObjetivosPDP .ui-state-default {
+        background: #337AB7;
+        color: #FFF;
+        border: 0;
+        cursor: pointer;
+    }
+
+    #accordionObjetivosPDP .ui-state-active {
+        background: #58ACFA;
+        color: #FFF;
+    }
+</style>
+
+<div id="accordionObjetivosPDP">
+    @if (Model != null)
+    {
+        foreach (Modelo.EPersonalDP item in Model)
+        {
+            <h3 class="ObjetivosPDP" style="position: relative;">
+                @item.ObjetivePDP
+                <div style="position: absolute; top: 0px;right: 4px; border: 0;">
+                    @*AQUÍ SE REALIZARIA UNA VALIDACIÓN EN CASO DE SER REQUERIDA*@
+                    @*if (ViewBag.status == 0 || ViewBag.status == 2 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))*@
+
+                    @Ajax.ActionLink(" ", "OperacionObjetivosPDP", "MisEvaluaciones", new { id = item.id, Eval = item.Eval, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleObjetivosPDP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivosPDP()" }, new { @class = "fa fa-edit", @style = "color: #FFF;", @title = "Editar" })
+                    @Ajax.ActionLink(" ", "EliminaObjetivoPDP", "MisEvaluaciones", new { id = item.id}, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadObjetivosPDP", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red;", @title = "Eliminar" })
+
+                </div>
+            </h3>
+            <div style="padding: 10px;">
+                <table class="table table-sm table-bordered table-striped">
+                    <tr class="ObjetivosPDP">
+                        <td style="background-color: #F9F9F9; font-weight: bold;">Objetivo</td>
+                        <td>@item.ObjetivePDP</td>
+                    </tr>
+                    <tr class="ObjetivosPDP">
+                        <td style="background-color: #F9F9F9; font-weight: bold;">Propósito</td>
+                        <td>@item.actionPDP</td>
+                    </tr>
+                    <tr class="ObjetivosPDP">
+                        <td style="background-color: #F9F9F9; font-weight: bold;">¿Cómo podemos Ayudarte?</td>
+                        <td>@item.dateFinish</td>
+                    </tr>
+
+                </table>
+            </div>
+        }
+    }
+
+</div>
+
+<script>
+    $(function () {
+        $("#accordionObjetivosPDP").accordion({
+            active: false,
+            collapsible: true,
+            heightStyle: "content"
+        });
+    });
+</script>

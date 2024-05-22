@@ -59,6 +59,7 @@
     <Compile Include="Clases\CHistorial.cs" />
     <Compile Include="Clases\CSessionEval.cs" />
     <Compile Include="Clases\CSession.cs" />
+    <Compile Include="Entidades\EPersonalDP.cs" />
     <Compile Include="Entidades\ECatSucComp.cs" />
     <Compile Include="Entidades\EDivision.cs" />
     <Compile Include="Entidades\EEscaletaEmpresa.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Entidades\EPeriodos.cs" />
     <Compile Include="Entidades\Eetapa.cs" />
     <Compile Include="Entidades\EEscaleta.cs" />
+    <Compile Include="Entidades\EPersonalTP.cs" />
     <Compile Include="Entidades\EStatus.cs" />
     <Compile Include="Entidades\VEvalCompetences.cs" />
     <Compile Include="Entidades\VEvalObj.cs" />

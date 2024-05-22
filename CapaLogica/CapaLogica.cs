@@ -795,6 +795,122 @@ namespace CapaLogica
 
         #endregion
 
+        #region Objetivos Personales PTP
+        public List<EPersonalTP> RecuperaListaObjetivosPTP(int Eval)
+        {
+            try
+            {
+                return ObjetivosPTP.ClsEObjetivesPersonalTP.RecuperaListaObjetivos(Eval);
+            }
+            catch (ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return null;
+            }
+        }
+
+        public EPersonalTP RecuperaUnObjetivoPTPid(int id)
+        {
+            try
+            {
+                
+                return ObjetivosPTP.ClsEObjetivesPersonalTP.RecuperaUnObjetivoPTPid(id);
+
+            }catch(ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return null;
+            }
+        }
+
+        public bool GuardaObjetivosPTP(EPersonalTP objetivo)
+        {
+            try
+            {
+                return ObjetivosPTP.ClsEObjetivesPersonalTP.GuardaObjetivo(objetivo);
+            }catch(ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return false;
+            }
+        }
+
+        public bool EliminaUnObjetivoPTP(int id)
+        {
+            try
+            {
+                return ObjetivosPTP.ClsEObjetivesPersonalTP.EliminaUnObjetivo(id);
+
+            }
+            catch(ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region OBJETIVOS PDP
+
+        public List<EPersonalDP> RecuperaListaObjetivosPDP(int Eval)
+        {
+            try
+            {
+                return ObjetivosPDP.ClsEObjetivesPersonalDP.RecuperaListaObjetivos(Eval);
+            }
+            catch (ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return null;
+            }
+        }
+
+        public EPersonalDP RecuperaUnObjetivoPDPid(int id)
+        {
+            try
+            {
+
+                return ObjetivosPDP.ClsEObjetivesPersonalDP.RecuperaUnObjetivoPTPid(id);
+
+            }
+            catch (ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return null;
+            }
+        }
+
+        public bool GuardaObjetivosPDP(EPersonalDP objetivo)
+        {
+            try
+            {
+                return ObjetivosPDP.ClsEObjetivesPersonalDP.GuardaObjetivo(objetivo);
+            }
+            catch (ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return false;
+            }
+        }
+
+        public bool EliminaUnObjetivoPDP(int id)
+        {
+            try
+            {
+                return ObjetivosPDP.ClsEObjetivesPersonalDP.EliminaUnObjetivo(id);
+
+            }
+            catch (ListErrores ex)
+            {
+                LogErrores.GuardaLogCapaLogica(GeneraException.RecuperaErrores(ex));
+                return false;
+            }
+        }
+
+
+        #endregion
+
         #region Correos
 
         public ECorreos RecuperaUnCorreo(int id)

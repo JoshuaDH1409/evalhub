@@ -45,7 +45,7 @@ namespace CapaLogica.Seguridad
                 List<ELogin> login = AccesoDB.Read(new ELogin(), new List<Cliterio>()
                 {
                     new Cliterio(typeof(ELogin).GetProperty("Email"), OperadoresRelacionales.IGUAL, Email, TipoValor.Texto),
-                    new Cliterio(OperadoresLogicos.AND,typeof(ELogin).GetProperty("Password"), OperadoresRelacionales.IGUAL, password, TipoValor.Texto)                     
+                    new Cliterio(OperadoresLogicos.AND,typeof(ELogin).GetProperty("Password"), OperadoresRelacionales.IGUAL, password, TipoValor.Texto)
                 });
                 if (login.Count > 0)
                     return login[0];

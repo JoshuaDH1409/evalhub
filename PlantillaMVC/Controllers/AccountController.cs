@@ -76,6 +76,9 @@ namespace PlantillaMVC.Controllers
         public ActionResult Login(ELogin model)
         {
             //model.Password = General.Encrypt.DesCifarado(model.Password);
+            //model.Password = General.Encrypt.DesCifarado("LeqDNbgFEe6ZjdJ/ib8yhxdid7N8csZfvWqx8m9YFZ4=");
+            //descifrafPSW
+
             model.Password = General.Encrypt.Cifrado(model.Password.Trim());
             int usr = Utilidades.negocio.ValidaAcceso(model.Email, model.Password);
             if (usr == 1)

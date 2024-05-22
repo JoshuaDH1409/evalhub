@@ -17,6 +17,7 @@ using Spire.Doc.Documents;
 using System.Drawing;
 using Spire.Doc.Fields;
 using static Spire.Pdf.General.Render.Decode.Jpeg2000.j2k.codestream.HeaderInfo;
+using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace PlantillaMVC.Controllers
 {
@@ -726,6 +727,1111 @@ namespace PlantillaMVC.Controllers
             }
         }
         #endregion
+
+
+        /// <summary>
+        /// Nuevo requerimiento 29-04-2024
+        /// Descargar en formato PDF la plantilla en excel => formato_excel_ejemplo_
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+
+        #region DounLoadPDFNew
+        public ActionResult DownloadPdfNew(int Id, int typeLanguaje)
+        {
+
+            //IDIOMA
+            int idiomaSP = 0;
+            int idiomaEN = 1;
+
+            int idiomaDOC = typeLanguaje;
+
+            string firmaJefe = "";
+            string firmaEmpleado = "";
+            if(idiomaDOC == idiomaSP)
+            {
+                firmaJefe = "Firma Jefe";
+                firmaEmpleado = "Firma Empleado";
+            }
+            else
+            {
+                firmaJefe = "Line Manager Signature";
+                firmaEmpleado = "Employee Signature";
+            }
+
+            string path = Path.Combine(Server.MapPath("~/PlantillasReportes/"), "DocTest_new.docx");
+            string pathResp = Path.Combine(Server.MapPath("~/PlantillasReportes/"), "Resp_new.docx");
+            string pathpdf = Path.Combine(Server.MapPath("~/PlantillasReportes/"), "Resp_new.pdf");
+
+            try
+            {
+
+                Spire.Doc.Document document = new Spire.Doc.Document();
+                EEval Evaluacion = Utilidades.negocio.RecuperaEvaluacionIdHistorial(Id);
+                Modelo.Clases.CSessionEval Evaluado = Utilidades.negocio.RecuperaUsuarioEval(Evaluacion.id_usuario);
+
+                ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(Evaluado.Login.EvaluadorIdSap);
+                EPeriodos periodo = Utilidades.negocio.RecuperaUnPeriodo(Evaluacion.periodo);
+
+                //SOLO PARA PRUEBAS ESPECIFICAS
+                //Evaluacion.id = 3357;
+
+                List<EObjetives> liObjetivos = Utilidades.negocio.RecuperaListaObjetivos(Evaluacion.id);
+                List<EPersonalTP> liPersonalPTP = Utilidades.negocio.RecuperaListaObjetivosPTP(Evaluacion.id);
+                List<EPersonalDP> liPersonalPDP = Utilidades.negocio.RecuperaListaObjetivosPDP(Evaluacion.id);
+
+                System.IO.File.Copy(path, pathResp, true);//copiamos el documento original al temporal
+                //System.IO.File.Copy(path, pathRespNew, true);//copiamos el documento original al temporal
+
+                object fileName = Path.Combine(Server.MapPath("~/PlantillasReportes/"), "Resp_new.docx");//obtenemos la ruta del archivo copiado
+
+
+                document.LoadFromFile(fileName.ToString());//se carga el documento que se le hara el replace
+                Bitacora.NuevaEntrada("se inicia el PDF de: " + Evaluado.Login.id_sap + "_" + Evaluado.Login.NombreCompleto + " Ingreso a Historial", "MiHistorial/Historial ");
+
+
+                //IDIOMA INFORMACIÓN
+
+
+
+                //PRUBAS NUEVO CÓDIGO
+
+                #region DatosUsuario
+                string label_Titulo = "";
+                string label_claveUnidad = "";
+                string label_nombreEmpleado = "";
+                string label_apellidoEmpleado = "";
+                string label_numEmp = "";
+                string label_puestoEmp = "";
+                string label_departamento = "";
+                string label_nombreJefe = "";
+
+                if(idiomaDOC == idiomaSP)
+                {
+                    label_Titulo = "FORMATO INDIVIDUAL DE REVISIÓN DE DESEMPEÑO";
+                    label_claveUnidad = "Unidad de Negocio";
+                    label_nombreEmpleado = "Nombre";
+                    label_apellidoEmpleado = "Apellido";
+                    label_numEmp = "Numero de Empleado";
+                    label_puestoEmp = "Nombre del Puesto";
+                    label_departamento = "Área";
+                    label_nombreJefe = "Nombre del Jefe Inmediato";
+                }
+                else
+                {
+                    label_Titulo = "INDIVIDUAL PERFORMANCE REVIEW";
+                    label_claveUnidad = "Business Unit:";
+                    label_nombreEmpleado = "Employee Name";
+                    label_apellidoEmpleado = "Employee Surname";
+                    label_numEmp = "Employee Number";
+                    label_puestoEmp = "Job Title";
+                    label_departamento = "Department";
+                    label_nombreJefe = "Line Manager";
+                }
+
+
+
+                document.Replace("#label_Titulo#", label_Titulo, true, true);
+                document.Replace("#label_claveUnidad#", label_claveUnidad, true, true);
+                document.Replace("#label_nombreEmpleado#", label_nombreEmpleado, true, true);
+                document.Replace("#label_apellidoEmpleado#", label_apellidoEmpleado, true, true);
+                document.Replace("#label_numEmp#", label_numEmp, true, true);
+                document.Replace("#label_puestoEmp#", label_puestoEmp, true, true);
+                document.Replace("#label_departamento#", label_departamento, true, true);
+                document.Replace("#label_nombreJefe#", label_nombreJefe, true, true);
+
+
+                document.Replace("#claveUnidad#", "S-LATAM", true, true);
+                document.Replace("#nombreEmpleado#", Evaluado.Login.Nombre, true, true);
+                document.Replace("#apellidoEmpleado#", Evaluado.Login.ApellidoPat + " " + Evaluado.Login.ApellidoMat, true, true);
+                document.Replace("#numEmpleado#", Evaluado.Login.id_sap, true, true);
+                document.Replace("#puestoEmp#", Evaluado.Login.Puesto, true, true);
+                document.Replace("#departamento#", Evaluado.Login.Division, true, true);
+                document.Replace("#nombreJefe#", String.Concat(jefe.NombreCompleto), true, true);
+                #endregion
+
+                ////
+                #region Objetivos Evaluacion medio año
+                if (liObjetivos != null)
+                {
+                    #region DECLARACION
+                    Spire.Doc.Section sectionObjetivos = document.Sections[0];
+                    Spire.Doc.Documents.TextSelection selectionObjetivos = document.FindString("#Objetivos1#", true, true);
+                    Spire.Doc.Fields.TextRange rangeObjetivos = selectionObjetivos.GetAsOneRange();
+                    Spire.Doc.Documents.Paragraph paragraphObjetivos = rangeObjetivos.OwnerParagraph;
+                    Spire.Doc.Body bodyObjetivos = paragraphObjetivos.OwnerTextBody;
+                    int index = bodyObjetivos.Paragraphs.IndexOf(paragraphObjetivos);
+
+                    Spire.Doc.Table tableObjetivos = sectionObjetivos.AddTable(true);
+                    PreferredWidth width = new PreferredWidth(WidthType.Percentage, 112);
+                    tableObjetivos.PreferredWidth = width;
+                    tableObjetivos.TableFormat.LeftIndent = -42;
+                    //tableObjetivos.AutoFitBehavior(AutoFitBehaviorType.wdAutoFitContents);
+                    tableObjetivos.TableFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                    tableObjetivos.TableFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 171, 239);
+
+                    #region IDIOMA ENCABEZADOS
+                    //Configuracion de idioma
+
+                    //INICIO ENCABEZADOS
+                    String[] Header;
+                    String[] HeaderEN = {
+                        "#", "KEYPERFORMANCEAREA (KPA)", "KEY PERFORMANCE INDICATOR (KPI) Specific objective(s) to be achieved per each KPA",
+                        "WEIGHTING Total of 100%", "Self Assessment Comments Completed by: Employee", "Mid-Year Comments Completed by: Manager %",
+                        "Self Assessment Rating Completed by: Employee", "Justification of Rating Completed by: Employee", "Final Rating Completed by: Manager", "Final Justification of Rating Completed by: Manager" };
+                    String[] HeaderSP = {
+                        "#", "ÁREA DE RENDIMIENTO CLAVE (KPA)", "INDICADOR DE RENDIMIENTO CLAVE (KPI) Objetivo(s) específico(s) a lograr por cada KPA",
+                        "PONDERACIÓN Total de 100%", "Comentarios de Autoevaluación Completado por: Empleado", "Comentarios de Medio Año Completado por: Gerente %",
+                        "Calificación de Autoevaluación Completado por: Empleado", "Justificación de la Calificación Completado por: Empleado", "Calificación Final Completado por: Gerente", "Justificación Final de la Calificación Completado por: Gerente"
+                    };
+                    
+                    String[] HeaderUno;
+                    String[] HeaderUnoSP = { "Configuración de Objetivos", "Revisión de Medio Año", "Revisión Anual Final" };
+                    String[] HeaderUnoEN = { "Objetivos Settings", "Mid-Year Review", "Final Annual Review" };
+
+                    String[] HeaderDos;
+                    String[] HeaderDosSP = { "Periodo KPI", "Julio 2023 a Junio 2024", "Fecha de Revisión de Medio Año (DD/MMM/AA)", "Fecha de Revisión Anual Final (DD/MMM/AA)" };
+                    String[] HeaderDosEN = { "KPI Period", "July 2023 to June 2024", "Mid-Year Review Date (DD/MMM/YY)", "Final Annual Review Date (DD/MMM/YY)" };
+
+                    if (idiomaDOC == idiomaSP)
+                    {
+                        Header = HeaderSP;
+                        HeaderUno = HeaderUnoSP;
+                        HeaderDos = HeaderDosSP;
+                    }
+                    else
+                    {
+                        Header = HeaderEN;
+                        HeaderUno = HeaderUnoEN;
+                        HeaderDos = HeaderDosEN;
+                    }
+                    #endregion
+
+
+
+                    //tamaño de los paquetes de datos
+                    int SIZE_HEADER = 10;//TAMAÑO DE LA LISTA Header
+                    int ENCABEZADOS = 3;
+                    int FOOTER = 4;
+
+                    //LISTA QUE ALMACENARA LOS DATOS DE LOS OBJETIVOS
+                    string[][] data = new string[liObjetivos.Count][];
+
+                    //SE DEFINE EL NUMERO DE FILAS QUE HABRA EN LA TABLA. EL NUMERO DE OBJETIVOS MAS LOS TRES ENCABEZADOS MAS LOS FOOTER
+                    //SE DEFINE EL NUMERO DE COLUMNAS CON EL NUMERO DE HEADERS
+                    tableObjetivos.ResetCells(liObjetivos.Count + ENCABEZADOS + FOOTER, SIZE_HEADER);
+                    #endregion
+
+                    #region HEADERS
+                    //PARA EL PRIMER HEADER SE REALIZA LO SIGUIENTE
+                    //String[] HeaderUno = { "Objetivos Settings", "Mid-Year Review", "Final Annual Review" };
+                    int[] IndexHeaderUno = { 0, 4, 6 };//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
+                    System.Drawing.Color[] columnColors = { System.Drawing.Color.FromArgb(0, 171, 239), System.Drawing.Color.FromArgb(0, 128, 0), System.Drawing.Color.FromArgb(128, 128, 128) };
+                    //COLORES 
+                    TableRow F_Header1_row = tableObjetivos.Rows[0];
+                    //F_Header1_row.RowFormat.BackColor = Color.FromArgb(0, 128, 0);
+                    F_Header1_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(0, 0, 3);
+                    tableObjetivos.ApplyHorizontalMerge(0, 4, 5);
+                    tableObjetivos.ApplyHorizontalMerge(0, 6, 9);
+
+                    // Agregar los encabezados y configurar su formato
+                    for (int h = 0; h < HeaderUno.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = IndexHeaderUno[h];
+                        // Configurar el color de fondo de la celda según la columna
+                        F_Header1_row.Cells[columnIndex].CellFormat.BackColor = columnColors[h];
+
+                        //Cell Alignment
+                        F_Header1_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black
+                            ;
+                        F_Header1_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+
+                        Spire.Doc.Documents.Paragraph p = F_Header1_row.Cells[columnIndex].AddParagraph();
+                        F_Header1_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(HeaderUno[h]);
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.White;
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.FontSize = 9;
+                        TR.CharacterFormat.Bold = true;
+                    
+                    }
+
+                    //PARA EL SEGUNDO HEADER
+                    //String[] HeaderDos = { "KPI Period", "July 2023 to June 2024", "Mid-Year Review Date (DD/MMM/YY)", "Final Annual Review Date (DD/MMM/YY)" };
+                    int[] IndexHeaderDos = { 0, 2, 4, 6 };//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
+                    //COLORES 
+                    TableRow S_row = tableObjetivos.Rows[1];
+                    S_row.RowFormat.BackColor = Color.FromArgb(0, 171, 239);
+                    S_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(1, 0, 1);
+                    tableObjetivos.ApplyHorizontalMerge(1, 2, 3);
+                    tableObjetivos.ApplyHorizontalMerge(1, 4, 5);
+                    tableObjetivos.ApplyHorizontalMerge(1, 6, 9);
+
+
+                    // Agregar los encabezados y configurar su formato
+                    //int celdaS_row = 0;
+                    for (int h = 0; h < HeaderDos.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = IndexHeaderDos[h];
+                        //Cell Alignment
+                        S_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        S_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+                        Spire.Doc.Documents.Paragraph p = S_row.Cells[columnIndex].AddParagraph();
+                        S_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(HeaderDos[h]);
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.Black;
+                        TR.CharacterFormat.FontSize = 9;
+                        TR.CharacterFormat.Bold = true;
+                        S_row.RowFormat.BackColor = System.Drawing.Color.FromArgb(173, 216, 230);
+                    }
+
+                    //PARA EL TERCER HEADER
+                    Spire.Doc.TableRow FRow = tableObjetivos.Rows[2];
+                    FRow.IsHeader = false;
+                    FRow.Height = 35;
+
+                    for (int h = 0; h < Header.Length; h++)
+                    {
+                        //Cell Alignment
+                        FRow.Cells[h].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        FRow.Cells[h].CellWidthType = CellWidthType.Auto;// = 300F;
+                        Spire.Doc.Documents.Paragraph p = FRow.Cells[h].AddParagraph();
+                        FRow.Cells[h].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        //FRow.Cells[h].CellFormat.Borders.Color = System.Drawing.Color.White;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(Header[h]);
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.White;
+                        TR.CharacterFormat.FontSize = 9;
+                        if (h == 1)
+                        {
+                            TR.CharacterFormat.FontSize = 8;
+                        }
+                        
+                        TR.CharacterFormat.Bold = true;
+                        //TR.CharacterFormat.Border.Color = System.Drawing.Color.White;
+                        FRow.RowFormat.BackColor = System.Drawing.Color.FromArgb(0, 171, 239);
+                    }
+                    #endregion
+
+                    #region DATOS DE LA TABLA
+                    ////DATOS
+                    int i = 0;
+                    int totalPonderado = 0;
+                    float totalEvaluado = 0.0f;
+                    float totalEvaluador = 0.0f;
+                    foreach (EObjetives objetivo in liObjetivos)
+                    {
+                        int numObj = i + 1;
+                        String titulo = objetivo.titulo;
+                        //Objetivos
+                        String descripcion = objetivo.objdesc + "\n" + objetivo.objMetricas;
+                        //Ponderado
+                        totalPonderado += objetivo.ponderado;
+                        String ponderado = objetivo.ponderado.ToString();
+                        //definicion del tamaño
+                        data[i] = new string[SIZE_HEADER];
+                        //primer apartado
+                        data[i][0] = numObj.ToString();
+                        data[i][1] = titulo;
+                        data[i][2] = descripcion;
+                        data[i][3] = ponderado;
+                        //segundo apartado
+                        data[i][4] = objetivo.resultado;
+                        data[i][5] = objetivo.ComentariosJefeEval;
+                        //tercer apartdo
+                        data[i][6] = objetivo.cumplimientoEvaluado2.ToString();
+                        data[i][7] = objetivo.Resultado2;
+                        data[i][8] = objetivo.cumplimientoEvaluador2.ToString();
+                        data[i][9] = objetivo.ComentariosJefeEval2;
+
+                        totalEvaluado += (( objetivo.ponderado/100f) * objetivo.cumplimientoEvaluado2);
+                        totalEvaluador += ((objetivo.ponderado/100f) * objetivo.cumplimientoEvaluador2);
+                        
+                        i = i + 1;
+                    }
+
+                    //rellenando la tabla
+                    for (int r = 0; r < data.Length; r++)
+                    {
+                        Spire.Doc.TableRow DataRow = tableObjetivos.Rows[r + ENCABEZADOS];
+                        DataRow.Height = 20;                      
+                        
+                        if ((r % 2) == 0)
+                        {
+                            DataRow.RowFormat.BackColor = System.Drawing.Color.FromArgb(222, 234, 246);//AZUL
+                        }
+                        else
+                        {
+                            DataRow.RowFormat.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);//BLANCO
+                        }
+
+                        for (int c = 0; c < data[r].Length; c++)
+                        {
+                            DataRow.Cells[c].CellFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                            DataRow.Cells[c].CellFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 171, 239);
+                            
+                            //DataRow.Cells[c].Width = 75F;
+                            Spire.Doc.Documents.Paragraph p2 = DataRow.Cells[c].AddParagraph();
+                            Spire.Doc.Fields.TextRange TR2 = p2.AppendText(data[r][c]);
+                            
+                            if(c == 2)
+                            {
+                                DataRow.Cells[c].Width = 50F;
+                            }
+
+
+                            //Format Cells
+                            DataRow.Cells[c].CellFormat.VerticalAlignment = VerticalAlignment.Middle;
+                            p2.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
+                            if (c == 3 || c == 5 || c == 7)
+                            {
+                                p2.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                            }
+
+                            //LETRA
+                            TR2.CharacterFormat.FontName = "Calibri";
+                            TR2.CharacterFormat.FontSize = 9;
+                            if(c == 2 || c == 1)
+                            {
+                                TR2.CharacterFormat.FontSize = 7;
+
+                            }
+                            TR2.CharacterFormat.TextColor = System.Drawing.Color.FromArgb(0, 32, 96);
+                            TR2.CharacterFormat.Border.Color = System.Drawing.Color.FromArgb(0, 171, 239);
+                        }
+                    }
+                    #endregion
+
+                    #region FOOTER
+
+                    #region IDIOMA FOOTER
+                    //FOOTER
+                    String[] FooterUno;
+                    String[] FooterUnoSP = { "PUNTUACIÓN GENERAL DE DESEMPEÑO INDIVIDUAL", totalPonderado.ToString() + "%", "", totalEvaluado.ToString("F2"), Evaluado.Evaluacion.ComEvaluado2, totalEvaluador.ToString("F2"), Evaluado.Evaluacion.ComEvaluador2 };
+                    String[] FooterUnoEN = { "OVERALL INDIVIDUAL PERFORMANCE SCORE", totalPonderado.ToString() + "%", "", totalEvaluado.ToString("F2"), Evaluado.Evaluacion.ComEvaluado2, totalEvaluador.ToString("F2"), Evaluado.Evaluacion.ComEvaluador2 };
+
+                    String[] FooterDos;
+                    String[] FooterDosSP = { "APROBACIÓN DE LA FASE ESTABLECIMIENTO DE OBJETIVOS", "FIRMA DE REVISIÓN DE MEDIO AÑO", "FIRMA DE REVISIÓN ANUAL FINAL" };
+                    String[] FooterDosEN = { "OBJECTIVE SETTING SIGN-OFF", "MID-YEAR REVIEW SIGN-OFF", "FINAL ANNUAL REVIEW SIGN-OFF" };
+
+                    if (idiomaDOC == idiomaSP)
+                    {
+                        FooterUno = FooterUnoSP;
+                        FooterDos = FooterDosSP;
+                    }
+                    else
+                    {
+                        FooterUno = FooterUnoEN;
+                        FooterDos = FooterDosEN;
+                    }
+
+                    #endregion
+                    //PARA EL PRIMER footer SE REALIZA LO SIGUIENTE
+                    //String[] FooterUno = { "OVERALL INDIVIDUAL PERFORMANCE SCORE", totalPonderado.ToString() + "%", "", totalEvaluado.ToString("F2"), "",totalEvaluador.ToString("F2"), "" };
+
+                    int[] IndexFooterUno = { 0, 3, 4, 6, 7, 8, 9};//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
+                    //COLORES 
+                    System.Drawing.Color[] columnColorsFooter = { System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(128, 128, 128), System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(128, 128, 128) };
+                    System.Drawing.Color[] columnColorsTextFooter = { System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0) };
+                    
+                    int inicioFooter = ENCABEZADOS + liObjetivos.Count;//suma para saber donde comienza el footer
+                    TableRow F_Footer1_row = tableObjetivos.Rows[inicioFooter];
+                    //F_Header1_row.RowFormat.BackColor = Color.FromArgb(0, 128, 0);
+                    F_Footer1_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooter, 0, 2);
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooter, 4, 5);
+
+                    // Agregar los encabezados y configurar su formato
+                    for (int h = 0; h < FooterUno.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = IndexFooterUno[h];
+                        // Configurar el color de fondo de la celda según la columna
+                        F_Footer1_row.Cells[columnIndex].CellFormat.BackColor = columnColorsFooter[h];
+
+                        //Cell Alignment
+                        F_Footer1_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        F_Footer1_row.Cells[columnIndex].CellFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                        F_Footer1_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+
+                        Spire.Doc.Documents.Paragraph p = F_Footer1_row.Cells[columnIndex].AddParagraph();
+                        F_Footer1_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(FooterUno[h]);
+                        TR.CharacterFormat.TextColor = columnColorsTextFooter[h];
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.FontSize = 9;
+                        TR.CharacterFormat.Bold = true;
+                    }
+
+                    //PARA EL SEGUNDO FOOTER SE REALIZA LO SIGUIENTE
+                    //String[] FooterDos = { "OVERALL INDIVIDUAL PERFORMANCE SCORE", "MID-YEAR REVIEW SIGN-OFF", "FINAL ANNUAL REVIEW SIGN-OFF" };
+                    int[] IndexFooterDos = { 0, 4, 6};//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
+                    //COLORES 
+                    int inicioFooterDos = inicioFooter + 1;//suma para saber donde comienza el footer dos
+                    TableRow F_Footer2_row = tableObjetivos.Rows[inicioFooterDos];
+                    F_Footer2_row.RowFormat.BackColor = Color.FromArgb(254, 254, 254);
+                    F_Footer2_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooterDos, 0, 3);
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooterDos, 4, 5);
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooterDos, 6, 9);
+
+                    // Agregar los encabezados y configurar su formato
+                    for (int h = 0; h < FooterDos.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = IndexFooterDos[h];
+
+                        //Cell Alignment
+                        F_Footer2_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        F_Footer2_row.Cells[columnIndex].CellFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                        F_Footer2_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+
+                        Spire.Doc.Documents.Paragraph p = F_Footer2_row.Cells[columnIndex].AddParagraph();
+                        F_Footer2_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(FooterDos[h]);
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.FontSize = 9;
+                        TR.CharacterFormat.Bold = true;
+                    }
+
+                    //PARA EL tercer FOOTER SE REALIZA LO SIGUIENTE
+                    int[] IndexFooterTres = { 0, 4, 6 };//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
+                    int inicioFooterTres = inicioFooterDos + 1;//suma para saber donde comienza el footer dos
+                    TableRow F_Footer3_row = tableObjetivos.Rows[inicioFooterTres];
+                    F_Footer3_row.RowFormat.BackColor = Color.FromArgb(254, 254, 254);
+                    F_Footer3_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooterTres, 0, 3);
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooterTres, 4, 5);
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooterTres, 6, 9);
+
+                    // Agregar los encabezados y configurar su formato
+                    for (int h = 0; h < IndexFooterTres.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = IndexFooterTres[h];
+
+                        //Cell Alignment
+                        F_Footer3_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        F_Footer3_row.Cells[columnIndex].CellFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                        F_Footer3_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+
+                        Spire.Doc.Documents.Paragraph p = F_Footer3_row.Cells[columnIndex].AddParagraph();
+                        F_Footer3_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        String textFirma = firmaEmpleado + "\n\n\n\n-------------------------\n" + Evaluado.Login.NombreCompleto;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(textFirma);
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.FontSize = 10;
+                        TR.CharacterFormat.Bold = true;
+                    }
+
+                    //PARA EL CUARTO FOOTER SE REALIZA LO SIGUIENTE
+                    int inicioFooterCuatro = inicioFooterTres + 1;//suma para saber donde comienza el footer dos
+                    F_Footer3_row = tableObjetivos.Rows[inicioFooterCuatro];
+                    F_Footer3_row.RowFormat.BackColor = Color.FromArgb(254, 254, 254);
+                    F_Footer3_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooterCuatro, 0, 3);
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooterCuatro, 4, 5);
+                    tableObjetivos.ApplyHorizontalMerge(inicioFooterCuatro, 6, 9);
+
+                    // Agregar los encabezados y configurar su formato
+                    for (int h = 0; h < IndexFooterTres.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = IndexFooterTres[h];
+
+                        //Cell Alignment
+                        F_Footer3_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        F_Footer3_row.Cells[columnIndex].CellFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                        F_Footer3_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+
+                        Spire.Doc.Documents.Paragraph p = F_Footer3_row.Cells[columnIndex].AddParagraph();
+                        F_Footer3_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        String textFirma = firmaJefe + "\r\n\n\n\n\n-------------------------\n" + jefe.NombreCompleto;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(textFirma);
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.FontSize = 10;
+                        TR.CharacterFormat.Bold = true;
+                    }
+
+
+
+
+                    #endregion
+
+                    #region ALINEACION
+                    for (int r = 0; r < 3; r++)
+                    {
+                        Spire.Doc.TableRow DataRow = tableObjetivos.Rows[r];
+
+                        for (int c = 0; c < SIZE_HEADER; c++)
+                        {
+                            //DataRow.Cells[c].CellFormat.Borders.Right.Color = System.Drawing.Color.FromArgb(0, 0, 0);
+                            //DataRow.Cells[c].CellFormat.Borders.Right.BorderType = Spire.Doc.Documents.BorderStyle.Double;
+                            DataRow.Cells[c].CellFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 0, 0);
+                            DataRow.Cells[c].CellFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                        }
+                    }
+                    #endregion
+
+                    tableObjetivos.TableFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 171, 239);
+                    //bodyObjetivos.ChildObjects.Remove(paragraphObjetivos);
+                    document.Replace("#Objetivos1#", "", true, true);
+                    bodyObjetivos.ChildObjects.Insert(index, tableObjetivos);
+                }
+                else
+                {
+                    document.Replace("#Objetivos1#", "", true, true);
+                }
+                #endregion
+
+                #region SEGUNDA TABLA
+
+                if(liPersonalPTP != null && liPersonalPTP.Count > 0 || liPersonalPDP != null && liPersonalPDP.Count > 0)
+                {
+                    #region DECLARACION
+                    Spire.Doc.Section sectionObjetivos = document.Sections[0];
+                    Spire.Doc.Documents.TextSelection selectionObjetivos = document.FindString("#Objetivos2#", true, true);
+                    Spire.Doc.Fields.TextRange rangeObjetivos = selectionObjetivos.GetAsOneRange();
+                    Spire.Doc.Documents.Paragraph paragraphObjetivos = rangeObjetivos.OwnerParagraph;
+                    Spire.Doc.Body bodyObjetivos = paragraphObjetivos.OwnerTextBody;
+                    int index = bodyObjetivos.Paragraphs.IndexOf(paragraphObjetivos);
+
+                    Spire.Doc.Table tableObjetivos = sectionObjetivos.AddTable(true);
+                    PreferredWidth width = new PreferredWidth(WidthType.Percentage, 112);
+                    tableObjetivos.PreferredWidth = width;
+                    tableObjetivos.TableFormat.LeftIndent = -22;
+                    //tableObjetivos.AutoFitBehavior(AutoFitBehaviorType.wdAutoFitContents);
+                    tableObjetivos.TableFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                    tableObjetivos.TableFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 0, 0);
+                    
+                    //INICIO ENCABEZADOS
+
+                    #region IDIOMA ENCABEZADOS
+                    String[] Header;
+                    String[] HeaderSP = { "Objetivos", "Acción", "Para cuándo", "Objetivos", "Propósito", "¿Cómo puede ayudar?" };
+                    String[] HeaderEN = {"Goals", "Action", "By when ", "Goals", "Purpose", "How can help?"};
+
+                    String textHeader1= "";
+                    String textHeader1SP = "PLAN DE FORMACIÓN Y DESARROLLO PERSONAL";
+                    String textHeader1EN = "PERSONAL TRAINING AND DEVELOPMENT PLAN";
+
+                    String[] HeaderDos;
+                    String[] HeaderDosSP = { "PLAN DE FORMACIÓN PERSONAL - ROL ACTUAL", "PLAN DE DESARROLLO PERSONAL - ENFOQUE EN LA CARRERA" };
+                    String[] HeaderDosEN = { "PERSONAL TRAINING PLAN - CURRENT ROLE ", "PERSONAL DEVELOPMENT PLAN - CAREER FOCUSED" };
+
+                    String[] HeaderTres;
+
+                    String[] HeaderTresSP = {
+                        "¿Qué entrenamiento necesitas? (por ejemplo, desarrollar tus habilidades, conocimientos, capacidades para desempeñar tu trabajo actual)",
+                        "Tu primera prioridad es tu rol actual. Si eres nuevo en el rol, o si tu desempeño actual necesita mejorar, entonces concéntrate primero en tu plan de entrenamiento. Piensa en tus aspiraciones profesionales y utiliza a tu gerente para ayudarte a establecer metas realistas si es necesario. Crea un plan de desarrollo de desempeño para cómo vas a lograr tus objetivos."
+                    };
+                    String[] HeaderTresEN = {
+                        "What training do you need? (i.e. developing your skills, knowledge, capabilities to do your currentjob)",
+                        "Your first priority is your current role, if you are new to role, or if your current performance needs to be improved then focus on your training plan first. Think about your career aspirations, using you manager to assist with establishing realistic goals if required. Create a performance development plan for how you are going to achieve your goals"
+                    };
+
+                    String[] HeaderCinco;
+                    String[] HeaderCincoSP = {
+                        "Lista de apoyo que necesitas en tu rol actual",
+                        "Lista de pasos que tomarás para alcanzar el objetivo (Aprendizaje autodirigido, aprendizaje en clase, coaching o aprendizaje en el trabajo)",
+                        "Fecha límite para lograr tu objetivo",
+                        "¿Cuáles son los objetivos de crecimiento, desafío y aspiraciones más allá del rol actual?",
+                        "¿Cuál es tu motivación para lograr estas aspiraciones?",
+                        "¿Qué necesitas hacer y/o qué apoyo necesitas para lograr tus aspiraciones profesionales? (estudios, proyectos específicos, formación, etc.)"
+                    };
+                    String[] HeaderCincoEN = {
+                        "List support you require in your current role",
+                        "List steps you will take to achieve the goal? (Self-directed learning, classroom learning, coaching or on-the job learning)",
+                        "Date by when you want to achieve your goa",
+                        "What are the growth, stretch goals and aspirations beyond current role?",
+                        "What is your motivation to achieve these aspirations?",
+                        "What do you need to do and/or what support do you need in order to achieve your career aspirations? (studies, specific projects, training, etc.)"
+                    };
+
+                    if (idiomaDOC == idiomaSP)
+                    {
+                        Header = HeaderSP;
+                        textHeader1 = textHeader1SP;
+                        HeaderDos = HeaderDosSP;
+                        HeaderTres = HeaderTresSP;
+                        HeaderCinco = HeaderCincoSP;
+                    }
+                    else
+                    {
+                        Header = HeaderEN;
+                        textHeader1 = textHeader1EN;
+                        HeaderDos = HeaderDosEN;
+                        HeaderTres = HeaderTresEN;
+                        HeaderCinco = HeaderCincoEN;
+                    }
+
+
+                    #endregion
+
+
+
+                    //DEFINIR QUIEN TIENE MAS DATOS PARA LA CREACIÓN DE LA TABLA
+                    int numeroDatosPTP = 0;
+                    int numeroDatosPDP = 0;
+
+                    if (liPersonalPTP != null && liPersonalPTP.Count > 0)
+                    {
+                        numeroDatosPTP = liPersonalPTP.Count;
+                    }
+                    if (liPersonalPDP != null && liPersonalPDP.Count > 0)
+                    {
+                        numeroDatosPDP = liPersonalPDP.Count;
+                    }
+
+                    bool isPDPmayor = true; // si son iguales tambien es true
+                    isPDPmayor = (numeroDatosPDP >= numeroDatosPTP);
+
+
+                    //tamaño de los paquetes de datos
+                    int SIZE_HEADER = 6;//TAMAÑO DE LA LISTA Header
+                    int ENCABEZADOS = 5;//POR DEFECTO PARA LA TABLA SE CREARON 5 ENCABEZADOS
+                    int FOOTER = 3;// POR DEFECTO PARA LA TABLA SE CREARON 3 ENCABEZADOS
+
+                    //LISTA QUE ALMACENARA LOS DATOS DE LOS OBJETIVOS PTP
+                    //Para este caso se crearan dos listas y se revisará cual es la mas larga
+                    string[][] dataGeneral;
+
+
+                    //SE DEFINE EL NUMERO DE FILAS QUE HABRA EN LA TABLA. EL NUMERO DE OBJETIVOS MAS LOS TRES ENCABEZADOS MAS LOS FOOTER
+                    //SE DEFINE EL NUMERO DE COLUMNAS CON EL NUMERO DE HEADERS
+                    //SE DEFINE EL TAMAÑO DEL APARTADO DE DATOS DE ACUERDO A LA LISTA QUE TENGA MAS DATOS 
+                    int numMayor = 0;
+                    if (isPDPmayor)
+                    {
+                        dataGeneral = new string[numeroDatosPDP][];
+                        tableObjetivos.ResetCells(numeroDatosPDP + ENCABEZADOS + FOOTER, SIZE_HEADER);
+                        numMayor = numeroDatosPDP;
+                    }
+                    else
+                    {
+                        dataGeneral = new string[numeroDatosPTP][];
+                        tableObjetivos.ResetCells(numeroDatosPTP + ENCABEZADOS + FOOTER, SIZE_HEADER);
+                        numMayor = numeroDatosPTP;
+                    }
+
+                    //tableObjetivos.ResetCells(liPersonalPTP.Count + ENCABEZADOS + FOOTER, SIZE_HEADER);
+
+                    #endregion
+
+                    #region ENCABEZADOS
+                    //PARA EL PRIMER HEADER SE REALIZA LO SIGUIENTE
+                    
+                    TableRow F_Header1_row = tableObjetivos.Rows[0];
+                    F_Header1_row.RowFormat.BackColor = Color.FromArgb(255, 69, 0);
+                    F_Header1_row.IsHeader = false;
+                    // Fusionar las celdas para crear UN encabezados
+                    tableObjetivos.ApplyHorizontalMerge(0, 0, 5);
+
+                    // Obtener el índice de la columna actual
+                    int columnIndex1 = 0;
+
+                    //Cell Alignment
+                    F_Header1_row.Cells[columnIndex1].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                    F_Header1_row.Cells[columnIndex1].CellWidthType = CellWidthType.Auto;
+
+                    Spire.Doc.Documents.Paragraph p1 = F_Header1_row.Cells[columnIndex1].AddParagraph();
+                    F_Header1_row.Cells[columnIndex1].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                    p1.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                    //String textHeader1 = "PERSONAL TRAINING AND DEVELOPMENT PLAN";
+                    
+                    Spire.Doc.Fields.TextRange TR1 = p1.AppendText(textHeader1);
+                    TR1.CharacterFormat.TextColor = System.Drawing.Color.White;
+                    TR1.CharacterFormat.FontName = "Calibri";
+                    TR1.CharacterFormat.FontSize = 15;
+                    TR1.CharacterFormat.Bold = true;
+
+
+                    //PARA EL SEGUNDO HEADER SE REALIZA LO SIGUIENTE
+                    //String[] HeaderDos = { "PERSONAL TRAINING PLAN - CURRENT ROLE ", "PERSONAL DEVELOPMENT PLAN - CAREER FOCUSED"};
+                    int[] IndexHeaderDos = { 0, 3};//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
+                    
+                    TableRow F_Header2_row = tableObjetivos.Rows[1];
+                    F_Header2_row.RowFormat.BackColor = Color.FromArgb(255, 165, 0);
+                    F_Header2_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(1, 0, 2);
+                    tableObjetivos.ApplyHorizontalMerge(1, 3, 5);
+
+                    // Agregar los encabezados y configurar su formato
+                    for (int h = 0; h < HeaderDos.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = IndexHeaderDos[h];
+
+                        //Cell Alignment
+                        F_Header2_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        F_Header2_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+
+                        Spire.Doc.Documents.Paragraph p = F_Header2_row.Cells[columnIndex].AddParagraph();
+                        F_Header2_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(HeaderDos[h]);
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.Black;
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.FontSize = 9;
+                        TR.CharacterFormat.Bold = true;
+
+                    }
+
+                    //PARA EL TERCER HEADER SE REALIZA LO SIGUIENTE
+                    //String[] HeaderTres = {};
+                    int[] IndexHeaderTres = { 0, 3 };//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
+                    
+                    TableRow F_Header3_row = tableObjetivos.Rows[2];
+                    F_Header3_row.RowFormat.BackColor = Color.FromArgb(254, 254, 254);
+                    F_Header3_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(2, 0, 2);
+                    tableObjetivos.ApplyHorizontalMerge(2, 3, 5);
+
+                    // Agregar los encabezados y configurar su formato
+                    for (int h = 0; h < HeaderTres.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = IndexHeaderTres[h];
+
+                        //Cell Alignment
+                        F_Header3_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        F_Header3_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+
+                        Spire.Doc.Documents.Paragraph p = F_Header3_row.Cells[columnIndex].AddParagraph();
+                        F_Header3_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(HeaderTres[h]);
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.Black;
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.FontSize = 9;
+                        TR.CharacterFormat.Bold = true;
+                    }
+
+                    //PARA EL CINCO HEADER SE REALIZA LO SIGUIENTE
+                    //String[] HeaderCinco = {};
+                     
+                    TableRow F_Header5_row = tableObjetivos.Rows[4];
+                    F_Header5_row.RowFormat.BackColor = Color.FromArgb(254, 254, 254);
+                    F_Header5_row.IsHeader = false;
+
+                    // Agregar los encabezados y configurar su formato
+                    for (int h = 0; h < HeaderCinco.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = h;
+
+                        //Cell Alignment
+                        F_Header5_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        F_Header5_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+
+                        Spire.Doc.Documents.Paragraph p = F_Header5_row.Cells[columnIndex].AddParagraph();
+                        F_Header5_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(HeaderCinco[h]);
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.Black;
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.FontSize = 9;
+                        TR.CharacterFormat.Bold = true;
+                    }
+
+                    //PARA EL CUATRO HEADER SE REALIZA LO SIGUIENTE
+                    TableRow F_Header4_row = tableObjetivos.Rows[3];
+                    F_Header4_row.RowFormat.BackColor = Color.FromArgb(255, 165, 0);
+                    F_Header4_row.IsHeader = false;
+
+                    // Agregar los encabezados y configurar su formato
+                    for (int h = 0; h < Header.Length; h++)
+                    {
+                        // Obtener el índice de la columna actual
+                        int columnIndex = h;
+
+                        //Cell Alignment
+                        F_Header4_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                        F_Header4_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+
+                        Spire.Doc.Documents.Paragraph p = F_Header4_row.Cells[columnIndex].AddParagraph();
+                        F_Header4_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        Spire.Doc.Fields.TextRange TR = p.AppendText(Header[h]);
+                        TR.CharacterFormat.TextColor = System.Drawing.Color.Black;
+                        TR.CharacterFormat.FontName = "Calibri";
+                        TR.CharacterFormat.FontSize = 9;
+                        TR.CharacterFormat.Bold = true;
+                    }
+
+
+
+                    #endregion
+
+                    #region DATOS
+                    ////DATOS
+
+                    //LLENADO DE LA TABLA DE OBJETIVOS PERSONALES
+                    //PRIMERO SE LLENARAN LOS PTP Y DESPUES LOS PDP
+
+                    for (int h = 0; h < numMayor; h++)
+                    {
+                        //Definimos el tamaño de cada fila que es la suma de las columnas de ambas listas
+                        //de cada una son tres columnas, en total son 6
+                        dataGeneral[h] = new string[6];
+
+
+                        //llenamos PTP
+                        string tituloPTP = "";
+                        string descripcionPTP = "";
+                        string datePTP = "";
+
+                        if (liPersonalPTP != null && numeroDatosPTP > 0 &&numeroDatosPTP > h)
+                        {
+                            tituloPTP = liPersonalPTP[h].ObjetivePTP;
+                            descripcionPTP = liPersonalPTP[h].ActionPTP;
+                            datePTP = liPersonalPTP[h].DateFin;
+                        }
+
+                        dataGeneral[h][0] = tituloPTP;
+                        dataGeneral[h][1] = descripcionPTP;
+                        dataGeneral[h][2] = datePTP;
+
+                        //llenamos PDP
+                        string tituloPDP = "";
+                        string descripcionPDP = "";
+                        string datePDP = "";
+
+                        if (liPersonalPDP != null && numeroDatosPDP > 0 && numeroDatosPDP > h)
+                        {
+                            tituloPDP = liPersonalPDP[h].ObjetivePDP;
+                            descripcionPDP = liPersonalPDP[h].actionPDP;
+                            datePDP = liPersonalPDP[h].dateFinish;
+                        }
+
+                        dataGeneral[h][3] = tituloPDP;
+                        dataGeneral[h][4] = descripcionPDP;
+                        dataGeneral[h][5] = datePDP;
+
+                    }
+
+                    //rellenando la tabla
+                    //SE LLENA PRIMERO LA PARTE DE LOS OBJETIVOS PTP
+                    for (int r = 0; r < dataGeneral.Length; r++)
+                    {
+                        Spire.Doc.TableRow DataRow = tableObjetivos.Rows[r + ENCABEZADOS];
+                        DataRow.Height = 20;
+
+                        if ((r % 2) == 0)
+                        {
+                            DataRow.RowFormat.BackColor = System.Drawing.Color.FromArgb(222, 234, 246);//AZUL
+                        }
+                        else
+                        {
+                            DataRow.RowFormat.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);//BLANCO
+                        }
+
+                        for (int c = 0; c < dataGeneral[r].Length; c++)
+                        {
+                            DataRow.Cells[c].CellFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                            DataRow.Cells[c].CellFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 0, 0);
+
+                            //DataRow.Cells[c].Width = 75F;
+                            Spire.Doc.Documents.Paragraph pPTP = DataRow.Cells[c].AddParagraph();
+                            Spire.Doc.Fields.TextRange TRPTP = pPTP.AppendText(dataGeneral[r][c]);
+
+                            if (c == 2)
+                            {
+                                DataRow.Cells[c].Width = 50F;
+                            }
+
+
+                            //Format Cells
+                            DataRow.Cells[c].CellFormat.VerticalAlignment = VerticalAlignment.Middle;
+                            pPTP.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
+                            //COLUMAS EN LAS CUALES EL TEXTO ESTARA EN MEDIO
+                            if (c == 2)
+                            {
+                                pPTP.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                            }
+
+                            //LETRA
+                            TRPTP.CharacterFormat.FontName = "Calibri";
+                            TRPTP.CharacterFormat.FontSize = 9;
+                            //CAMBIAR LA LETRA DE LAS COLUMNAS
+                            if (c == 1)
+                            {
+                                TRPTP.CharacterFormat.FontSize = 7;
+                            }
+                            TRPTP.CharacterFormat.TextColor = System.Drawing.Color.FromArgb(0, 32, 96);
+                            TRPTP.CharacterFormat.Border.Color = System.Drawing.Color.FromArgb(0, 0, 0);
+                        }
+                    }
+                    #endregion
+
+                    #region FOOTER
+                    //PARA EL PRIMER FOOTER SE REALIZA LO SIGUIENTE
+                    int indexFooter1 = SIZE_HEADER + numMayor - 1 ;
+
+                    TableRow F_Footer1_row = tableObjetivos.Rows[indexFooter1];
+                    F_Footer1_row.RowFormat.BackColor = Color.FromArgb(254, 254, 254);
+                    F_Footer1_row.Cells[columnIndex1].CellFormat.Borders.Color = System.Drawing.Color.Black;
+
+                    tableObjetivos.TableFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                    tableObjetivos.TableFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 0, 0);
+
+                    //DataRow.Cells[c].CellFormat.Borders.Right.Color = System.Drawing.Color.FromArgb(0, 0, 0);
+                    //DataRow.Cells[c].CellFormat.Borders.Right.BorderType = Spire.Doc.Documents.BorderStyle.Double;
+
+                    F_Footer1_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(indexFooter1, 0, 5);
+
+                    // Obtener el índice de la columna actual
+                    columnIndex1 = 0;
+
+                    //Cell Alignment
+                    F_Footer1_row.Cells[columnIndex1].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                    F_Footer1_row.Cells[columnIndex1].CellWidthType = CellWidthType.Auto;
+
+                    Spire.Doc.Documents.Paragraph p2 = F_Footer1_row.Cells[columnIndex1].AddParagraph();
+                    F_Footer1_row.Cells[columnIndex1].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
+                    p2.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                    String titleFooter1 = "";
+                    if(idiomaDOC == idiomaSP)
+                    {
+                        titleFooter1 = "FIRMA DE APROBACIÓN DEL PLAN DE FORMACIÓN Y DESARROLLO PERSONAL";
+                    }
+                    else
+                    {
+                        titleFooter1 = "PERSONAL TRAINING AND DEVELOPMENT SIGN-OFF";
+
+                    }
+                    Spire.Doc.Fields.TextRange TR2 = p2.AppendText(titleFooter1);
+                    TR2.CharacterFormat.TextColor = System.Drawing.Color.Black;
+                    TR2.CharacterFormat.FontName = "Calibri";
+                    TR2.CharacterFormat.FontSize = 9;
+                    TR2.CharacterFormat.Bold = true;
+
+
+                    //PARA EL SEGUNDO FOOTER SE REALIZA LO SIGUIENTE
+                    int indexFooter2 = indexFooter1 + 1;
+
+                    F_Footer1_row = tableObjetivos.Rows[indexFooter2];
+                    F_Footer1_row.RowFormat.BackColor = Color.FromArgb(254, 254, 254);
+                    F_Footer1_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(indexFooter2, 0, 5);
+
+                    // Obtener el índice de la columna actual
+                    columnIndex1 = 0;
+
+                    //Cell Alignment
+                    F_Footer1_row.Cells[columnIndex1].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                    F_Footer1_row.Cells[columnIndex1].CellWidthType = CellWidthType.Auto;
+
+                    p2 = F_Footer1_row.Cells[columnIndex1].AddParagraph();
+                    F_Footer1_row.Cells[columnIndex1].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Top;
+                    p2.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
+                    String textFirmaEmpleado = firmaEmpleado+"\n\n\t\t\t-------------------------\n\t\t\t" + Evaluado.Login.NombreCompleto;
+                    TR2 = p2.AppendText(textFirmaEmpleado);
+                    TR2.CharacterFormat.TextColor = System.Drawing.Color.Black;
+                    TR2.CharacterFormat.FontName = "Calibri";
+                    TR2.CharacterFormat.FontSize = 9;
+                    TR2.CharacterFormat.Bold = true;
+
+
+                    //PARA EL TERCER FOOTER SE REALIZA LO SIGUIENTE
+                    int indexFooter3 = indexFooter2 + 1;
+
+                    F_Footer1_row = tableObjetivos.Rows[indexFooter3];
+                    F_Footer1_row.RowFormat.BackColor = Color.FromArgb(254, 254, 254);
+                    F_Footer1_row.IsHeader = false;
+                    // Fusionar las celdas para crear tres encabezados
+                    tableObjetivos.ApplyHorizontalMerge(indexFooter3, 0, 5);
+
+                    // Obtener el índice de la columna actual
+                    columnIndex1 = 0;
+
+                    //Cell Alignment
+                    F_Footer1_row.Cells[columnIndex1].CellFormat.Borders.Color = System.Drawing.Color.Black;
+                    F_Footer1_row.Cells[columnIndex1].CellWidthType = CellWidthType.Auto;
+
+                    p2 = F_Footer1_row.Cells[columnIndex1].AddParagraph();
+                    F_Footer1_row.Cells[columnIndex1].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Top;
+                    p2.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
+                    String textFirmaJefe = firmaJefe+"\n\n\t\t\t-------------------------\n\t\t\t" + jefe.NombreCompleto;
+                    TR2 = p2.AppendText(textFirmaJefe);
+                    TR2.CharacterFormat.TextColor = System.Drawing.Color.Black;
+                    TR2.CharacterFormat.FontName = "Calibri";
+                    TR2.CharacterFormat.FontSize = 9;
+                    TR2.CharacterFormat.Bold = true;
+
+                    #endregion
+
+                    tableObjetivos.TableFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 0, 0);
+                    //bodyObjetivos.ChildObjects.Remove(paragraphObjetivos);
+                    document.Replace("#Objetivos2#", "", true, true);
+                    bodyObjetivos.ChildObjects.Insert(index, tableObjetivos);
+                }
+                else
+                {
+                    document.Replace("#Objetivos2#", "", true, true);
+                }
+
+                #endregion
+
+
+                Bitacora.NuevaEntrada("fin de Calificación de: " + Evaluado.Login.id_sap + "_" + Evaluado.Login.NombreCompleto.Trim() + " Ingreso a Historial", "MiHistorial/Historial ");
+                Bitacora.NuevaEntrada("path:" + pathResp.ToString() + " Ingreso a Historial", "MiHistorial/Historial ");
+
+                //SE REALIZA EL GUARDADO DEL ARCHIVO
+                pathResp = pathResp.Replace(".docx", ".pdf");
+                document.SaveToFile(pathResp.ToString(), Spire.Doc.FileFormat.PDF);
+
+
+                Bitacora.NuevaEntrada("Se guardo el archivo:" + pathResp.ToString() + " Ingreso a Historial", "MiHistorial/Historial ");
+                //esto es para regresarlo al navegador
+                byte[] fileBytes = System.IO.File.ReadAllBytes(pathResp);
+                string fileNameResp = Evaluado.Login.id_sap + "_" + Evaluado.Login.NombreCompleto.Trim().Replace(" ", "") + ".pdf";
+                Bitacora.NuevaEntrada("El usuario: " + Evaluado.Login.NombreCompleto + " Logro descargar su  evaluación del periodo " + periodo.Llave, "MiHistorial/DownloadPdf ");
+                return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileNameResp);
+            }
+            catch (Exception ex)
+            {
+                Bitacora.NuevaEntrada("*****exception:" + ex.ToString(), "MiHistorial/Historial ");
+                return PartialView("Respuesta", ex.ToString());
+            }
+            finally
+            {
+                if (System.IO.File.Exists(pathResp))
+                { //eliminar para evitar duplicid
+                  //ades
+                    //System.IO.File.Delete(pathResp);
+                }
+            }
+        }
+
+        #endregion
+
 
         #region Formato diferente
         public ActionResult DownloadPdfDetailed(int Id)

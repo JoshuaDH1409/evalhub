@@ -1117,6 +1117,10 @@
     <Content Include="Views\Objetivos\EscaletaIndividual.cshtml" />
     <Content Include="Views\Objetivos\EscaletaEmpresa.cshtml" />
     <Content Include="Views\Dash\DashObjetivesEmpleados.cshtml" />
+    <Content Include="Views\MisEvaluaciones\OperacionObjetivosPTP.cshtml" />
+    <Content Include="Views\MisEvaluaciones\OperacionObjetivosPDP.cshtml" />
+    <Content Include="Views\MisEvaluaciones\RecargaObjetivosPTP.cshtml" />
+    <Content Include="Views\MisEvaluaciones\RecargaObjetivosPDP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

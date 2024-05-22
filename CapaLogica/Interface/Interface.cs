@@ -189,6 +189,37 @@ namespace CapaLogica.Interface
         ECatSubComp RecuperaCatSubCompetencia(int Id);
         #endregion
 
+        #region Objetivos PTP
+        [OperationContract]
+        EPersonalTP RecuperaUnObjetivoPTPid(int id);
+
+        [OperationContract]
+        List<EPersonalTP> RecuperaListaObjetivosPTP(int Eval);
+
+        [OperationContract]
+        bool GuardaObjetivosPTP(EPersonalTP objetivo);
+        
+        [OperationContract]
+        bool EliminaUnObjetivoPTP(int id);
+
+
+        #endregion
+
+        #region objetivos PDP
+        [OperationContract]
+        EPersonalDP RecuperaUnObjetivoPDPid(int id);
+
+        [OperationContract]
+        List<EPersonalDP> RecuperaListaObjetivosPDP(int Eval);
+
+        [OperationContract]
+        bool GuardaObjetivosPDP(EPersonalDP objetivo);
+
+        [OperationContract]
+        bool EliminaUnObjetivoPDP(int id);
+
+        #endregion
+
         #region Log
 
         [OperationContract]

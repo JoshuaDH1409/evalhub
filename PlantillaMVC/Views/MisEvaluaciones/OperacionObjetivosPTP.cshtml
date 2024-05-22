@@ -1,0 +1,125 @@
+﻿@model Modelo.EPersonalTP
+
+
+
+<div>
+    <h2>@(ViewData["Editar"] != null && (bool)ViewData["Editar"] ? "Editar Objetivo" : "Nuevo Objetivo")</h2>
+
+    <div style="color:#FF0000;"> @ViewBag.Error </div>
+
+    <div id="RespuestaObjetivos">
+        @using (Ajax.BeginForm("GuardaObjetivosPTP", "MisEvaluaciones", new { Eval = ViewBag.Eval, Usr = ViewBag.Usr }, new AjaxOptions
+        {
+            UpdateTargetId = "TblObjetivosPTP",
+            OnBegin = "AbreCierraDilogoEspera",
+            OnComplete = "AbreCierraDilogoEspera(); loadObjetivosPTP(); CerrarObjetivosPTP();",
+            HttpMethod = "Post"
+        }, new { id = "ObjetivosPTP", novalidate = "novalidate" }))
+        {
+            @Html.AntiForgeryToken();
+
+        <table class="table-pop">
+
+            
+            <tr class="oculto">
+                <td>
+                    @Html.LabelFor(m => m.id, new { @class = "etiqueta" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.id)
+                </td>
+            </tr>
+            <tr class="oculto">
+                <td>
+                    @Html.LabelFor(m => m.Eval, new { @class = "etiqueta" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Eval, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Eval)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.ObjetivePTP, new { @class = "etiqueta" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.ObjetivePTP, new { @class = "form-control", required = true })
+                    @Html.ValidationMessageFor(m => m.ObjetivePTP, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.ActionPTP, new { @class = "etiqueta" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.ActionPTP, new { @class = "form-control", required = true })
+                    @Html.ValidationMessageFor(m => m.ActionPTP, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.DateFin, new { @class = "etiqueta" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.DateFin, new { @class = "form-control DatePicker", required = true })
+                    @Html.ValidationMessageFor(m => m.DateFin, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+
+        </table>
+
+
+            <div class="modal-footer" style="padding-bottom: 0px;">
+                <p style="text-align: right;">
+                    <button type="submit" id="enviar" class="btn btn-success fa fa-check"> <x style="font-family:Arial"> Guardar</x> </button>  <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal">  <x style="font-family:Arial"> Cerrar</x></button>
+                </p>
+            </div>
+
+        }
+    </div>
+
+
+</div>
+
+
+@*<script src="http://malsup.github.com/jquery.form.js"></script>*@
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.DatePicker').datepicker({
+            format: "dd/mm/yyyy"
+        });
+
+        var objeto = $(".oculto")
+        objeto.hide();
+
+        var forma = $("#ObjetivosPTP");
+        $(forma).removeData("validator");
+        $("#ObjetivosPTP").validate({
+            submitHandler: function (form) {
+                $(form).ajaxSubmit();
+            }
+        });
+        $.validator.unobtrusive.parse(forma);
+
+    });
+</script>
+
+<script>
+    /* Evento para cuando el usuario libera la tecla escrita dentro del input */
+    $('input,textarea').keyup(function () {
+        /* Obtengo el valor contenido dentro del input */
+        var value = $(this).val();
+
+        /* Elimino todos los espacios en blanco que tenga la cadena delante y detrás */
+        var value_without_space = value.trimStart();
+
+        /* Muestro una alerta al usuario */
+        //alert('El texto que ha ingresado contiene espacios y serán eliminados');
+
+        /* Cambio el valor contenido por el valor sin espacios */
+        $(this).val(value_without_space);
+    });
+</script>

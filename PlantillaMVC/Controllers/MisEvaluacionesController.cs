@@ -26,7 +26,7 @@ namespace PlantillaMVC.Controllers
         }
 
         [Autentificado]
-        public ActionResult MiEvaluacion(int user,int id)
+        public ActionResult MiEvaluacion(int user, int id)
         {
 
             //usuario
@@ -42,7 +42,7 @@ namespace PlantillaMVC.Controllers
             ViewBag.usuario = user;
             Modelo.Clases.CEvaluacion eval = new Modelo.Clases.CEvaluacion();
             if (id == 0)
-            {                
+            {
                 eval.sesion = Utilidades.negocio.RecuperaUsuarioEval(sesion.Login.id);
             }
             else
@@ -57,7 +57,7 @@ namespace PlantillaMVC.Controllers
             }
             else
             {
-                eval.sesion.Login.FechaAntiguedadTemp = new DateUtils().DateDifference(DateTime.Today,Convert.ToDateTime(eval.sesion.Login.FechaIngresoTemp));
+                eval.sesion.Login.FechaAntiguedadTemp = new DateUtils().DateDifference(DateTime.Today, Convert.ToDateTime(eval.sesion.Login.FechaIngresoTemp));
                 eval.Jefedir = Utilidades.negocio.RecuperaUnUsuarioSap(eval.sesion.Login.EvaluadorIdSap);
                 if (eval.Jefedir == null)
                 {
@@ -76,22 +76,27 @@ namespace PlantillaMVC.Controllers
 
                 eval.periodo = Utilidades.negocio.RecuperaPeriodopais(eval.sesion.Login.Pais);
                 eval.Liobjetivos = Utilidades.negocio.RecuperaListaObjetivos(eval.sesion.Evaluacion.id);
-                ViewBag.PesoTotal =eval.Liobjetivos!=null? eval.Liobjetivos.Sum(t => t.ponderado):0;
-                ViewBag.nObjetivos =eval.Liobjetivos!=null?eval.Liobjetivos.Count():0;
-                eval.ListaCompetencias = Utilidades.negocio.RecuperaLiCompetencias(eval.sesion.Evaluacion.id);
+                ViewBag.PesoTotal = eval.Liobjetivos != null ? eval.Liobjetivos.Sum(t => t.ponderado) : 0;
+                ViewBag.nObjetivos = eval.Liobjetivos != null ? eval.Liobjetivos.Count() : 0;
+                //eval.ListaCompetencias = Utilidades.negocio.RecuperaLiCompetencias(eval.sesion.Evaluacion.id);
 
                 if (eval.ListaCompetencias != null)
                 {
                     foreach (ECompetemces item in eval.ListaCompetencias) {
                         ECatComp Comp = Utilidades.negocio.RecuperaUnaCatCompetencias(item.titulo);
                         ECatSubComp subComp = new ECatSubComp();
-                        if(item.Subtitulo != 0)
-                            subComp = Utilidades.negocio.RecuperaCatSubCompetencia(item.Subtitulo) ;
+                        if (item.Subtitulo != 0)
+                            subComp = Utilidades.negocio.RecuperaCatSubCompetencia(item.Subtitulo);
                         subComp.SubCompetencia = subComp.SubCompetencia != null ? subComp.SubCompetencia : string.Empty;
                         item.tituloTemp = $"{Comp.descripcion} | {subComp.SubCompetencia}";
 
                     }
                 }
+
+                //Recuperando los objetivos Personal PTP
+                eval.ListaPersonalPTP = Utilidades.negocio.RecuperaListaObjetivosPTP(eval.sesion.Evaluacion.id);
+                eval.ListaPersonalPDP = Utilidades.negocio.RecuperaListaObjetivosPDP(eval.sesion.Evaluacion.id);
+
 
                 eval.Jefedir.FechaAntiguedadTemp = new DateUtils().DateDifference(DateTime.Today, Convert.ToDateTime(eval.Jefedir.FechaIngresoTemp));
                 if (eval.periodo != null)
@@ -293,7 +298,7 @@ namespace PlantillaMVC.Controllers
                 model.Etapa = 10;//eliminado por usuario 2
             }
             ViewData["Calificaciones"] = Calificaciones();
-            ViewBag.PesoTotal =objetivos!=null? objetivos.Sum(t=>t.ponderado)-model.ponderado:0;
+            ViewBag.PesoTotal = objetivos != null ? objetivos.Sum(t => t.ponderado) - model.ponderado : 0;
             return PartialView(model);
         }
 
@@ -314,6 +319,7 @@ namespace PlantillaMVC.Controllers
             }
             ECompetemces temp = Utilidades.negocio.RecuperaUnaCompetencia(id);
 
+            //Moldeo.EPersonalDP modelObjetive = Utilidades.negocio.
 
             model.Eval = eval;
             ViewBag.Eval = eval;
@@ -439,6 +445,203 @@ namespace PlantillaMVC.Controllers
             ViewData["Subcompetencias"] = SubCompsCat();
             return PartialView(model);
         }
+
+        #region Objetivos PTP y PDP
+
+
+        [Autentificado]
+        public ActionResult RecargaObjetivosPTP(int Eval, int status, int Usr)
+        {
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
+
+            Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+            Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Actualizó la vista de objetivos PTP " + Eval.ToString(), "Gestion/RecargaObjetivosPTP ");
+
+            List<EPersonalTP> liObjetivos = Utilidades.negocio.RecuperaListaObjetivosPTP(Eval);
+            EEval evaluacion = Utilidades.negocio.RecuperaUnaEaluacion(Eval);
+            EPeriodos periodo = null;
+            if (evaluacion != null)
+            {
+                periodo = Utilidades.negocio.RecuperaUnPeriodo(evaluacion.periodo);
+            }
+
+            ViewBag.status = status;
+            ViewBag.usuario = Usr;
+            ViewBag.StatusPer = periodo.Etapa;
+            ViewBag.Eval = Eval;
+            ViewBag.nObjetivos = liObjetivos.Count();
+            return PartialView(liObjetivos);
+        }
+
+        [Autentificado]
+        public ActionResult RecargaObjetivosPDP(int Eval, int status, int Usr)
+        {
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
+
+            Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+            Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Actualizó la vista de objetivos PDP " + Eval.ToString(), "Gestion/RecargaObjetivosPDP ");
+
+            List<EPersonalDP> liObjetivos = Utilidades.negocio.RecuperaListaObjetivosPDP(Eval);
+            EEval evaluacion = Utilidades.negocio.RecuperaUnaEaluacion(Eval);
+            EPeriodos periodo = null;
+            if (evaluacion != null)
+            {
+                periodo = Utilidades.negocio.RecuperaUnPeriodo(evaluacion.periodo);
+            }
+
+            ViewBag.status = status;
+            ViewBag.usuario = Usr;
+            ViewBag.StatusPer = periodo.Etapa;
+            ViewBag.Eval = Eval;
+            ViewBag.nObjetivos = liObjetivos.Count();
+            return PartialView(liObjetivos);
+        }
+
+
+        [Autentificado]
+        public ActionResult OperacionObjetivosPTP(int id, int eval, int Usr)
+        {
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
+
+            Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+            Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " ingreso a cargar/Modificar un objetipo PT", "MisEvaluaciones/OperacionObjetivosPTP ");
+
+            Modelo.EPersonalTP model = new EPersonalTP();
+            model.Eval = eval;
+            if (id > 0)
+            {
+                model = Utilidades.negocio.RecuperaUnObjetivoPTPid(id);
+            }
+
+            model.Eval = eval;
+            ViewBag.Eval = eval;
+
+            //ViewBag.status = status;
+            ViewBag.Usr = Usr;
+
+            
+            if (id != 0)
+                ViewData["Editar"] = true;
+            else
+                ViewData["Editar"] = false;
+
+            return PartialView(model);
+        }
+
+        [Autentificado]
+        public ActionResult OperacionObjetivosPDP(int id, int eval, int Usr)
+        {
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
+
+            Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+            Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " ingreso a cargar/modificar un objetivo DP", "MisEvaluaciones/OperacionObjetivosPDP ");
+
+            Modelo.EPersonalDP model = new EPersonalDP();
+            model.Eval = eval;
+            if (id > 0)
+            {
+                model = Utilidades.negocio.RecuperaUnObjetivoPDPid(id);
+            }
+
+            model.Eval = eval;
+            ViewBag.Eval = eval;
+
+            //ViewBag.status = status;
+            ViewBag.Usr = Usr;
+
+
+            if (id != 0)
+                ViewData["Editar"] = true;
+            else
+                ViewData["Editar"] = false;
+
+            return PartialView(model);
+        }
+
+        [HttpPost]
+        [Autentificado]
+        public ActionResult GuardaObjetivosPTP(Modelo.EPersonalTP modelo, int Eval, int Usr)
+        {
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
+            Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+
+            //if (modelo.id > 0)
+
+            if (Utilidades.negocio.GuardaObjetivosPTP(modelo))
+            {
+                return PartialView("Respuesta", "se guardó correctamente");
+            }
+            else
+            {
+                return PartialView("Respuesta", "ocurrió un error");
+            }
+        }
+
+        [HttpPost]
+        [Autentificado]
+        public ActionResult GuardaObjetivosPDP(Modelo.EPersonalDP modelo, int Eval, int Usr)
+        {
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
+            Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+
+            //if (modelo.id > 0)
+
+            if (Utilidades.negocio.GuardaObjetivosPDP(modelo))
+            {
+                return PartialView("Respuesta", "se guardó correctamente");
+            }
+            else
+            {
+                return PartialView("Respuesta", "ocurrió un error");
+            }
+        }
+
+        [Autentificado]
+        public ActionResult EliminaObjetivoPTP(int id)
+        {
+
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
+            Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+            if (Utilidades.negocio.EliminaUnObjetivoPTP(id))
+            {
+                Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Elimino objetivo " + id.ToString(), "MisEvaluaciones/EliminaUnObjetivoPTP ");
+                return PartialView("Respuesta", "se guardó correctamente");
+            }
+            else
+            {
+                Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " no pudo eliminar el objetivo " + id.ToString(), "MisEvaluaciones/EliminaUnObjetivoPTP ");
+                return PartialView("Respuesta", "ocurrió un error");
+            }
+
+        }
+
+        [Autentificado]
+        public ActionResult EliminaObjetivoPDP(int id)
+        {
+
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
+            Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+            if (Utilidades.negocio.EliminaUnObjetivoPDP(id))
+            {
+                Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Elimino objetivo " + id.ToString(), "MisEvaluaciones/EliminaUnObjetivoPDP ");
+                return PartialView("Respuesta", "se guardó correctamente");
+            }
+            else
+            {
+                Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " no pudo eliminar el objetivo " + id.ToString(), "MisEvaluaciones/EliminaUnObjetivoPDP ");
+                return PartialView("Respuesta", "ocurrió un error");
+            }
+
+        }
+        #endregion
 
         [Autentificado]
         public ActionResult GuardaCompetencias(Modelo.ECompetemces modelo, int Eval, int Usr)

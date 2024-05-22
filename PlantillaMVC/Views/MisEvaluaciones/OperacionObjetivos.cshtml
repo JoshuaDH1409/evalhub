@@ -130,15 +130,23 @@
                         @Html.ValidationMessageFor(m => m.ponderado, "", new { @class = "text-danger" })
                     </td>
                 </tr>
+                <!--CAMPO NUEVO Rating Completed VA DEL 1 AL 5
+                    1: INSATISFACTORIO
+                    2: NECESITA MEJORA
+                    3: CUMPLE CON LAS EXPECTATIVAS
+                    4: EXCEDE LA EXPECTATIVAS
+                    5: SOBRESALIENTE
+                    -->
                 <tr>
                     <td>
                         @Html.LabelFor(m => m.cumplimientoEvaluado, new { @class = "etiqueta" })
                     </td>
                     <td>
-                        @Html.TextBoxFor(m => m.cumplimientoEvaluado, new { @class = "form-control", @type = "number", min = 0, max = 100, required = true })
+                        @Html.TextBoxFor(m => m.cumplimientoEvaluado, new { @class = "form-control", @type = "number", min = 0, max = 5, required = true })
                         @Html.ValidationMessageFor(m => m.cumplimientoEvaluado, "", new { @class = "text-danger" })
                     </td>
                 </tr>
+
                 <tr>
                     <td>
                         @Html.LabelFor(m => m.resultado, new { @class = "etiqueta" })
@@ -241,7 +249,7 @@
                         @Html.LabelFor(m => m.cumplimientoEvaluador, new { @class = "etiqueta" })
                     </td>
                     <td>
-                        @Html.TextBoxFor(m => m.cumplimientoEvaluador, new { @class = "form-control", @type = "number", min = 0, max = 100, required = true })
+                        @Html.TextBoxFor(m => m.cumplimientoEvaluador, new { @class = "form-control", @type = "number", min = 0, max = 5, required = true })
                         @Html.ValidationMessageFor(m => m.cumplimientoEvaluador, "", new { @class = "text-danger" })
                     </td>
                 </tr>
@@ -250,7 +258,7 @@
                         @Html.LabelFor(m => m.ComentariosJefeEval, new { @class = "etiqueta" })
                     </td>
                     <td>
-                        @Html.TextAreaFor(m => m.ComentariosJefeEval, new { @class = "form-control", @rows = "4", required=true })
+                        @Html.TextAreaFor(m => m.ComentariosJefeEval, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.ComentariosJefeEval)
                     </td>
                 </tr>
@@ -472,7 +480,7 @@
                         @Html.LabelFor(m => m.cumplimientoEvaluado2, new { @class = "etiqueta" })
                     </td>
                     <td>
-                        @Html.TextBoxFor(m => m.cumplimientoEvaluado2, new { @class = "form-control", @type = "number", min = 1, max = 100, required = true })
+                        @Html.TextBoxFor(m => m.cumplimientoEvaluado2, new { @class = "form-control", @type = "number", min = 1, max = 5, required = true })
                         @Html.ValidationMessageFor(m => m.ponderado, "", new { @class = "text-danger" })
                     </td>
                 </tr>
@@ -527,10 +535,10 @@
                 </tr>
                 <tr>
                     <td>
-                        @Html.Label("Cumplimiento %", new { @class = "etiqueta" })
+                        @Html.Label("Cumplimiento", new { @class = "etiqueta" })
                     </td>
                     <td>
-                        @Html.TextBoxFor(m => m.cumplimientoEvaluador2, new { @class = "form-control", required = true, @type = "number", min = 1, max = 120 })
+                        @Html.TextBoxFor(m => m.cumplimientoEvaluador2, new { @class = "form-control", required = true, @type = "number", min = 1, max = 5 })
                         @Html.ValidationMessageFor(m => m.cumplimientoEvaluador2, "", new { @class = "text-danger" })
                     </td>
                 </tr>

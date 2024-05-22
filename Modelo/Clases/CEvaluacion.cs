@@ -19,11 +19,17 @@ namespace Modelo.Clases
     public List<ECompetemces> ListaCompetencias { get; set; }
     public List<EEscaleta> Escaleta { get; set; }
 
-    public bool EvalL2 { get; set; }
+
+     public List<EPersonalDP> ListaPersonalPDP { get; set; }
+     public List<EPersonalTP> ListaPersonalPTP { get; set; }
+
+        public bool EvalL2 { get; set; }
         public CEvaluacion()
         {
             Liobjetivos = new List<EObjetives>();
         }
     }
+
+
     
 }

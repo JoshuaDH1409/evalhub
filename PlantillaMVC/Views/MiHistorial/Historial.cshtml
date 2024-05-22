@@ -65,11 +65,25 @@
             {
                 <td style="text-align:center">@item.Evaluacion.CaliFinal2</td>
             }
+
+            
+            @{
+                //NUEVO REQUERIMIENTO: SI EL INICIO DE LA EVALUACIÓN ES A PARTIR DEL 2023 SE DEBE
+                //DESCARGAR EL NUEVO FORMATO, EN CASO CONTRARIO, SE DESCARGA EL ANTERIOR.
+                // Convertimos los ticks a DateTime
+                DateTime startDate = new DateTime(item.Periodo.StartDateObj);
+
+                // Determinamos el método a usar basado en el año
+                string downloadAction = startDate.Year >= 2023 ? "DownloadPdfNew" : "DownloadPdfDetailed";
+            }
+
             <td style="text-align:center">
-                @using (Html.BeginForm("DownloadPdfDetailed", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+
+                @using (Html.BeginForm(downloadAction, "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
                 {
                     <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
                 }
+
             </td>
         </tr>
                 }

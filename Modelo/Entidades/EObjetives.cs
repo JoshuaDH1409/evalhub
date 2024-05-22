@@ -21,7 +21,7 @@ namespace Modelo
 
         [DataMember]
         [Required(ErrorMessage = "Titulo es requerido")]
-        [Display(Name = "Objetivo")]
+        [Display(Name = "Objetivo Cambiado")]
         [StringLength(4999, ErrorMessage = "El campo no puede tener más de 5000 letras.")]
         [AttributeDataMember("titulo", SQLTypeBasic.TEXT)]
         public string titulo { get; set; }
@@ -123,7 +123,7 @@ namespace Modelo
 
         [DataMember]
         [Required(ErrorMessage = "Cumplimiento es requerido")]
-        [Display(Name = "Cumplimiento %")]
+        [Display(Name = "Cumplimiento")]
         [AttributeDataMember("cumplimientoEvaluado", SQLTypeBasic.INTEGER)]
         public int cumplimientoEvaluado { get; set; }
 
@@ -135,7 +135,7 @@ namespace Modelo
 
         [DataMember]
         [Required(ErrorMessage = "Cumplimiento es requerido")]
-        [Display(Name = "Cumplimiento %")]
+        [Display(Name = "Cumplimiento")]
         [AttributeDataMember("cumplimientoEvaluador", SQLTypeBasic.INTEGER)]
         public int cumplimientoEvaluador { get; set; }
 
@@ -147,13 +147,13 @@ namespace Modelo
 
         [DataMember]
         [Required(ErrorMessage = "Cumplimiento es requerido")]
-        [Display(Name = "Cumplimiento %")]
+        [Display(Name = "Cumplimiento")]
         [AttributeDataMember("cumplimientoEvaluado2", SQLTypeBasic.INTEGER)]
         public int cumplimientoEvaluado2 { get; set; }
 
         [DataMember]
         [Required(ErrorMessage = "Cumplimiento es requerido")]
-        [Display(Name = "Cumplimiento %")]
+        [Display(Name = "Cumplimiento")]
         [AttributeDataMember("cumplimientoEvaluador2", SQLTypeBasic.INTEGER)]
         public int cumplimientoEvaluador2 { get; set; }
 

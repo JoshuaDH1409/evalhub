@@ -361,7 +361,7 @@
         </p>
         <br />
         <b>
-            Deberás agregar mínimo tres objetivos, el máximo es seis objetivos.
+            Podrás agregar máximo diez objetivos.
         </b>
 
         <table style="width:100%">
@@ -497,17 +497,17 @@
                                     <tr>
                                         <th></th>
                                         <th class="text-center">Comentarios</th>
-                                        <th class="text-center">Cumplimiento %</th>
+                                        @*<th class="text-center">Cumplimiento %</th>*@
                                     </tr>
                                     <tr>
                                         <th>Evaluado</th>
                                         <td class="AutoEvalCell">@item.resultado</td>
-                                        <td>@item.cumplimientoEvaluado</td>
+                                        @*<td>@item.cumplimientoEvaluado</td>*@
                                     </tr>
                                     <tr>
                                         <th scope="row">Evaluador</th>
                                         <td class="JefeEvalCell">@item.ComentariosJefeEval</td>
-                                        <td>@item.cumplimientoEvaluador</td>
+                                        @*<td>@item.cumplimientoEvaluador</td>*@
                                     </tr>
                                     if (Model.sesion.Evaluacion.Status >= 10 && Model.sesion.Evaluacion.Status < 16)
                                     {
@@ -517,7 +517,7 @@
                                         <tr>
                                             <th></th>
                                             <th class="text-center">Comentarios</th>
-                                            <th class="text-center">Cumplimiento %</th>
+                                            <th class="text-center">Cumplimiento </th>
                                         </tr>
                                         <tr>
                                             <th>
@@ -554,18 +554,18 @@
             else if (Model.sesion.Evaluacion.Status < 16)
             {
                 <div class="clearfix alert alert-success mt-1">
-                    <div class="float-left"><strong>Cumplimiento % total: @ViewBag.sum_ponderado</strong></div>
+                    <div class="float-left"><strong>Calificación: @ViewBag.sum_ponderado</strong></div>
                     @if ((Model.sesion.Evaluacion.Status != 11 && Model.sesion.Evaluacion.Status != 13 && Model.sesion.Evaluacion.Status != 15) && ViewBag.usuario == 0)
                     {
-                        <div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+                        //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
                     }
                     @if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
                     {
-                        <div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+                        //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
                     }
                     @if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 2)
                     {
-                        <div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+                        //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
                     }
                 </div>
 
@@ -761,8 +761,8 @@
 
     <div class="collapse show" id="collapseObjetivosPTP">
         <div>
-            <b>
-                Deberás agregar al menos un objetivo
+            <b style="font-size: 12px;">
+                ¿Qué capacitación necesitas? (para desarrollar tus habilidades, conocimientos y capacidades para realizar tu trabajo actual)
             </b>
         </div>
         <div id="TblObjetivosPTP">
@@ -785,16 +785,33 @@
                         <div style="padding: 10px;">
                             <table class="table table-sm table-bordered table-striped">
                                 <tr class="ObjetivosPTP">
-                                    <td style="background-color: #F9F9F9; font-weight: bold;">Objetivos</td>
-                                    <td>@item.ObjetivePTP</td>
+                                    <td style="background-color: #F9F9F9; font-weight: bold;  width: 50%;">
+                                        Objetivos
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                                            Enlista el apoyo que necesitas en tu puesto actual
+                                        </p>
+                                    </td>
+                                    <td  style="width: 50%;">@item.ObjetivePTP</td>
                                 </tr>
                                 <tr class="ObjetivosPTP">
-                                    <td style="background-color: #F9F9F9; font-weight: bold;">Acciones</td>
-                                    <td>@item.ActionPTP</td>
+                                    <td style="background-color: #F9F9F9; font-weight: bold; width: 50%;">
+                                        Acciones
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                                            Enumera los pasos a realizar para lograr el objetivo
+                                            (Aprendizaje autodirigido, aprendizaje en el aula, coaching o aprendizaje en el trabajo)
+                                        </p>
+                                    </td>
+                                    <td  style="width: 50%;" >@item.ActionPTP</td>
                                 </tr>
                                 <tr class="ObjetivosPTP">
-                                    <td style="background-color: #F9F9F9; font-weight: bold;">¿Para Cuándo?</td>
-                                    <td>@item.DateFin</td>
+                                    <td style="background-color: #F9F9F9; font-weight: bold;">
+                                        ¿Para Cuándo?
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
+                                            Fecha límite para cuando deseas lograr tu objetivo
+                                        </p>
+
+                                    </td>
+                                    <td  style="width: 50%;">@item.DateFin</td>
                                 </tr>
 
                             </table>
@@ -886,8 +903,10 @@
 
     <div class="collapse show" id="collapseObjetivosPDP">
         <div>
-            <b>
-                Deberás agregar al menos un objetivo
+            <b style="font-size: 12px;">
+                La primera prioridad es tu función actual; si eres nuevo en esta función o si necesitas mejorar tu desempeño actual, concéntrate primero en tu plan de capacitación.
+                Piensa en tus aspiraciones profesionales y en conjunto con tu jefe inmediato establezcan objetivos realistas si es necesario.
+                Crea un plan de desarrollo del desempeño sobre cómo vas a lograr tus objetivos.
             </b>
         </div>
         <div id="TblObjetivosPDP">
@@ -911,16 +930,31 @@
                         <div style="padding: 10px;">
                             <table class="table table-sm table-bordered table-striped">
                                 <tr class="ObjetivosPDP">
-                                    <td style="background-color: #F9F9F9; font-weight: bold;">Objetivos</td>
-                                    <td>@item.ObjetivePDP</td>
+                                    <td style="background-color: #F9F9F9; font-weight: bold; width: 50%;">
+                                        Objetivos
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                                            ¿Cuáles son los objetivos ambiciosos, de crecimiento y las aspiraciones más allá del tu rol actual?
+                                        </p>
+                                    </td>
+                                    <td style="width: 50%;">@item.ObjetivePDP</td>
                                 </tr>
                                 <tr class="ObjetivosPDP">
-                                    <td style="background-color: #F9F9F9; font-weight: bold;">Propoósito</td>
-                                    <td>@item.actionPDP</td>
+                                    <td style="background-color: #F9F9F9; font-weight: bold; width: 50%;">
+                                        Propósito
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                                            ¿Cuál es tu motivación para alcanzar estas aspiraciones?
+                                        </p>
+                                    </td>
+                                    <td style="width: 50%;">@item.actionPDP</td>
                                 </tr>
                                 <tr class="ObjetivosPDP">
-                                    <td style="background-color: #F9F9F9; font-weight: bold;">¿Cómo podemos Ayudarte?</td>
-                                    <td>@item.dateFinish</td>
+                                    <td style="background-color: #F9F9F9; font-weight: bold; width: 50%;">
+                                        ¿Cómo podemos Ayudarte?
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                                            ¿Qué necesitas hacer y/o qué apoyo necesitas para lograr tus aspiraciones profesionales? (estudios, proyectos específicos, formación, etc.)
+                                        </p>
+                                    </td>
+                                    <td style="width: 50%;">@item.dateFinish</td>
                                 </tr>
 
                             </table>
@@ -1946,7 +1980,7 @@
 {
     using (Html.BeginForm("DownloadPdfNew", "MiHistorial", new { Id = Model.sesion.Evaluacion.id, typeLanguaje = 0 }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
     {
-        <button type="submit" class="btn btn-default">Descargar SP <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+        <button type="submit" class="btn btn-default">Descargar ES <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
     }
 
 
@@ -2224,8 +2258,11 @@ new { id = "ObjetivosPTP" })
                     Objetivo = Objetivo + 1;
                 });
                 //alert(Objetivo);
-                if (Objetivo < 3 || Objetivo>6) {
-                    alert('Debe ingresar mínimo 3 objetivos, máximo 6. \n Objetivos actuales->' + Objetivo);
+                //CAMBIO_OBJETIVOS: SE ACEPTARAN 10 OBJETIVOS
+                //if (Objetivo < 3 || Objetivo>6) {
+                if (Objetivo>10) {
+                    //alert('Debe ingresar mínimo 3 objetivos, máximo 6. \n Objetivos actuales->' + Objetivo);
+                    alert('Podrá agregar máximo 10 Objetivos. \n Objetivos actuales->' + Objetivo);
                     return false;
                 }
                 Objetivo = 0;
@@ -2263,8 +2300,12 @@ new { id = "ObjetivosPTP" })
                 $('.Objetivos').each(function (index, value) {
                     Objetivo = Objetivo + 1;
                 });
-                if (Objetivo < 3 || Objetivo > 6) {
-                    alert('Debe ingresar mínimo 3 objetivos, máximo 6. \n Objetivos actuales->' + Objetivo);
+                //CAMBIO_OBJETIVOS: SE ACEPTARAN 10 OBJETIVOS
+
+                //if (Objetivo < 3 || Objetivo > 6) {
+                if (Objetivo > 10) {
+                    //alert('Debe ingresar mínimo 3 objetivos, máximo 6. \n Objetivos actuales->' + Objetivo);
+                    alert('Podrá agregar máximo 10 Objetivos. \n Objetivos actuales->' + Objetivo);
                     return false;
                 }
                 Objetivo = 0;
@@ -2612,7 +2653,8 @@ new { id = "ObjetivosPTP" })
             $("#txtPesoTotal").val(pesototal);
             var nobjetivos = '@ViewBag.nObjetivos';
         //alert(nobjetivos);
-        if (parseInt(nobjetivos) >= 6) {
+        //CAMBIO_OBJETIVOS: SE ACEPTARAN 10 OBJETIVOS
+        if (parseInt(nobjetivos) >= 10) {
             $("#btnNuevoObjetivo").hide();
         }
         else {

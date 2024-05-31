@@ -18,6 +18,7 @@ using System.Drawing;
 using Spire.Doc.Fields;
 using static Spire.Pdf.General.Render.Decode.Jpeg2000.j2k.codestream.HeaderInfo;
 using DocumentFormat.OpenXml.Drawing.Charts;
+using System.Globalization;
 
 namespace PlantillaMVC.Controllers
 {
@@ -790,12 +791,6 @@ namespace PlantillaMVC.Controllers
                 Bitacora.NuevaEntrada("se inicia el PDF de: " + Evaluado.Login.id_sap + "_" + Evaluado.Login.NombreCompleto + " Ingreso a Historial", "MiHistorial/Historial ");
 
 
-                //IDIOMA INFORMACIÓN
-
-
-
-                //PRUBAS NUEVO CÓDIGO
-
                 #region DatosUsuario
                 string label_Titulo = "";
                 string label_claveUnidad = "";
@@ -863,9 +858,9 @@ namespace PlantillaMVC.Controllers
                     int index = bodyObjetivos.Paragraphs.IndexOf(paragraphObjetivos);
 
                     Spire.Doc.Table tableObjetivos = sectionObjetivos.AddTable(true);
-                    PreferredWidth width = new PreferredWidth(WidthType.Percentage, 112);
+                    PreferredWidth width = new PreferredWidth(WidthType.Percentage, 117);
                     tableObjetivos.PreferredWidth = width;
-                    tableObjetivos.TableFormat.LeftIndent = -42;
+                    tableObjetivos.TableFormat.LeftIndent = -50;
                     //tableObjetivos.AutoFitBehavior(AutoFitBehaviorType.wdAutoFitContents);
                     tableObjetivos.TableFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
                     tableObjetivos.TableFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 171, 239);
@@ -880,18 +875,51 @@ namespace PlantillaMVC.Controllers
                         "WEIGHTING Total of 100%", "Self Assessment Comments Completed by: Employee", "Mid-Year Comments Completed by: Manager %",
                         "Self Assessment Rating Completed by: Employee", "Justification of Rating Completed by: Employee", "Final Rating Completed by: Manager", "Final Justification of Rating Completed by: Manager" };
                     String[] HeaderSP = {
-                        "#", "ÁREA DE RENDIMIENTO CLAVE (KPA)", "INDICADOR DE RENDIMIENTO CLAVE (KPI) Objetivo(s) específico(s) a lograr por cada KPA",
-                        "PONDERACIÓN Total de 100%", "Comentarios de Autoevaluación Completado por: Empleado", "Comentarios de Medio Año Completado por: Gerente %",
-                        "Calificación de Autoevaluación Completado por: Empleado", "Justificación de la Calificación Completado por: Empleado", "Calificación Final Completado por: Gerente", "Justificación Final de la Calificación Completado por: Gerente"
+                        "#", "Área Clave de Desempeño (KPA)", 
+                        "INDICADOR CLAVE DE DESEMPEÑO (KPI)\r\nObjetivo(s) específico(s) a alcanzar por cada KPA",
+                        "Peso ponderado: Total de 100%", 
+                        "Comentarios de Autoevaluación Completado por el Colaborador", 
+                        "Comentarios de Medio Año Completado por el jefe inmediato",
+                        "Calificación de Autoevaluación Completado por el Colaborador",
+                        "Justificación de la CalificaciónCompletado por el Colaborador",
+                        "Calificación Final Completado por el jefe inmediato",
+                        "Justificación Final de la Calificación Completado por el Colaborador"
                     };
                     
                     String[] HeaderUno;
-                    String[] HeaderUnoSP = { "Configuración de Objetivos", "Revisión de Medio Año", "Revisión Anual Final" };
+                    String[] HeaderUnoSP = { "ESTABLECIMIENTO DE OBJETIVOS", "EVALUACIÓN DE DESEMPEÑO - MEDIO AÑO", "EVALUACIÓN FINAL DE DESEMPEÑO" };
                     String[] HeaderUnoEN = { "Objetivos Settings", "Mid-Year Review", "Final Annual Review" };
 
+                    //EXTRACCION DE FECHAS
+                    //Inicio de los objetivos
+                    string sDateObj = "";
+                    try
+                    {
+                        DateTime startDateObj = new DateTime(periodo.StartDateObj);
+                        DateTime finishDateObj = new DateTime(periodo.FinishDateObj);
+                        string sYear = startDateObj.Year.ToString();
+                        string fYear = finishDateObj.Year.ToString();
+                        sDateObj = "";
+
+
+                        if (idiomaDOC == idiomaSP)
+                        {
+                            sDateObj = "Julio de " + sYear.ToString() + " a Junio de " + fYear.ToString();
+                        }
+                        else
+                        {
+                            sDateObj = "July " + sYear.ToString() + " to June " + fYear.ToString();
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+
+                    }
+                    
+
                     String[] HeaderDos;
-                    String[] HeaderDosSP = { "Periodo KPI", "Julio 2023 a Junio 2024", "Fecha de Revisión de Medio Año (DD/MMM/AA)", "Fecha de Revisión Anual Final (DD/MMM/AA)" };
-                    String[] HeaderDosEN = { "KPI Period", "July 2023 to June 2024", "Mid-Year Review Date (DD/MMM/YY)", "Final Annual Review Date (DD/MMM/YY)" };
+                    String[] HeaderDosSP = { "Periodo de Evaluación", sDateObj, "Revisión de Medio Año", "Evaluación de Desempeño Anual" };
+                    String[] HeaderDosEN = { "KPI Period", sDateObj, "Mid-Year Review ", "Final Annual Review" };
 
                     if (idiomaDOC == idiomaSP)
                     {
@@ -1056,6 +1084,7 @@ namespace PlantillaMVC.Controllers
 
                         totalEvaluado += (( objetivo.ponderado/100f) * objetivo.cumplimientoEvaluado2);
                         totalEvaluador += ((objetivo.ponderado/100f) * objetivo.cumplimientoEvaluador2);
+
                         
                         i = i + 1;
                     }
@@ -1115,13 +1144,24 @@ namespace PlantillaMVC.Controllers
                     #region FOOTER
 
                     #region IDIOMA FOOTER
+
+                    //obteniendo comentarios
+                    string comFinalEvaluado = Evaluado.Evaluacion.ComEvaluado2;
+                    string comFinalEvaluador = Evaluado.Evaluacion.ComEvaluador2;
+
+                    //string comMedioEvaluado = "";
+                    string comMedioEvaluado = Evaluado.Evaluacion.ComEvaluado;
+                    //string comMedioEvaluador = "";
+                    string comMedioEvaluador = Evaluado.Evaluacion.ComEvaluador;
+
+
                     //FOOTER
                     String[] FooterUno;
-                    String[] FooterUnoSP = { "PUNTUACIÓN GENERAL DE DESEMPEÑO INDIVIDUAL", totalPonderado.ToString() + "%", "", totalEvaluado.ToString("F2"), Evaluado.Evaluacion.ComEvaluado2, totalEvaluador.ToString("F2"), Evaluado.Evaluacion.ComEvaluador2 };
-                    String[] FooterUnoEN = { "OVERALL INDIVIDUAL PERFORMANCE SCORE", totalPonderado.ToString() + "%", "", totalEvaluado.ToString("F2"), Evaluado.Evaluacion.ComEvaluado2, totalEvaluador.ToString("F2"), Evaluado.Evaluacion.ComEvaluador2 };
+                    String[] FooterUnoSP = { "PUNTUACIÓN GENERAL DE DESEMPEÑO INDIVIDUAL", totalPonderado.ToString() + "%", comMedioEvaluado, comMedioEvaluador, totalEvaluado.ToString("F2"), comFinalEvaluado, totalEvaluador.ToString("F2"), comFinalEvaluador };
+                    String[] FooterUnoEN = { "OVERALL INDIVIDUAL PERFORMANCE SCORE", totalPonderado.ToString() + "%", comMedioEvaluado, comMedioEvaluador, totalEvaluado.ToString("F2"), comFinalEvaluado, totalEvaluador.ToString("F2"), comFinalEvaluador };
 
                     String[] FooterDos;
-                    String[] FooterDosSP = { "APROBACIÓN DE LA FASE ESTABLECIMIENTO DE OBJETIVOS", "FIRMA DE REVISIÓN DE MEDIO AÑO", "FIRMA DE REVISIÓN ANUAL FINAL" };
+                    String[] FooterDosSP = { "APROBACIÓN DE LA FASE ESTABLECIMIENTO DE OBJETIVOS", "APROBACIÓN DE LA FASE REVISIÓN DE MEDIO AÑO", "APROBACIÓN DE LA FASE REVISIÓN ANUAL" };
                     String[] FooterDosEN = { "OBJECTIVE SETTING SIGN-OFF", "MID-YEAR REVIEW SIGN-OFF", "FINAL ANNUAL REVIEW SIGN-OFF" };
 
                     if (idiomaDOC == idiomaSP)
@@ -1136,13 +1176,46 @@ namespace PlantillaMVC.Controllers
                     }
 
                     #endregion
+                    #region COLORES PONDERACION
+                    System.Drawing.Color colorEvaluado = colorEvaluado = System.Drawing.Color.FromArgb(254, 254, 254);
+                    //blanco
+                    if (totalEvaluado == 0.00f){colorEvaluado = System.Drawing.Color.FromArgb(254, 254, 254);}
+                    //gris
+                    else if (totalEvaluado == 5.00f){colorEvaluado = System.Drawing.Color.FromArgb(211, 211, 211);}
+                    //azul claro
+                    else if (totalEvaluado >= 4.00f && totalEvaluado < 5.00f){colorEvaluado = System.Drawing.Color.FromArgb(173, 216, 230);}
+                    //verde claro
+                    else if (totalEvaluado >= 3.00f && totalEvaluado < 4.00f){colorEvaluado = System.Drawing.Color.FromArgb(144, 238, 144);}
+                    //amarillo
+                    else if (totalEvaluado >= 2.00f && totalEvaluado < 3.00f){colorEvaluado = System.Drawing.Color.FromArgb(255, 255, 224);}
+                    //rojo
+                    else if (totalEvaluado > 0.00f && totalEvaluado < 2.00f){colorEvaluado = System.Drawing.Color.FromArgb(255, 0, 0);}
+
+                    System.Drawing.Color colorEvaluador = colorEvaluador = System.Drawing.Color.FromArgb(254, 254, 254);
+                    //blanco
+                    if (totalEvaluador == 0.00f) { colorEvaluador = System.Drawing.Color.FromArgb(254, 254, 254); }
+                    //gris
+                    else if (totalEvaluador == 5.00f) { colorEvaluador = System.Drawing.Color.FromArgb(211, 211, 211); }
+                    //azul claro
+                    else if (totalEvaluador >= 4.00f && totalEvaluador < 5.00f) { colorEvaluador = System.Drawing.Color.FromArgb(173, 216, 230); }
+                    //verde claro
+                    else if (totalEvaluador >= 3.00f && totalEvaluador < 4.00f) { colorEvaluador = System.Drawing.Color.FromArgb(144, 238, 144); }
+                    //amarillo
+                    else if (totalEvaluador >= 2.00f && totalEvaluador < 3.00f) { colorEvaluador = System.Drawing.Color.FromArgb(255, 255, 224); }
+                    //rojo
+                    else if (totalEvaluador > 0.00f && totalEvaluador < 2.00f) { colorEvaluador = System.Drawing.Color.FromArgb(255, 0, 0); }
+
+
+                    #endregion
+
+
                     //PARA EL PRIMER footer SE REALIZA LO SIGUIENTE
                     //String[] FooterUno = { "OVERALL INDIVIDUAL PERFORMANCE SCORE", totalPonderado.ToString() + "%", "", totalEvaluado.ToString("F2"), "",totalEvaluador.ToString("F2"), "" };
 
-                    int[] IndexFooterUno = { 0, 3, 4, 6, 7, 8, 9};//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
+                    int[] IndexFooterUno = { 0, 3, 4, 5, 6, 7, 8, 9};//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
                     //COLORES 
-                    System.Drawing.Color[] columnColorsFooter = { System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(128, 128, 128), System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(128, 128, 128) };
-                    System.Drawing.Color[] columnColorsTextFooter = { System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0) };
+                    System.Drawing.Color[] columnColorsFooter = { System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(254, 254, 254), colorEvaluado, System.Drawing.Color.FromArgb(254, 254, 254), colorEvaluador, System.Drawing.Color.FromArgb(254, 254, 254) };
+                    System.Drawing.Color[] columnColorsTextFooter = { System.Drawing.Color.FromArgb(254, 254, 254), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0), System.Drawing.Color.FromArgb(0, 0, 0) };
                     
                     int inicioFooter = ENCABEZADOS + liObjetivos.Count;//suma para saber donde comienza el footer
                     TableRow F_Footer1_row = tableObjetivos.Rows[inicioFooter];
@@ -1150,7 +1223,6 @@ namespace PlantillaMVC.Controllers
                     F_Footer1_row.IsHeader = false;
                     // Fusionar las celdas para crear tres encabezados
                     tableObjetivos.ApplyHorizontalMerge(inicioFooter, 0, 2);
-                    tableObjetivos.ApplyHorizontalMerge(inicioFooter, 4, 5);
 
                     // Agregar los encabezados y configurar su formato
                     for (int h = 0; h < FooterUno.Length; h++)
@@ -1318,9 +1390,9 @@ namespace PlantillaMVC.Controllers
                     int index = bodyObjetivos.Paragraphs.IndexOf(paragraphObjetivos);
 
                     Spire.Doc.Table tableObjetivos = sectionObjetivos.AddTable(true);
-                    PreferredWidth width = new PreferredWidth(WidthType.Percentage, 112);
+                    PreferredWidth width = new PreferredWidth(WidthType.Percentage, 117);
                     tableObjetivos.PreferredWidth = width;
-                    tableObjetivos.TableFormat.LeftIndent = -22;
+                    tableObjetivos.TableFormat.LeftIndent = -50;
                     //tableObjetivos.AutoFitBehavior(AutoFitBehaviorType.wdAutoFitContents);
                     tableObjetivos.TableFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
                     tableObjetivos.TableFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -1329,35 +1401,36 @@ namespace PlantillaMVC.Controllers
 
                     #region IDIOMA ENCABEZADOS
                     String[] Header;
-                    String[] HeaderSP = { "Objetivos", "Acción", "Para cuándo", "Objetivos", "Propósito", "¿Cómo puede ayudar?" };
+                    String[] HeaderSP = { "Objetivos", "Acciones", "¿Para Cuándo?", "Objetivos", "Propósito", "¿Cómo podemos ayudarte?" };
                     String[] HeaderEN = {"Goals", "Action", "By when ", "Goals", "Purpose", "How can help?"};
 
                     String textHeader1= "";
-                    String textHeader1SP = "PLAN DE FORMACIÓN Y DESARROLLO PERSONAL";
+                    String textHeader1SP = "PLAN DE CAPACITACIÓN Y DESARROLLO PERSONAL";
                     String textHeader1EN = "PERSONAL TRAINING AND DEVELOPMENT PLAN";
 
                     String[] HeaderDos;
-                    String[] HeaderDosSP = { "PLAN DE FORMACIÓN PERSONAL - ROL ACTUAL", "PLAN DE DESARROLLO PERSONAL - ENFOQUE EN LA CARRERA" };
-                    String[] HeaderDosEN = { "PERSONAL TRAINING PLAN - CURRENT ROLE ", "PERSONAL DEVELOPMENT PLAN - CAREER FOCUSED" };
+                    String[] HeaderDosSP = { "   PLAN DE CAPACITACIÓN PERSONAL - ROL ACTUAL   ", "PLAN DE DESARROLLO PERSONAL - ENFOCADO EN LA CARRERA" };
+                    String[] HeaderDosEN = { "  PERSONAL TRAINING PLAN - CURRENT ROLE   ", 
+                                             "PERSONAL DEVELOPMENT PLAN - CAREER FOCUSED" };
 
                     String[] HeaderTres;
 
                     String[] HeaderTresSP = {
                         "¿Qué entrenamiento necesitas? (por ejemplo, desarrollar tus habilidades, conocimientos, capacidades para desempeñar tu trabajo actual)",
-                        "Tu primera prioridad es tu rol actual. Si eres nuevo en el rol, o si tu desempeño actual necesita mejorar, entonces concéntrate primero en tu plan de entrenamiento. Piensa en tus aspiraciones profesionales y utiliza a tu gerente para ayudarte a establecer metas realistas si es necesario. Crea un plan de desarrollo de desempeño para cómo vas a lograr tus objetivos."
+                        "La primera prioridad es tu función actual; si eres nuevo en esta función o si necesitas mejorar tu desempeño actual, concéntrate primero en tu plan de capacitación. \nPiensa en tus aspiraciones profesionales y en conjunto con tu jefe inmediato establezcan objetivos realistas si es necesario. \nCrea un plan de desarrollo del desempeño sobre cómo vas a lograr sus objetivos."
                     };
                     String[] HeaderTresEN = {
                         "What training do you need? (i.e. developing your skills, knowledge, capabilities to do your currentjob)",
-                        "Your first priority is your current role, if you are new to role, or if your current performance needs to be improved then focus on your training plan first. Think about your career aspirations, using you manager to assist with establishing realistic goals if required. Create a performance development plan for how you are going to achieve your goals"
+                        "Your first priority is your current role, if you are new to role, or if your current performance needs to be improved then focus on your training plan first. \nThink about your career aspirations, using you manager to assist with establishing realistic goals if required. \nCreate a performance development plan for how you are going to achieve your goals"
                     };
 
                     String[] HeaderCinco;
                     String[] HeaderCincoSP = {
-                        "Lista de apoyo que necesitas en tu rol actual",
-                        "Lista de pasos que tomarás para alcanzar el objetivo (Aprendizaje autodirigido, aprendizaje en clase, coaching o aprendizaje en el trabajo)",
-                        "Fecha límite para lograr tu objetivo",
-                        "¿Cuáles son los objetivos de crecimiento, desafío y aspiraciones más allá del rol actual?",
-                        "¿Cuál es tu motivación para lograr estas aspiraciones?",
+                        "Enlista el apoyo que necesitas en tu puesto actual",
+                        "Enumera los pasos a realizar para lograr el objetivo (Aprendizaje autodirigido, aprendizaje en el aula, coaching o aprendizaje en el trabajo)",
+                        "Fecha límite para cuando deseas lograr tu objetivo",
+                        "¿Cuáles son los objetivos ambiciosos, de crecimiento y las aspiraciones más allá de tu rol actual?",
+                        "¿Cuál es tu motivación para alcanzar estas aspiraciones?",
                         "¿Qué necesitas hacer y/o qué apoyo necesitas para lograr tus aspiraciones profesionales? (estudios, proyectos específicos, formación, etc.)"
                     };
                     String[] HeaderCincoEN = {
@@ -1443,6 +1516,9 @@ namespace PlantillaMVC.Controllers
                     //PARA EL PRIMER HEADER SE REALIZA LO SIGUIENTE
                     
                     TableRow F_Header1_row = tableObjetivos.Rows[0];
+                    System.Drawing.Color[] columnColorsFooterLargo = { Color.FromArgb(255, 165, 0), Color.FromArgb(255, 165, 0), Color.FromArgb(255, 165, 0), Color.FromArgb(255, 200, 0), Color.FromArgb(255, 200, 0), Color.FromArgb(255, 200, 0) };
+                    System.Drawing.Color[] columnColorsFooterCorto   = { Color.FromArgb(255, 165, 0), Color.FromArgb(255, 200, 0) };
+
                     F_Header1_row.RowFormat.BackColor = Color.FromArgb(255, 69, 0);
                     F_Header1_row.IsHeader = false;
                     // Fusionar las celdas para crear UN encabezados
@@ -1453,7 +1529,7 @@ namespace PlantillaMVC.Controllers
 
                     //Cell Alignment
                     F_Header1_row.Cells[columnIndex1].CellFormat.Borders.Color = System.Drawing.Color.Black;
-                    F_Header1_row.Cells[columnIndex1].CellWidthType = CellWidthType.Auto;
+                    F_Header1_row.Cells[columnIndex1].CellWidthType = CellWidthType.Point;
 
                     Spire.Doc.Documents.Paragraph p1 = F_Header1_row.Cells[columnIndex1].AddParagraph();
                     F_Header1_row.Cells[columnIndex1].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
@@ -1472,7 +1548,7 @@ namespace PlantillaMVC.Controllers
                     int[] IndexHeaderDos = { 0, 3};//Guarda las columnas donde se encontraran las nuevas celdas despues de la fución
                     
                     TableRow F_Header2_row = tableObjetivos.Rows[1];
-                    F_Header2_row.RowFormat.BackColor = Color.FromArgb(255, 165, 0);
+                    //F_Header2_row.RowFormat.BackColor = Color.FromArgb(255, 165, 0);
                     F_Header2_row.IsHeader = false;
                     // Fusionar las celdas para crear tres encabezados
                     tableObjetivos.ApplyHorizontalMerge(1, 0, 2);
@@ -1484,9 +1560,12 @@ namespace PlantillaMVC.Controllers
                         // Obtener el índice de la columna actual
                         int columnIndex = IndexHeaderDos[h];
 
+                        F_Header2_row.Cells[columnIndex].CellFormat.BackColor = columnColorsFooterCorto[h];
+
+
                         //Cell Alignment
                         F_Header2_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
-                        F_Header2_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+                        F_Header2_row.Cells[columnIndex].CellWidthType = CellWidthType.Point;
 
                         Spire.Doc.Documents.Paragraph p = F_Header2_row.Cells[columnIndex].AddParagraph();
                         F_Header2_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
@@ -1516,13 +1595,16 @@ namespace PlantillaMVC.Controllers
                         // Obtener el índice de la columna actual
                         int columnIndex = IndexHeaderTres[h];
 
+                        //F_Header3_row.Cells[columnIndex].CellFormat.BackColor = columnColorsFooterCorto[h];
+
+
                         //Cell Alignment
                         F_Header3_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
-                        F_Header3_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+                        F_Header3_row.Cells[columnIndex].CellWidthType = CellWidthType.Point;
 
                         Spire.Doc.Documents.Paragraph p = F_Header3_row.Cells[columnIndex].AddParagraph();
                         F_Header3_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
-                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
                         Spire.Doc.Fields.TextRange TR = p.AppendText(HeaderTres[h]);
                         TR.CharacterFormat.TextColor = System.Drawing.Color.Black;
                         TR.CharacterFormat.FontName = "Calibri";
@@ -1545,11 +1627,11 @@ namespace PlantillaMVC.Controllers
 
                         //Cell Alignment
                         F_Header5_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
-                        F_Header5_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+                        F_Header5_row.Cells[columnIndex].CellWidthType = CellWidthType.Point;
 
                         Spire.Doc.Documents.Paragraph p = F_Header5_row.Cells[columnIndex].AddParagraph();
                         F_Header5_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
-                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
                         Spire.Doc.Fields.TextRange TR = p.AppendText(HeaderCinco[h]);
                         TR.CharacterFormat.TextColor = System.Drawing.Color.Black;
                         TR.CharacterFormat.FontName = "Calibri";
@@ -1568,9 +1650,12 @@ namespace PlantillaMVC.Controllers
                         // Obtener el índice de la columna actual
                         int columnIndex = h;
 
+                        F_Header4_row.Cells[columnIndex].CellFormat.BackColor = columnColorsFooterLargo[h];
+
+
                         //Cell Alignment
                         F_Header4_row.Cells[columnIndex].CellFormat.Borders.Color = System.Drawing.Color.Black;
-                        F_Header4_row.Cells[columnIndex].CellWidthType = CellWidthType.Auto;
+                        F_Header4_row.Cells[columnIndex].CellWidthType = CellWidthType.Point;
 
                         Spire.Doc.Documents.Paragraph p = F_Header4_row.Cells[columnIndex].AddParagraph();
                         F_Header4_row.Cells[columnIndex].CellFormat.VerticalAlignment = Spire.Doc.Documents.VerticalAlignment.Middle;
@@ -1658,19 +1743,17 @@ namespace PlantillaMVC.Controllers
                             Spire.Doc.Documents.Paragraph pPTP = DataRow.Cells[c].AddParagraph();
                             Spire.Doc.Fields.TextRange TRPTP = pPTP.AppendText(dataGeneral[r][c]);
 
-                            if (c == 2)
-                            {
-                                DataRow.Cells[c].Width = 50F;
-                            }
-
-
                             //Format Cells
                             DataRow.Cells[c].CellFormat.VerticalAlignment = VerticalAlignment.Middle;
                             pPTP.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
                             //COLUMAS EN LAS CUALES EL TEXTO ESTARA EN MEDIO
+                            
                             if (c == 2)
                             {
                                 pPTP.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                                DataRow.Cells[c].CellFormat.Borders.Right.Color = System.Drawing.Color.FromArgb(255, 69, 0);
+                                DataRow.Cells[c].CellFormat.Borders.Right.BorderType = Spire.Doc.Documents.BorderStyle.Double;
+
                             }
 
                             //LETRA
@@ -1679,7 +1762,7 @@ namespace PlantillaMVC.Controllers
                             //CAMBIAR LA LETRA DE LAS COLUMNAS
                             if (c == 1)
                             {
-                                TRPTP.CharacterFormat.FontSize = 7;
+                                TRPTP.CharacterFormat.FontSize = 9;
                             }
                             TRPTP.CharacterFormat.TextColor = System.Drawing.Color.FromArgb(0, 32, 96);
                             TRPTP.CharacterFormat.Border.Color = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -1787,6 +1870,28 @@ namespace PlantillaMVC.Controllers
 
                     #endregion
 
+                    #region Divicion
+                    for (int r = 0; r < ENCABEZADOS + numMayor; r++)
+                    {
+                        Spire.Doc.TableRow DataRow = tableObjetivos.Rows[r];
+
+                        for (int c = 0; c < SIZE_HEADER; c++)
+                        {
+                            DataRow.Cells[c].CellFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 0, 0);
+                            DataRow.Cells[c].CellFormat.Borders.BorderType = Spire.Doc.Documents.BorderStyle.Single;
+                            
+                            if(c == 2)
+                            {
+                                DataRow.Cells[c].CellFormat.Borders.Right.Color = System.Drawing.Color.FromArgb(255, 69, 0);
+                                DataRow.Cells[c].CellFormat.Borders.Right.BorderType = Spire.Doc.Documents.BorderStyle.Double;
+
+                            }
+
+                        }
+                    }
+
+                    #endregion
+
                     tableObjetivos.TableFormat.Borders.Color = System.Drawing.Color.FromArgb(0, 0, 0);
                     //bodyObjetivos.ChildObjects.Remove(paragraphObjetivos);
                     document.Replace("#Objetivos2#", "", true, true);
@@ -1829,6 +1934,43 @@ namespace PlantillaMVC.Controllers
                 }
             }
         }
+
+        #endregion
+
+
+        #region VERIFICAR AÑO
+        public ActionResult VerifyYear(int Id)
+        {
+            try
+            {
+                EEval Evaluacion = Utilidades.negocio.RecuperaEvaluacionIdHistorial(Id);
+                EPeriodos periodo = Utilidades.negocio.RecuperaUnPeriodo(Evaluacion.periodo);
+
+                DateTime startDate = new DateTime(periodo.StartDateObj);
+
+                // Determinamos el método a usar basado en el año
+                Boolean newPDF = startDate.Year >= 2023 ? true : false;
+                if (newPDF)
+                {
+                    return DownloadPdfNew(Id, 0);
+
+                }
+                else
+                {
+                    return DownloadPdfDetailed(Id);
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                Bitacora.NuevaEntrada("*****exception:" + ex.ToString(), "MiHistorial/Historial ");
+                return PartialView("Respuesta", ex.ToString());
+            }
+
+
+        }
+
 
         #endregion
 

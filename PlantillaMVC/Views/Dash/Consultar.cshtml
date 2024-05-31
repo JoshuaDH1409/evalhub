@@ -67,6 +67,17 @@
                     <td>@item.Login.Puesto</td>
                     <td>@item.Login.Division</td>
                     @*<td>@item.login.Area</td>*@
+
+                    @{
+                        //NUEVO REQUERIMIENTO: SI EL INICIO DE LA EVALUACIÓN ES A PARTIR DEL 2024 SE DEBE
+                        //DESCARGAR EL NUEVO FORMATO, EN CASO CONTRARIO, SE DESCARGA EL ANTERIOR.
+                        // Convertimos los ticks a DateTime
+                        DateTime startDate = new DateTime(item.Evaluacion.periodo);
+
+                        // Determinamos el método a usar basado en el año
+                        string downloadAction = startDate.Year >= 2024 ? "DownloadPdfNew" : "DownloadPdfDetailed";
+                    }
+
                     <td>
                         @using (Html.BeginForm("DownloadPdfDetailed", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
                         {

@@ -39,29 +39,38 @@
                 </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ObjetivePDP, new { @class = "etiqueta" })
+                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                            ¿Cuáles son los objetivos ambiciosos, de crecimiento y las aspiraciones más allá del tu rol actual?
+                        </p>
                     </td>
-                    <td>
-                        @Html.TextBoxFor(m => m.ObjetivePDP, new { @class = "form-control", required = true })
+                    <td style="width: 50%; text-align: left;">
+                        @Html.TextAreaFor(m => m.ObjetivePDP, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.ObjetivePDP, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.actionPDP, new { @class = "etiqueta" })
+                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                            ¿Cuál es tu motivación para alcanzar estas aspiraciones?
+                        </p>
                     </td>
-                    <td>
-                        @Html.TextBoxFor(m => m.actionPDP, new { @class = "form-control", required = true })
+                    <td style="width: 50%; text-align: left;">
+                        @Html.TextAreaFor(m => m.actionPDP, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.actionPDP, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.dateFinish, new { @class = "etiqueta" })
+                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                            ¿Qué necesitas hacer y/o qué apoyo necesitas para lograr tus aspiraciones profesionales? (estudios, proyectos específicos, formación, etc.)
+                        </p>
                     </td>
-                    <td>
-                        @Html.TextBoxFor(m => m.dateFinish, new { @class = "form-control", required = true })
+                    <td style="width: 50%; text-align: left;">
+                        @Html.TextAreaFor(m => m.dateFinish, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.dateFinish, "", new { @class = "text-danger" })
                     </td>
                 </tr>

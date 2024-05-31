@@ -32,14 +32,14 @@ namespace Modelo
 
         [DataMember]
         [Required(ErrorMessage = "Nombre del objetivo requerido")]
-        [Display(Name = "Nombre de Objetivo")]
+        [Display(Name = "Objetivo")]
         [StringLength(4999, ErrorMessage = "El campo no puede tener más de 5000 letras.")]
         [AttributeDataMember("ObjetivePDP", SQLTypeBasic.TEXT)]
         public string ObjetivePDP { get; set; }
 
         [DataMember]
         [Required(ErrorMessage = "Acción es requerido")]
-        [Display(Name = "Acción Cambiada")]
+        [Display(Name = "Propósito")]
         [StringLength(4999, ErrorMessage = "El campo no puede tener más de 5000 letras.")]
         [AttributeDataMember("ActionPDP", SQLTypeBasic.TEXT)]
         public string actionPDP { get; set; }
@@ -47,7 +47,7 @@ namespace Modelo
 
         [DataMember]
         [Required(ErrorMessage = "Fecha es requerido")]
-        [Display(Name = "Fecha Cambiada")]
+        [Display(Name = "¿Cómo podemos Ayudarte?")]
         [StringLength(4999, ErrorMessage = "El campo no puede tener más de 5000 letras.")]
         [AttributeDataMember("DateFin", SQLTypeBasic.TEXT)]
         public string dateFinish { get; set; }

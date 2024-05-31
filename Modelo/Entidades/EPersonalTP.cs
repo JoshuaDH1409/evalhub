@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    [AttributeDataClass("TBL_ObjetivesPTP")]
+    [AttributeDataClass("TBL_objetivesPTP")]
     [DataContract]
     public class EPersonalTP : EntidadBase
     {

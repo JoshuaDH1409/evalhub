@@ -7,6 +7,8 @@
 
 @if (Model.periodo != null)
 {
+
+
     <style>
         .Imagen {
             max-height: 50px;
@@ -144,7 +146,7 @@
                         else
                         {
                             <td>
-                                @using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                                @using (Html.BeginForm("VerifyYear", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
                                 {
                                     <button type="submit" style="background:none; border:none"><i class="far fa-file-pdf"></i><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
                                 }
@@ -154,7 +156,7 @@
                     else if (Model.periodo.Etapa == 2 && hoy >= Model.periodo.StartDateCali && hoy <= Model.periodo.FinishDateCali && item.Evaluacion.Status != 17)
                     {
                         <td>
-                            @using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                            @using (Html.BeginForm("VerifyYear", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
                             {
                                 <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
                             }
@@ -184,7 +186,7 @@
                     else if (Model.periodo.Etapa == 4 && hoy >= Model.periodo.StartDateCali2 && hoy <= Model.periodo.FinishDateCali2 && item.Evaluacion.Status != 17)
                     {
                         <td>
-                            @using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                            @using (Html.BeginForm("VerifyYear", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
                             {
                                 <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
                             }
@@ -220,7 +222,7 @@
                         {
                             if (item.Evaluacion.Status >= 3)
                             {
-                                using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                               using (Html.BeginForm("VerifyYear", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data" }))
                                 {
                                     <button type="submit" class="btn"><i class="fa fa-file-pdf fontIcons"></i></button>
                                 }

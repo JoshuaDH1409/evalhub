@@ -715,17 +715,17 @@
                             <tr>
                                 <th></th>
                                 <th>Comentarios</th>
-                                <th>Cumplimiento %</th>
+                                @*<th>Cumplimiento %</th>*@
                             </tr>
                             <tr>
                                 <th>Evaluado</th>
                                 <td class="AutoEvalCell">@item.resultado</td>
-                                <td>@item.cumplimientoEvaluado</td>
+                                @*<td>@item.cumplimientoEvaluado</td>*@
                             </tr>
                             <tr>
                                 <th scope="row">Evaluador</th>
                                 <td class="JefeEvalCell">@item.ComentariosJefeEval</td>
-                                <td>@item.cumplimientoEvaluador</td>
+                                @*<td>@item.cumplimientoEvaluador</td>*@
                             </tr>
                             if (ViewBag.status >= 10 && ViewBag.status < 16)
                             {
@@ -735,7 +735,7 @@
                                 <tr>
                                     <th></th>
                                     <th>Comentarios</th>
-                                    <th>Cumplimiento %</th>
+                                    <th>Cumplimiento</th>
                                 </tr>
                                 <tr>
                                     <th>
@@ -772,8 +772,8 @@
         else
         {
 <div class="clearfix alert alert-success mt-1">
-    <div class="float-left"><strong>Cumplimiento % total: @Model.Sum(m => m.ValorObj)</strong></div>
-    <div class="float-right"><strong id="">Calificación: @ViewBag.CalFinalTemp </strong></div>
+    <div class="float-left"><strong>Calificación: @Model.Sum(m => m.ValorObj)</strong></div>
+    @*<div class="float-right"><strong id="">Calificación: @ViewBag.CalFinalTemp </strong></div>*@
 </div>
         }
 
@@ -787,7 +787,8 @@
         var pesototal = '@ViewBag.PesoTotal';
         var nobjetivos = '@ViewBag.nObjetivos';
         //alert(nobjetivos);
-        if (parseInt(nobjetivos) >= 6) {
+        //CAMBIO_OBJETIVOS: SE ACEPTARAN 10 OBJETIVOS
+        if (parseInt(nobjetivos) >= 10) {
             $("#btnNuevoObjetivo").hide();
         }
         else {

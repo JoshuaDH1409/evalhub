@@ -137,15 +137,18 @@
                     4: EXCEDE LA EXPECTATIVAS
                     5: SOBRESALIENTE
                     -->
-                <tr>
-                    <td>
-                        @Html.LabelFor(m => m.cumplimientoEvaluado, new { @class = "etiqueta" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(m => m.cumplimientoEvaluado, new { @class = "form-control", @type = "number", min = 0, max = 5, required = true })
-                        @Html.ValidationMessageFor(m => m.cumplimientoEvaluado, "", new { @class = "text-danger" })
-                    </td>
-                </tr>
+        <tr>
+            @*
+                <td>
+                    @Html.LabelFor(m => m.cumplimientoEvaluado, new { @class = "etiqueta" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.cumplimientoEvaluado, new { @class = "form-control", @type = "number", min = 0, max = 5, required = true })
+                    @Html.ValidationMessageFor(m => m.cumplimientoEvaluado, "", new { @class = "text-danger" })
+                </td>
+            *@
+
+        </tr>
 
                 <tr>
                     <td>
@@ -244,15 +247,18 @@
                         </td>
                     </tr>
                 }
-                <tr>
-                    <td>
-                        @Html.LabelFor(m => m.cumplimientoEvaluador, new { @class = "etiqueta" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(m => m.cumplimientoEvaluador, new { @class = "form-control", @type = "number", min = 0, max = 5, required = true })
-                        @Html.ValidationMessageFor(m => m.cumplimientoEvaluador, "", new { @class = "text-danger" })
-                    </td>
-                </tr>
+        <tr>
+            @*CAMBIO_OBJETIVOS: Cuando sea estatus 5 y etapa !=  2 entonces se oculta*@
+            @*
+            <td>
+                @Html.LabelFor(m => m.cumplimientoEvaluador, new { @class = "etiqueta" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.cumplimientoEvaluador, new { @class = "form-control", @type = "number", min = 0, max = 5, required = true })
+                @Html.ValidationMessageFor(m => m.cumplimientoEvaluador, "", new { @class = "text-danger" })
+            </td>
+            *@
+        </tr>
                 <tr>
                     <td>
                         @Html.LabelFor(m => m.ComentariosJefeEval, new { @class = "etiqueta" })

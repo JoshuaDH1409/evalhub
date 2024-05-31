@@ -16,6 +16,90 @@ namespace PlantillaMVC
 {
     public class EnvioCorreo
     {
+
+        public void SendMail(string fromname, string tomail, string toname, string bodymail, string subjectmail)
+        {
+            bool enviarCorreos = false;
+
+            if (enviarCorreos)
+            {
+                ThreadPool.QueueUserWorkItem(delegate (object t)
+                {
+                    SmtpClient client = new SmtpClient("smtp.office365.com", 0x24b)
+                    {
+                        EnableSsl = true,
+                        Credentials = new NetworkCredential("evaluacion.desempeno@aspenlatam.com", "Aspen2017.")
+                    };
+                    MailAddress from = new MailAddress("evaluacion.desempeno@aspenlatam.com", fromname, Encoding.UTF8);
+                    MailAddress to = new MailAddress(tomail);
+                    //MailAddress to = new MailAddress("fvargas@estrategiatec.com.mx");
+                    //MailAddress to = new MailAddress("giselle.dominguez@aspenlatam.com");
+                    MailMessage message = new MailMessage(from, to)
+                    {
+                        Body = bodymail,
+                        BodyEncoding = Encoding.UTF8,
+                        IsBodyHtml = true,
+                        Subject = subjectmail,
+                        SubjectEncoding = Encoding.UTF8
+                    };
+                    client.SendCompleted += delegate (object s, AsyncCompletedEventArgs e)
+                    {
+                        client.Dispose();
+                        message.Dispose();
+                    };
+                    string userToken = DateTime.Today.ToString();
+                    try
+                    {
+                        Thread.Sleep(5000);
+                        client.SendAsync(message, userToken);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw GeneraException.AddException(ex, System.Reflection.MethodInfo.GetCurrentMethod(),
+                                             new string[] { string.Format("Error: {0}", ex.Message),
+                                                            string.Format("InnerException: {0}", ex.InnerException),
+                                                            string.Format("Periodo: {0}", tomail)});
+                    }
+                });
+            }
+
+                
+        }
+
+     
+        public string ProcesarMsg(string Msg, ELogin Usuario)
+        {
+           
+
+            if (Msg.Contains("#Nombre#"))
+            {
+                Msg = Msg.Replace("#Nombre#",String.Concat(String.Concat(Usuario.Nombre+" "+Usuario.ApellidoPat+" "+Usuario.ApellidoMat)));
+            }
+            if (Msg.Contains("#Jefe#"))
+            {
+                ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(Usuario.EvaluadorIdSap);
+                Msg = Msg.Replace("#Jefe#", String.Concat(jefe.NombreCompleto));
+            }
+            if (Msg.Contains("#Puesto#"))
+            {
+                Msg = Msg.Replace("#Puesto#", Usuario.Puesto);
+            }
+            if (Msg.Contains("#Area#"))
+            {
+                Msg = Msg.Replace("#Area#", Usuario.Division);
+            }
+
+
+            string Liga = General.Utilidades.ObtenerAppSettings("SelfLink");
+            Liga = "[a href=\"http://" + Liga + "\"]http://" + Liga + "[/a]";
+            Msg = Msg.Replace("#Liga#", Liga);
+
+            Msg = Msg.Replace("[", "<");
+            Msg = Msg.Replace("]", ">");
+            return Msg;
+        }
+
+        #region emailNoUtilizados
         public async Task SendEmailAsync(Models.Email email)
         {
             string mailAddressTo = "evaluacion.desempeno@aspenlatam.com";
@@ -46,7 +130,7 @@ namespace PlantillaMVC
             }
             if (email.CC != null)
             {
-                foreach(string cc in email.CC)
+                foreach (string cc in email.CC)
                 {
                     msg.CC.Add(cc);
                 }
@@ -127,48 +211,7 @@ namespace PlantillaMVC
             }
         }
 
-        public void SendMail(string fromname, string tomail, string toname, string bodymail, string subjectmail)
-        {
-          
-                ThreadPool.QueueUserWorkItem(delegate (object t)
-                {
-                    SmtpClient client = new SmtpClient("smtp.office365.com", 0x24b)
-                    {
-                        EnableSsl = true,
-                        Credentials = new NetworkCredential("evaluacion.desempeno@aspenlatam.com", "Aspen2017.")
-                    };
-                    MailAddress from = new MailAddress("evaluacion.desempeno@aspenlatam.com", fromname, Encoding.UTF8);
-                    MailAddress to = new MailAddress(tomail);
-                    //MailAddress to = new MailAddress("fvargas@estrategiatec.com.mx");
-                    //MailAddress to = new MailAddress("giselle.dominguez@aspenlatam.com");
-                    MailMessage message = new MailMessage(from, to)
-                    {
-                        Body = bodymail,
-                        BodyEncoding = Encoding.UTF8,
-                        IsBodyHtml = true,
-                        Subject = subjectmail,
-                        SubjectEncoding = Encoding.UTF8
-                };
-                    client.SendCompleted += delegate (object s, AsyncCompletedEventArgs e)
-                    {
-                        client.Dispose();
-                        message.Dispose();
-                    };
-                    string userToken = DateTime.Today.ToString();
-                    try
-                    {
-                        Thread.Sleep(5000);
-                        client.SendAsync(message, userToken);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw GeneraException.AddException(ex, System.Reflection.MethodInfo.GetCurrentMethod(),
-                                             new string[] { string.Format("Error: {0}", ex.Message),
-                                                            string.Format("InnerException: {0}", ex.InnerException),
-                                                            string.Format("Periodo: {0}", tomail)});
-                    }
-                });
-        }
+
         /*public void SendEmail(string toEmailAddress, string emailSubject, string emailMessage)
         {
             var message = new MailMessage();
@@ -300,39 +343,8 @@ namespace PlantillaMVC
                 }
             });
         }
-        
-        public string ProcesarMsg(string Msg, ELogin Usuario)
-        {
-           
 
-            if (Msg.Contains("#Nombre#"))
-            {
-                Msg = Msg.Replace("#Nombre#",String.Concat(String.Concat(Usuario.Nombre+" "+Usuario.ApellidoPat+" "+Usuario.ApellidoMat)));
-            }
-            if (Msg.Contains("#Jefe#"))
-            {
-                ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(Usuario.EvaluadorIdSap);
-                Msg = Msg.Replace("#Jefe#", String.Concat(jefe.NombreCompleto));
-            }
-            if (Msg.Contains("#Puesto#"))
-            {
-                Msg = Msg.Replace("#Puesto#", Usuario.Puesto);
-            }
-            if (Msg.Contains("#Area#"))
-            {
-                Msg = Msg.Replace("#Area#", Usuario.Division);
-            }
-
-
-            string Liga = General.Utilidades.ObtenerAppSettings("SelfLink");
-            Liga = "[a href=\"http://" + Liga + "\"]http://" + Liga + "[/a]";
-            Msg = Msg.Replace("#Liga#", Liga);
-
-            Msg = Msg.Replace("[", "<");
-            Msg = Msg.Replace("]", ">");
-            return Msg;
-        }
-
+        #endregion
 
     }
 }

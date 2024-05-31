@@ -25,16 +25,18 @@
                     <td>@item.Login.Puesto</td>
                     <td>@item.Login.Division</td>
                     @*<td>@item.login.Area</td>*@
-                    <td>
-                        @*@using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
-                        {
-                            <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
-                        }*@
-                        @using (Html.BeginForm("DownloadPdfDetailed", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
-                        {
-                            <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
-                        }
-                    </td>
+                <td>
+                    @*@using (Html.BeginForm("DownloadPdf", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                    {
+                        <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                    }*@
+
+
+                    @using (Html.BeginForm("VerifyYear", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+                    {
+                        <button type="submit" style="background:none; border:none"><img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+                    }
+                </td>
                 </tr>
             }
         }

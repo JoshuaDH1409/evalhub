@@ -78,6 +78,7 @@ namespace PlantillaMVC.Controllers
             //model.Password = General.Encrypt.DesCifarado(model.Password);
             //model.Password = General.Encrypt.DesCifarado("LeqDNbgFEe6ZjdJ/ib8yhxdid7N8csZfvWqx8m9YFZ4=");
             //descifrafPSW
+            //string pass = General.Encrypt.Cifrado("passwDev2024");
 
             model.Password = General.Encrypt.Cifrado(model.Password.Trim());
             int usr = Utilidades.negocio.ValidaAcceso(model.Email, model.Password);

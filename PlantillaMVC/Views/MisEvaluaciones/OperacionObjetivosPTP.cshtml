@@ -41,28 +41,39 @@
             </tr>
 
             <tr>
-                <td>
+                <td style="width: 50%; text-align: left;">
                     @Html.LabelFor(m => m.ObjetivePTP, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                        Enlista el apoyo que necesitas en tu puesto actual
+                    </p>
                 </td>
-                <td>
-                    @Html.TextBoxFor(m => m.ObjetivePTP, new { @class = "form-control", required = true })
+                <td style="width: 50%; text-align: left;">
+                    @Html.TextAreaFor(m => m.ObjetivePTP, new { @class = "form-control", @rows = "4", required = true })
                     @Html.ValidationMessageFor(m => m.ObjetivePTP, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
-                <td>
+                <td style="width: 50%; text-align: left;">
                     @Html.LabelFor(m => m.ActionPTP, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                        Enumera los pasos a realizar para lograr el objetivo<br>
+                        (Aprendizaje autodirigido, aprendizaje en el aula, coaching o aprendizaje en el trabajo)
+                    </p>
                 </td>
-                <td>
-                    @Html.TextBoxFor(m => m.ActionPTP, new { @class = "form-control", required = true })
+                <td style="width: 50%; text-align: left;">
+                    @Html.TextAreaFor(m => m.ActionPTP, new { @class = "form-control", @rows = "4", required = true })
                     @Html.ValidationMessageFor(m => m.ActionPTP, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
-                <td>
+                <td style="width: 50%; text-align: left;">
                     @Html.LabelFor(m => m.DateFin, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                        Fecha límite para cuando deseas lograr tu objetivo
+                    </p>
+
                 </td>
-                <td>
+                <td style="width: 50%; text-align: left;">
                     @Html.TextBoxFor(m => m.DateFin, new { @class = "form-control DatePicker", required = true })
                     @Html.ValidationMessageFor(m => m.DateFin, "", new { @class = "text-danger" })
                 </td>

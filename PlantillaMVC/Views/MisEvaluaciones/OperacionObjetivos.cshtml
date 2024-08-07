@@ -55,37 +55,37 @@
             @if (ViewBag.status == 0 || ViewBag.status == 2 || ViewBag.status == 16)
             {
                 <tr>
-                    <td>
+                    <td  style="width: 50%; text-align: left;" >
                         @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.titulo, new { @class = "form-control", required = true })
                         @Html.ValidationMessageFor(m => m.titulo, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.objdesc, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.objMetricas, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ponderado, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.ponderado, new { @class = "form-control", @type = "number", min = 1, max = 99, required = true })
                         @Html.ValidationMessageFor(m => m.ponderado, "", new { @class = "text-danger" })
                     </td>
@@ -95,37 +95,37 @@
             {
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.titulo, new { @class = "form-control", required = true })
                         @Html.ValidationMessageFor(m => m.titulo, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.objdesc, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.objMetricas, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ponderado, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.ponderado, new { @class = "form-control", @type = "number", min = 1, max = 99, required = true })
                         @Html.ValidationMessageFor(m => m.ponderado, "", new { @class = "text-danger" })
                     </td>
@@ -151,10 +151,10 @@
         </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.resultado, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.resultado, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.resultado, "", new { @class = "text-danger" })
                     </td>
@@ -166,28 +166,28 @@
                 if (Model.Etapa != 2)
                 {
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.titulo, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                             @Html.ValidationMessageFor(m => m.titulo)
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", @rows = "4", @readonly = "readonly", @style = "background-color:#eeeeee" })
                             @Html.ValidationMessageFor(m => m.objdesc)
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control", @rows = "4", @readonly = "readonly", @style = "background-color:#eeeeee" })
                             @Html.ValidationMessageFor(m => m.objMetricas)
                         </td>
@@ -196,28 +196,28 @@
                 else
                 {
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.titulo, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.titulo)
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", @rows = "4" })
                             @Html.ValidationMessageFor(m => m.objdesc)
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control", @rows = "4" })
                             @Html.ValidationMessageFor(m => m.objMetricas)
                         </td>
@@ -226,10 +226,10 @@
                 if (Model.Etapa != 2)
                 {
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.ponderado, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.ponderado, new { @class = "form-control", @type = "number", min = "1", max = "99", @maxlength = "2", required = true, @readonly = "readonly", @style = "background-color:#eeeeee" })
                             @Html.ValidationMessageFor(m => m.ponderado)
                         </td>
@@ -238,10 +238,10 @@
                 else
                 {
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.ponderado, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.ponderado, new { @class = "form-control", @type = "number", min = "1", max = "99", @maxlength = "2", required = true })
                             @Html.ValidationMessageFor(m => m.objMetricas)
                         </td>
@@ -260,10 +260,10 @@
             *@
         </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ComentariosJefeEval, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.ComentariosJefeEval, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.ComentariosJefeEval)
                     </td>
@@ -275,19 +275,19 @@
                 if (Model.Etapa != 2)
                 {
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.titulo, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                             @Html.ValidationMessageFor(m => m.titulo)
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                             @Html.ValidationMessageFor(m => m.objdesc)
                         </td>
@@ -296,19 +296,19 @@
                 else
                 {
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.titulo, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.titulo)
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.objdesc)
                         </td>
@@ -316,30 +316,30 @@
                 }
 
                 <tr class="oculto">
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.objMetricas)
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.resultado, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.resultado, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.resultado)
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ComentariosJefeEval, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.ComentariosJefeEval, new { @class = "form-control", @rows = "8" })
                         @Html.ValidationMessageFor(m => m.ComentariosJefeEval)
                     </td>
@@ -352,37 +352,37 @@
                 if (Model.Etapa != 6)
                 {
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.titulo, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                             @Html.ValidationMessageFor(m => m.titulo)
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", @readonly = "readonly", @rows = 4, @style = "background-color:#eeeeee" })
                             @Html.ValidationMessageFor(m => m.objdesc)
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control", @rows = 4, @readonly = "readonly", required = true })
                             @Html.ValidationMessageFor(m => m.objMetricas, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.ponderado, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.ponderado, new { @class = "form-control", @readonly = "readonly", @type = "number", min = 1, max = 100, required = true })
                             @Html.ValidationMessageFor(m => m.ponderado, "", new { @class = "text-danger" })
                         </td>
@@ -391,38 +391,38 @@
                 else
                 {
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.titulo, new { @class = "form-control", required = true })
                             @Html.ValidationMessageFor(m => m.titulo, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", required = true })
                             @Html.ValidationMessageFor(m => m.objdesc, "", new { @class = "text-danger" })
                         </td>
                     </tr>
 
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control", required = true })
                             @Html.ValidationMessageFor(m => m.objMetricas, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.LabelFor(m => m.ponderado, new { @class = "etiqueta" })
                         </td>
-                        <td>
+                        <td style="width: 50%; text-align: left;">
                             @Html.TextBoxFor(m => m.ponderado, new { @class = "form-control", @type = "number", min = 1, max = 100, required = true })
                             @Html.ValidationMessageFor(m => m.ponderado, "", new { @class = "text-danger" })
                         </td>
@@ -482,19 +482,19 @@
                 </td>
             </tr>*@
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.cumplimientoEvaluado2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.cumplimientoEvaluado2, new { @class = "form-control", @type = "number", min = 1, max = 5, required = true })
                         @Html.ValidationMessageFor(m => m.ponderado, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.Resultado2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.Resultado2, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.Resultado2, "", new { @class = "text-danger" })
                     </td>
@@ -504,46 +504,46 @@
             else if (ViewBag.status == 11)
             {
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.titulo, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.titulo)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.objdesc)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control", @readonly = "readonly", required = true })
                         @Html.ValidationMessageFor(m => m.objMetricas, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ponderado, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.ponderado, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee", @type = "number", min = 1, max = 100, required = true })
                         @Html.ValidationMessageFor(m => m.ponderado, "", new { @class = "text-danger" })
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        @Html.Label("Cumplimiento", new { @class = "etiqueta" })
+                    <td style="width: 50%; text-align: left;">
+                        @Html.Label("Calificación", new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.cumplimientoEvaluador2, new { @class = "form-control", required = true, @type = "number", min = 1, max = 5 })
                         @Html.ValidationMessageFor(m => m.cumplimientoEvaluador2, "", new { @class = "text-danger" })
                     </td>
@@ -558,10 +558,10 @@
                 </td>
             </tr>*@
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ComentariosJefeEval2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.ComentariosJefeEval2, new { @class = "form-control", @rows = "4", required = true })
                         @Html.ValidationMessageFor(m => m.ComentariosJefeEval2, "", new { @class = "text-danger" })
                     </td>
@@ -570,38 +570,38 @@
             else if (ViewBag.status == 12)
             {
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.titulo, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.titulo)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", @rows = "6", @readonly = "readonly", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.objdesc)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.objMetricas)
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ponderado, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.ponderado, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee", @type = "number", min = 1, max = 100, required = true })
                         @Html.ValidationMessageFor(m => m.ponderado, "", new { @class = "text-danger" })
                     </td>
@@ -628,29 +628,29 @@
                 </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ComentariosJefeEval2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.ComentariosJefeEval2, new { @class = "form-control", @rows = "6", @readonly = "readonly", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.ComentariosJefeEval2)
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.cumplimientoEvaluador2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.DropDownListFor(m => m.cumplimientoEvaluador2, (ViewData["Calificaciones"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.cumplimientoEvaluador2)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ComentariosJefeEvalFinall2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.ComentariosJefeEvalFinall2, new { @class = "form-control", @rows = "6" })
                         @Html.ValidationMessageFor(m => m.ComentariosJefeEvalFinall2)
                     </td>
@@ -659,56 +659,56 @@
             else
             {
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.titulo, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.titulo, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.titulo)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objdesc, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objdesc, new { @class = "form-control", @readonly = "readonly", @rows = "6", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.objdesc)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.resultado, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.resultado, new { @class = "form-control", @rows = "6", @readonly = "readonly", @style = "background-color:#eeeeee" })
                         @Html.ValidationMessageFor(m => m.resultado)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objMetricas, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objMetricas, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.objMetricas)
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.autoeval, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @*@Html.DropDownListFor(m => m.autoeval, (ViewData["Calificaciones"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })*@
                         @Html.ValidationMessageFor(m => m.autoeval)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.calif, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @*@Html.DropDownListFor(m => m.calif, (ViewData["Calificaciones"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })*@
                         @Html.ValidationMessageFor(m => m.calif)
                     </td>
@@ -725,29 +725,29 @@
 
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objActs, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objActs, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.objActs)
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.comentariosJefeEvalFinal, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.comentariosJefeEvalFinal, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.comentariosJefeEvalFinal)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ComentariosJefeEval, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.ComentariosJefeEval, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.ComentariosJefeEval)
                     </td>
@@ -758,83 +758,83 @@
 
                 @*Segundo semestre*@
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.cumplimientoEvaluado2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @*@Html.DropDownListFor(m => m.cumplimientoEvaluado2, (ViewData["Calificaciones"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })*@
                         @Html.ValidationMessageFor(m => m.cumplimientoEvaluado2)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.Resultado2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextBoxFor(m => m.Resultado2, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Resultado2)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.Calif2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @*@Html.DropDownListFor(m => m.Calif2, (ViewData["Calificaciones"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })*@
                         @Html.ValidationMessageFor(m => m.Calif2)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.CalifFinal2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @*@Html.DropDownListFor(m => m.CalifFinal2, (ViewData["Calificaciones"] as List<SelectListItem>), "--SELECCIONA--", new { @class = "form-control" })*@
                         @Html.ValidationMessageFor(m => m.CalifFinal2)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ComentariosJefeEvalFinall2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.ComentariosJefeEvalFinall2, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.ComentariosJefeEvalFinall2)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.ComentariosJefeEval2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.ComentariosJefeEval2, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.ComentariosJefeEval2)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objMetricas2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objMetricas2, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.objMetricas2)
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objDesc2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objDesc2, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.objDesc2)
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.LabelFor(m => m.objActs2, new { @class = "etiqueta" })
                     </td>
-                    <td>
+                    <td style="width: 50%; text-align: left;">
                         @Html.TextAreaFor(m => m.objActs2, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.objActs2)
                     </td>

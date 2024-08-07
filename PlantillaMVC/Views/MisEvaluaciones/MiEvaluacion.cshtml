@@ -517,7 +517,7 @@
                                         <tr>
                                             <th></th>
                                             <th class="text-center">Comentarios</th>
-                                            <th class="text-center">Cumplimiento </th>
+                                            <th class="text-center">Calificación </th>
                                         </tr>
                                         <tr>
                                             <th>
@@ -1048,7 +1048,7 @@
                         <th class="align-middle width-66">
                             Objetivo
                         </th>
-                        <th class="align-middle text-center">Cumplimiento %</th>
+                        <th class="align-middle text-center">Calificación</th>
                         <th class="align-middle text-center width-33">
                             Calificación Final
                         </th>
@@ -2277,10 +2277,10 @@ new { id = "ObjetivosPTP" })
                 $('.Competencias').each(function (index, value) {
                     Competencias = Competencias + 1;
                 });
-                if (Competencias <= 0) {
-                    alert('Debe de ingresar por lo menos una Competencia')
-                    return false;
-                }
+                //if (Competencias <= 0) {
+                //  alert('Debe de ingresar por lo menos una Competencia')
+                //return false;
+                //}
                 Competencias = 0;
                 return true;
             }
@@ -2562,7 +2562,7 @@ new { id = "ObjetivosPTP" })
                     return false;
                 }
                 if (aux == 1) {
-                    alert('Es necesario que ingrese cumplimiento, así como comentario de todos los objetivos y competencias');
+                    alert('Es necesario que ingrese la calificación, así como comentario de todos los objetivos y competencias');
                     return false;
                 } else {
                     return true;
@@ -2620,10 +2620,10 @@ new { id = "ObjetivosPTP" })
                 $('.Competencias').each(function (index, value) {
                     Competencias = Competencias + 1;
                 });
-                if (Competencias <= 0) {
-                    alert('debe de ingresar por lo menos una Competencia')
-                    return false;
-                }
+                //if (Competencias <= 0) {
+                //    alert('debe de ingresar por lo menos una Competencia')
+                //    return false;
+                //}
                 Competencias = 0;
                 return true;
             }

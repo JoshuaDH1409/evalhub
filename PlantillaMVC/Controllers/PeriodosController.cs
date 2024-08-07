@@ -402,8 +402,49 @@ namespace PlantillaMVC.Controllers
                 {
                     Periodo.Etapa = 0;
                     Periodo.PaisTempral = Utilidades.negocio.RecuperaUnPais(Periodo.Country).descripcion;
-                    if (Utilidades.negocio.GuardaPeriodo(Periodo))
+                    //Se guarda el NUEVO PERIODO
+                    bool savePeriodo = Utilidades.negocio.GuardaPeriodo(Periodo);
+                    if (savePeriodo)
                     {
+                        //GUARDAR LAS EVALUACIONES DE LOS USUARIOS
+                        Modelo.Clases.CPeriodo Respuesta = new Modelo.Clases.CPeriodo();
+
+                        //SE RECUPERA LA LISTA DE USUARIOS POR PAÍS
+                        Respuesta.listSesion = Utilidades.negocio.RecuperaLiUsuariosPais(Periodo.Country);
+                        //SE FILTRAN LOS USUARIOS QUE ESTAN ACTIVOS EN EL SISTEMA
+                        Respuesta.listSesion = (from item in Respuesta.listSesion
+                                                where item.Login.Activo
+                                                select item).ToList();
+                        //SE RECUPERA EL NUEVO PERIODO AGREGADO CON LA FINALIDAD DE SABER SU ID
+                        Respuesta.periodo = Utilidades.negocio.RecuperaPeriodopais(Periodo.Country);
+                        //SE RECUPERA EL PAIS DEL CUAL ES EL PERIODO
+                        EPais paisTemp = Utilidades.negocio.RecuperaUnPais(Periodo.Country);
+
+                        //INICIALIZANDO NUESTRO EEVAL PARA INSERTAR A LOS USUARIOS
+                        Modelo.EEval eval = new Modelo.EEval();
+                        eval.id = 0; //INDICA QUE SERA UNA NUEVA EVALUACIÓN
+                        eval.periodo = Respuesta.periodo.id; //id del periodo
+                        eval.Status = 0;
+                        eval.Activo = true;
+                        eval.Modificadopor = sesion.Login.NombreCompleto;
+
+                        foreach (var user in Respuesta.listSesion)
+                        {
+                            eval.id = 0;
+                            eval.id_usuario = user.Login.id;
+                            eval.Puesto = user.Login.Division;
+                            eval.Nivel = user.Login.perfil;
+                            eval.Division = user.Login.Division;
+                            eval.Area = "";
+                            eval.id_evaluador = user.Login.EvaluadorIdSap;
+
+                            //SE REALIZA LA INSERSIÓN DE LA EVALUACIÓN
+                            Utilidades.negocio.GuardaEvaluacion(eval);
+                        
+                        }
+
+
+
                         TempData["Message"]= "Se creó el periodo: " + Periodo.Llave + ", país: " + Periodo.PaisTempral;
                         return RedirectToAction("Periodos");
                         //return PartialView("Respuesta", "Se creó el periodo: "+Periodo.Llave+", país: "+Periodo.PaisTempral);

@@ -14,8 +14,12 @@ namespace CapaLogica.Correo
 {
     class EnvioCorreo
     {
+        //mantener desactivado por requerimiento
+        bool enviarCorreos = true;
         public void SendMail(string fromname, string tomail, string toname, string bodymail, string subjectmail)
         {
+
+            if (!enviarCorreos) return;
 
             Task t = Task.Run(async () =>
             {
@@ -26,6 +30,9 @@ namespace CapaLogica.Correo
                 };
                 MailAddress from = new MailAddress("evaluacion.desempeno@aspenlatam.com", fromname, Encoding.UTF8);
                 MailAddress to = new MailAddress(tomail);
+                //to = new MailAddress("grodriguez@estrategiatec.com.mx");
+                //to = new MailAddress("luis.cano@aspenlatam.com");
+
                 MailMessage message = new MailMessage(from, to)
                 {
                     Body = bodymail,
@@ -56,6 +63,8 @@ namespace CapaLogica.Correo
         }
         public void SendMail(string fromname, string tomail, string toname, string cc, string bodymail, string subjectmail)
         {
+            if (!enviarCorreos) return;
+
             Task t = Task.Run(async () =>
             {
                 //SmtpClient client = new SmtpClient("smtp.office365.com", 0x24b)
@@ -108,6 +117,7 @@ namespace CapaLogica.Correo
         }
         public void SendMail(string fromname, List<string> tomail, string toname, string bodymail, string subjectmail)
         {
+            if (!enviarCorreos) return;
 
             Task t = Task.Run(async () =>
             {
@@ -166,6 +176,7 @@ namespace CapaLogica.Correo
 
         public string ProcesarMsg(string Msg, Modelo.ELogin Usuario)
         {
+            if (!enviarCorreos) return "";
 
 
             if (Msg.Contains("#Nombre#"))

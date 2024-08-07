@@ -19,7 +19,8 @@ namespace PlantillaMVC
 
         public void SendMail(string fromname, string tomail, string toname, string bodymail, string subjectmail)
         {
-            bool enviarCorreos = false;
+            //desactivar en desarrollo
+            bool enviarCorreos = true;
 
             if (enviarCorreos)
             {
@@ -33,7 +34,9 @@ namespace PlantillaMVC
                     MailAddress from = new MailAddress("evaluacion.desempeno@aspenlatam.com", fromname, Encoding.UTF8);
                     MailAddress to = new MailAddress(tomail);
                     //MailAddress to = new MailAddress("fvargas@estrategiatec.com.mx");
-                    //MailAddress to = new MailAddress("giselle.dominguez@aspenlatam.com");
+                     //to = new MailAddress("grodriguez@estrategiatec.com.mx");
+                     //to = new MailAddress("luis.cano@aspenlatam.com");
+
                     MailMessage message = new MailMessage(from, to)
                     {
                         Body = bodymail,

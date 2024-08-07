@@ -21,7 +21,7 @@ namespace Modelo
 
         [DataMember]
         [Required(ErrorMessage = "Titulo es requerido")]
-        [Display(Name = "Objetivo Cambiado")]
+        [Display(Name = "Objetivo - Área Clave de Desempeño (KPA)")]
         [StringLength(4999, ErrorMessage = "El campo no puede tener más de 5000 letras.")]
         [AttributeDataMember("titulo", SQLTypeBasic.TEXT)]
         public string titulo { get; set; }
@@ -122,8 +122,8 @@ namespace Modelo
         public int CalifFinal2 { get; set; }
 
         [DataMember]
-        [Required(ErrorMessage = "Cumplimiento es requerido")]
-        [Display(Name = "Cumplimiento")]
+        [Required(ErrorMessage = "Calificación es requerido")]
+        [Display(Name = "Calificación")]
         [AttributeDataMember("cumplimientoEvaluado", SQLTypeBasic.INTEGER)]
         public int cumplimientoEvaluado { get; set; }
 
@@ -134,8 +134,8 @@ namespace Modelo
         public string ComentariosJefeEvalFinall2 { get; set; }
 
         [DataMember]
-        [Required(ErrorMessage = "Cumplimiento es requerido")]
-        [Display(Name = "Cumplimiento")]
+        [Required(ErrorMessage = "Calificación es requerido")]
+        [Display(Name = "Calificación")]
         [AttributeDataMember("cumplimientoEvaluador", SQLTypeBasic.INTEGER)]
         public int cumplimientoEvaluador { get; set; }
 
@@ -146,14 +146,14 @@ namespace Modelo
         public string ComentariosJefeEval2 { get; set; }
 
         [DataMember]
-        [Required(ErrorMessage = "Cumplimiento es requerido")]
-        [Display(Name = "Cumplimiento")]
+        [Required(ErrorMessage = "Calificación es requerido")]
+        [Display(Name = "Calificación")]
         [AttributeDataMember("cumplimientoEvaluado2", SQLTypeBasic.INTEGER)]
         public int cumplimientoEvaluado2 { get; set; }
 
         [DataMember]
-        [Required(ErrorMessage = "Cumplimiento es requerido")]
-        [Display(Name = "Cumplimiento")]
+        [Required(ErrorMessage = "Calificación es requerido")]
+        [Display(Name = "Calificación")]
         [AttributeDataMember("cumplimientoEvaluador2", SQLTypeBasic.INTEGER)]
         public int cumplimientoEvaluador2 { get; set; }
 

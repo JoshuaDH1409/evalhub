@@ -50,7 +50,7 @@ namespace Modelo
         [DataMember]
         [Required(ErrorMessage = "Puesto requerido")]
         [Display(Name = "Puesto")]
-        [StringLength(50, ErrorMessage = "El campo no puede tener más de 50 letras.")]
+        [StringLength(150, ErrorMessage = "El campo no puede tener más de 150 letras.")]
         [AttributeDataMember("Puesto", SQLTypeBasic.TEXT)]
         public string Puesto { get; set; }
 

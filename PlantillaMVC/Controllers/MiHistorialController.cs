@@ -896,9 +896,8 @@ namespace PlantillaMVC.Controllers
                     try
                     {
                         DateTime startDateObj = new DateTime(periodo.StartDateObj);
-                        DateTime finishDateObj = new DateTime(periodo.FinishDateObj);
                         string sYear = startDateObj.Year.ToString();
-                        string fYear = finishDateObj.Year.ToString();
+                        string fYear = (startDateObj.Year + 1).ToString();
                         sDateObj = "";
 
 

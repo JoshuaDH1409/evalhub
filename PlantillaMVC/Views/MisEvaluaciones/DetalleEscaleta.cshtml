@@ -6,14 +6,15 @@
             <thead class="bg-primary">
                 <tr>
                     <th align="center">
-                        Objetivo
+                        Calificación de Desempeño
                     </th>
                     @*<th class="text-center">Cumplimiento<br />%</th>*@
-                    <th class="text-center">Calificación</th>
+                    @*<th class="text-center">Calificación</th>*@
+                    <th class="text-center">      </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach(var e in Model)
+                @foreach(var e in Model.AsEnumerable().Reverse())
                 {
                 <tr>
                     <td>@Html.Raw(e.Objetivo)</td>

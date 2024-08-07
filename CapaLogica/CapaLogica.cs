@@ -46,8 +46,9 @@ namespace CapaLogica
         {
             try
             {
-
-                return Seguridad.Seguridad.RecuperaUsuarios(activos);
+                List<CSession> lista_usuarios = new List<CSession>();
+                lista_usuarios = Seguridad.Seguridad.RecuperaUsuarios(activos);
+                return lista_usuarios;
 
             }
             catch (ListErrores ex)

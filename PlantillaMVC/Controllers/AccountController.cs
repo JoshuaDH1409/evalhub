@@ -76,10 +76,10 @@ namespace PlantillaMVC.Controllers
         public ActionResult Login(ELogin model)
         {
             //model.Password = General.Encrypt.DesCifarado(model.Password);
-            //model.Password = General.Encrypt.DesCifarado("LeqDNbgFEe6ZjdJ/ib8yhxdid7N8csZfvWqx8m9YFZ4=");
+            //model.Password = General.Encrypt.DesCifarado("");
             //descifrarPSW
-            //string pass = General.Encrypt.Cifrado("passwDev2024");
-            string pass = General.Encrypt.DesCifarado("JPWWxU7keALbaI2hpiqloA==");
+            //string pass = General.Encrypt.Cifrado("");
+            //string pass = General.Encrypt.DesCifarado("");
 
             model.Password = General.Encrypt.Cifrado(model.Password.Trim());
             int usr = Utilidades.negocio.ValidaAcceso(model.Email, model.Password);

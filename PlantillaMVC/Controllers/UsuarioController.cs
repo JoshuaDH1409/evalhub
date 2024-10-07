@@ -472,7 +472,56 @@ namespace PlantillaMVC.Controllers
                 
                 if (Utilidades.negocio.GuardaUsuario(modelo))
                 {
-                    if (form["changecountry"] == "1")
+                    EEval eval = Utilidades.negocio.RecuperaEvaluacionActivaUsario(modelo.id);
+
+                    //caso 1: La evaluación se cambiara si hubo cambio de país y el periodo esta activo y la evaluacion no es nulla
+                    //caso 2: La evaluación se agregará si es null y el periodo esta activo
+                    if (form["changecountry"] == "1" || eval == null)
+                    {
+                        //Verifica si el periodo esta activo
+                        EPeriodos per = Utilidades.negocio.RecuperaPeriodopais(modelo.Pais);
+                        if(per != null)
+                        {
+                            //verifica si es el caso 1
+                            if (form["changecountry"] == "1" && eval != null)
+                            {
+                               
+                                if (per.id != eval.periodo)
+                                {
+                                    eval.periodo = per.id;
+                                    bool saved = Utilidades.negocio.GuardaEvaluacion(eval);
+                                }
+                            }
+
+                            //sino es el caso 1 por ende es el caso 2
+                            else
+                            {
+                                //INICIALIZANDO NUESTRO EEVAL PARA INSERTAR A LOS USUARIOS
+                                Modelo.EEval evalAux = new Modelo.EEval();
+                                evalAux.id = 0; //INDICA QUE SERA UNA NUEVA EVALUACIÓN
+                                evalAux.periodo = per.id;
+                                evalAux.Status = 0;
+                                evalAux.Activo = true;
+                                evalAux.Modificadopor = sesion.Login.NombreCompleto;
+
+                                evalAux.id_usuario = modelo.id;
+                                evalAux.Puesto = modelo.Division;
+                                evalAux.Nivel = modelo.perfil;
+                                evalAux.Division = modelo.Division;
+                                evalAux.Area = "";
+                                evalAux.id_evaluador = modelo.EvaluadorIdSap;
+
+                                //SE REALIZA LA INSERSIÓN DE LA EVALUACIÓN
+                                Utilidades.negocio.GuardaEvaluacion(evalAux);
+                            }
+                        }
+
+
+                    }
+        
+
+
+                    /*if (form["changecountry"] == "1")
                     {
                         EEval eval = Utilidades.negocio.RecuperaEvaluacionActivaUsario(modelo.id);
                         if (eval != null)
@@ -487,7 +536,9 @@ namespace PlantillaMVC.Controllers
                                 }
                             }
                         }
-                    }
+                        
+                    }*/
+
                     if (modelo.Notificar) {
                         ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(40);
                         PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();

@@ -110,6 +110,7 @@
                 @if (item.Evaluacion != null)
                 {
                     if (Model.periodo.Etapa == 0 && hoy >= Model.periodo.StartDateObj && hoy <= Model.periodo.FinishDateObj && item.Evaluacion.Status != 17)
+                    //if (Model.periodo.Etapa == 0 && hoy >= Model.periodo.StartDateObj && item.Evaluacion.Status != 17)
                     {
                         <td>
                             @if (item.Evaluacion.Status == 1)

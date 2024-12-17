@@ -525,10 +525,10 @@ namespace PlantillaMVC.Controllers
                                     item.Evaluacion.Status = 4;
                                     item.Evaluacion.Modificadopor = sesion.Login.NombreCompleto;
                                     Utilidades.negocio.GuardaEvaluacion(item.Evaluacion);
-                                    ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(15);
-                                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
-                                    correo.Mensaje=MandarCorreo.ProcesarMsg(correo.Mensaje,item.Login);
-                                    MandarCorreo.SendMail("Soporte", item.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
+                                    //ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(15);
+                                    //PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                                    //correo.Mensaje=MandarCorreo.ProcesarMsg(correo.Mensaje,item.Login);
+                                    //MandarCorreo.SendMail("Soporte", item.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                                     Utilidades.negocio.GuardaEvaluacion(item.Evaluacion);
                                     Bitacora.NuevaEntrada("El usuario: " + item.Login.NombreCompleto + " Finaliza etapa de carga de objetivos del periodo " + modelo.Llave, "Periodos/TerminarPeriodo ");
                                 }
@@ -573,10 +573,10 @@ namespace PlantillaMVC.Controllers
                                     item.Evaluacion.Status = 10;
                                     item.Evaluacion.Modificadopor = sesion.Login.NombreCompleto;
                                     Utilidades.negocio.GuardaEvaluacion(item.Evaluacion);
-                                    ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(15);                            
-                                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
-                                    correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, item.Login);
-                                    MandarCorreo.SendMail("Soporte", item.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
+                                    //ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(15);                            
+                                    //PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                                    //correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, item.Login);
+                                    //MandarCorreo.SendMail("Soporte", item.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                                     Bitacora.NuevaEntrada("El usuario: " + item.Login.NombreCompleto + " Finaliza etapa de calibración primer semestre del periodo " + modelo.Llave, "Periodos/TerminarPeriodo ");
                                 }
                             }
@@ -597,10 +597,10 @@ namespace PlantillaMVC.Controllers
                                     item.Evaluacion.Status = 15;
                                     item.Evaluacion.Modificadopor = sesion.Login.NombreCompleto;
                                     Utilidades.negocio.GuardaEvaluacion(item.Evaluacion);
-                                    ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(17);
-                                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
-                                    correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, item.Login);
-                                    MandarCorreo.SendMail("Soporte", item.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
+                                    //ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(17);
+                                    //PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                                    //correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, item.Login);
+                                    //MandarCorreo.SendMail("Soporte", item.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                                     Bitacora.NuevaEntrada("El usuario: " + item.Login.NombreCompleto + " Finaliza etapa de Evaluación segundo semestre del periodo " + modelo.Llave, "Periodos/TerminarPeriodo ");
                                 }
                             }
@@ -620,11 +620,11 @@ namespace PlantillaMVC.Controllers
                                     item.Evaluacion.Activo = false;
                                 item.Evaluacion.Modificadopor = sesion.Login.NombreCompleto;
                                 Utilidades.negocio.GuardaEvaluacion(item.Evaluacion);
-                                    ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(20);
-                                    correo.Mensaje = correo.Mensaje.Replace("#Periodo#", modelo.Llave);
-                                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
-                                    correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, item.Login);
-                                    MandarCorreo.SendMail("Soporte", item.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
+                                    //ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(20);
+                                    //correo.Mensaje = correo.Mensaje.Replace("#Periodo#", modelo.Llave);
+                                    //PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                                    //correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, item.Login);
+                                    //MandarCorreo.SendMail("Soporte", item.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                                     Bitacora.NuevaEntrada("El usuario: " + item.Login.NombreCompleto + " Finaliza etapa de calibración del periodo " + modelo.Llave, "Periodos/TerminarPeriodo ");
                             }
                         }

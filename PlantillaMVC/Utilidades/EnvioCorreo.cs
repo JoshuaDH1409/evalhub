@@ -34,7 +34,7 @@ namespace PlantillaMVC
                     MailAddress from = new MailAddress("evaluacion.desempeno@aspenlatam.com", fromname, Encoding.UTF8);
                     MailAddress to = new MailAddress(tomail);
                     //MailAddress to = new MailAddress("fvargas@estrategiatec.com.mx");
-                     //to = new MailAddress("grodriguez@estrategiatec.com.mx");
+                    //MailAddress to = new MailAddress("jdiaz@estrategiatec.com.mx");
                      //to = new MailAddress("luis.cano@aspenlatam.com");
 
                     MailMessage message = new MailMessage(from, to)

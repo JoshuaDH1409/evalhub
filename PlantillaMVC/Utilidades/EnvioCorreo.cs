@@ -20,23 +20,24 @@ namespace PlantillaMVC
         public void SendMail(string fromname, string tomail, string toname, string bodymail, string subjectmail)
         {
             //desactivar en desarrollo
-            bool enviarCorreos = true;
+            bool enviarCorreos = false;
 
             if (enviarCorreos)
             {
                 ThreadPool.QueueUserWorkItem(delegate (object t)
                 {
-                    SmtpClient client = new SmtpClient("smtp.office365.com", 0x24b)
+                    SmtpClient client = new SmtpClient("smtp-mail.outlook.com", 0x24b)
                     {
                         EnableSsl = true,
                         Credentials = new NetworkCredential("evaluacion.desempeno@aspenlatam.com", "Aspen2017.")
                     };
                     MailAddress from = new MailAddress("evaluacion.desempeno@aspenlatam.com", fromname, Encoding.UTF8);
-                    MailAddress to = new MailAddress(tomail);
+                    //MailAddress to = new MailAddress(tomail);
                     //MailAddress to = new MailAddress("fvargas@estrategiatec.com.mx");
-                    //MailAddress to = new MailAddress("jdiaz@estrategiatec.com.mx");
-                     //to = new MailAddress("luis.cano@aspenlatam.com");
-
+                    //MailAddress to = new MailAddress("grodriguez@estrategiatec.com.mx");
+                    //MailAddress to = new MailAddress("luis.cano@aspenlatam.com");
+                    //MailAddress to = new MailAddress("evaluacion.desempeno@aspenlatam.com");
+                    MailAddress to = new MailAddress("aspen.desarrollo@aspenlatam.com");
                     MailMessage message = new MailMessage(from, to)
                     {
                         Body = bodymail,

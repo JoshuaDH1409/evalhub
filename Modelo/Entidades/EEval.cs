@@ -221,5 +221,35 @@ namespace Modelo
         [AttributeDataMember("Modificadopor", SQLTypeBasic.TEXT)]
         public string Modificadopor { get; set; }
 
+        [DataMember]
+        [Display(Name = "FechaCargaDeObjetivos")]
+        [AttributeDataMember("FechaStatus1", SQLTypeBasic.NUMERIC)]
+        public long FechaStatus1 { get; set; }
+
+        [DataMember]
+        [Display(Name = "FechaObjetivosAprobados")]
+        [AttributeDataMember("FechaStatus3", SQLTypeBasic.NUMERIC)]
+        public long FechaStatus3 { get; set; } 
+
+        [DataMember]
+        [Display(Name = "FechaObjetivosAutoevaluadosMedioAño")]
+        [AttributeDataMember("FechaStatus5", SQLTypeBasic.NUMERIC)]
+        public long FechaStatus5 { get; set; } 
+
+        [DataMember]
+        [Display(Name = "FechaCerradaMedioAño")]
+        [AttributeDataMember("FechaStatus8", SQLTypeBasic.NUMERIC)]
+        public long FechaStatus8 { get; set; } 
+
+        [DataMember]
+        [Display(Name = "FechaObjetivosAutoevaluadosFindeAño")]
+        [AttributeDataMember("FechaStatus11", SQLTypeBasic.NUMERIC)]
+        public long FechaStatus11 { get; set; }
+
+        [DataMember]
+        [Display(Name = "FechaCerradaFindeAño")]
+        [AttributeDataMember("FechaStatus14", SQLTypeBasic.NUMERIC)]
+        public long FechaStatus14 { get; set; } 
+
     }
 }

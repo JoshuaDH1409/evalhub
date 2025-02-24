@@ -12,6 +12,8 @@ using System.IO;
 using ClosedXML.Excel;
 using System.Web.Script.Serialization;
 using Modelo.Clases;
+using DocumentFormat.OpenXml.Drawing.Charts;
+using System.Web.UI;
 
 namespace PlantillaMVC.Controllers
 {
@@ -19,6 +21,8 @@ namespace PlantillaMVC.Controllers
     {
         List<CSessionEval> listSesion = new List<CSessionEval>();
         // GET: Dash
+
+        
         public ActionResult Index()
         {
             return PartialView();
@@ -281,15 +285,20 @@ namespace PlantillaMVC.Controllers
                 return PartialView("Respuesta", ex.ToString() + " Phat->" + path);
             }
         }
+        // Función para convertir Ticks a DateTime en formato correcto
+        private DateTime ConvertTicksToDateTime(long ticks)
+        {
+            return ticks > 0 ? new DateTime(ticks) : DateTime.MinValue;
+        }
 
         public void Create(List<int> Pais, List<int> Periodo, string Area, bool Actual)
         {
-
             Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
             Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Ingreso a crear documento", "DashBoard/Create ");
 
             List<VEvaluacion> evals = new List<VEvaluacion>();
             var index = 0;
+
             foreach (var p in Pais)
             {
                 if (Area == null)
@@ -299,43 +308,11 @@ namespace PlantillaMVC.Controllers
                 else
                 {
                     evals.AddRange(Utilidades.negocio.GetEvalViewByPeriodCountry(Periodo[index], p).Where(t => t.Division == Area));
-
                 }
                 index++;
             }
 
             string filePath = Path.Combine(Server.MapPath("~/Export/"), "Temp.xlsx");
-
-            /*List<Modelo.Clases.CSessionEval> ListaEvalSession = new List<Modelo.Clases.CSessionEval>();
-
-            if (Actual)
-            {
-                ListaEvalSession = Utilidades.negocio.RecuperaEvaluacionesPeriodoUsuarios(Periodo);
-            
-                if(Area!=null)
-                {
-                    ListaEvalSession = (from aux in ListaEvalSession
-                                        where aux.login.Area == Area  && aux.login.Activo && aux.login.Pais==Pais
-                                        select aux).ToList();                 
-                }
-            }
-            else
-            {
-                ListaEvalSession = Utilidades.negocio.RecuperaEvaluacionesPeriodoUsuarios(Periodo);
-                if (Area != null)
-                {
-                    ListaEvalSession = (from aux in ListaEvalSession
-                                                where aux.login.Area == Area && aux.login.Activo && aux.login.Pais==Pais
-                                        select aux).ToList();
-                }
-            }
-            
-            string filePath = Path.Combine(Server.MapPath("~/Export/"), "Temp.xlsx");
-
-            ListaEvalSession = (from aux in ListaEvalSession
-                                where aux.login.Pais == Pais
-                                select aux).ToList();
-                                
             try
             {
                 var workbook = new XLWorkbook();
@@ -345,101 +322,11 @@ namespace PlantillaMVC.Controllers
                 {
                     System.IO.File.Delete(filePath);
                 }
-                ws.Rows(1, 1).Style.Fill.BackgroundColor = XLColor.AliceBlue;
-                //ws.Rows(1, 1).Style.Font.FontColor = XLColor.White;
-                ws.Rows(1, 1).Style.Font.Bold = true;
-                ws.Column(1).Width = 15;
-                ws.Column(2).Width = 40;
-                ws.Column(3).Width = 40;
-                ws.Column(4).Width = 40;
-                ws.Column(5).Width = 40;
-                ws.Column(6).Width = 20;
-                ws.Column(7).Width = 20;
-                ws.Column(8).Width = 40;
 
-                ws.Cell(1, 1).Value = "Numero Empleado SAP";
-                ws.Cell(1, 2).Value = "Nombre completo";
-                ws.Cell(1, 3).Value = "División";
-                ws.Cell(1, 4).Value = "Puesto";
-                ws.Cell(1, 5).Value = "Evaluador";
-                ws.Cell(1, 6).Value = "Fecha de ingreso";
-                ws.Cell(1, 7).Value = "Pais";
-                ws.Cell(1, 8).Value = "Estatus";
-                ws.Cell(1, 9).Value = "Calificación fin de año";
-                int i = 0;
-
-                List<EStatus> estatus = Utilidades.negocio.GetStatus();
-
-                foreach (Modelo.Clases.CSessionEval item in ListaEvalSession)
-                {
-                    if (item.login.Activo)
-                    {
-                        ELogin Evaluador = new ELogin();
-                        Evaluador = Utilidades.negocio.RecuperaUnUsuarioSap(item.login.EvaluadorIdSap);
-
-                        EPeriodos PeriodoAux = Utilidades.negocio.RecuperaUnPeriodo(item.Evaluacion.periodo);
-                        EPais PaisAux = Utilidades.negocio.RecuperaUnPais(item.login.Pais);
-                        ws.Cell(i + 2, 1).Value = item.login.id_sap;
-                        ws.Cell(i + 2, 2).Value = item.login.NombreCompleto;
-                        ws.Cell(i + 2, 3).Value = item.login.Division;
-                        ws.Cell(i + 2, 4).Value = item.login.Puesto;
-                        ws.Cell(i + 2, 5).Value = Evaluador.NombreCompleto;
-                        DateTime dt = new DateTime(item.login.FechaIngreso);
-                        ws.Cell(i + 2, 6).Value = dt.ToString("dd/MM/yyyy");
-                        ws.Cell(i + 2, 7).Value = PaisAux.descripcion;
-
-                        if (item.Evaluacion != null)
-                        {
-                            //EStatus estatusId = new EStatus();
-                            //estatusId = (EStatus)(from aux in estatus
-                            //                      where aux.Id == item.Evaluacion.Status
-                            //                      select aux).First().Name;
-                            ws.Cell(i + 2, 8).Value = (from aux in estatus
-                                                                where aux.Id == item.Evaluacion.Status
-                                                                select aux).First().Name;
-
-                            if (item.Evaluacion.CaliFinal > 0)
-                            {
-                                ws.Cell(i + 2, 10).Value = item.Evaluacion.CaliFinal.ToString();
-                            }
-                            else
-                            {
-                                ws.Cell(i + 2, 10).Value = " ";
-                            }
-
-                            if (item.Evaluacion.CaliFinal2 > 0)
-                            {
-                                ws.Cell(i + 2, 9).Value = item.Evaluacion.CaliFinal2.ToString();
-                            }
-                            else
-                            {
-                                ws.Cell(i + 2, 9).Value = " ";
-                            }
-
-                        }
-                        else
-                        {
-                            ws.Cell(i + 2, 8).Value = " ";
-                            ws.Cell(i + 2, 9).Value = " ";
-                            //ws.Cell(i + 2, 11).Value = " ";
-                        }
-
-                        i = i + 1;
-                    }
-                }
-                workbook.SaveAs(filePath);
-            }*/
-            try
-            {
-                var workbook = new XLWorkbook();
-                var ws = workbook.Worksheets.Add("Column Cells");
-
-                if (System.IO.File.Exists(filePath))
-                {
-                    System.IO.File.Delete(filePath);
-                }
                 ws.Rows(1, 1).Style.Fill.BackgroundColor = XLColor.AliceBlue;
                 ws.Rows(1, 1).Style.Font.Bold = true;
+
+                // Definir anchos de columnas
                 ws.Column(1).Width = 15;
                 ws.Column(2).Width = 40;
                 ws.Column(3).Width = 40;
@@ -449,26 +336,38 @@ namespace PlantillaMVC.Controllers
                 ws.Column(7).Width = 25;
                 ws.Column(8).Width = 20;
                 ws.Column(9).Width = 20;
-                //ws.Column(10).Width = 20;
-                //ws.Column(11).Width = 20;
+                ws.Column(10).Width = 20;
+                ws.Column(11).Width = 20;
+                ws.Column(12).Width = 20;
+                ws.Column(13).Width = 20;
+                ws.Column(14).Width = 20;
+                ws.Column(15).Width = 20;
+                ws.Column(16).Width = 20;
+                ws.Column(17).Width = 20;
 
+                // Cabecera del reporte
                 ws.Cell(1, 1).Value = "Numero Empleado SAP";
                 ws.Cell(1, 2).Value = "Nombre";
-                //ws.Cell(1, 3).Value = "A. Paterno";
-                //ws.Cell(1, 4).Value = "A. Materno";
                 ws.Cell(1, 3).Value = "Dirección";
                 ws.Cell(1, 4).Value = "Puesto";
                 ws.Cell(1, 5).Value = "Evaluador";
                 ws.Cell(1, 6).Value = "Fecha de ingreso";
                 ws.Cell(1, 7).Value = "País";
-                ws.Cell(1, 8).Value = "Estatus";
-                ws.Cell(1, 9).Value = "Calificación fin de año";
-                ws.Cell(1, 10).Value = "Porcentaje de Cumplimiento";
-                ws.Cell(1, 11).Value = "Calificación Calibración";
+
+                // Nuevas columnas de fechas de status
+                ws.Cell(1, 8).Value = "Objetivos Cargados";
+                ws.Cell(1, 9).Value = "Objetivos Aprobados";
+                ws.Cell(1, 10).Value = "Objetivos autoevaluados medio año";
+                ws.Cell(1, 11).Value = "Cerrada medio año";
+                ws.Cell(1, 12).Value = "Objetivos autoevaluados Fin de año";
+                ws.Cell(1, 13).Value = "Cerrada fin de año";
+
+                ws.Cell(1, 14).Value = "Estatus";
+                ws.Cell(1, 15).Value = "Calificación fin de año";
+                ws.Cell(1, 16).Value = "Porcentaje de Cumplimiento";
+                ws.Cell(1, 17).Value = "Calificación Calibración";
+
                 int i = 0;
-
-                List<EStatus> estatus = Utilidades.negocio.GetStatus();
-
                 foreach (VEvaluacion item in evals)
                 {
                     CEvaluacion eval = new CEvaluacion();
@@ -478,29 +377,70 @@ namespace PlantillaMVC.Controllers
 
                     ws.Cell(i + 2, 1).Value = item.UsuarioSap;
                     ws.Cell(i + 2, 2).Value = item.UsuarioNombre;
-                    //ws.Cell(i + 2, 3).Value = item.UsuarioNombre;
-                    //ws.Cell(i + 2, 4).Value = item.UsuarioNombre;
                     ws.Cell(i + 2, 3).Value = item.Division;
                     ws.Cell(i + 2, 4).Value = item.Puesto;
                     ws.Cell(i + 2, 5).Value = item.EvaluadorNombre;
+
                     DateTime dt = new DateTime(item.FechaIngreso);
                     ws.Cell(i + 2, 6).Value = dt.ToString("dd/MM/yyyy");
+
                     ws.Cell(i + 2, 7).Value = item.PaisName;
-                    ws.Cell(i + 2, 8).Value = item.statusName;
-                    ws.Cell(i + 2, 9).Value = item.CalifFinal2;
-                    ws.Cell(i + 2, 10).Value = sum_ponderado + "%";
-                    ws.Cell(i + 2, 11).Value = item.CaliFinalCalibracion;
+
+                    // Agregar las fechas de status
+
+                    //Para FechaStatus1
+                    DateTime dt1 = new DateTime(item.FechaStatus1);
+                    ws.Cell(i + 2, 8).Value = dt1.ToString("dd/MM/yyyy");
+
+                    // Para FechaStatus3
+                    DateTime dt3 = new DateTime(item.FechaStatus3);
+                    ws.Cell(i + 2, 9).Value = dt3.ToString("dd/MM/yyyy");
+
+                    // Para FechaStatus5
+                    DateTime dt5 = new DateTime(item.FechaStatus5);
+                    ws.Cell(i + 2, 10).Value = dt5.ToString("dd/MM/yyyy");
+
+                    // Para FechaStatus8
+                    DateTime dt8 = new DateTime(item.FechaStatus8);
+                    ws.Cell(i + 2, 11).Value = dt8.ToString("dd/MM/yyyy");
+
+                    // Para FechaStatus11
+                    DateTime dt11 = new DateTime(item.FechaStatus11);
+                    ws.Cell(i + 2, 12).Value = dt11.ToString("dd/MM/yyyy");
+
+                    // Para FechaStatus14
+                    DateTime dt14 = new DateTime(item.FechaStatus14);
+                    ws.Cell(i + 2, 13).Value = dt14.ToString("dd/MM/yyyy");
+
+                    //ws.Cell(i + 2, 8).Value = ConvertTicksToDateTime(item.FechaStatus1).ToString("dd/MM/yyyy");
+                    //ws.Cell(i + 2, 9).Value = ConvertTicksToDateTime(item.FechaStatus3).ToString("dd/MM/yyyy");
+                    //ws.Cell(i + 2, 10).Value = ConvertTicksToDateTime(item.FechaStatus5).ToString("dd/MM/yyyy");
+                    //ws.Cell(i + 2, 11).Value = ConvertTicksToDateTime(item.FechaStatus8).ToString("dd/MM/yyyy");
+                    //ws.Cell(i + 2, 12).Value = ConvertTicksToDateTime(item.FechaStatus11).ToString("dd/MM/yyyy");
+                    //ws.Cell(i + 2, 13).Value = ConvertTicksToDateTime(item.FechaStatus14).ToString("dd/MM/yyyy");
+
+                    ws.Cell(i + 2, 8).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+                    ws.Cell(i + 2, 9).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+                    ws.Cell(i + 2, 10).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+                    ws.Cell(i + 2, 11).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+                    ws.Cell(i + 2, 12).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+                    ws.Cell(i + 2, 13).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+
+                    ws.Cell(i + 2, 14).Value = item.statusName;
+                    ws.Cell(i + 2, 15).Value = item.CalifFinal2;
+                    ws.Cell(i + 2, 16).Value = sum_ponderado + "%";
+                    ws.Cell(i + 2, 17).Value = item.CaliFinalCalibracion;
 
                     i = i + 1;
                 }
-                 workbook.SaveAs(filePath);
+                workbook.SaveAs(filePath);
             }
             catch (Exception ex)
             {
-                Bitacora.NuevaEntrada(ex.Message, "MisEvaluaciones/OperacionCompetencias ");
+                Bitacora.NuevaEntrada(ex.Message, "MisEvaluaciones/OperacionCompetencias");
             }
-
         }
+
 
         public ActionResult Comments(string Pais, string Periodo)
         {

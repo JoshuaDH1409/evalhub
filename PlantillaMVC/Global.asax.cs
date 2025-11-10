@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -23,7 +25,37 @@ namespace PlantillaMVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            // Verificar conexión a la base de datos
+            string connectionString = ConfigurationManager.ConnectionStrings["SQLServerJoshuaLocal"].ConnectionString;
+            string errorMessage;
+
+            if (CheckDatabaseConnection(connectionString, out errorMessage))
+            {
+                Bitacora.NuevaEntrada("Conexión exitosa a la base de datos.", "Global.asax");
+            }
+            else
+            {
+                Bitacora.NuevaEntrada($"Error al conectar a la base de datos: {errorMessage}", "Global.asax");
+                throw new Exception($"No se pudo conectar a la base de datos: {errorMessage}");
+            }
         }
 
+        private bool CheckDatabaseConnection(string connectionString, out string errorMessage)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    errorMessage = string.Empty;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+                return false;
+            }
+        }
     }
 }

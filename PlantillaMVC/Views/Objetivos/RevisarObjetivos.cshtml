@@ -109,7 +109,7 @@
                 </td>
                 @if (item.Evaluacion != null)
                 {
-                    if (Model.periodo.Etapa == 0 && hoy >= Model.periodo.StartDateObj && hoy <= Model.periodo.FinishDateObj && item.Evaluacion.Status != 17)
+                    if (Model.periodo.Etapa == 0 && hoy >= Model.periodo.StartDateObj && item.Evaluacion.Status != 17)
                     //if (Model.periodo.Etapa == 0 && hoy >= Model.periodo.StartDateObj && item.Evaluacion.Status != 17)
                     {
                         <td>
@@ -154,7 +154,7 @@
                             </td>
                         }
                     }
-                    else if (Model.periodo.Etapa == 2 && hoy >= Model.periodo.StartDateCali && hoy <= Model.periodo.FinishDateCali && item.Evaluacion.Status != 17)
+                    else if (Model.periodo.Etapa == 2 && hoy >= Model.periodo.StartDateCali && item.Evaluacion.Status != 17)
                     {
                         <td>
                             @using (Html.BeginForm("VerifyYear", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
@@ -163,7 +163,7 @@
                             }
                         </td>
                     }
-                    else if (Model.periodo.Etapa == 3 && hoy >= Model.periodo.StartDateEva2 && hoy <= Model.periodo.FinishDateEva2 && item.Evaluacion.Status != 17)
+                    else if (Model.periodo.Etapa == 3 && hoy >= Model.periodo.StartDateEva2  && item.Evaluacion.Status != 17)
                     {
                         <td>
                             @if (item.Evaluacion.Status == 5 || item.Evaluacion.Status == 6)
@@ -178,13 +178,18 @@
                             {
                                 @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 2, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit fontIcons", @title = "Calibrar" })
                             }
-                            @*else if (item.Evaluacion.Status == 15)
+                            
+                            else if (item.Evaluacion.Status == 15)
                     {
                         @Ajax.ActionLink(" ", "MiEvaluacion", "MisEvaluaciones", new { user = 1, id = item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera" }, new { @class = "fa fa-lg fa-edit fontIcons", @title = "Evaluar" })
-                    }*@
+                    }
                         </td>
                     }
-                    else if (Model.periodo.Etapa == 4 && hoy >= Model.periodo.StartDateCali2 && hoy <= Model.periodo.FinishDateCali2 && item.Evaluacion.Status != 17)
+
+                     
+                    
+
+                    else if (Model.periodo.Etapa == 4 && hoy >= Model.periodo.StartDateCali2 && item.Evaluacion.Status != 17)
                     {
                         <td>
                             @using (Html.BeginForm("VerifyYear", "MiHistorial", new { Id = item.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
@@ -205,6 +210,8 @@
                         </td>
 
                     }
+                    
+
                     else if (Model.periodo.id != item.Evaluacion.periodo)
                     {
                         <td>

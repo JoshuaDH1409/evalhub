@@ -362,3 +362,8 @@ MigrationBackup/
 FodyWeavers.xsd
 /PlantillaMVC/Bit
 /PlantillaMVC/Web.config
+/PlantillaMVC/PlantillasReportes/Resp_new.pdf
+/Modelo/Modelo.csproj
+/General/General.csproj
+/CRUD/CRUD.csproj
+/CapaLogica/CapaLogica.csproj

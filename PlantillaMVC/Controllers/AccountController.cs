@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -75,32 +76,33 @@ namespace PlantillaMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(ELogin model)
         {
-            //model.Password = General.Encrypt.DesCifarado(model.Password);
-            //model.Password = General.Encrypt.DesCifarado("");
-            //descifrarPSW
-            //string pass = General.Encrypt.Cifrado("");
-            //string pass = General.Encrypt.DesCifarado("");
-
-            model.Password = General.Encrypt.Cifrado(model.Password.Trim());
-            int usr = Utilidades.negocio.ValidaAcceso(model.Email, model.Password);
-            if (usr == 1)
+            try
             {
-                CSession sesion = Utilidades.negocio.obtenSession(model.Email, model.Password);
-                Session[Utilidades.session] = sesion;
-                FormsAuthentication.SetAuthCookie(model.Email, false);
+                model.Password = General.Encrypt.Cifrado(model.Password.Trim());
+                int usr = Utilidades.negocio.ValidaAcceso(model.Email, model.Password);
 
-                Bitacora.NuevaEntrada("El Usuario "+sesion.Login.NombreCompleto +" ingreso a su cuenta", "Account/LogIn ");
-                return RedirectToAction("Principal", "Evaluacion");
-                //return View("Index");
+                if (usr == 1)
+                {
+                    CSession sesion = Utilidades.negocio.obtenSession(model.Email, model.Password);
+                    Session[Utilidades.session] = sesion;
+                    FormsAuthentication.SetAuthCookie(model.Email, false);
+
+                    Bitacora.NuevaEntrada("El Usuario " + sesion.Login.NombreCompleto + " ingreso a su cuenta", "Account/LogIn ");
+                    return RedirectToAction("Principal", "Evaluacion");
+                }
+                else
+                {
+                    Bitacora.NuevaEntrada("Intento fallido de entrar a " + model.Email, "Account/LogIn ");
+                    ViewBag.Error = "¡Verifique los datos!";
+                    return View();
+                }
             }
-            else
+            catch (Exception ex)
             {
-
-                Bitacora.NuevaEntrada("Intento fallido de entrar a " + model.Email , "Account/LogIn ");
-                ViewBag.Error = "¡Verifique los datos!";
+                Bitacora.NuevaEntrada($"Error en el proceso de login: {ex.Message}", "Account/LogIn");
+                ViewBag.Error = "Ocurrió un error inesperado. Por favor, intente nuevamente.";
                 return View();
             }
-
         }
 
         [HttpGet]

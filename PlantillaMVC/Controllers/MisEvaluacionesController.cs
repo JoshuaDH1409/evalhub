@@ -8,7 +8,7 @@ using CRUD;
 using System.Reflection;
 using General;
 using CRUD.Transaction;
-using CapaLogica.Funciones;
+using CapaLogica;
 using PlantillaMVC.Filters;
 using System.Web.Security;
 using System.IO;
@@ -945,7 +945,7 @@ namespace PlantillaMVC.Controllers
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(sesion.Login.EvaluadorIdSap);
                     //enviar Correo
 
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(1);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, sesion.Login);
 
@@ -975,7 +975,7 @@ namespace PlantillaMVC.Controllers
                     //ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(sesion.Login.EvaluadorIdSap);
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Rechazo los objetivos de la evaluación " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(3);
                     correo.Mensaje = correo.Mensaje.Replace("#Motivo#", modelo.sesion.Evaluacion.MotivoRechazoObj);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, sesion.Login);
@@ -1006,7 +1006,7 @@ namespace PlantillaMVC.Controllers
                 {
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Acepto los objetivos de la evaluación " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(2);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                     MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
@@ -1035,7 +1035,7 @@ namespace PlantillaMVC.Controllers
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " guardo su autoevaluación " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(5);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                     MandarCorreo.SendMail("Soporte", jefe.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
@@ -1065,7 +1065,7 @@ namespace PlantillaMVC.Controllers
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(sesion.Login.EvaluadorIdSap);
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Rechazo los objetivos de la evaluación " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(42);
                     correo.Mensaje = correo.Mensaje.Replace("#Motivo#", envio.Evaluacion.MotivoRechazoObj2);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, sesion.Login);
@@ -1098,7 +1098,7 @@ namespace PlantillaMVC.Controllers
 
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(9);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                     MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
 
@@ -1131,7 +1131,7 @@ namespace PlantillaMVC.Controllers
                     ELogin jefeNivel2 = Utilidades.negocio.RecuperaUnUsuarioSap(jefe.EvaluadorIdSap);
 
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(8);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, sesion.Login);
                     MandarCorreo.SendMail("Soporte", jefeNivel2.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notifico de su verificación a " + jefeNivel2.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
@@ -1160,7 +1160,7 @@ namespace PlantillaMVC.Controllers
 
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(9);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                     MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
 
@@ -1191,7 +1191,7 @@ namespace PlantillaMVC.Controllers
                     
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(4);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                    
                     MandarCorreo.SendMail("Soporte", jefe.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
@@ -1221,7 +1221,7 @@ namespace PlantillaMVC.Controllers
                     
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(9);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);                    
                     MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notifico de su confirmación de su calificacion a " + jefe.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
@@ -1254,7 +1254,7 @@ namespace PlantillaMVC.Controllers
                     
                     correo.Mensaje = correo.Mensaje.Replace("#Motivo#", modelo.sesion.Evaluacion.MotivoCalibracion);
                     correo.Mensaje = correo.Mensaje.Replace("#Calif#", modelo.sesion.Evaluacion.CaliFinal.ToString());
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                     MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
 
@@ -1283,7 +1283,7 @@ namespace PlantillaMVC.Controllers
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " guardo su autoevaluacion2 " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(41);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                     MandarCorreo.SendMail("Soporte", jefe.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
@@ -1313,7 +1313,7 @@ namespace PlantillaMVC.Controllers
                     //ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(sesion.Login.EvaluadorIdSap);
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Rechazo los objetivos de la evaluación " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(42);
                     correo.Mensaje = correo.Mensaje.Replace("#Motivo#", modelo.sesion.Evaluacion.MotivoRechazoObjFin);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, sesion.Login);
@@ -1347,7 +1347,7 @@ namespace PlantillaMVC.Controllers
 
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(17);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
 
                     //MandarCorreo.SendMail("Soporte", jefe.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
@@ -1381,7 +1381,7 @@ namespace PlantillaMVC.Controllers
                     ELogin jefeNivel2 = Utilidades.negocio.RecuperaUnUsuarioSap(jefe.EvaluadorIdSap);
 
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(8);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                     MandarCorreo.SendMail("Soporte", jefeNivel2.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notifico de su evaluación a " + jefe.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
@@ -1412,7 +1412,7 @@ namespace PlantillaMVC.Controllers
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " guardo su calificacion final2 " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(9);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);                
 
@@ -1446,7 +1446,7 @@ namespace PlantillaMVC.Controllers
                     
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(6);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);                
 
                     MandarCorreo.SendMail("Soporte", jefe.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
@@ -1477,7 +1477,7 @@ namespace PlantillaMVC.Controllers
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(9);
                  
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                     MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notificó de su calificación a " + envio.Login.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
@@ -1507,7 +1507,7 @@ namespace PlantillaMVC.Controllers
 
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(18);
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
 
                     correo.Mensaje = correo.Mensaje.Replace("#Motivo#", modelo.sesion.Evaluacion.MotivoCalibracion2);
                     correo.Mensaje = correo.Mensaje.Replace("#Calif#", modelo.sesion.Evaluacion.CaliFinal2.ToString());
@@ -1540,7 +1540,7 @@ namespace PlantillaMVC.Controllers
                     ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(sesion.Login.EvaluadorIdSap);
                     //enviar Correo
 
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(1);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, sesion.Login);
 
@@ -1570,7 +1570,7 @@ namespace PlantillaMVC.Controllers
                     //ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(sesion.Login.EvaluadorIdSap);
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Rechazo los objetivos de la evaluación " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(3);
                     correo.Mensaje = correo.Mensaje.Replace("#Motivo#", modelo.sesion.Evaluacion.MotivoRechazoObj);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, sesion.Login);
@@ -1650,7 +1650,7 @@ namespace PlantillaMVC.Controllers
                 {
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Acepto los objetivos de la evaluación " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
-                    PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(2);
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
                     MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);

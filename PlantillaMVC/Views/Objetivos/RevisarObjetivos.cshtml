@@ -119,7 +119,9 @@
                             }
                         </td>
                     }
-                    else if (Model.periodo.Etapa == 1 && hoy >= Model.periodo.StartDateEva && hoy <= Model.periodo.FinishDateEva && item.Evaluacion.Status != 17)
+                    else if (Model.periodo.Etapa == 1 && hoy >= Model.periodo.StartDateEva
+                        //&& hoy <= Model.periodo.FinishDateEva 
+                        && item.Evaluacion.Status != 17)
                     {
                         <td>
                             @if (item.Evaluacion.Status == 1)

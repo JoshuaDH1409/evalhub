@@ -9,7 +9,7 @@ using CapaLogica.Funciones;
 using System.Reflection;
 using CRUD;
 using General;
-
+using CapaLogica.Correo;
 
 namespace CapaLogica.Periodo
 {
@@ -345,26 +345,26 @@ namespace CapaLogica.Periodo
                 if (Recordatorio == 1 && Usuario.Notificar)
                 {
                     ECorreos correo = Correo.ClsCorreos.RecuperaUnCorreo(21);//idCorreo
-                    Correo.EnvioCorreo MandarCorreo = new Correo.EnvioCorreo();
+                    global::CapaLogica.Correo.EnvioCorreo MandarCorreo = new global::CapaLogica.Correo.EnvioCorreo();
                     MandarCorreo.SendMail("Soporte", Usuario.Email, " ", "Estimado:" + Usuario.NombreCompleto + "<br><br><br>" + correo.Mensaje + " <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
 
                 }
                 else if (Recordatorio == 2 && Jefe.Notificar)
                 {
                     ECorreos correo = Correo.ClsCorreos.RecuperaUnCorreo(22);//idCorreo
-                    Correo.EnvioCorreo MandarCorreo = new Correo.EnvioCorreo();
+                    global::CapaLogica.Correo.EnvioCorreo MandarCorreo = new global::CapaLogica.Correo.EnvioCorreo();
                     MandarCorreo.SendMail("Soporte", Jefe.Email, " ", "Estimado:" + Jefe.NombreCompleto + "<br><br><br>" + correo.Mensaje + " <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                 }
                 else if (Recordatorio == 3 && Usuario.Notificar)
                 {
                     ECorreos correo = Correo.ClsCorreos.RecuperaUnCorreo(23);//idCorreo
-                    Correo.EnvioCorreo MandarCorreo = new Correo.EnvioCorreo();
+                    global::CapaLogica.Correo.EnvioCorreo MandarCorreo = new global::CapaLogica.Correo.EnvioCorreo();
                     MandarCorreo.SendMail("Soporte", Usuario.Email, " ", "Estimado:" + Usuario.NombreCompleto + "<br><br><br>" + correo.Mensaje + " <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                 }
                 else if (Recordatorio == 4 && Jefe.Notificar)
                 {
                     ECorreos correo = Correo.ClsCorreos.RecuperaUnCorreo(24);//idCorreo
-                    Correo.EnvioCorreo MandarCorreo = new Correo.EnvioCorreo();
+                    global::CapaLogica.Correo.EnvioCorreo MandarCorreo = new global::CapaLogica.Correo.EnvioCorreo();
                     MandarCorreo.SendMail("Soporte", Jefe.Email, " ", "Estimado:" + Jefe.NombreCompleto + "<br><br><br>" + correo.Mensaje + " <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                 }
                 else if (Recordatorio == 5 && jefeLv2 != null)
@@ -372,7 +372,7 @@ namespace CapaLogica.Periodo
                     if (jefeLv2.Notificar)
                     {
                         ECorreos correo = Correo.ClsCorreos.RecuperaUnCorreo(25);//idCorreo
-                        Correo.EnvioCorreo MandarCorreo = new Correo.EnvioCorreo();
+                        global::CapaLogica.Correo.EnvioCorreo MandarCorreo = new global::CapaLogica.Correo.EnvioCorreo();
                         MandarCorreo.SendMail("Soporte", jefeLv2.Email, " ", "Estimado:" + jefeLv2.NombreCompleto + "<br><br><br>" + correo.Mensaje + " <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
                     }
                 }
@@ -388,6 +388,8 @@ namespace CapaLogica.Periodo
             }
 
         }
+
+        // EN ClsPeriodo.cs
 
 
     }

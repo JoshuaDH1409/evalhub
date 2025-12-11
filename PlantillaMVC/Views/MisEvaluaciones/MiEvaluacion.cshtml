@@ -373,13 +373,13 @@
                     @Ajax.ActionLink(" Escaleta de Calificaciones", "DetalleEscaleta", "MisEvaluaciones", new AjaxOptions { UpdateTargetId = "DetalleEscaleta", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirEscaleta" }, new { @class = "btn btn-default fa fa-file-alt", @style = "color:#004b8d" })
                     <div style="text-align:right; float:right;">
                         @if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 2 || Model.sesion.Evaluacion.Status == 4 || Model.sesion.Evaluacion.Status == 10 ||@*Model.sesion.Evaluacion.Status == 11 ||*@ (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
-                        {
-                        //agregar validacion para maximo 6 objetivos
-                        //if (Model.Liobjetivos.Count < 6)
-                        //{
-                            @Ajax.ActionLink(" Nuevo Objetivo", "OperacionObjetivos", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "btn btn-default fa fa-plus", id = "btnNuevoObjetivo", @style = "background: #FEFEFE;color:#004b8d" })
-                        //}
-                        }
+{
+//agregar validacion para maximo 6 objetivos
+//if (Model.Liobjetivos.Count < 6)
+//{
+@Ajax.ActionLink(" Nuevo Objetivo", "OperacionObjetivos", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "btn btn-default fa fa-plus", id = "btnNuevoObjetivo", @style = "background: #FEFEFE;color:#004b8d" })
+//}
+}
                     </div>
                 </td>
             </tr>
@@ -743,21 +743,21 @@
 
 
     @*OBJETIVOS PERSONAL PTP*@
-<h4>
-    PLAN DE CAPACITACIÓN PERSONAL - ROL ACTUAL
-    <div class="btn-toolbar float-right">
-        @*if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 2 || Model.sesion.Evaluacion.Status == 4 || Model.sesion.Evaluacion.Status == 10 || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
-        {
-            @Ajax.ActionLink(" Agregar Objetivo", "OperacionObjetivosPTP", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleObjetivosPTP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivosPTP()" }, new { @class = "btn btn-default fa fa-plus", @style = "color: #004b8d;" })
-        }*@
-        @Ajax.ActionLink(" Agregar Objetivo", "OperacionObjetivosPTP", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleObjetivosPTP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivosPTP()" }, new { @class = "btn btn-default fa fa-plus", @style = "color: #004b8d;" })
+    <h4>
+        PLAN DE CAPACITACIÓN PERSONAL - ROL ACTUAL
+        <div class="btn-toolbar float-right">
+            @*if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 2 || Model.sesion.Evaluacion.Status == 4 || Model.sesion.Evaluacion.Status == 10 || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+                {
+                    @Ajax.ActionLink(" Agregar Objetivo", "OperacionObjetivosPTP", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleObjetivosPTP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivosPTP()" }, new { @class = "btn btn-default fa fa-plus", @style = "color: #004b8d;" })
+                }*@
+            @Ajax.ActionLink(" Agregar Objetivo", "OperacionObjetivosPTP", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleObjetivosPTP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivosPTP()" }, new { @class = "btn btn-default fa fa-plus", @style = "color: #004b8d;" })
 
-        @*Colapsa al div de abajo*@
-        <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseObjetivosPTP" aria-expanded="false" aria-controls="collapseExample">
-            <i class="fa fa-compress-alt"></i>
-        </button>
-    </div>
-</h4>
+            @*Colapsa al div de abajo*@
+            <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseObjetivosPTP" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-compress-alt"></i>
+            </button>
+        </div>
+    </h4>
 
     <div class="collapse show" id="collapseObjetivosPTP">
         <div>
@@ -791,7 +791,7 @@
                                             Enlista el apoyo que necesitas en tu puesto actual
                                         </p>
                                     </td>
-                                    <td  style="width: 50%;">@item.ObjetivePTP</td>
+                                    <td style="width: 50%;">@item.ObjetivePTP</td>
                                 </tr>
                                 <tr class="ObjetivosPTP">
                                     <td style="background-color: #F9F9F9; font-weight: bold; width: 50%;">
@@ -801,7 +801,7 @@
                                             (Aprendizaje autodirigido, aprendizaje en el aula, coaching o aprendizaje en el trabajo)
                                         </p>
                                     </td>
-                                    <td  style="width: 50%;" >@item.ActionPTP</td>
+                                    <td style="width: 50%;">@item.ActionPTP</td>
                                 </tr>
                                 <tr class="ObjetivosPTP">
                                     <td style="background-color: #F9F9F9; font-weight: bold;">
@@ -811,7 +811,7 @@
                                         </p>
 
                                     </td>
-                                    <td  style="width: 50%;">@item.DateFin</td>
+                                    <td style="width: 50%;">@item.DateFin</td>
                                 </tr>
 
                             </table>
@@ -885,21 +885,21 @@
 
 
     @*OBJETIVOS PERSONAL PDP*@
-<h4>
-    PLAN DE DESARROLLO PERSONAL - ENFOCADO EN LA CARRERA
-    <div class="btn-toolbar float-right">
-        @*if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 2 || Model.sesion.Evaluacion.Status == 4 || Model.sesion.Evaluacion.Status == 10 || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
-        {
-            @Ajax.ActionLink(" Agregar Objetivo", "OperacionObjetivosPDP", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleObjetivosPDP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivosPDP()" }, new { @class = "btn btn-default fa fa-plus", @style = "color: #004b8d;" })
-        }*@
-        @Ajax.ActionLink(" Agregar Objetivo", "OperacionObjetivosPDP", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleObjetivosPDP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivosPDP()" }, new { @class = "btn btn-default fa fa-plus", @style = "color: #004b8d;" })
+    <h4>
+        PLAN DE DESARROLLO PERSONAL - ENFOCADO EN LA CARRERA
+        <div class="btn-toolbar float-right">
+            @*if (Model.sesion.Evaluacion.Status == 0 || Model.sesion.Evaluacion.Status == 2 || Model.sesion.Evaluacion.Status == 4 || Model.sesion.Evaluacion.Status == 10 || (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0))
+                {
+                    @Ajax.ActionLink(" Agregar Objetivo", "OperacionObjetivosPDP", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleObjetivosPDP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivosPDP()" }, new { @class = "btn btn-default fa fa-plus", @style = "color: #004b8d;" })
+                }*@
+            @Ajax.ActionLink(" Agregar Objetivo", "OperacionObjetivosPDP", "MisEvaluaciones", new { id = "0", eval = Model.sesion.Evaluacion.id, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "DetalleObjetivosPDP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirObjetivosPDP()" }, new { @class = "btn btn-default fa fa-plus", @style = "color: #004b8d;" })
 
-        @*Colapsa al div de abajo*@
-        <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseObjetivosPDP" aria-expanded="false" aria-controls="collapseExample">
-            <i class="fa fa-compress-alt"></i>
-        </button>
-    </div>
-</h4>
+            @*Colapsa al div de abajo*@
+            <button type="button" name="button" class="btn btn-default btn-compress" data-toggle="collapse" data-target="#collapseObjetivosPDP" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-compress-alt"></i>
+            </button>
+        </div>
+    </h4>
 
     <div class="collapse show" id="collapseObjetivosPDP">
         <div>
@@ -1859,10 +1859,23 @@
 
             </div>
         </div>
+
         <div style="text-align: center;">
             <input type="text" id="TemporalCalif2" name="TemporalCalif2" class="oculto">
-            <button class="btn btn-success" id="Calibracion2" name="submitButton" type="submit" value="Calibracion2">Calibrar/Cerrar evaluación </button>
+            <button class="btn btn-success"
+                    id="Calibracion2"
+                    name="submitButton"
+                    type="submit"
+                    value="Calibracion2"
+                    onclick="return confirm('¿Estás seguro de continuar?');">
+                Calibrar/Cerrar evaluación
+            </button>
         </div>
+
+        @*<div style="text-align: center;">
+                <input type="text" id="TemporalCalif2" name="TemporalCalif2" class="oculto">
+                <button class="btn btn-success" id="Calibracion2" name="submitButton" type="submit" value="Calibracion2">Calibrar/Cerrar evaluación </button>
+            </div>*@
     }
 
     @*if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)

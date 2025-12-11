@@ -123,7 +123,7 @@ namespace PlantillaMVC.Controllers
 
             if (modelo != null)
             {
-                PlantillaMVC.EnvioCorreo MandarCorreo = new PlantillaMVC.EnvioCorreo();
+                CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
                 if (modelo.Email != null)
                 {
                     Bitacora.NuevaEntrada("Se solicito recuperar contraseña de la cuenta " + Correo , "Account/EnviarCorreoPass ");

@@ -1762,7 +1762,7 @@
 		 * sZeroRecords - assuming that is given.
 		 */
 		if ( ! lang.sEmptyTable && zeroRecords &&
-			defaults.sEmptyTable === "No hay datos disponibles" )
+			defaults.sEmptyTable === "No data available in table" )
 		{
 			_fnMap( lang, lang, 'sZeroRecords', 'sEmptyTable' );
 		}
@@ -11425,7 +11425,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No hay datos disponibles",
+			"sEmptyTable": "No data available in table",
 	
 	
 			/**

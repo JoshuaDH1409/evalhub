@@ -285,6 +285,57 @@ namespace PlantillaMVC.Controllers
                 return PartialView("Respuesta", ex.ToString() + " Phat->" + path);
             }
         }
+
+        public ActionResult DownloadActivePeriods()
+        {
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
+
+            var sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+
+            var paisesDisponibles = Utilidades.negocio.RecuperaPaises().Where(t => t.Activo).ToList();
+            List<EPais> paisesFiltrados;
+            if (sesion.Login.perfil == 1)
+            {
+                paisesFiltrados = paisesDisponibles;
+            }
+            else if (sesion.Login.perfil == 2)
+            {
+                var region = sesion.Login.paisesRegion.Split(',').ToList();
+                paisesFiltrados = paisesDisponibles.Where(p => region.Contains(p.id.ToString())).ToList();
+            }
+            else
+            {
+                paisesFiltrados = paisesDisponibles.Where(p => p.id == sesion.Login.Pais).ToList();
+            }
+
+            var periodosActivos = new List<EPeriodos>();
+            foreach (var pais in paisesFiltrados)
+            {
+                periodosActivos.AddRange(Utilidades.negocio.RecuperaTodosPeriodosPais(pais.id).Where(per => per.Activo));
+            }
+
+            if (!periodosActivos.Any())
+            {
+                return PartialView("Respuesta", "No se encontraron periodos activos para generar el reporte.");
+            }
+
+            var paises = periodosActivos.Select(p => p.Country).ToList();
+            var periodos = periodosActivos.Select(p => p.id).ToList();
+            var path = Path.Combine(Server.MapPath("~/Export/"), "Temp.xlsx");
+
+            try
+            {
+                Create(paises, periodos, null, true);
+                byte[] fileBytes = System.IO.File.ReadAllBytes(path);
+                string fileName = "ReporteTodosLosPaises.xlsx";
+                return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+            }
+            catch (Exception ex)
+            {
+                return PartialView("Respuesta", ex.ToString() + " Path->" + path);
+            }
+        }
         // Función para convertir Ticks a DateTime en formato correcto
         private DateTime ConvertTicksToDateTime(long ticks)
         {
@@ -718,10 +769,11 @@ namespace PlantillaMVC.Controllers
 
             Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
             Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " Ingreso a crear documento", "DashBoard/DashObjetives ");
+
             List<VEvalObj> evals = new List<VEvalObj>();
             foreach (var p in Pais)
             {
-                evals.AddRange(Utilidades.negocio.GetEvalObjViewByPeriodCountryDiv(Periodo,p, Area));
+                evals.AddRange(Utilidades.negocio.GetEvalObjViewByPeriodCountryDiv(Periodo, p, Area));
             }
             //string filePath = Path.Combine(Server.MapPath("~/Export/"), "Temp.xlsx");
 
@@ -757,9 +809,10 @@ namespace PlantillaMVC.Controllers
                 ws.Cell(1, 6).Value = "Objetivo";
                 ws.Cell(1, 7).Value = "Descripción";
                 ws.Cell(1, 8).Value = "Métrica";
-                ws.Cell(1, 9).Value = "Resultado";
-                ws.Cell(1, 10).Value = "Comentarios jefe";
-                ws.Cell(1, 11).Value = "Peso ponderado %";
+                ws.Cell(1, 9).Value = "Peso del objetivo(%)";
+                ws.Cell(1, 10).Value = "Resultado";
+                ws.Cell(1, 11).Value = "Comentarios jefe";
+                //ws.Cell(1, 12).Value = "Peso ponderado";
                 int i = 0;
 
                 foreach (VEvalObj item in evals)
@@ -767,11 +820,31 @@ namespace PlantillaMVC.Controllers
                     if((i % 2) == 0 && i!=0)
                         ws.Rows(i, i).Style.Fill.BackgroundColor = XLColor.AliceBlue;
 
+                    // Resolver evaluador tomando el evaluador vigente del login del evaluado
+                    var evaluadorNombre = item.Evaluator;
+                    var evaluadoUsr = Utilidades.negocio.RecuperaUnUsuarioSap(item.EvaluatedNoEmp);
+                    if (evaluadoUsr != null && !string.IsNullOrWhiteSpace(evaluadoUsr.EvaluadorIdSap))
+                    {
+                        var evaluadorUsr = Utilidades.negocio.RecuperaUnUsuarioSap(evaluadoUsr.EvaluadorIdSap);
+                        if (evaluadorUsr != null && !string.IsNullOrWhiteSpace(evaluadorUsr.NombreCompleto))
+                        {
+                            evaluadorNombre = evaluadorUsr.NombreCompleto;
+                        }
+                    }
+                    else if (!string.IsNullOrWhiteSpace(item.EvaluadorNoEmp))
+                    {
+                        var evaluadorUsr = Utilidades.negocio.RecuperaUnUsuarioSap(item.EvaluadorNoEmp);
+                        if (evaluadorUsr != null && !string.IsNullOrWhiteSpace(evaluadorUsr.NombreCompleto))
+                        {
+                            evaluadorNombre = evaluadorUsr.NombreCompleto;
+                        }
+                    }
+
                     ws.Cell(i + 2, 1).Value = item.EvaluatedNoEmp;
                     ws.Cell(i + 2, 2).Value = item.Evaluated;
                     ws.Cell(i + 2, 3).Value = item.Division;
                     ws.Cell(i + 2, 4).Value = item.Puesto;
-                    ws.Cell(i + 2, 5).Value = item.Evaluator;
+                    ws.Cell(i + 2, 5).Value = evaluadorNombre;
                     ws.Cell(i + 2, 6).Value = item.Objetive;
                     ws.Cell(i + 2, 7).Value = item.objdesc;
                     ws.Cell(i + 2, 8).Value = item.objMetricas;
@@ -782,13 +855,11 @@ namespace PlantillaMVC.Controllers
 
                     i = i + 1;
                 }
-                ws.Column(7).Style.Alignment.WrapText = true;
-                ws.Column(8).Style.Alignment.WrapText = true;
                 workbook.SaveAs(filePath);
             }
             catch (Exception ex)
             {
-                Bitacora.NuevaEntrada(ex.Message, "DashBoard/DashObjetives ");
+                Bitacora.NuevaEntrada(ex.Message, "DashBoard/DashObjetives");
             }
 
         }
@@ -868,7 +939,8 @@ namespace PlantillaMVC.Controllers
                             ws.Cell(i + 2, 11).Value = item.ComentariosJefeEval2;
                             //ws.Cell(i + 2, 11).Value = item.ObjetivePeso;
                             ws.Row(i + 1).Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
-                            i++;
+
+                            i = i + 1;
                         }
                         else
                         {
@@ -900,10 +972,10 @@ namespace PlantillaMVC.Controllers
             }
             catch (Exception ex)
             {
-                Bitacora.NuevaEntrada(ex.Message, "DashBoard/DashObjetives ");
-            }
 
+            }
         }
+
         public void BuscarSubordinados(string idsap, int Periodo)
         {
             var users=Utilidades.negocio.RecuperaLiSubordinadosPeriodo(idsap,Periodo).Where(t=>t.Login.Activo).ToList();

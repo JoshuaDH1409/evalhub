@@ -1,5 +1,4 @@
-﻿
-@model PlantillaMVC.Models.EFlitrosDash
+﻿@model PlantillaMVC.Models.EFlitrosDash
 <link href="~/Content/themes/css/select2.min.css" rel="stylesheet" />
 
 
@@ -33,6 +32,12 @@
     <br />
     @*<button type="submit" id="enviar" class="btn btn-success glyphicon glyphicon-stats"> <x style="font-family:Arial"> Consultar</x></button>*@
 }
+
+<div class="text-right" style="margin-top:10px; margin-bottom:10px;">
+    <a class="btn btn-primary" href="@Url.Action("DownloadActivePeriods", "Dash")">
+        <span class="glyphicon glyphicon-download-alt"></span> Descargar periodo activo (todos los países)
+    </a>
+</div>
 
 <div id="Contenedor"></div>
 

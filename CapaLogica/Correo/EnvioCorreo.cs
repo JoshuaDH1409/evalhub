@@ -25,7 +25,7 @@ namespace CapaLogica.Correo
         // =========================================================================
 
         // ¡IMPORTANTE! Cambia esto a 'false' cuando subas a PRODUCCIÓN
-        private const bool MODO_PRUEBAS = false;
+        private const bool MODO_PRUEBAS = true;
 
         // Si MODO_PRUEBAS es true, todos los correos llegarán aquí:
         private const string CORREO_DEVELOPER = "jdiaz@estrategiatec.com.mx";

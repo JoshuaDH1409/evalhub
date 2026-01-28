@@ -29,7 +29,8 @@
             <th>Puesto</th>
             <th>División</th>
             <th>País</th>
-            <th>Perfil</th>            
+            <th>Perfil</th>
+            <th>Estado</th>
             <th></th>
             <th></th>
             <th></th>
@@ -46,8 +47,18 @@
             <td>@item.Login.Division</td>
             <td>@item.Pais.descripcion</td>
             <td>@item.Perfil.descripcion</td>
+            <td>@(item.Login.Activo ? "Activo" : "Inactivo")</td>
             <td>@Ajax.ActionLink(" ", "NuevoUsuario", "Usuario", new { Id = @item.Login.id }, new AjaxOptions { UpdateTargetId = "NuevoItem", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "AbrirModal" }, new { @class = "fa fa-edit fontIcons", @title = "Editar" })</td>
-            <td>@Ajax.ActionLink(" ", "EliminarUsuario", "Usuario", new { Id = @item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "confirma();AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "VerificaSesionEnv()" }, new { @class = "fa fa-times eliminar", @style = "color:red", @title = "Eliminar" })</td>
+            <td>
+                @if (item.Login.Activo)
+                {
+                    @Ajax.ActionLink(" ", "EliminarUsuario", "Usuario", new { Id = @item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "confirma();AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "VerificaSesionEnv()" }, new { @class = "fa fa-times eliminar", @style = "color:red", @title = "Eliminar" })
+                }
+                else
+                {
+                    @Ajax.ActionLink(" ", "ActivarUsuario", "Usuario", new { Id = @item.Login.id }, new AjaxOptions { UpdateTargetId = "Principal", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "VerificaSesionEnv()" }, new { @class = "fa fa-undo", @style = "color:green", @title = "Activar" })
+                }
+            </td>
             <td>
                 @if (ViewBag.rol == 1 || ViewBag.rol == 2 || ViewBag.rol == 3)
                 {

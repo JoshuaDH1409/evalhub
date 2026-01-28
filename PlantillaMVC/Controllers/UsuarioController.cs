@@ -35,7 +35,7 @@ namespace PlantillaMVC.Controllers
 
             CSession sesion = (CSession)Session[Utilidades.session];
             Bitacora.NuevaEntrada("El Usuario " + sesion.Login.NombreCompleto + " ingreso a usuarios", "Usuario/Usuarios ");
-            List<CSession> ListaUsuarios = Utilidades.negocio.RecuperaUsuarios(true);
+            List<CSession> ListaUsuarios = Utilidades.negocio.RecuperaUsuarios(false);
 
             if (ListaUsuarios != null)
             {
@@ -450,6 +450,78 @@ namespace PlantillaMVC.Controllers
             Utilidades.negocio.GuardaUsuario(modelo);
 
             return PartialView("RespEliminar", "Se eliminó correctamente");
+        }
+
+        [Autentificado]
+        public ActionResult ActivarUsuario(int Id)
+        {
+            if (!Utilidades.ValidaSesion(Session, HttpContext))
+                return RedirectToAction("Login", "Account");
+
+            Modelo.Clases.CSession sesion = (Modelo.Clases.CSession)Session[Utilidades.session];
+            Bitacora.NuevaEntrada("El Usuario " + sesion.Login.NombreCompleto + " Activó el usuario" + Id.ToString(), "Usuario/Usuarios ");
+
+            ELogin usuario = Utilidades.negocio.RecuperaUnUsuario(Id);
+            if (usuario == null)
+            {
+                return PartialView("RespEliminar", "No se encontró el usuario");
+            }
+
+            usuario.Activo = true;
+            usuario.Modificadopor = sesion.Login.NombreCompleto;
+            if (!Utilidades.negocio.GuardaUsuario(usuario))
+            {
+                return PartialView("RespEliminar", "No se pudo activar el usuario");
+            }
+
+            string mensaje = "Se activó correctamente";
+
+            EPeriodos per = Utilidades.negocio.RecuperaPeriodopais(usuario.Pais);
+            if (per != null && per.Activo)
+            {
+                EEval evalActiva = Utilidades.negocio.RecuperaEvaluacionActivaUsario(usuario.id);
+                if (evalActiva == null || evalActiva.periodo != per.id)
+                {
+                    EEval evalPeriodo = null;
+                    List<Modelo.Clases.CHistorial> historial = Utilidades.negocio.RecuperaHistorialUsr(usuario.id);
+                    if (historial != null)
+                    {
+                        evalPeriodo = historial.Select(t => t.Evaluacion).FirstOrDefault(t => t.periodo == per.id);
+                    }
+
+                    if (evalPeriodo == null)
+                    {
+                        evalPeriodo = new Modelo.EEval
+                        {
+                            id = 0,
+                            periodo = per.id,
+                            Status = 0,
+                            Activo = true,
+                            Modificadopor = sesion.Login.NombreCompleto,
+                            id_usuario = usuario.id,
+                            Puesto = usuario.Division,
+                            Nivel = usuario.perfil,
+                            Division = usuario.Division,
+                            Area = "",
+                            id_evaluador = usuario.EvaluadorIdSap
+                        };
+                    }
+                    else
+                    {
+                        evalPeriodo.Activo = true;
+                        evalPeriodo.Status = 0;
+                        evalPeriodo.Modificadopor = sesion.Login.NombreCompleto;
+                    }
+
+                    Utilidades.negocio.GuardaEvaluacion(evalPeriodo);
+                }
+            }
+            else
+            {
+                mensaje = "Usuario activado. No hay periodo activo para asignar evaluación";
+            }
+
+            return PartialView("RespEliminar", mensaje);
         }
 
         [Autentificado]

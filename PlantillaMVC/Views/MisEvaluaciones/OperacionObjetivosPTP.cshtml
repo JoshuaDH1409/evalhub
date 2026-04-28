@@ -20,7 +20,7 @@
 
         <table class="table-pop">
 
-            
+
             <tr class="oculto">
                 <td>
                     @Html.LabelFor(m => m.id, new { @class = "etiqueta" })
@@ -76,6 +76,33 @@
                 <td style="width: 50%; text-align: left;">
                     @Html.TextBoxFor(m => m.DateFin, new { @class = "form-control DatePicker", required = true })
                     @Html.ValidationMessageFor(m => m.DateFin, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width: 50%; text-align: left;">
+                    @Html.LabelFor(m => m.ComAutoPTP, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                    </p>
+
+                </td>
+                <td style="width: 50%; text-align: left;">
+                    @Html.TextBoxFor(m => m.ComAutoPTP, new { @class = "form-control DatePicker", required = true })
+                    @Html.ValidationMessageFor(m => m.ComAutoPTP, "", new { @class = "text-danger" })
+                </td>
+
+            </tr>
+
+            <tr>
+                <td style="width: 50%; text-align: left;">
+                    @Html.LabelFor(m => m.ComEvaluadorPTP, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                    </p>
+
+                </td>
+                <td style="width: 50%; text-align: left;">
+                    @Html.TextBoxFor(m => m.ComEvaluadorPTP, new { @class = "form-control DatePicker", required = true })
+                    @Html.ValidationMessageFor(m => m.ComEvaluadorPTP, "", new { @class = "text-danger" })
                 </td>
             </tr>
 

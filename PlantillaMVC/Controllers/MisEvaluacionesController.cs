@@ -1105,7 +1105,7 @@ namespace PlantillaMVC.Controllers
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notifico de su calificacion final a " + envio.Login.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
 
-                    return PartialView("Respuesta", "Se guardó correctamente y se notificó al evaluado ");
+                    return PartialView("Respuesta", "En esta fase deberás calificar cada uno de los objetivos de tu colaborador con base en el cumplimiento de estos y agregar comentarios de retroalimentación. ");
                 }
                 else
                 {
@@ -1290,7 +1290,7 @@ namespace PlantillaMVC.Controllers
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notificó de su autoevaluación de segundo semestre a " + jefe.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
 
-                    return PartialView("Respuesta", "Se guardó correctamente y se notificó al evaluador ");
+                    return PartialView("Respuesta", "Tus objetivos han sido autoevaluados. Recuerda dar seguimiento a esta fase del Proceso de Evaluación de Desempeño");
                 }
                 else
                 {

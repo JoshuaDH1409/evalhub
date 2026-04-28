@@ -98,7 +98,7 @@ namespace Modelo
 
         [DataMember]
         [Required(ErrorMessage = "Resultado2 requerida")]
-        [Display(Name = "Resultado")]
+        [Display(Name = "Resultado sobre el logro del objetivo")]
         [StringLength(4999, ErrorMessage = "El campo no puede tener más de 5000 letras.")]
         [AttributeDataMember("Resultado2", SQLTypeBasic.TEXT)]
         public string Resultado2 { get; set; }

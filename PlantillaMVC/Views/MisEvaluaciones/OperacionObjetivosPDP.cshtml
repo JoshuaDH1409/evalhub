@@ -16,66 +16,93 @@
         {
             @Html.AntiForgeryToken();
 
-            <table class="table-pop">
+        <table class="table-pop">
 
 
-                <tr class="oculto">
-                    <td>
-                        @Html.LabelFor(m => m.id, new { @class = "etiqueta" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.id)
-                    </td>
-                </tr>
-                <tr class="oculto">
-                    <td>
-                        @Html.LabelFor(m => m.Eval, new { @class = "etiqueta" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(m => m.Eval, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Eval)
-                    </td>
-                </tr>
+            <tr class="oculto">
+                <td>
+                    @Html.LabelFor(m => m.id, new { @class = "etiqueta" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.id, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.id)
+                </td>
+            </tr>
+            <tr class="oculto">
+                <td>
+                    @Html.LabelFor(m => m.Eval, new { @class = "etiqueta" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Eval, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Eval)
+                </td>
+            </tr>
 
-                <tr>
-                    <td style="width: 50%; text-align: left;">
-                        @Html.LabelFor(m => m.ObjetivePDP, new { @class = "etiqueta" })
-                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
-                            ¿Cuáles son los objetivos ambiciosos, de crecimiento y las aspiraciones más allá del tu rol actual?
-                        </p>
-                    </td>
-                    <td style="width: 50%; text-align: left;">
-                        @Html.TextAreaFor(m => m.ObjetivePDP, new { @class = "form-control", @rows = "4", required = true })
-                        @Html.ValidationMessageFor(m => m.ObjetivePDP, "", new { @class = "text-danger" })
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 50%; text-align: left;">
-                        @Html.LabelFor(m => m.actionPDP, new { @class = "etiqueta" })
-                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
-                            ¿Cuál es tu motivación para alcanzar estas aspiraciones?
-                        </p>
-                    </td>
-                    <td style="width: 50%; text-align: left;">
-                        @Html.TextAreaFor(m => m.actionPDP, new { @class = "form-control", @rows = "4", required = true })
-                        @Html.ValidationMessageFor(m => m.actionPDP, "", new { @class = "text-danger" })
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 50%; text-align: left;">
-                        @Html.LabelFor(m => m.dateFinish, new { @class = "etiqueta" })
-                        <p style="font-size: 12px; font-weight: normal; text-align: left;">
-                            ¿Qué necesitas hacer y/o qué apoyo necesitas para lograr tus aspiraciones profesionales? (estudios, proyectos específicos, formación, etc.)
-                        </p>
-                    </td>
-                    <td style="width: 50%; text-align: left;">
-                        @Html.TextAreaFor(m => m.dateFinish, new { @class = "form-control", @rows = "4", required = true })
-                        @Html.ValidationMessageFor(m => m.dateFinish, "", new { @class = "text-danger" })
-                    </td>
-                </tr>
+            <tr>
+                <td style="width: 50%; text-align: left;">
+                    @Html.LabelFor(m => m.ObjetivePDP, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                        ¿Cuáles son los objetivos ambiciosos, de crecimiento y las aspiraciones más allá del tu rol actual?
+                    </p>
+                </td>
+                <td style="width: 50%; text-align: left;">
+                    @Html.TextAreaFor(m => m.ObjetivePDP, new { @class = "form-control", @rows = "4", required = true })
+                    @Html.ValidationMessageFor(m => m.ObjetivePDP, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%; text-align: left;">
+                    @Html.LabelFor(m => m.actionPDP, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                        ¿Cuál es tu motivación para alcanzar estas aspiraciones?
+                    </p>
+                </td>
+                <td style="width: 50%; text-align: left;">
+                    @Html.TextAreaFor(m => m.actionPDP, new { @class = "form-control", @rows = "4", required = true })
+                    @Html.ValidationMessageFor(m => m.actionPDP, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%; text-align: left;">
+                    @Html.LabelFor(m => m.dateFinish, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                        ¿Qué necesitas hacer y/o qué apoyo necesitas para lograr tus aspiraciones profesionales? (estudios, proyectos específicos, formación, etc.)
+                    </p>
+                </td>
+                <td style="width: 50%; text-align: left;">
+                    @Html.TextAreaFor(m => m.dateFinish, new { @class = "form-control", @rows = "4", required = true })
+                    @Html.ValidationMessageFor(m => m.dateFinish, "", new { @class = "text-danger" })
+                </td>
+            </tr>
 
-            </table>
+            <tr>
+                <td style="width: 50%; text-align: left;">
+                    @Html.LabelFor(m => m.ComAutoPDP, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                    </p>
+
+                </td>
+                <td style="width: 50%; text-align: left;">
+                    @Html.TextBoxFor(m => m.ComAutoPDP, new { @class = "form-control DatePicker", required = true })
+                    @Html.ValidationMessageFor(m => m.ComAutoPDP, "", new { @class = "text-danger" })
+                </td>
+
+            </tr>
+
+            <tr>
+                <td style="width: 50%; text-align: left;">
+                    @Html.LabelFor(m => m.ComEvaluadorPDP, new { @class = "etiqueta" })
+                    <p style="font-size: 12px; font-weight: normal; text-align: left;">
+                    </p>
+
+                </td>
+                <td style="width: 50%; text-align: left;">
+                    @Html.TextBoxFor(m => m.ComEvaluadorPDP, new { @class = "form-control DatePicker", required = true })
+                    @Html.ValidationMessageFor(m => m.ComEvaluadorPDP, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+
+        </table>
 
 
             <div class="modal-footer" style="padding-bottom: 0px;">

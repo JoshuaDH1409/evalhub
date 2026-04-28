@@ -49,5 +49,19 @@ namespace Modelo
         [AttributeDataMember("DateFin", SQLTypeBasic.TEXT)]
         public string DateFin { get; set; }
 
+        [DataMember]
+        [Required(ErrorMessage = "Comentarios autoevalucioón es requerido")]
+        [Display(Name = "Comentarios autoevaluación")]
+        [StringLength(4999, ErrorMessage = "El campo no puede tener más de 5000 letras.")]
+        [AttributeDataMember("ComentariosAutoEval", SQLTypeBasic.TEXT)]
+        public string ComAutoPTP { get; set; }
+
+        [DataMember]
+        [Required(ErrorMessage = "Comentarios evaluador es requerido")]
+        [Display(Name = "Comentarios evaluador")]
+        [StringLength(4999, ErrorMessage = "El campo no puede tener más de 5000 letras.")]
+        [AttributeDataMember("ComentariosEvaluador", SQLTypeBasic.TEXT)]
+        public string ComEvaluadorPTP { get; set; }
+
     }
 }

@@ -264,7 +264,7 @@
                 </tbody>
             </table>
             <p>
-                Por favor considera que la Evaluación del Desempeño mide únicamente tu Desempeño en el trabajo
+               
             </p>
         </div>
     </div>
@@ -470,8 +470,8 @@
                             <div style="position: absolute; top: 0px;right: 4px; border: 0;">
                                 @if (ViewBag.status == 0 || ViewBag.status == 2 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))
                                 {
-                                    @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "color: #FFF;", @title = "Editar" })
-                                    @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red;", @title = "Eliminar" })
+                                    @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "color: #FFF; margin-right: 16px;", @title = "Editar" })
+                                    @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red; margin-right: 8px;", @title = "Eliminar" })
                                 }
                             </div>
                         </h3>
@@ -814,6 +814,29 @@
                                     <td style="width: 50%;">@item.DateFin</td>
                                 </tr>
 
+                                 <tr class="ObjetivosPTP">
+                                     <td style="background-color: #F9F9F9; font-weight: bold;">
+                                         Comentarios autoevaluación
+                                         <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
+                                             
+                                         </p>
+
+                                     </td>
+                                     <td style="width: 50%;">@item.ComAutoPTP</td>
+                                 </tr>
+
+                                 <tr class="ObjetivosPTP">
+                                        <td style="background-color: #F9F9F9; font-weight: bold;">
+                                            Comentarios evaluador
+                                            <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
+                                                
+                                            </p>
+    
+                                        </td>
+                                        <td style="width: 50%;">@item.ComEvaluadorPTP</td>
+
+                                </tr>
+
                             </table>
                         </div>
                     }
@@ -955,6 +978,29 @@
                                         </p>
                                     </td>
                                     <td style="width: 50%;">@item.dateFinish</td>
+                                </tr>
+
+                                 <tr class="ObjetivosPDP">
+                                     <td style="background-color: #F9F9F9; font-weight: bold;">
+                                         Comentarios autoevaluación
+                                         <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
+             
+                                         </p>
+
+                                     </td>
+                                     <td style="width: 50%;">@item.ComAutoPDP</td>
+                                 </tr>
+
+                                 <tr class="ObjetivosPDP">
+                                        <td style="background-color: #F9F9F9; font-weight: bold;">
+                                            Comentarios evaluador
+                                            <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
+                
+                                            </p>
+    
+                                        </td>
+                                        <td style="width: 50%;">@item.ComEvaluadorPDP</td>
+
                                 </tr>
 
                             </table>
@@ -2364,7 +2410,7 @@ new { id = "ObjetivosPTP" })
                     }
                 });
                 if ($("#sesion_Evaluacion_ComEvaluado").val().trim() == "") {
-                    alert('Se requiere que agregue un comentario');
+                    alert('');
                     return false;
                 }
                 //alert(auxres + '<>' + TotalComp);
@@ -2490,7 +2536,7 @@ new { id = "ObjetivosPTP" })
             if (status == 10) {
                 //alert('entra');
                 if ($("#sesion_Evaluacion_ComEvaluado2").val() == "") {
-                    alert('Se requiere que agregue un comentario');
+                    alert('Para poder enviar el formulario a tu jefe inmediato deberás agregar comentarios de logro alcanzado, fortalezas y áreas de oportunidad de tu desempeño de este año fiscal.');
                     return false;
                 }
                 var aux = 0;
@@ -2505,7 +2551,7 @@ new { id = "ObjetivosPTP" })
                 });
 
                 if (aux == 1) {
-                    alert('Es necesario que ingrese calificación como comentario de todos los objetivos');
+                    alert('Para ´poder enviar el formulario a tu jefe inmediato deberás agregar una calificación y comentarios a cada uno de tus objetivos. ');
                     return false;
                 }
 
@@ -2571,7 +2617,7 @@ new { id = "ObjetivosPTP" })
                     return false;
                 }
                 else if ($("#sesion_Evaluacion_ComEvaluador2").val() == "" && auxiliar == 0) {
-                    alert('Se requiere que agregue un comentario');
+                    alert('Para poder enviar el formulario a tu jefe inmediato deberás agregar comentarios de logro alcanzado, fortalezas y áreas de oportunidad de tu desempeño de este año fiscal.');
                     return false;
                 }
                 if (aux == 1) {
@@ -2595,7 +2641,7 @@ new { id = "ObjetivosPTP" })
                 });
 
                 if (aux == 1) {
-                    alert('Es necesario que ingrese calificación como comentario de todos los objetivos');
+                    alert('Para ´poder enviar el formulario a tu jefe inmediato deberás agregar una calificación y comentarios a cada uno de tus objetivos.);
                     return false;
                 } else {
                     return true;

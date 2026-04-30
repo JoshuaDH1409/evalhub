@@ -168,6 +168,8 @@ namespace PlantillaMVC.Controllers
                     var sum_ponderado = eval.Liobjetivos.Sum(t => t.ValorObj);
                     ViewBag.sum_ponderado = sum_ponderado;
                     ViewBag.CalFinTemp = Utilidades.getScore(sum_ponderado);
+                    var autoeval2 = eval.Liobjetivos.Sum(e => e.AutoEval2);
+                    ViewBag.CalAutoEval = autoeval2;
                 }
             }
             return PartialView(eval);
@@ -1042,7 +1044,7 @@ namespace PlantillaMVC.Controllers
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notifico de su autoevaliación a: " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
 
-                    return PartialView("Respuesta", "Se guardó correctamente y se notificó al evaluador");
+                    return PartialView("Respuesta", " Tus objetivos han sido autoevaluados. \r\nRecuerda dar seguimiento a esta fase del Proceso de Evaluación de Desempeño ");
                 }
                 else
                 {
@@ -1345,18 +1347,18 @@ namespace PlantillaMVC.Controllers
                 {
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " guardo su evaluacion de segundo semestre. Evaluación: " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
-                    ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
-                    ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(17);
-                    CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
-                    correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
+                    //ELogin jefe = Utilidades.negocio.RecuperaUnUsuarioSap(envio.Login.EvaluadorIdSap);
+                    //ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(17);
+                    //CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
+                    //correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);
 
-                    //MandarCorreo.SendMail("Soporte", jefe.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
-                    MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
-                    Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notificó de su evaluación a " + jefe.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
-                    Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notificó de su evaluación a " + envio.Login.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
+                    ////MandarCorreo.SendMail("Soporte", jefe.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
+                    //MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);
+                    //Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notificó de su evaluación a " + jefe.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
+                    //Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " notificó de su evaluación a " + envio.Login.Email, "MisEvaluaciones/GuardaClaseEvaluacion ");
 
 
-                    return PartialView("Respuesta", "Se guardó correctamente y se notificó al evaluado ");
+                    return PartialView("Respuesta", "Se guardó correctamente, no se notificó al evaluado");
                 }
                 else
                 {
@@ -1509,7 +1511,7 @@ namespace PlantillaMVC.Controllers
                     ECorreos correo = Utilidades.negocio.RecuperaUnCorreo(18);
                     CapaLogica.Correo.EnvioCorreo MandarCorreo = new CapaLogica.Correo.EnvioCorreo();
 
-                    correo.Mensaje = correo.Mensaje.Replace("#Motivo#", modelo.sesion.Evaluacion.MotivoCalibracion2);
+                    //correo.Mensaje = correo.Mensaje.Replace("#Motivo#", modelo.sesion.Evaluacion.MotivoCalibracion2);
                     correo.Mensaje = correo.Mensaje.Replace("#Calif#", modelo.sesion.Evaluacion.CaliFinal2.ToString());
                     correo.Mensaje = MandarCorreo.ProcesarMsg(correo.Mensaje, envio.Login);                   
                     MandarCorreo.SendMail("Soporte", envio.Login.Email, " ", correo.Mensaje + " <br><br><br> saludos<br>Atentamente Sistema de Evaluación de Desempeño  <br><br> *AUTOMATED SYSTEM MESSAGE - Please do not reply to this email*", correo.asunto);

@@ -37,7 +37,18 @@
         </div>
     </div>
     <div class="alert alert-info">
-        @ViewBag.statusDesc
+        @if (( Model.sesion.Evaluacion.Status == 11) && ViewBag.usuario == 1)
+        {
+            <text>En esta fase deberás calificar cada uno de los objetivos de tu colaborador con base en el cumplimiento de estos y agregar comentarios de retroalimentación.</text>
+        }
+        else if (( Model.sesion.Evaluacion.Status == 11) && ViewBag.usuario == 0)
+        {
+            <text>Estimado Colaborador, tu Jefe inmediato ha calificado tu evaluación y se inició la etapa de calibración. Pronto recibirás tu calificación final.</text>
+        }
+        else
+        {
+            @ViewBag.statusDesc
+        }
     </div>
     <div>
         <h4>
@@ -59,6 +70,7 @@
                         <th>Fecha fin</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     @if (Model.periodo.Activo == true)
                     {
@@ -237,7 +249,7 @@
                                 }
                                 else
                                 {
-                                    <div class="oculto">
+                                    <div class="oculto" style="display:none;">
                                         @Html.TextAreaFor(m => m.sesion.Evaluacion.Nivel)
                                     </div>
                                     if (Model.sesion.Evaluacion.Nivel == 1)
@@ -526,17 +538,23 @@
                                             <td class="AutoEvalCell2">@item.Resultado2</td>
                                             <td>@item.cumplimientoEvaluado2</td>
                                         </tr>
-                                        <tr>
-                                            <th>Evaluador</th>
-                                            <td class="JefeEvalCell2">@item.ComentariosJefeEval2</td>
-                                            <td>@item.cumplimientoEvaluador2 -> @item.ValorObj</td>
+                                        if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 1)
+                                        {
+                                            <tr>
 
-                                        </tr>
+                                                <th>Evaluador</th>
+                                                <td class="JefeEvalCell2">@item.ComentariosJefeEval2</td>
+                                                <td>@item.cumplimientoEvaluador2 -> @item.ValorObj</td>
+
+
+
+                                            </tr>
+                                        }
                                         @*<tr>
-                                                <th>Comentario Final</th>
-                                                <td>@item.ComentariosJefeEvalFinall2</td>
-                                                <td></td>
-                                            </tr>*@
+                                        <th>Comentario Final</th>
+                                        <td>@item.ComentariosJefeEvalFinall2</td>
+                                        <td></td>
+                                    </tr>*@
                                     }
                                 }
                             </table>
@@ -550,47 +568,58 @@
                     <div class="float-left"><strong>Total peso objetivos (%)</strong></div>
                     <div class="float-right"><strong id="pesototalobjetivos">@ViewBag.PesoTotal</strong></div>
                 </div>
-            }
-            else if (Model.sesion.Evaluacion.Status < 16)
-            {
+                        }
+
+
+                        else if (Model.sesion.Evaluacion.Status < 16)
+                        {
+                            if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 0)
+                            {
+                                   <div class="clearfix alert alert-success mt-1">
+
+                                    <div class="float-left"></div> </div>
+                }
+    else { 
                 <div class="clearfix alert alert-success mt-1">
-                    <div class="float-left"><strong>Calificación: @ViewBag.sum_ponderado</strong></div>
+
+                    <div class="float-left"><strong>  Calificación: @ViewBag.sum_ponderado </strong></div>
                     @if ((Model.sesion.Evaluacion.Status != 11 && Model.sesion.Evaluacion.Status != 13 && Model.sesion.Evaluacion.Status != 15) && ViewBag.usuario == 0)
                     {
                         //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
                     }
-                    @if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
+            @if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
                     {
-                        //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+                //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+            }
+            @if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 2)
+            {
+                //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+            }
+                </div>
+                        }
+
                     }
-                    @if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 2)
-                    {
-                        //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
-                    }
+                    <script>
+                        $(function () {
+                            $("#accordion").accordion({
+                collapsible: true,
+                                active: false,
+                                heightStyle: "content"
+                            });
+            });
+                    </script>
                 </div>
 
-            }
-            <script>
-                $(function () {
-                    $("#accordion").accordion({
-                        collapsible: true,
-                        active: false,
-                        heightStyle: "content"
-                    });
-                });
-            </script>
-        </div>
-
-        @*APARTADO SMART*@
-        <p><strong>Ejemplo para construir objetivos SMART:</strong></p>
-        <p style="text-align:center; color: #004b8d;">
-            <a id="fancybox-smart" href="javascript:;" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i> Referencia para creación de objetivos</a>
-        </p>
-        <div style="display: none;">
-            <a href="~/Imgs/formato_smart.png" data-options='{"caption" : "Formato Objetivo SMART" }' class="imgSmart"></a>
-            <a href="~/Imgs/objetivos_smart.jpg" data-options='{"caption" : "Objetivos SMART" }' class="imgSmart"></a>
-        </div>
-    </div>@*<p style="text-align:center; color: #004b8d;">
+                @*APARTADO SMART*@
+                <p><strong>Ejemplo para construir objetivos SMART:</strong></p>
+                <p style="text-align:center; color: #004b8d;">
+                    <a id="fancybox-smart" href="javascript:;" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i> Referencia para creación de objetivos</a>
+                </p>
+                <div style="display: none;">
+                    <a href="~/Imgs/formato_smart.png" data-options='{"caption" : "Formato Objetivo SMART" }' class="imgSmart"></a>
+                    <a href="~/Imgs/objetivos_smart.jpg" data-options='{"caption" : "Objetivos SMART" }' class="imgSmart"></a>
+                </div>
+            </div>@*<p style="text-align:center; color: #004b8d;">
             <a data-fancybox="gallery" href="~/Imgs/objetivos_smart.jpg" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i> Referencia para creación de objetivos</a>
             <a data-fancybox="gallery" href="~/Imgs/objetivos_smart.jpg" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i>Objetivos SMART</a>
         </p>*@
@@ -1085,7 +1114,14 @@
                 </button>
             </div>
         </h3>
-        <p>Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo.</p>
+        <p>
+            Esta calificación deberá asignarse una vez concluida la sesión de calibración. El resultado final deberá redondearse al nivel de desempeñó que corresponda
+            (para subir o bajar.)
+            
+        </p>
+        <p>
+            La calificación de calibración puede ser diferente a la autoevaluación y/o a la calificación previamente asignada por ti.
+        </p>
 
         <div class="collapse show" id="collapseCalificacion">
             <table class="table table-sm table-bordered table-striped">
@@ -1094,13 +1130,14 @@
                         <th class="align-middle width-66">
                             Objetivo
                         </th>
-                        <th class="align-middle text-center">Calificación</th>
-                        <th class="align-middle text-center width-33">
+                        @*<th class="align-middle text-center">Calificación</th>*@
+                        
+                        @*<th class="align-middle text-center width-33">
                             Calificación Final
-                        </th>
+                        </th>*@
                         @if (Model.sesion.Evaluacion.Status == 15)
                         {
-                            <th class="align-middle text-center">Calibración</th>
+                            <th class="align-middle text-center">Calificación de desempeño</th>
                         }
                     </tr>
                 </thead>
@@ -1122,14 +1159,14 @@
 
                         foreach (var item in Model.Escaleta)
                         {
-                            if (item.Valor == Model.sesion.Evaluacion.CaliFinal2 && Model.sesion.Evaluacion.CaliFinalCalibracion == 0)
-                            {
-                                fondo = "bg-success";
-                            }
-                            else
-                            {
-                                fondo = "";
-                            }
+                            //if (item.Valor == Model.sesion.Evaluacion.CaliFinal2 && Model.sesion.Evaluacion.CaliFinalCalibracion == 0)
+                            //{
+                            //    fondo = "bg-success";
+                            //}
+                            //else
+                            //{
+                            //    fondo = "";
+                            //}
                             if (Model.sesion.Evaluacion.CaliFinalCalibracion > 0)
                             {
                                 if (item.Valor == Model.sesion.Evaluacion.CaliFinalCalibracion)
@@ -1141,45 +1178,46 @@
                                     fondocalibrado = "";
                                 }
                             }
-                            <tr class="@fondo  @fondocalibrado">
-                                <td>@Html.Raw(item.Objetivo)</td>
-                                <td class="text-center">@item.Ponderacion</td>
-                                <td class="@fondo" align="center">@item.Valor</td>
-                                @if (Model.sesion.Evaluacion.Status == 15)
-                                {
-                                    <td align="center">@item.Valor</td>
-                                }
-
-                                @*@if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1 || (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2))
-                                    {
-                                        <td>
-                                            <div class="radio">
-                                                <label>
-                                                    @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new {   }) 4<br />
-                                                </label>
-                                            </div>
-                                        </td>
-                                    }*@
-                                @*else if (Model.sesion.Evaluacion.Status > 11 && Model.sesion.Evaluacion.Status <= 15)
-                                    {
-                                        <td>
-                                            <div class="radio">
-                                                <label>
-                                                    @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new { disabled = "disabled" }) 4<br />
-                                                </label>
-                                            </div>
-                                        </td>
-                                    }*@
-                                @*else
-                                    {
-                                        <td>
-                                            @if (Model.sesion.Evaluacion.CaliFinal2 == 4)
+                                        <tr class="@fondo  @fondocalibrado">
+                                            <td>@Html.Raw(item.Objetivo)</td>
+                                            @*<td class="text-center">@item.Ponderacion</td>*@
+                                            @*<td class="@fondo" align="center">@ViewBag.CalAutoEval</td>*@
+                                            @*<td class="@fondo" align="center">@item.Valor</td>*@
+                                            @if (Model.sesion.Evaluacion.Status == 15)
                                             {
-                                            <label>@Model.sesion.Evaluacion.CaliFinal2</label>
+                                                <td align="center">@item.Valor</td>
                                             }
-                                        </td>
-                                    }*@
-                            </tr>
+
+                                            @*@if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1 || (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2))
+        {
+            <td>
+                <div class="radio">
+                    <label>
+                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new {   }) 4<br />
+                    </label>
+                </div>
+            </td>
+        }*@
+                                            @*else if (Model.sesion.Evaluacion.Status > 11 && Model.sesion.Evaluacion.Status <= 15)
+        {
+            <td>
+                <div class="radio">
+                    <label>
+                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new { disabled = "disabled" }) 4<br />
+                    </label>
+                </div>
+            </td>
+        }*@
+                                            @*else
+        {
+            <td>
+                @if (Model.sesion.Evaluacion.CaliFinal2 == 4)
+                {
+                <label>@Model.sesion.Evaluacion.CaliFinal2</label>
+                }
+            </td>
+        }*@
+                                        </tr>
                         }
                     }
                     <!--<tr>
@@ -1297,7 +1335,7 @@
             </table>
 
         </div>
-        if (Model.sesion.Evaluacion.Status == 15)
+        @*if (Model.sesion.Evaluacion.Status == 15)
         {
             <div id="PanelComentariosCalibración">
                 <hr>
@@ -1315,7 +1353,7 @@
                     </div>
                 </div>
             </div>
-        }
+        }*@
     }
 
     //ViewBag.usuario ***************************
@@ -1504,7 +1542,7 @@
             </div>
         </div>
         <div style="text-align: center">
-            <input type="text" id="TemporalObj" name="TemporalObj" class="oculto">
+            <input type="hidden" id="TemporalObj" name="TemporalObj" class="oculto">
             <button class="btn btn-success" id="AceptarObjetivos" name="submitButton" type="submit" value="AceptarObjetivos"><i class="fa fa-check-square-o" aria-hidden="true"></i> Aceptar objetivos</button>
             @if (Model.sesion.Evaluacion.Rechazos < 3)
             {
@@ -1566,7 +1604,7 @@
             </div>
         </div>
         <div style="text-align: center;">
-            <input type="text" id="TemporalCalif" name="TemporalCalif" class="oculto">
+            <input type="hidden" id="TemporalCalif" name="TemporalCalif" class="oculto">
             <button class="btn btn-success" id="AceptarCalificacion" name="submitButton" type="submit" value="AceptarCalificacion"><i class="fa fa-check-square-o"></i>Aceptar evaluación </button>
             @if (Model.sesion.Evaluacion.ComentariosSegundoNivel == "")
             {
@@ -1793,7 +1831,14 @@
                         </a>
                     </h4>
                 </div>
-                <p>Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo.</p>
+                <p>
+                    Esta calificación deberá asignarse una vez concluida la sesión de calibración. El resultado final deberá redondearse al nivel de desempeñó que corresponda
+                    (para subir o bajar.)
+
+                </p>
+                <p>
+                    La calificación de calibración puede ser diferente a la autoevaluación y/o a la calificación previamente asignada por ti.
+                </p>
                 <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <table class="table table-sm table-bordered table-striped">
@@ -1806,20 +1851,20 @@
                                         Calificación Final
                                     </th>
                                     <th class="text-center width-33">
-                                        Calificación Calibración
+                                        Calificación calibración
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @*<tr>
-                                        <td>
-                                            ("Qué" se logró)<br />
-                                            Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td></td>
-                                    </tr>*@
+                            <td>
+                                ("Qué" se logró)<br />
+                                Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo
+                            </td>
+                            <td>
+                            </td>
+                            <td></td>
+                        </tr>*@
                                 @{ var fondo = "";
 
                                     foreach (var item in Model.Escaleta)
@@ -1850,24 +1895,24 @@
                                                 </div>
                                             </td>
                                             @*else if (Model.sesion.Evaluacion.Status > 11 && Model.sesion.Evaluacion.Status <= 15)
-                                                {
-                                                    <td>
-                                                        <div class="radio">
-                                                            <label>
-                                                                @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new { disabled = "disabled" }) 4<br />
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                }*@
+                                    {
+                                        <td>
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new { disabled = "disabled" }) 4<br />
+                                                </label>
+                                            </div>
+                                        </td>
+                                    }*@
                                             @*else
-                                                {
-                                                    <td>
-                                                        @if (Model.sesion.Evaluacion.CaliFinal2 == 4)
-                                                        {
-                                                        <label>@Model.sesion.Evaluacion.CaliFinal2</label>
-                                                        }
-                                                    </td>
-                                                }*@
+                                    {
+                                        <td>
+                                            @if (Model.sesion.Evaluacion.CaliFinal2 == 4)
+                                            {
+                                            <label>@Model.sesion.Evaluacion.CaliFinal2</label>
+                                            }
+                                        </td>
+                                    }*@
                                         </tr>
 
                                     }
@@ -1880,17 +1925,17 @@
                 </div>
             </div>
         </div>
-        <div id="pnlComentariosJefeSupervisor">
+        <!--<div id="pnlComentariosJefeSupervisor">
             <hr>
-            <h3>
-                Motivo de calibración
-                <div class="btn-toolbar float-right">
+            <h3>-->
+                @*Motivo de calibración*@
+                @*<div class="btn-toolbar float-right">
                     <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoJS2">
                         <i class="fa fa-compress-alt"></i>
                     </button>
                 </div>
-            </h3>
-            <div class="collapse show" id="collapseComentariosRechazoJS2">
+            </h3>*@
+            @*<div class="collapse show" id="collapseComentariosRechazoJS2">
 
                 <div class="form-group">
                     @if (Model.sesion.Evaluacion.Status == 13 && ViewBag.Usuario == 2)
@@ -1903,11 +1948,11 @@
                     }
                 </div>
 
-            </div>
-        </div>
+            </div>*@
+        <!--</div>-->
 
         <div style="text-align: center;">
-            <input type="text" id="TemporalCalif2" name="TemporalCalif2" class="oculto">
+            <input type="hidden" id="TemporalCalif2" name="TemporalCalif2" class="oculto">
             <button class="btn btn-success"
                     id="Calibracion2"
                     name="submitButton"
@@ -2018,7 +2063,7 @@
             </div>
         </div>
         <div style="text-align: center">
-            <input type="text" id="TemporalObj" name="TemporalObj" class="oculto">
+            <input type="hidden" id="TemporalObj" name="TemporalObj" class="oculto">
             <button class="btn btn-success" id="AceptarObjetivosEx" name="submitButton" type="submit" value="AceptarObjetivosEx"><i class="fa fa-check-square-o" aria-hidden="true"></i> Aceptar objetivos</button>
             @if (Model.sesion.Evaluacion.Rechazos < 3)
             {
@@ -2075,7 +2120,7 @@ new AjaxOptions { UpdateTargetId = "TblObjetivosPTP", OnBegin = "AbreCierraDilog
 new { id = "ObjetivosPTP" })
 </div>
 
-<input type="text" id="TemporalObj" name="TemporalObj" class="oculto">
+<input type="hidden" id="TemporalObj" name="TemporalObj" class="oculto">
 
 <div class="modal fade" id="ModalDetalle" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-scrollable">
@@ -2410,7 +2455,7 @@ new { id = "ObjetivosPTP" })
                     }
                 });
                 if ($("#sesion_Evaluacion_ComEvaluado").val().trim() == "") {
-                    alert('');
+                    alert('Para poder enviar el formulario deberás agregar tus comentarios generales de autoevaluación.');
                     return false;
                 }
                 //alert(auxres + '<>' + TotalComp);
@@ -2456,11 +2501,11 @@ new { id = "ObjetivosPTP" })
                 //alert(auxiliar);
                 var temp = $("#sesion_Evaluacion_MotivoRechazoObj2").val();
                 if (temp.trim() == "" && auxiliar == 1) {
-                    alert("Tiene que ingresar comentario de rechazo");
+                    alert("Para poder rechazar el formulario, deberás agregar los motivos por los cuales estas realizando esta acción.");
                     return false;
                 }
                 else if ($("#sesion_Evaluacion_ComEvaluador").val() == "" && auxiliar==0) {
-                    alert('Se requiere que agregue un comentario');
+                    alert('Para poder enviar el formulario a la fase de calibración, deberás agregar comentarios de fortalezas y áreas de oportunidad del desempeño de tu colaborador de este año fiscal');
                     return false;
                 }
                 var pesototal = $("#txtPesoTotal").val();
@@ -2520,7 +2565,7 @@ new { id = "ObjetivosPTP" })
                 var temp = $("#Sesion_Evaluacion_ComentariosSegundoNivel").val();
                 var aux = $("#TemporalCalif").val();
                 if (temp == "" && aux == 1) {
-                    alert("Tiene que ingresar comentario de rechazo");
+                    alert("Para poder rechazar el formulario, deberás agregar los motivos por los cuales estas realizando esta acción.");
                     return false;
                 }
                 return true;
@@ -2535,97 +2580,58 @@ new { id = "ObjetivosPTP" })
             }
             if (status == 10) {
                 //alert('entra');
+                var aux = 0;
+                $('.AutoEvalCell2').each(function (index, value) {
+                    var cellText = $.trim($(this).text());
+                    var cellCalif = $.trim($(this).next('td').text());
+                    if (cellText === '' || cellCalif === '' || cellCalif === '0') {
+                        aux = 1;
+                    }
+                });
+
+                if (aux == 1) {
+                    alert('Para poder enviar el formulario a tu jefe inmediato deberás agregar una calificación y comentarios a cada uno de tus objetivos.');
+                    return false;
+                }
+
+
                 if ($("#sesion_Evaluacion_ComEvaluado2").val() == "") {
                     alert('Para poder enviar el formulario a tu jefe inmediato deberás agregar comentarios de logro alcanzado, fortalezas y áreas de oportunidad de tu desempeño de este año fiscal.');
                     return false;
                 }
-                var aux = 0;
-                var auxres = 0;
-                $('.AutoEvalCell2').each(function (index, value) {
-                    var cellText = $(this).html();
-                    cellText = $.trim(cellText);
-                    //alert(cellText);
-                    if (cellText == '') {
-                        aux = 1;
-                    }
-                });
-
-                if (aux == 1) {
-                    alert('Para ´poder enviar el formulario a tu jefe inmediato deberás agregar una calificación y comentarios a cada uno de tus objetivos. ');
-                    return false;
-                }
-
-
-                $('.ResultadoComp2').each(function (index, value) {
-                    var cellRes = $(this).html();
-                    cellRes = $.trim(cellRes);
-                    if (cellRes == '') {
-                        //alert('celda->' + cellRes);
-                        auxres = 1;
-                    }
-                });
-
-                if (auxres == 1) {
-                    alert('Es necesario evaluar todas las competencias');
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-
-
+                
+                return true;
             }
             if (status == 11) {
-                var aux = 0;
-                var auxres = 0;
-                $('.JefeEvalCell2').each(function (index, value) {
-                    var cellText = $(this).html();
-                    cellText = $.trim(cellText);
-                    //alert(cellText);
-                    if (cellText == '') {
-                        aux = 1;
-                    }
-                });
-                $('.ponderadoJefeEvalCell2').each(function (index, value) {
-                    var cellText = $(this).html();
-                    cellText = $.trim(cellText);
-                    //alert(cellText);
-                    if (cellText == '') {
-                        aux = 1;
-                    }
-                });
-                $('.ResultadoComp2Eval').each(function (index, value) {
-                    var cellText = $(this).html();
-                    cellText = $.trim(cellText);
-                    //alert(cellText);
-                    if (cellText == '') {
-                        aux = 1;
-                    }
-                });
-                //var radioValue = $("input[name='Sesion.Evaluacion.CaliFinal2']:checked").val();
-
-                //if (!radioValue) {
-                //    alert("Seleccione una calificación final");
-                //    return false;
-                //}
                 var auxiliar = $("#TemporalObj").val();
-                //alert(auxiliar);
                 var temp = $("#sesion_Evaluacion_MotivoRechazoObjFin").val();
+                if (auxiliar == 0) {
+                    var aux = 0;
+                    $('.JefeEvalCell2').each(function (index, value) {
+                        var cellText = $.trim($(this).text());
+                        var cellCalif = $.trim($(this).next('td').text());
+                        if (cellText === '' || cellCalif === '' || cellCalif.indexOf('0') === 0) {
+                            aux = 1;
+                        }
+                    });
+
+                    if (aux == 1) {
+                        alert('Para poder enviar el formulario a calibración deberás agregar una calificación y comentarios a cada uno de tus objetivos.');
+                        return false;
+                    }
+                }
                 if (temp.trim() == "" && auxiliar == 1) {
-                    alert("Tiene que ingresar comentario de rechazo");
+                    alert("Para poder rechazar el formulario, deberás agregar los motivos por los cuales estas realizando esta acción.");
                     return false;
                 }
                 else if ($("#sesion_Evaluacion_ComEvaluador2").val() == "" && auxiliar == 0) {
-                    alert('Para poder enviar el formulario a tu jefe inmediato deberás agregar comentarios de logro alcanzado, fortalezas y áreas de oportunidad de tu desempeño de este año fiscal.');
+                    alert('Para poder enviar el formulario a la fase de calibración, deberás agregar comentarios de fortalezas y áreas de oportunidad del desempeño de tu colaborador de este año fiscal.');
                     return false;
                 }
-                if (aux == 1) {
-                    alert('Es necesario que ingrese la calificación, así como comentario de todos los objetivos y competencias');
-                    return false;
-                } else {
-                    return true;
-                }
+
+                
+
+                return true;
             }
             if (status == 12) {
                 var aux = 0;
@@ -2640,8 +2646,8 @@ new { id = "ObjetivosPTP" })
 
                 });
 
-                if (aux == 1) {
-                    alert('Para ´poder enviar el formulario a tu jefe inmediato deberás agregar una calificación y comentarios a cada uno de tus objetivos.);
+                    if (aux == 1) {
+                    alert('Para poder enviar el formulario a tu jefe inmediato deberás agregar una calificación y comentarios a cada uno de tus objetivos.');
                     return false;
                 } else {
                     return true;
@@ -2649,12 +2655,25 @@ new { id = "ObjetivosPTP" })
 
             }
             if (status == 13) {
-                var temp = $("#sesion_Evaluacion_MotivoCalibracion2").val();
-                if (temp == "") {
-                    alert("Tiene que ingresar un comentario de calibración");
+               
+                // === CALIBRACIÓN FINAL (Calibrar/Cerrar Evaluación) ===
+                var temp = $("#sesion_Evaluacion_MotivoCalibracion2").val ?
+                    $("#sesion_Evaluacion_MotivoCalibracion2").val().trim() : "";
+
+                // Si ya quitaste el campo de comentarios, solo validamos que al menos haya seleccionado una calificación
+                if ($('input[name="sesion.Evaluacion.CaliFinal2"]:checked').length === 0) {
+                    alert("Debes seleccionar una Calificación de Desempeño para calibrar.");
                     return false;
                 }
+
+                // Si aún tienes el campo de comentarios y quieres que sea obligatorio:
+                // if (temp === "") {
+                //     alert("Tiene que ingresar un comentario de calibración");
+                //     return false;
+                // }
+
                 return true;
+            }
             }
             if (status == 15) {
                 var temp = $("#Sesion_Evaluacion_MotivoCalibracion2").val();

@@ -26,18 +26,18 @@ namespace PlantillaMVC
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             // Verificar conexión a la base de datos
-            string connectionString = ConfigurationManager.ConnectionStrings["SQLServerJoshuaLocal"].ConnectionString;
-            string errorMessage;
+            //string connectionString = ConfigurationManager.ConnectionStrings["SQLServerJoshuaLocal"].ConnectionString;
+            //string errorMessage;
 
-            if (CheckDatabaseConnection(connectionString, out errorMessage))
-            {
-                Bitacora.NuevaEntrada("Conexión exitosa a la base de datos.", "Global.asax");
-            }
-            else
-            {
-                Bitacora.NuevaEntrada($"Error al conectar a la base de datos: {errorMessage}", "Global.asax");
-                throw new Exception($"No se pudo conectar a la base de datos: {errorMessage}");
-            }
+            //if (CheckDatabaseConnection(connectionString, out errorMessage))
+            //{
+            //    Bitacora.NuevaEntrada("Conexión exitosa a la base de datos.", "Global.asax");
+            //}
+            //else
+            //{
+            //    Bitacora.NuevaEntrada($"Error al conectar a la base de datos: {errorMessage}", "Global.asax");
+            //    throw new Exception($"No se pudo conectar a la base de datos: {errorMessage}");
+            //}
         }
 
         private bool CheckDatabaseConnection(string connectionString, out string errorMessage)

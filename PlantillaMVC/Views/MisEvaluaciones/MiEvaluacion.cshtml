@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-@using (Ajax.BeginForm("GuardaClaseEvaluacion", " MisEvaluaciones", new AjaxOptions
+@using (Ajax.BeginForm("GuardaClaseEvaluacion", "MisEvaluaciones", new AjaxOptions
 {
     UpdateTargetId = "Principal",
     OnBegin = "AbreCierraDilogoEspera",
@@ -37,11 +37,18 @@
         </div>
     </div>
     <div class="alert alert-info">
-        @if (( Model.sesion.Evaluacion.Status == 11) && ViewBag.usuario == 1)
+        @{
+            int usuarioInt = 0;
+            if (ViewBag.usuario != null && int.TryParse(ViewBag.usuario.ToString(), out usuarioInt))
+            {
+                // Conversión exitosa
+            }
+        }
+        @if ((Model.sesion.Evaluacion.Status == 13) && (usuarioInt == 1 || usuarioInt == 2))
         {
             <text>En esta fase deberás calificar cada uno de los objetivos de tu colaborador con base en el cumplimiento de estos y agregar comentarios de retroalimentación.</text>
         }
-        else if (( Model.sesion.Evaluacion.Status == 11) && ViewBag.usuario == 0)
+        else if ((Model.sesion.Evaluacion.Status == 13) && (usuarioInt == 0))
         {
             <text>Estimado Colaborador, tu Jefe inmediato ha calificado tu evaluación y se inició la etapa de calibración. Pronto recibirás tu calificación final.</text>
         }
@@ -538,7 +545,17 @@
                                             <td class="AutoEvalCell2">@item.Resultado2</td>
                                             <td>@item.cumplimientoEvaluado2</td>
                                         </tr>
-                                        if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 1)
+
+                                        if (Model.sesion.Evaluacion.Status >= 11 && Model.sesion.Evaluacion.Status <= 12)
+                                        {
+                                            <tr>
+                                                <th>Evaluador</th>
+                                                <td class="JefeEvalCell2">@item.ComentariosJefeEval2</td>
+                                                <td>@item.cumplimientoEvaluador2</td>
+                                            </tr>
+                                        }
+
+                                        else if (Model.sesion.Evaluacion.Status == 13 && (ViewBag.usuario == 1 || ViewBag.usuario == 2))
                                         {
                                             <tr>
 
@@ -551,10 +568,10 @@
                                             </tr>
                                         }
                                         @*<tr>
-                                        <th>Comentario Final</th>
-                                        <td>@item.ComentariosJefeEvalFinall2</td>
-                                        <td></td>
-                                    </tr>*@
+                    <th>Comentario Final</th>
+                    <td>@item.ComentariosJefeEvalFinall2</td>
+                    <td></td>
+                </tr>*@
                                     }
                                 }
                             </table>
@@ -2301,7 +2318,7 @@ new { id = "ObjetivosPTP" })
             });
         $(".wmd-view").scroll(function () {
             $(".wmd-view-topscroll")
-                .scrollLeft($(".wmd-view").scrollLeft());
+                .scrollLeft($(".wmd-view").scrollLeft());submi
         });
             });
             $(function () {
@@ -2578,30 +2595,42 @@ new { id = "ObjetivosPTP" })
                 }
                 return true;
             }
-            if (status == 10) {
-                //alert('entra');
+            else if (status == 10) {
+                console.log("=== VALIDACIÓN STATUS 10 EJECUTANDOSE ===");
+                console.log("Status leído:", status);
+
                 var aux = 0;
+                var objetivosSinCompletar = [];
+
                 $('.AutoEvalCell2').each(function (index, value) {
-                    var cellText = $.trim($(this).text());
-                    var cellCalif = $.trim($(this).next('td').text());
-                    if (cellText === '' || cellCalif === '' || cellCalif === '0') {
+                    var cellText = $.trim($(this).text());           // Comentario del evaluado
+                    var cellCalif = $.trim($(this).next('td').text()); // Calificación
+
+                    if (cellText === '' || cellCalif === '' || cellCalif === '0' || cellCalif === '0%') {
                         aux = 1;
+                        objetivosSinCompletar.push(index + 1);
                     }
                 });
 
                 if (aux == 1) {
-                    alert('Para poder enviar el formulario a tu jefe inmediato deberás agregar una calificación y comentarios a cada uno de tus objetivos.');
+                    alert('❌ Para poder enviar el formulario a tu jefe inmediato deberás agregar una calificación y comentarios a cada uno de tus objetivos.\n\nObjetivos incompletos: ' + objetivosSinCompletar.length);
+                    console.log("Objetivos sin completar:", objetivosSinCompletar);
                     return false;
                 }
 
-
-                if ($("#sesion_Evaluacion_ComEvaluado2").val() == "") {
-                    alert('Para poder enviar el formulario a tu jefe inmediato deberás agregar comentarios de logro alcanzado, fortalezas y áreas de oportunidad de tu desempeño de este año fiscal.');
+                // Validación de comentarios generales
+                var comentarios = $("#sesion_Evaluacion_ComEvaluado2").val().trim();
+                if (comentarios === "") {
+                    alert('❌ Para poder enviar el formulario a tu jefe inmediato deberás agregar comentarios de logro alcanzado, fortalezas y áreas de oportunidad de tu desempeño de este año fiscal.');
+                    $("#sesion_Evaluacion_ComEvaluado2").focus();
                     return false;
                 }
-                
+
+                console.log("✅ Validación status 10 aprobada");
                 return true;
             }
+
+           
             if (status == 11) {
                 var auxiliar = $("#TemporalObj").val();
                 var temp = $("#sesion_Evaluacion_MotivoRechazoObjFin").val();
@@ -2674,7 +2703,7 @@ new { id = "ObjetivosPTP" })
 
                 return true;
             }
-            }
+            
             if (status == 15) {
                 var temp = $("#Sesion_Evaluacion_MotivoCalibracion2").val();
                 if (temp == "") {

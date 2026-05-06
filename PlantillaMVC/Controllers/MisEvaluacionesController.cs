@@ -33,6 +33,9 @@ namespace PlantillaMVC.Controllers
             //0-> usuario Propietario
             //1-> usuario Jefe
             //2-> usuario jefe lv2
+            // Al inicio del método MiEvaluacion, después de cargar eval:
+           
+
             if (!Utilidades.ValidaSesion(Session, HttpContext))
                 return PartialView("Respuesta", "Su sesión termino favor de re ingresar al sistema");
 
@@ -48,6 +51,11 @@ namespace PlantillaMVC.Controllers
             else
             {
                 eval.sesion = Utilidades.negocio.RecuperaUsuarioEval(id);
+            }
+
+            if (eval.Liobjetivos == null)
+            {
+                eval.Liobjetivos = new List<Modelo.EObjetives>(); // o el tipo correcto
             }
 
             if (eval.sesion.Evaluacion == null)
@@ -82,7 +90,8 @@ namespace PlantillaMVC.Controllers
 
                 if (eval.ListaCompetencias != null)
                 {
-                    foreach (ECompetemces item in eval.ListaCompetencias) {
+                    foreach (ECompetemces item in eval.ListaCompetencias)
+                    {
                         ECatComp Comp = Utilidades.negocio.RecuperaUnaCatCompetencias(item.titulo);
                         ECatSubComp subComp = new ECatSubComp();
                         if (item.Subtitulo != 0)
@@ -165,14 +174,44 @@ namespace PlantillaMVC.Controllers
                 if (eval.sesion.Evaluacion.Status >= 11)
                 {
                     eval.Escaleta = Utilidades.negocio.RecuperaEscaleta();
-                    var sum_ponderado = eval.Liobjetivos.Sum(t => t.ValorObj);
+
+                    // ←←← CORRECCIÓN PRINCIPAL
+                    double sum_ponderado = 0;
+
+                    if (eval.Liobjetivos != null && eval.Liobjetivos.Any())
+                    {
+                        sum_ponderado = eval.Liobjetivos.Sum(t => t.ValorObj);
+                    }
+                    else
+                    {
+                        // Opcional: loguear para debug
+                        // System.Diagnostics.Debug.WriteLine("Liobjetivos es null o vacío - Status: " + eval.sesion.Evaluacion.Status);
+                    }
+
                     ViewBag.sum_ponderado = sum_ponderado;
-                    ViewBag.CalFinTemp = Utilidades.getScore(sum_ponderado);
-                    var autoeval2 = eval.Liobjetivos.Sum(e => e.AutoEval2);
+
+                    double finalScore = sum_ponderado;
+                    if (finalScore < 1) finalScore = 1;
+                    if (finalScore > 5) finalScore = 5;
+
+                    // Guardamos tanto entero como decimal
+                    ViewBag.CalFinTemp = new EEscaleta
+                    {
+                        Valor = Convert.ToInt32(Math.Round(finalScore, MidpointRounding.AwayFromZero))
+                    };
+
+                    ViewBag.CalFinalDecimal = finalScore;   // ← Útil para mostrar con decimales
+
+                    // Autoevaluación 2
+                    double autoeval2 = 0;
+                    if (eval.Liobjetivos != null && eval.Liobjetivos.Any())
+                    {
+                        autoeval2 = eval.Liobjetivos.Sum(e => e.AutoEval2);
+                    }
                     ViewBag.CalAutoEval = autoeval2;
                 }
             }
-            return PartialView(eval);
+                return PartialView(eval);
         }
 
         [Autentificado]
@@ -1342,7 +1381,12 @@ namespace PlantillaMVC.Controllers
                 envio.Evaluacion.ComEvaluador2 = modelo.sesion.Evaluacion.ComEvaluador2;
                 envio.Evaluacion.Modificadopor = sesion.Login.NombreCompleto;
                 var suma_ponderados = modelo.Liobjetivos.Sum(t => t.ValorObj);
-                envio.Evaluacion.CaliFinal2 = Utilidades.getScore(suma_ponderados).Valor;
+
+                int finalScore = Convert.ToInt32(Math.Round(suma_ponderados, MidpointRounding.AwayFromZero));
+                if (finalScore < 1) finalScore = 1;
+                if (finalScore > 5) finalScore = 5;
+                envio.Evaluacion.CaliFinal2 = finalScore;
+
                 if (Utilidades.negocio.GuardaEvaluacion(envio.Evaluacion))
                 {
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " guardo su evaluacion de segundo semestre. Evaluación: " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
@@ -1408,7 +1452,12 @@ namespace PlantillaMVC.Controllers
                 envio.Evaluacion.ComEvaluador2 = modelo.sesion.Evaluacion.ComEvaluador2;
                 //envio.Evaluacion.CaliFinal2 = modelo.sesion.Evaluacion.CaliFinal2;
                 var suma_ponderados = modelo.Liobjetivos.Sum(t => t.ValorObj);
-                envio.Evaluacion.CaliFinal2 = Utilidades.getScore(suma_ponderados).Valor;
+
+                int finalScore = Convert.ToInt32(Math.Round(suma_ponderados, MidpointRounding.AwayFromZero));
+                if (finalScore < 1) finalScore = 1;
+                if (finalScore > 5) finalScore = 5;
+                envio.Evaluacion.CaliFinal2 = finalScore;
+
                 if (Utilidades.negocio.GuardaEvaluacion(envio.Evaluacion))
                 {
                     Bitacora.NuevaEntrada("El usuario: " + sesion.Login.NombreCompleto + " guardo su calificacion final2 " + modelo.sesion.Evaluacion.id, "MisEvaluaciones/GuardaClaseEvaluacion ");
@@ -1721,7 +1770,12 @@ namespace PlantillaMVC.Controllers
             ViewBag.nObjetivos = liObjetivos.Count();
             ViewBag.PesoTotal = liObjetivos.Sum(t => t.ponderado);
             var sum_ponderados = liObjetivos.Sum(t => t.ValorObj);
-            ViewBag.CalFinalTemp = Utilidades.negocio.RecuperaEscaleta().Where(t=>t.Cal_Min<=sum_ponderados && t.Cal_Max>sum_ponderados).SingleOrDefault().Valor;
+
+            int finalScore = Convert.ToInt32(Math.Round(sum_ponderados, MidpointRounding.AwayFromZero));
+            if (finalScore < 1) finalScore = 1;
+            if (finalScore > 5) finalScore = 5;
+            ViewBag.CalFinalTemp = finalScore;
+
             return PartialView(liObjetivos);
         }
 
@@ -2315,6 +2369,23 @@ namespace PlantillaMVC.Controllers
                 ViewBag.porc = statusEval.Porc;
                 ViewBag.panel1 = panel1;
                 ViewBag.panel2 = panel2;
+
+                if (eval.sesion.Evaluacion.Status >= 11)
+                {
+                    eval.Escaleta = Utilidades.negocio.RecuperaEscaleta();
+                    double sum_ponderado = eval.Liobjetivos.Sum(t => t.ValorObj);
+                    ViewBag.sum_ponderado = sum_ponderado;
+
+                    double finalScore = sum_ponderado;
+                    if (finalScore < 1) finalScore = 1;
+                    if (finalScore > 5) finalScore = 5;
+
+                    ViewBag.CalFinTemp = new EEscaleta { Valor = Convert.ToInt32(Math.Round(finalScore, MidpointRounding.AwayFromZero)) };
+                    ViewBag.CalFinalDecimal = finalScore;
+
+                    var autoeval2 = eval.Liobjetivos.Sum(e => e.AutoEval2);
+                    ViewBag.CalAutoEval = autoeval2;
+                }
             }
             return PartialView(eval);
         }

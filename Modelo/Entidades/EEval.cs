@@ -140,7 +140,7 @@ namespace Modelo
         [DataMember]
         [Required(ErrorMessage = "Motivo Calibracion evaluador requerido")]
         [StringLength(4999, ErrorMessage = "El campo no puede tener más de 5000 letras.")]
-        [AttributeDataMember("MotivoRechazoObj2", SQLTypeBasic.TEXT)]
+        [AttributeDataMember("MotivoRechazoObj2", SQLTypeBasic.TEXT)]   
         public string MotivoRechazoObj2 { get; set; }
         [DataMember]
         [Required(ErrorMessage = "Motivo rechazo evaluador requerido")]

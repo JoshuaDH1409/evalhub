@@ -220,14 +220,14 @@ namespace PlantillaMVC.Controllers
                                                                                      select aux).ToList();
 
                             int NoEval = ListaEvalSessionTemp.Count;
-                            int TotalCalif = 0;
+                            double TotalCalif = 0.0;
                             if (ListaEvalSessionTemp.Count > 0)
                             {
                                 foreach (Modelo.Clases.CSessionEval eval in ListaEvalSessionTemp)
                                 {
                                     TotalCalif = TotalCalif + eval.Evaluacion.CaliFinal2;
                                 }
-                                int promedio = TotalCalif / ListaEvalSessionTemp.Count;
+                                double promedio = TotalCalif / ListaEvalSessionTemp.Count;
                                 resultado = resultado + "[\"" + item + "\"," + promedio.ToString() + ", \"#884DE6\"],";
                             }                          
                        

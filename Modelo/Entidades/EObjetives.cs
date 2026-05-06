@@ -207,12 +207,12 @@ namespace Modelo
 
         [Display(Name = "Valor objetivo")]
         [DisplayFormat(DataFormatString = "{0:F1}")]
-        public decimal ValorObj
+        public double ValorObj
         {
             get
             {
                 if (cumplimientoEvaluador2 != 0)
-                    return Decimal.Divide(ponderado * cumplimientoEvaluador2, 100);
+                    return Decimal.ToDouble(Decimal.Divide(ponderado * cumplimientoEvaluador2, 100));
                 else
                     return 0;
             }

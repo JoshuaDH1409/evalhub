@@ -130,7 +130,7 @@ namespace PlantillaMVC
             else
             {
                 results.CompC_SumaCumplimiento = objetivos_ind.Sum(t => t.cumplimientoEvaluador2);
-                results.CompC_SumaValor = objetivos_ind.Sum(t => t.ValorObj);
+                results.CompC_SumaValor = (decimal)objetivos_ind.Sum(t => t.ValorObj);
             }
             results.CompC_SumaPonderados = objetivos_ind.Sum(t => t.ponderado);
             results.CompB_Score = getScoreEmpresa(results.CompB_SumaValor).Score;

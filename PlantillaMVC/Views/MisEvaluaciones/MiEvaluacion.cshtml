@@ -1,4 +1,9 @@
 ﻿
+@using System.Collections.Generic
+@using System.Linq
+@using System.Collections.Generic
+
+
 @model Modelo.Clases.CEvaluacion
 @{
     string statusEt = "";
@@ -44,11 +49,7 @@
                 // Conversión exitosa
             }
         }
-        @if ((Model.sesion.Evaluacion.Status == 13) && (usuarioInt == 1 || usuarioInt == 2))
-        {
-            <text>En esta fase deberás calificar cada uno de los objetivos de tu colaborador con base en el cumplimiento de estos y agregar comentarios de retroalimentación.</text>
-        }
-        else if ((Model.sesion.Evaluacion.Status == 13) && (usuarioInt == 0))
+        @if ((Model.sesion.Evaluacion.Status == 13 || Model.sesion.Evaluacion.Status == 11) && (usuarioInt == 0))
         {
             <text>Estimado Colaborador, tu Jefe inmediato ha calificado tu evaluación y se inició la etapa de calibración. Pronto recibirás tu calificación final.</text>
         }
@@ -283,7 +284,7 @@
                 </tbody>
             </table>
             <p>
-               
+
             </p>
         </div>
     </div>
@@ -378,7 +379,7 @@
         <p>
             Describir los objetivos y expectativas para el periodo en formato SMART con indicadores específicos de medición y tiempo de revisión. En la columna de resultados proveer los datos numéricos que permitan dar sustento a la evaluación que se asigne
         </p>
-        <br />
+        
         <b>
             Podrás agregar máximo diez objetivos.
         </b>
@@ -489,8 +490,11 @@
                             <div style="position: absolute; top: 0px;right: 4px; border: 0;">
                                 @if (ViewBag.status == 0 || ViewBag.status == 2 || (ViewBag.status == 4 && ViewBag.usuario == 0 && item.Etapa != 5) || (ViewBag.status == 5 && ViewBag.usuario == 1) || (ViewBag.status == 6 && ViewBag.usuario == 1) || (ViewBag.status == 10 && ViewBag.usuario == 0 && item.Etapa != 10) || (ViewBag.status == 11 && ViewBag.usuario == 1) || (ViewBag.status == 12 && ViewBag.usuario == 1) || (ViewBag.status == 16 && ViewBag.usuario == 0))
                                 {
-                                    @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "color: #FFF; margin-right: 16px;", @title = "Editar" })
-                                    @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red; margin-right: 8px;", @title = "Eliminar" })
+                                    @Ajax.ActionLink(" ", "OperacionObjetivos", "MisEvaluaciones", new { id = item.id, eval = item.Eval, status = ViewBag.status, Usr = ViewBag.usuario }, new AjaxOptions { UpdateTargetId = "Detalle", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera", OnSuccess = "AbrirDetalle" }, new { @class = "fa fa-edit", style = "color: #FFF; margin-right: 16px; display: inline-block;", @title = "Editar" })
+                                    @Html.Raw("&nbsp;&nbsp;&nbsp;&nbsp;")
+                                    @Ajax.ActionLink(" ", "EliminaUnObjetivos", "MisEvaluaciones", new { id = item.id }, new AjaxOptions { UpdateTargetId = "", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", OnSuccess = "loadTable()", Confirm = "¿Seguro desea eliminar el elemento?" }, new { @class = "fa fa-times", @style = "color: red; margin-right: 8px ; display: inline-block;", @title = "Eliminar" })
+
+
                                 }
                             </div>
                         </h3>
@@ -568,10 +572,10 @@
                                             </tr>
                                         }
                                         @*<tr>
-                    <th>Comentario Final</th>
-                    <td>@item.ComentariosJefeEvalFinall2</td>
-                    <td></td>
-                </tr>*@
+                                                <th>Comentario Final</th>
+                                                <td>@item.ComentariosJefeEvalFinall2</td>
+                                                <td></td>
+                                            </tr>*@
                                     }
                                 }
                             </table>
@@ -585,58 +589,66 @@
                     <div class="float-left"><strong>Total peso objetivos (%)</strong></div>
                     <div class="float-right"><strong id="pesototalobjetivos">@ViewBag.PesoTotal</strong></div>
                 </div>
-                        }
-
-
-                        else if (Model.sesion.Evaluacion.Status < 16)
-                        {
-                            if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 0)
-                            {
-                                   <div class="clearfix alert alert-success mt-1">
-
-                                    <div class="float-left"></div> </div>
-                }
-    else { 
-                <div class="clearfix alert alert-success mt-1">
-
-                    <div class="float-left"><strong>  Calificación: @ViewBag.sum_ponderado </strong></div>
-                    @if ((Model.sesion.Evaluacion.Status != 11 && Model.sesion.Evaluacion.Status != 13 && Model.sesion.Evaluacion.Status != 15) && ViewBag.usuario == 0)
-                    {
-                        //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
-                    }
-            @if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
-                    {
-                //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
             }
-            @if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 2)
+
+
+            else if (Model.sesion.Evaluacion.Status < 16)
             {
-                //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
-            }
-                </div>
+                if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 0)
+                {
+                    <div class="clearfix alert alert-success mt-1">
+
+                        <div class="float-left"></div>
+                    </div>
+                }
+                else
+                {
+                    <div class="clearfix alert alert-success mt-1">
+
+                        <div class="float-left">
+                            <strong>Calificación: @Convert.ToDouble(ViewBag.CalFinalDecimal).ToString("0.00")</strong>
+                        </div>
+
+                        @* FORZAR EL GUARDADO EN EL MODELO *@
+                        <input type="hidden" name="sesion.Evaluacion.CaliFinal2" id="sesion_Evaluacion_CaliFinal2" value="@ViewBag.CalFinTemp.Valor" />
+
+                        @if ((Model.sesion.Evaluacion.Status != 11 && Model.sesion.Evaluacion.Status != 13 && Model.sesion.Evaluacion.Status != 15) && ViewBag.usuario == 0)
+                        {
+                            //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
                         }
+                        @if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
+                        {
+                            //<div class="float-right"><strong id="">Calificación Final: @ViewBag.CalFinTemp.Valor </strong></div>
+                        }
+                        @if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 2)
+                        {
+                            //<div class="float-right"><strong id="">Calificación Final: @Model.sesion.Evaluacion.CaliFinal2 </strong></div>
+                        }
+                    </div>
+                }
 
-                    }
-                    <script>
-                        $(function () {
-                            $("#accordion").accordion({
-                collapsible: true,
-                                active: false,
-                                heightStyle: "content"
-                            });
-            });
-                    </script>
-                </div>
+            }
+            <script>
+                $(function () {
+                    $("#accordion").accordion({
+                        collapsible: true,
+                        active: false,
+                        heightStyle: "content"
+                    });
+                });
+            </script>
+        </div>
 
-                @*APARTADO SMART*@
-                <p><strong>Ejemplo para construir objetivos SMART:</strong></p>
-                <p style="text-align:center; color: #004b8d;">
-                    <a id="fancybox-smart" href="javascript:;" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i> Referencia para creación de objetivos</a>
-                </p>
-                <div style="display: none;">
-                    <a href="~/Imgs/formato_smart.png" data-options='{"caption" : "Formato Objetivo SMART" }' class="imgSmart"></a>
-                    <a href="~/Imgs/objetivos_smart.jpg" data-options='{"caption" : "Objetivos SMART" }' class="imgSmart"></a>
-                </div>
-            </div>@*<p style="text-align:center; color: #004b8d;">
+        @*APARTADO SMART*@
+        <p><strong>Ejemplo para construir objetivos SMART:</strong></p>
+        <p style="text-align:center; color: #004b8d;">
+            <a id="fancybox-smart" href="javascript:;" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i> Referencia para creación de objetivos</a>
+        </p>
+        <div style="display: none;">
+            <a href="~/Imgs/formato_smart.png" data-options='{"caption" : "Formato Objetivo SMART" }' class="imgSmart"></a>
+            <a href="~/Imgs/objetivos_smart.jpg" data-options='{"caption" : "Objetivos SMART" }' class="imgSmart"></a>
+        </div>
+    </div>@*<p style="text-align:center; color: #004b8d;">
             <a data-fancybox="gallery" href="~/Imgs/objetivos_smart.jpg" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i> Referencia para creación de objetivos</a>
             <a data-fancybox="gallery" href="~/Imgs/objetivos_smart.jpg" class="btn btn-default" style="color: #004b8d;"><i class="fa fa-th-list"></i>Objetivos SMART</a>
         </p>*@
@@ -860,26 +872,26 @@
                                     <td style="width: 50%;">@item.DateFin</td>
                                 </tr>
 
-                                 <tr class="ObjetivosPTP">
-                                     <td style="background-color: #F9F9F9; font-weight: bold;">
-                                         Comentarios autoevaluación
-                                         <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
-                                             
-                                         </p>
+                                <tr class="ObjetivosPTP">
+                                    <td style="background-color: #F9F9F9; font-weight: bold;">
+                                        Comentarios autoevaluación
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
 
-                                     </td>
-                                     <td style="width: 50%;">@item.ComAutoPTP</td>
-                                 </tr>
+                                        </p>
 
-                                 <tr class="ObjetivosPTP">
-                                        <td style="background-color: #F9F9F9; font-weight: bold;">
-                                            Comentarios evaluador
-                                            <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
-                                                
-                                            </p>
-    
-                                        </td>
-                                        <td style="width: 50%;">@item.ComEvaluadorPTP</td>
+                                    </td>
+                                    <td style="width: 50%;">@item.ComAutoPTP</td>
+                                </tr>
+
+                                <tr class="ObjetivosPTP">
+                                    <td style="background-color: #F9F9F9; font-weight: bold;">
+                                        Comentarios evaluador
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
+
+                                        </p>
+
+                                    </td>
+                                    <td style="width: 50%;">@item.ComEvaluadorPTP</td>
 
                                 </tr>
 
@@ -1026,26 +1038,26 @@
                                     <td style="width: 50%;">@item.dateFinish</td>
                                 </tr>
 
-                                 <tr class="ObjetivosPDP">
-                                     <td style="background-color: #F9F9F9; font-weight: bold;">
-                                         Comentarios autoevaluación
-                                         <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
-             
-                                         </p>
+                                <tr class="ObjetivosPDP">
+                                    <td style="background-color: #F9F9F9; font-weight: bold;">
+                                        Comentarios autoevaluación
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
 
-                                     </td>
-                                     <td style="width: 50%;">@item.ComAutoPDP</td>
-                                 </tr>
+                                        </p>
 
-                                 <tr class="ObjetivosPDP">
-                                        <td style="background-color: #F9F9F9; font-weight: bold;">
-                                            Comentarios evaluador
-                                            <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
-                
-                                            </p>
-    
-                                        </td>
-                                        <td style="width: 50%;">@item.ComEvaluadorPDP</td>
+                                    </td>
+                                    <td style="width: 50%;">@item.ComAutoPDP</td>
+                                </tr>
+
+                                <tr class="ObjetivosPDP">
+                                    <td style="background-color: #F9F9F9; font-weight: bold;">
+                                        Comentarios evaluador
+                                        <p style="font-size: 12px; font-weight: normal; text-align: left; width: 50%;">
+
+                                        </p>
+
+                                    </td>
+                                    <td style="width: 50%;">@item.ComEvaluadorPDP</td>
 
                                 </tr>
 
@@ -1134,7 +1146,7 @@
         <p>
             Esta calificación deberá asignarse una vez concluida la sesión de calibración. El resultado final deberá redondearse al nivel de desempeñó que corresponda
             (para subir o bajar.)
-            
+
         </p>
         <p>
             La calificación de calibración puede ser diferente a la autoevaluación y/o a la calificación previamente asignada por ti.
@@ -1148,10 +1160,10 @@
                             Objetivo
                         </th>
                         @*<th class="align-middle text-center">Calificación</th>*@
-                        
+
                         @*<th class="align-middle text-center width-33">
-                            Calificación Final
-                        </th>*@
+                                Calificación Final
+                            </th>*@
                         @if (Model.sesion.Evaluacion.Status == 15)
                         {
                             <th class="align-middle text-center">Calificación de desempeño</th>
@@ -1176,7 +1188,7 @@
 
                         foreach (var item in Model.Escaleta)
                         {
-                            //if (item.Valor == Model.sesion.Evaluacion.CaliFinal2 && Model.sesion.Evaluacion.CaliFinalCalibracion == 0)
+                            //if (item.Valor == Model.sesion.Evaluacion. && Model.sesion.Evaluacion.CaliFinalCalibracion == 0)
                             //{
                             //    fondo = "bg-success";
                             //}
@@ -1195,46 +1207,46 @@
                                     fondocalibrado = "";
                                 }
                             }
-                                        <tr class="@fondo  @fondocalibrado">
-                                            <td>@Html.Raw(item.Objetivo)</td>
-                                            @*<td class="text-center">@item.Ponderacion</td>*@
-                                            @*<td class="@fondo" align="center">@ViewBag.CalAutoEval</td>*@
-                                            @*<td class="@fondo" align="center">@item.Valor</td>*@
-                                            @if (Model.sesion.Evaluacion.Status == 15)
-                                            {
-                                                <td align="center">@item.Valor</td>
-                                            }
+                            <tr class="@fondo  @fondocalibrado">
+                                <td>@Html.Raw(item.Objetivo)</td>
+                                @*<td class="text-center">@item.Ponderacion</td>*@
+                                @*<td class="@fondo" align="center">@ViewBag.CalAutoEval</td>*@
+                                @*<td class="@fondo" align="center">@item.Valor</td>*@
+                                @if (Model.sesion.Evaluacion.Status == 15)
+                                {
+                                    <td align="center">@item.Valor</td>
+                                }
 
-                                            @*@if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1 || (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2))
-        {
-            <td>
-                <div class="radio">
-                    <label>
-                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new {   }) 4<br />
-                    </label>
-                </div>
-            </td>
-        }*@
-                                            @*else if (Model.sesion.Evaluacion.Status > 11 && Model.sesion.Evaluacion.Status <= 15)
-        {
-            <td>
-                <div class="radio">
-                    <label>
-                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new { disabled = "disabled" }) 4<br />
-                    </label>
-                </div>
-            </td>
-        }*@
-                                            @*else
-        {
-            <td>
-                @if (Model.sesion.Evaluacion.CaliFinal2 == 4)
-                {
-                <label>@Model.sesion.Evaluacion.CaliFinal2</label>
-                }
-            </td>
-        }*@
-                                        </tr>
+                                @*@if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1 || (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2))
+                                    {
+                                        <td>
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new {   }) 4<br />
+                                                </label>
+                                            </div>
+                                        </td>
+                                    }*@
+                                @*else if (Model.sesion.Evaluacion.Status > 11 && Model.sesion.Evaluacion.Status <= 15)
+                                    {
+                                        <td>
+                                            <div class="radio">
+                                                <label>
+                                                    @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new { disabled = "disabled" }) 4<br />
+                                                </label>
+                                            </div>
+                                        </td>
+                                    }*@
+                                @*else
+                                    {
+                                        <td>
+                                            @if (Model.sesion.Evaluacion.CaliFinal2 == 4)
+                                            {
+                                            <label>@Model.sesion.Evaluacion.CaliFinal2</label>
+                                            }
+                                        </td>
+                                    }*@
+                            </tr>
                         }
                     }
                     <!--<tr>
@@ -1353,24 +1365,24 @@
 
         </div>
         @*if (Model.sesion.Evaluacion.Status == 15)
-        {
-            <div id="PanelComentariosCalibración">
-                <hr>
-                <h4>
-                    Comentarios calibración
-                    <div class="btn-toolbar float-right">
-                        <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosCalibracion">
-                            <i class="fa fa-compress-alt"></i>
-                        </button>
-                    </div>
-                </h4>
-                <div class="collapse show" id="collapseComentariosCalibracion">
-                    <div class="form-group">
-                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control", @readonly = "readonly" })
+            {
+                <div id="PanelComentariosCalibración">
+                    <hr>
+                    <h4>
+                        Comentarios calibración
+                        <div class="btn-toolbar float-right">
+                            <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosCalibracion">
+                                <i class="fa fa-compress-alt"></i>
+                            </button>
+                        </div>
+                    </h4>
+                    <div class="collapse show" id="collapseComentariosCalibracion">
+                        <div class="form-group">
+                            @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control", @readonly = "readonly" })
+                        </div>
                     </div>
                 </div>
-            </div>
-        }*@
+            }*@
     }
 
     //ViewBag.usuario ***************************
@@ -1833,482 +1845,417 @@
                     </div>
                 </div>
             </div>
-        }
+                            }
 
-    }
-    else if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 2)
-    {
-        <hr />
-        <div class="panel-group" id="accordion_calibracion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-                <div class="panel-heading active" role="tab" id="headingOne">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion_calibracion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Calificación por Calibración
-                        </a>
-                    </h4>
-                </div>
-                <p>
-                    Esta calificación deberá asignarse una vez concluida la sesión de calibración. El resultado final deberá redondearse al nivel de desempeñó que corresponda
-                    (para subir o bajar.)
+                        }
 
-                </p>
-                <p>
-                    La calificación de calibración puede ser diferente a la autoevaluación y/o a la calificación previamente asignada por ti.
-                </p>
-                <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body">
-                        <table class="table table-sm table-bordered table-striped">
-                            <thead>
-                                <tr class="bg-light">
-                                    <th class="width-66">
-                                        Objetivo
-                                    </th>
-                                    <th class="text-center width-33">
-                                        Calificación Final
-                                    </th>
-                                    <th class="text-center width-33">
-                                        Calificación calibración
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @*<tr>
-                            <td>
-                                ("Qué" se logró)<br />
-                                Resultados esperados (Metas, Objetivos, Estándares) basados en las responsabilidades y asignaciones del trabajo
-                            </td>
-                            <td>
-                            </td>
-                            <td></td>
-                        </tr>*@
-                                @{ var fondo = "";
+                        if (Model.sesion.Evaluacion.Status == 13 && ViewBag.usuario == 2)
+                        {
 
-                                    foreach (var item in Model.Escaleta)
-                                    {
-                                        if (item.Valor == Model.sesion.Evaluacion.CaliFinal2)
-                                        {
-                                            fondo = "bg-success";
-                                        }
-                                        else
-                                        {
-                                            fondo = "";
-                                        }
-                                        <tr class="@fondo">
-                                            <td>@Html.Raw(item.Objetivo)</td>
-                                            @if (item.Valor == Model.sesion.Evaluacion.CaliFinal2)
-                                            {
-                                                <td class="text-center font-weight-bold">@Model.sesion.Evaluacion.CaliFinal2</td>
-                                            }
-                                            else
-                                            {
-                                                <td></td>
-                                            }
-                                            <td class="text-center font-weight-bold">
-                                                <div class="radio">
-                                                    <label>
-                                                        @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, item.Valor, new { }) @item.Valor<br />
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            @*else if (Model.sesion.Evaluacion.Status > 11 && Model.sesion.Evaluacion.Status <= 15)
-                                    {
-                                        <td>
-                                            <div class="radio">
-                                                <label>
-                                                    @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2, "4", new { disabled = "disabled" }) 4<br />
-                                                </label>
-                                            </div>
-                                        </td>
-                                    }*@
-                                            @*else
-                                    {
-                                        <td>
-                                            @if (Model.sesion.Evaluacion.CaliFinal2 == 4)
-                                            {
-                                            <label>@Model.sesion.Evaluacion.CaliFinal2</label>
-                                            }
-                                        </td>
-                                    }*@
-                                        </tr>
+                                                        <div class="panel-group" id="accordion_calibracion" role="tablist" aria-multiselectable="true">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading active" role="tab" id="headingOne">
+                                                                    <h4 class="panel-title">
+                                                                        <a role="button" data-toggle="collapse" data-parent="#accordion_calibracion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                            Calificación por Calibración
+                                                                        </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <p>
+                                                                    Esta calificación deberá asignarse una vez concluida la sesión de calibración. El resultado final deberá redondearse al nivel de desempeñó que corresponda
+                                                                    (para subir o bajar.)
+                                                                    La calificación de calibración puede ser diferente a la autoevaluación y/o a la calificación previamente asignada por ti.
+                                                                </p>
 
-                                    }
-                                }
+                                                                <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                                                    <div class="panel-body">
+                                                                        <table class="table table-sm table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr class="bg-light">
+                                                                                    <th class="width-66">Objetivo</th>
+                                                                                    <th class="text-center width-33">Calificación Final</th>
+                                                                                    <th class="text-center width-33">Calificación calibración</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                @{
+                                                                                    
+                                                                                    var evaluacion =  Model.sesion.Evaluacion;
+                                                                                    double califActual = 0;
+                                                                                    if (evaluacion != null && evaluacion.CaliFinal2 != null)
+                                                                                    {
+                                                                                        califActual = Convert.ToDouble(evaluacion.CaliFinal2);
+                                                                                        
 
-                            </tbody>
-                        </table>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-        <!--<div id="pnlComentariosJefeSupervisor">
-            <hr>
-            <h3>-->
-                @*Motivo de calibración*@
-                @*<div class="btn-toolbar float-right">
-                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoJS2">
-                        <i class="fa fa-compress-alt"></i>
-                    </button>
-                </div>
-            </h3>*@
-            @*<div class="collapse show" id="collapseComentariosRechazoJS2">
+                                                                                    }
+                                                                                    var escaleta = Model.Escaleta;
+                                                                                    foreach (var item in escaleta)
+                                                                                    {
+                                                                                        string fondo = "";
+                                                                                        if (item.Valor == califActual)
+                                                                                        {
+                                                                                            fondo = "bg-success";
+                                                                                        }
 
-                <div class="form-group">
-                    @if (Model.sesion.Evaluacion.Status == 13 && ViewBag.Usuario == 2)
-                    {
-                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control" })
-                    }
-                    else
-                    {
-                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
-                    }
-                </div>
+                                                                                    <tr class="@fondo">
+                                                                                        <td>@Html.Raw(item.Objetivo)</td>
 
-            </div>*@
-        <!--</div>-->
+                                                                                        <!-- Columna valor seleccionado -->
+                                                                                        <td class="text-center font-weight-bold">
+                                                                                            @if (item.Valor == califActual)
+                                                                                            {
+                                                                                                @Convert.ToDouble(ViewBag.CalFinalDecimal).ToString("0.00")
+                                                                                                
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                <text>&nbsp;</text>
+                                                                                            }
+                                                                                        </td>
 
-        <div style="text-align: center;">
-            <input type="hidden" id="TemporalCalif2" name="TemporalCalif2" class="oculto">
-            <button class="btn btn-success"
-                    id="Calibracion2"
-                    name="submitButton"
-                    type="submit"
-                    value="Calibracion2"
+                                                                                        <!-- Radio buttons -->
+                                                                                        <td class="text-center font-weight-bold">
+                                                                                            <div class="radio">
+                                                                                                <label>
+                                                                                                    @Html.RadioButtonFor(m => m.sesion.Evaluacion.CaliFinal2,
+                                                                                                                  item.Valor,
+                                                                                                                  new { @checked = (item.Valor == califActual) })
+                                                                                                    @item.Valor.ToString()
+                                                                                                </label>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                        }
+                                                                                    }
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+        
+        <div style="text-align: center; margin-top: 15px;">
+            <input type="hidden" id="TemporalCalif2" name="TemporalCalif2" class="oculto" />
+            <button class="btn btn-success" id="Calibracion2" name="submitButton" type="submit" value="Calibracion2"
                     onclick="return confirm('¿Estás seguro de continuar?');">
-                Calibrar/Cerrar evaluación
+                Calibrar / Cerrar evaluación
             </button>
         </div>
-
-        @*<div style="text-align: center;">
-                <input type="text" id="TemporalCalif2" name="TemporalCalif2" class="oculto">
-                <button class="btn btn-success" id="Calibracion2" name="submitButton" type="submit" value="Calibracion2">Calibrar/Cerrar evaluación </button>
-            </div>*@
     }
-
-    @*if (Model.sesion.Evaluacion.Status == 11 && ViewBag.usuario == 1)
-            {
-                <div style="text-align: center;">
-                    <button class="btn btn-success" id="CerrarEval2" name="submitButton" type="submit" value="CerrarEval2">Cerrar evaluacón </button>
-                    @if (Model.sesion.Evaluacion.ComentariosSegundoNivel == "")
-        {
-                        <button class="btn btn-primary" id="EnvioSuperior2" name="submitButton" type="submit" value="EnvioSuperior2">Enviar evaluación a superior</button>
-                    }
-                </div>
-            }*@
 
     if (Model.sesion.Evaluacion.Status == 15 && ViewBag.usuario == 2)
     {
-        <div id="pnlComentariosJefeSupervisor">
-            <hr>
-            <h3>
-                Motivo calibración Etapa 2
-                <div class="btn-toolbar float-right">
-                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosCalibra2">
-                        <i class="fa fa-compress-alt"></i>
-                    </button>
-                </div>
-            </h3>
-            <div class="collapse in" id="collapseComentariosCalibra2">
-                <table class="table table-bordered table-striped">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="form-group">
-                                    @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control" })
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+    <div id="pnlComentariosJefeSupervisor">
+        <hr>
+        <h3>
+            Motivo calibración Etapa 2
+            <div class="btn-toolbar float-right">
+                <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosCalibra2">
+                    <i class="fa fa-compress-alt"></i>
+                </button>
             </div>
+        </h3>
+        <div class="collapse in" id="collapseComentariosCalibra2">
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoCalibracion2, new { @class = "form-control" })
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div style="text-align: center;">
-            <button class="btn btn-success" id="Calibracion2" name="submitButton" type="submit" value="Calibracion2">Calibrar </button>
-        </div>
+    </div>
+    <div style="text-align: center;">
+        <button class="btn btn-success" id="Calibracion2" name="submitButton" type="submit" value="Calibracion2">Calibrar </button>
+    </div>
     }
 
     <!-- Etapa 1 : del lado del empleado -->
     if (Model.sesion.Evaluacion.Status == 16 && ViewBag.usuario == 0)
     {
-        if (Model.sesion.Evaluacion.MotivoRechazoObj != "")
-        {
-            <div id="pnlComentariosJefeSupervisor">
-                <hr>
-                <h3>
-                    Comentarios rechazo objetivos
-                    <div class="btn-toolbar float-right">
-                        <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosJS">
-                            <i class="fa fa-compress-alt"></i>
-                        </button>
-                    </div>
-                </h3>
-                <div class="collapse show" id="collapseComentariosJS">
-                    <div class="form-group">
-                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
-                    </div>
-                </div>
+    if (Model.sesion.Evaluacion.MotivoRechazoObj != "")
+    {
+    <div id="pnlComentariosJefeSupervisor">
+        <hr>
+        <h3>
+            Comentarios rechazo objetivos
+            <div class="btn-toolbar float-right">
+                <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosJS">
+                    <i class="fa fa-compress-alt"></i>
+                </button>
             </div>
-        }
-        <div style="text-align: center;">
-            <button class="btn btn-primary" id="CagraObjetivosEx" name="submitButton" type="submit" value="CagraObjetivosEx"><i class="fa fa-paper-plane"></i> Enviar objetivos para aprobación</button>
+        </h3>
+        <div class="collapse show" id="collapseComentariosJS">
+            <div class="form-group">
+                @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+            </div>
         </div>
+    </div>
+    }
+    <div style="text-align: center;">
+        <button class="btn btn-primary" id="CagraObjetivosEx" name="submitButton" type="submit" value="CagraObjetivosEx"><i class="fa fa-paper-plane"></i> Enviar objetivos para aprobación</button>
+    </div>
     }
     else if (Model.sesion.Evaluacion.Status == 17 && ViewBag.usuario == 1)
     {
-        <div id="pnlComentariosJefeSupervisor">
-            <hr>
-            <h3>
-                Comentarios rechazo objetivos
-                <div class="btn-toolbar float-right">
-                    <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoObj">
-                        <i class="fa fa-compress-alt"></i>
+    <div id="pnlComentariosJefeSupervisor">
+        <hr>
+        <h3>
+            Comentarios rechazo objetivos
+            <div class="btn-toolbar float-right">
+                <button name="button" class="btn btn-default btn-compress" aria-expanded="false" aria-controls="collapseExample" type="button" data-toggle="collapse" data-target="#collapseComentariosRechazoObj">
+                    <i class="fa fa-compress-alt"></i>
+                </button>
+            </div>
+        </h3>
+        <div class="collapse show" id="collapseComentariosRechazoObj">
+            <div class="form-group">
+                @if (Model.sesion.Evaluacion.Rechazos < 3)
+                {
+                    @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control" })
+                }
+                else
+                {
+                    @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
+                }
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <input type="hidden" id="TemporalObj" name="TemporalObj" class="oculto">
+        <button class="btn btn-success" id="AceptarObjetivosEx" name="submitButton" type="submit" value="AceptarObjetivosEx"><i class="fa fa-check-square-o" aria-hidden="true"></i> Aceptar objetivos</button>
+        @if (Model.sesion.Evaluacion.Rechazos < 3)
+        {
+            <button class="btn btn-danger" id="RechazarObjetivos" name="submitButton" type="submit" value="RechazarObjetivosEx"><i class="fa fa-ban" aria-hidden="true"></i> Rechazar objetivos</button>
+        }
+    </div>
+    }
+    }
+
+    @*@if (Model.sesion.Evaluacion.Status > 1)
+        {
+            using (Html.BeginForm("DownloadPdfDetailed", "MiHistorial", new { Id = Model.sesion.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+            {
+                <button type="submit" class="btn btn-default">Descargar <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+            }
+        }*@
+    @if (Model.sesion.Evaluacion.Status != 13)
+    {
+        using (Html.BeginForm("DownloadPdfNew", "MiHistorial", new { Id = Model.sesion.Evaluacion.id, typeLanguaje = 0 }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+        {
+            <button type="submit" class="btn btn-default">Descargar ES <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+        }
+
+
+        using (Html.BeginForm("DownloadPdfNew", "MiHistorial", new { Id = Model.sesion.Evaluacion.id, typeLanguaje = 1 }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
+        {
+            <button type="submit" class="btn btn-default">Descargar EN <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+        }
+    }
+
+    <div style="visibility:hidden; display:none;">
+        @Ajax.ActionLink("RecargaTabla", "RecargaObjetivos", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
+    new AjaxOptions { UpdateTargetId = "TblObjetivos", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
+    new { id = "RecargaTabla" })
+    </div>
+
+    <div style="visibility:hidden; display:none;">
+        @Ajax.ActionLink("Competencias", "RecargaCompetencias", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
+    new AjaxOptions { UpdateTargetId = "TblCompetencias", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
+    new { id = "Competencias" })
+    </div>
+
+    @*PARA OBJETIVOS PDP*@
+    <div style="visibility:hidden; display:none;">
+        @Ajax.ActionLink("ObjetivosPDP", "RecargaObjetivosPDP", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
+    new AjaxOptions { UpdateTargetId = "TblObjetivosPDP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
+    new { id = "ObjetivosPDP" })
+    </div>
+
+    @*PARA OBJETIVOS PTP*@
+    <div style="visibility:hidden; display:none;">
+        @Ajax.ActionLink("ObjetivosPTP", "RecargaObjetivosPTP", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
+    new AjaxOptions { UpdateTargetId = "TblObjetivosPTP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
+    new { id = "ObjetivosPTP" })
+    </div>
+
+    <input type="hidden" id="TemporalObj" name="TemporalObj" class="oculto">
+
+    <div class="modal fade" id="ModalDetalle" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                    <h4 class="modal-title">Objetivos</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-            </h3>
-            <div class="collapse show" id="collapseComentariosRechazoObj">
-                <div class="form-group">
-                    @if (Model.sesion.Evaluacion.Rechazos < 3)
-                    {
-                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control" })
-                    }
-                    else
-                    {
-                        @Html.TextAreaFor(m => m.sesion.Evaluacion.MotivoRechazoObj, new { @class = "form-control", @readonly = "readonly", @style = "background-color:#eeeeee" })
-                    }
+                <div class="modal-body">
+                    <div id="Detalle"> </div> @*se llena con el ajax*@
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalCompetencias" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <!-- Modal content-->
+                <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                    <h4 class="modal-title">Competencias</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="DetalleCompetencias" style="width:100%;"></div> @*se llena con el ajax*@
                 </div>
             </div>
         </div>
-        <div style="text-align: center">
-            <input type="hidden" id="TemporalObj" name="TemporalObj" class="oculto">
-            <button class="btn btn-success" id="AceptarObjetivosEx" name="submitButton" type="submit" value="AceptarObjetivosEx"><i class="fa fa-check-square-o" aria-hidden="true"></i> Aceptar objetivos</button>
-            @if (Model.sesion.Evaluacion.Rechazos < 3)
-            {
-                <button class="btn btn-danger" id="RechazarObjetivos" name="submitButton" type="submit" value="RechazarObjetivosEx"><i class="fa fa-ban" aria-hidden="true"></i> Rechazar objetivos</button>
-            }
-        </div>
-    }
-}
+    </div>
 
-@*@if (Model.sesion.Evaluacion.Status > 1)
-    {
-        using (Html.BeginForm("DownloadPdfDetailed", "MiHistorial", new { Id = Model.sesion.Evaluacion.id }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
-        {
-            <button type="submit" class="btn btn-default">Descargar <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
+    @*MODAL PARA OBJETIVOS PTP*@
+    <div class="modal fade" id="ModalObjetivosPTP" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <!-- Modal content-->
+                <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                    <h4 class="modal-title">PLAN DE CAPACITACIÓN PERSONAL - ROL ACTUAL</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="DetalleObjetivosPTP" style="width:100%;"></div> @*se llena con el ajax*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*MODAL PARA OBJETIVOS PDP*@
+    <div class="modal fade" id="ModalObjetivosPDP" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <!-- Modal content-->
+                <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                    <h4 class="modal-title">PLAN DE DESARROLLO PERSONAL - ENFOCADO EN LA CARRERA</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="DetalleObjetivosPDP" style="width:100%;"></div> @*se llena con el ajax*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="ModalDetalleObj" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <!-- Modal content-->
+                <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                    <h5 class="modal-title">Objetivos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="DetalleObj"></div> @*se llena con el ajax*@
+                </div>
+                <div class="modal-footer" style="padding-bottom: 0px;">
+                    <p style="text-align:right;">
+                        <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal">  <x style="font-family:Arial"> Cerrar</x></button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="txtPesoTotal" />
+    <div class="modal fade" id="ModalEscaleta" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
+                    <h4 class="modal-title">Escaleta de Calificaciones</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="DetalleEscaleta"></div> @*se llena con el ajax*@
+                </div>
+                <div class="modal-footer" style="padding-bottom: 0px;">
+                    <p style="text-align:right;">
+                        <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal">  <x style="font-family:Arial"> Cerrar</x></button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Fragmento de codigo para implementar doble Scroll*@
+    <style>
+        .wmd-view-topscroll, .wmd-view {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 300px;
+            border: none 0px RED;
         }
-    }*@
-@if (Model.sesion.Evaluacion.Status != 13)
-{
-    using (Html.BeginForm("DownloadPdfNew", "MiHistorial", new { Id = Model.sesion.Evaluacion.id, typeLanguaje = 0 }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
-    {
-        <button type="submit" class="btn btn-default">Descargar ES <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
-    }
 
+        .wmd-view-topscroll {
+            height: 18px;
+            width: 100%;
+        }
 
-    using (Html.BeginForm("DownloadPdfNew", "MiHistorial", new { Id = Model.sesion.Evaluacion.id, typeLanguaje = 1 }, FormMethod.Post, new { enctype = "multipart/form-data", @style = "text-align: center; margin-top: 10px;" }))
-    {
-        <button type="submit" class="btn btn-default">Descargar EN <img src="~/Imgs/img-pdf.png" width="25px" height="25px" /></button>
-    }
-}
+        .wmd-view {
+            /*height: 200px;*/
+            width: 100%;
+        }
 
-<div style="visibility:hidden; display:none;">
-    @Ajax.ActionLink("RecargaTabla", "RecargaObjetivos", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
-new AjaxOptions { UpdateTargetId = "TblObjetivos", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
-new { id = "RecargaTabla" })
-</div>
+        .wmd-view-topscroll2, .wmd-view2 {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 300px;
+            border: none 0px RED;
+        }
 
-<div style="visibility:hidden; display:none;">
-    @Ajax.ActionLink("Competencias", "RecargaCompetencias", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
-new AjaxOptions { UpdateTargetId = "TblCompetencias", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
-new { id = "Competencias" })
-</div>
+        .wmd-view-topscroll2 {
+            height: 18px;
+            width: 100%;
+        }
 
-@*PARA OBJETIVOS PDP*@
-<div style="visibility:hidden; display:none;">
-    @Ajax.ActionLink("ObjetivosPDP", "RecargaObjetivosPDP", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
-new AjaxOptions { UpdateTargetId = "TblObjetivosPDP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
-new { id = "ObjetivosPDP" })
-</div>
-
-@*PARA OBJETIVOS PTP*@
-<div style="visibility:hidden; display:none;">
-    @Ajax.ActionLink("ObjetivosPTP", "RecargaObjetivosPTP", "MisEvaluaciones", new { Eval = @Model.sesion.Evaluacion.id, status = Model.sesion.Evaluacion.Status, Usr = ViewBag.usuario },
-new AjaxOptions { UpdateTargetId = "TblObjetivosPTP", OnBegin = "AbreCierraDilogoEspera", OnComplete = "AbreCierraDilogoEspera();VerificaSesionEnv()", HttpMethod = "GET" },
-new { id = "ObjetivosPTP" })
-</div>
-
-<input type="hidden" id="TemporalObj" name="TemporalObj" class="oculto">
-
-<div class="modal fade" id="ModalDetalle" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
-                <h4 class="modal-title">Objetivos</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="Detalle"> </div> @*se llena con el ajax*@
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="modal fade" id="ModalCompetencias" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <!-- Modal content-->
-            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
-                <h4 class="modal-title">Competencias</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="DetalleCompetencias" style="width:100%;"></div> @*se llena con el ajax*@
-            </div>
-        </div>
-    </div>
-</div>
-
-@*MODAL PARA OBJETIVOS PTP*@
-<div class="modal fade" id="ModalObjetivosPTP" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <!-- Modal content-->
-            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
-                <h4 class="modal-title">PLAN DE CAPACITACIÓN PERSONAL - ROL ACTUAL</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="DetalleObjetivosPTP" style="width:100%;"></div> @*se llena con el ajax*@
-            </div>
-        </div>
-    </div>
-</div>
-
-@*MODAL PARA OBJETIVOS PDP*@
-<div class="modal fade" id="ModalObjetivosPDP" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <!-- Modal content-->
-            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
-                <h4 class="modal-title">PLAN DE DESARROLLO PERSONAL - ENFOCADO EN LA CARRERA</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="DetalleObjetivosPDP" style="width:100%;"></div> @*se llena con el ajax*@
-            </div>
-        </div>
-    </div>
-</div>
+        .wmd-view2 {
+            /*height: 200px;*/
+            width: 100%;
+        }
 
 
 
-<div class="modal fade" id="ModalDetalleObj" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <!-- Modal content-->
-            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
-                <h5 class="modal-title">Objetivos</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="DetalleObj"></div> @*se llena con el ajax*@
-            </div>
-            <div class="modal-footer" style="padding-bottom: 0px;">
-                <p style="text-align:right;">
-                    <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal">  <x style="font-family:Arial"> Cerrar</x></button>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-<input type="hidden" id="txtPesoTotal" />
-<div class="modal fade" id="ModalEscaleta" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #cccccc; border: 1px solid #aaaaaa; border-radius: 6px;">
-                <h4 class="modal-title">Escaleta de Calificaciones</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="DetalleEscaleta"></div> @*se llena con el ajax*@
-            </div>
-            <div class="modal-footer" style="padding-bottom: 0px;">
-                <p style="text-align:right;">
-                    <button type="button" class="btn btn-danger fa fa-times" data-dismiss="modal">  <x style="font-family:Arial"> Cerrar</x></button>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+        .scroll-div1 {
+            width: 1000px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
 
-@*Fragmento de codigo para implementar doble Scroll*@
-<style>
-    .wmd-view-topscroll, .wmd-view {
-        overflow-x: scroll;
-        overflow-y: hidden;
-        width: 300px;
-        border: none 0px RED;
-    }
-
-    .wmd-view-topscroll {
-        height: 18px;
-        width: 100%;
-    }
-
-    .wmd-view {
-        /*height: 200px;*/
-        width: 100%;
-    }
-
-    .wmd-view-topscroll2, .wmd-view2 {
-        overflow-x: scroll;
-        overflow-y: hidden;
-        width: 300px;
-        border: none 0px RED;
-    }
-
-    .wmd-view-topscroll2 {
-        height: 18px;
-        width: 100%;
-    }
-
-    .wmd-view2 {
-        /*height: 200px;*/
-        width: 100%;
-    }
+        .scroll-div2 {
+            width: 1000px;
+            /*height: 20px;*/
+        }
+    </style>
+    @*Fragmento de codigo para implementar doble Scroll*@
 
 
 
-    .scroll-div1 {
-        width: 1000px;
-        overflow-x: scroll;
-        overflow-y: hidden;
-    }
-
-    .scroll-div2 {
-        width: 1000px;
-        /*height: 20px;*/
-    }
-</style>
-@*Fragmento de codigo para implementar doble Scroll*@
-
-
-
-<script type="text/javascript">
+    <script type="text/javascript">
 
    @*Fragmento de codigo para implementar doble Scroll*@
             $(function () {
@@ -2318,7 +2265,7 @@ new { id = "ObjetivosPTP" })
             });
         $(".wmd-view").scroll(function () {
             $(".wmd-view-topscroll")
-                .scrollLeft($(".wmd-view").scrollLeft());submi
+                .scrollLeft($(".wmd-view").scrollLeft());
         });
             });
             $(function () {
@@ -2630,7 +2577,7 @@ new { id = "ObjetivosPTP" })
                 return true;
             }
 
-           
+
             if (status == 11) {
                 var auxiliar = $("#TemporalObj").val();
                 var temp = $("#sesion_Evaluacion_MotivoRechazoObjFin").val();
@@ -2658,7 +2605,7 @@ new { id = "ObjetivosPTP" })
                     return false;
                 }
 
-                
+
 
                 return true;
             }
@@ -2684,7 +2631,7 @@ new { id = "ObjetivosPTP" })
 
             }
             if (status == 13) {
-               
+
                 // === CALIBRACIÓN FINAL (Calibrar/Cerrar Evaluación) ===
                 var temp = $("#sesion_Evaluacion_MotivoCalibracion2").val ?
                     $("#sesion_Evaluacion_MotivoCalibracion2").val().trim() : "";
@@ -2703,7 +2650,7 @@ new { id = "ObjetivosPTP" })
 
                 return true;
             }
-            
+
             if (status == 15) {
                 var temp = $("#Sesion_Evaluacion_MotivoCalibracion2").val();
                 if (temp == "") {
@@ -2862,21 +2809,21 @@ new { id = "ObjetivosPTP" })
 
 
 
-</script>
-<script>
-    /* Evento para cuando el usuario libera la tecla escrita dentro del input */
-    $('input,textarea').keyup(function () {
-        /* Obtengo el valor contenido dentro del input */
-        var value = $(this).val();
+    </script>
+    <script>
+        /* Evento para cuando el usuario libera la tecla escrita dentro del input */
+        $('input,textarea').keyup(function () {
+            /* Obtengo el valor contenido dentro del input */
+            var value = $(this).val();
 
-        /* Elimino todos los espacios en blanco que tenga la cadena delante y detrás */
-        var value_without_space = value.trimStart();
+            /* Elimino todos los espacios en blanco que tenga la cadena delante y detrás */
+            var value_without_space = value.trimStart();
 
-        /* Muestro una alerta al usuario */
-        //alert('El texto que ha ingresado contiene espacios y serán eliminados');
+            /* Muestro una alerta al usuario */
+            //alert('El texto que ha ingresado contiene espacios y serán eliminados');
 
-        /* Cambio el valor contenido por el valor sin espacios */
-        $(this).val(value_without_space);
-    });
-</script>
+            /* Cambio el valor contenido por el valor sin espacios */
+            $(this).val(value_without_space);
+        });
+    </script>
 

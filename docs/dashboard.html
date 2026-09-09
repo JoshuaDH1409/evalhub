@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EvalHub — Dashboard</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,system-ui,sans-serif;background:#f1f5f9;color:#0f172a;display:flex;min-height:100vh}
+aside{width:240px;background:#0f172a;color:#e2e8f0;padding:1.25rem}
+aside .logo{font-weight:800;color:#60a5fa;margin-bottom:1.5rem;font-size:1.2rem}
+aside a{display:block;color:#94a3b8;text-decoration:none;padding:.55rem .7rem;border-radius:8px;margin-bottom:.25rem}
+aside a.active{background:#1e293b;color:#fff}
+main{flex:1;padding:1.5rem}
+h1{margin:0 0 .25rem}.sub{color:#64748b;margin-bottom:1.25rem}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.25rem}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1rem}
+.card .k{color:#64748b;font-size:.8rem}.card .v{font-size:1.6rem;font-weight:700;margin-top:.25rem}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0}
+th,td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid #f1f5f9;font-size:.92rem}
+th{color:#64748b;font-size:.75rem;letter-spacing:.04em}
+.badge{display:inline-block;padding:.2rem .55rem;border-radius:999px;font-size:.75rem;font-weight:600}
+.ok{background:#dcfce7;color:#166534}.mid{background:#ffedd5;color:#9a3412}.go{background:#dbeafe;color:#1d4ed8}
+a.cta{display:inline-block;margin-top:1rem;background:#2563eb;color:#fff;padding:.7rem 1rem;border-radius:10px;text-decoration:none;font-weight:600}
+</style></head>
+<body>
+<aside>
+  <div class="logo">EvalHub</div>
+  <a class="active" href="dashboard.html">Dashboard</a>
+  <a href="evaluacion.html">Mis evaluaciones</a>
+  <a href="#">Objetivos</a>
+  <a href="#">Periodos</a>
+  <a href="login.html">Salir</a>
+</aside>
+<main>
+  <h1>Dashboard</h1>
+  <div class="sub">Periodo 2026-H2 · área Operaciones</div>
+  <div class="grid">
+    <div class="card"><div class="k">Evaluaciones</div><div class="v">128</div></div>
+    <div class="card"><div class="k">En curso</div><div class="v">34</div></div>
+    <div class="card"><div class="k">Cerradas</div><div class="v">81</div></div>
+    <div class="card"><div class="k">Promedio</div><div class="v">4.2</div></div>
+  </div>
+  <table>
+    <thead><tr><th>Colaborador</th><th>Evaluador</th><th>Etapa</th><th>Estatus</th></tr></thead>
+    <tbody>
+      <tr><td>Ana Ruiz</td><td>María Fernanda</td><td>Calibración</td><td><span class="badge mid">En curso</span></td></tr>
+      <tr><td>Luis Mendoza</td><td>Carlos Pérez</td><td>Autoevaluación</td><td><span class="badge go">Pendiente</span></td></tr>
+      <tr><td>Carla Soto</td><td>María Fernanda</td><td>Cierre</td><td><span class="badge ok">Completada</span></td></tr>
+      <tr><td>Diego Peña</td><td>Ana López</td><td>Objetivos</td><td><span class="badge go">Pendiente</span></td></tr>
+    </tbody>
+  </table>
+  <a class="cta" href="evaluacion.html">Abrir evaluación</a>
+</main>
+</body></html>

@@ -28,15 +28,15 @@ namespace PlantillaMVC
         private const bool MODO_PRUEBAS = true;
 
         // Si MODO_PRUEBAS es true, todos los correos llegarán aquí:
-        private const string CORREO_DEVELOPER = "jdiaz@estrategiatec.com.mx";
+        private const string CORREO_DEVELOPER = ""; // portfolio placeholder
 
         // CREDENCIALES DE AZURE (Reemplaza con los IDs que obtuviste en el portal)
-        private const string TenantId = "ed1ad1e7-8a19-4a4b-9be2-0594be3acfce";
-        private const string ClientId = "fa73aa5e-32c6-417b-95d9-9fab46ca54fa";
-        private const string ClientSecret = "T4w8Q~nR_GevYYmZeUn_iMwJadBMroLYAOQTMb8h";
+        private const string TenantId = ""; // Azure AD tenant — fill locally
+        private const string ClientId = ""; // Azure AD app id — fill locally
+        private const string ClientSecret = ""; // NEVER commit real secrets
 
         // El buzón compartido desde el que salen los correos
-        private const string RemitenteOficial = "evaluacion.desempeno@aspenlatam.com";
+        private const string RemitenteOficial = ""; // shared mailbox placeholder
 
         // =========================================================================
         // 2. MÉTODOS PÚBLICOS (IGUALES A TU CÓDIGO ORIGINAL)

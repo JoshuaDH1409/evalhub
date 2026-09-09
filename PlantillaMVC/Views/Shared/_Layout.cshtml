@@ -1,12 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>@ViewBag.Title - EvalHub</title>
 
     <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
-    @*<title>@ViewBag.Title - My ASP.NET Application</title>*@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
@@ -18,9 +17,7 @@
     @Scripts.Render("~/bundles/jqueryui")
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
     <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
-    @*<script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>*@
     <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
-    @*<link href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />*@
     <script src="~/Scripts/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link href="~/Content/jquery-clockpicker.min.css" rel="stylesheet" />
@@ -28,121 +25,62 @@
     <script src="~/Scripts/DataTables/dataTables.rowGroup.js"></script>
     <link href="~/Content/DataTables/css/rowGroup.dataTables.css" rel="stylesheet" />
     <script type="text/javascript">
-
-        //$(function () {
-        //$("#DivWaitPrincipal").dialog({
-        //        autoOpen: false,
-        //        width: 400,
-        //        resizable: false,
-        //        title: "Cargando....",
-        //        modal: true,
-        //        dialogClass: "no-closeWait",
-        //        closeOnEscape: false,
-        //        draggable: false,
-        //    });
-        //});
-
         function AbreCierraDilogoEspera() {
-            //var isOpen = $("#DivWaitPrincipal").dialog("isOpen");
             if ($('#myModal').hasClass('show')) {
-                //alert('Abierto');
                 $('#myModal').modal('hide');
                 document.getElementById('myModal').style.pointerEvents = 'auto';
             }
             else {
-                //alert('Cerrado');
                 document.getElementById('myModal').style.pointerEvents = 'none';
                 $('#myModal').modal('show');
             }
         }
     </script>
-
 </head>
-<body>
-    <div class="container">
-        <div class="row" style="border-bottom: 1px solid red">
-            <div class="col-3"> <br /><img src="~/Imgs/ASPEN2.png" style="width:180px" /></div>
-            <div class="col-9" style="text-align:right;margin-top:30px;"><h2> @*<b style="color:red"> Capacitación </b>*@ @*OJO comentar en Producción*@  Sistema de Evaluación de Desempeño</h2><span style="font-size: 1.8em;">@ViewBag.Titulo</span> </div>
-            <hr />
-        </div>
+<body class="evalhub-body">
+    <div class="container evalhub-shell">
+        <header class="row evalhub-header align-items-center">
+            <div class="col-3">
+                <a href="~/" class="evalhub-brand">
+                    <img src="~/Imgs/evalhub-logo.png" alt="EvalHub" class="evalhub-logo" />
+                </a>
+            </div>
+            <div class="col-9 evalhub-header-title">
+                <h2>EvalHub</h2>
+                <p class="evalhub-subtitle">Sistema de evaluación de desempeño</p>
+                <span class="evalhub-page-title">@ViewBag.Titulo</span>
+            </div>
+        </header>
         <div class="row">
-            <div class="col-md-12 "><b>@ViewBag.NomUsr</b></div>
+            <div class="col-md-12 evalhub-userbar"><b>@ViewBag.NomUsr</b></div>
         </div>
         <br />
-
-        <p style="align-content:flex-end">
-
-        </p>
         <div class="row">
             <div class="col-md-3">
                 @Html.Partial("_Menu")
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 evalhub-main">
                 @RenderBody()
             </div>
-</div>
-            <div style="width:100%">
-
-            </div>
-    </div><!-- /.container -->
-    @*background-color:#004b8d;*@
-    <footer class="col-md-12 foot-style" style="background-color:#004b8d;margin-top: 25px;">
-        <div style="display:inline-block">
-            <p style="color:white">Sistema de Evaluación de Desempeño | @ViewBag.Titulo </p>
-            <p style="color:white"> &copy; <b>@DateTime.Now.Year Powered by Aspen Labs | development IT area | ver 3.0</b> &nbsp;&nbsp; </p>
         </div>
-        <div style="display:inline">
-            <img src="~/Imgs/LogoB.png" style="width: 7%; height:8%; " />
+    </div>
+    <footer class="col-md-12 foot-style evalhub-footer">
+        <div class="evalhub-footer-inner">
+            <p>EvalHub — evaluaciones de desempeño | @ViewBag.Titulo</p>
+            <p>&copy; @DateTime.Now.Year · Proyecto de portafolio · ver 3.0</p>
+        </div>
+        <div class="evalhub-footer-logo">
+            <img src="~/Imgs/LogoB.PNG" alt="EvalHub" />
         </div>
     </footer>
 
-
     <div class="modal" id='myModal'>
         <div class="modal-header">
-            @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>*@
             <h3 id="myModalLabel" style="color:white">Cargando:</h3>
         </div>
         <div class="modal-body" style="text-align:center">
-            @*<img src="~/Imgs/carga.gif" style="width:25%; height:25%;" alt="Imagen de espera." />*@
-            <img src="~/Imgs/Aspen-gif.gif" style="width:20%; height:20%;" alt="Imagen de espera." />
+            <img src="~/Imgs/carga.gif" style="width:20%; height:20%;" alt="Cargando…" />
         </div>
     </div>
-
-
-    @*<style>
-   
-
-        .modal.fade .modal-dialog {
-            -webkit-transform: scale(0.1);
-            -moz-transform: scale(0.1);
-            -ms-transform: scale(0.1);
-            transform: scale(0.1);
-            /*top: -200px;*/
-            /*opacity: 0;*/
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            transition: all 0.3s;
-        }
-
-        .modal.fade.in .modal-dialog {
-            -webkit-transform: scale(1);
-            -moz-transform: scale(1);
-            -ms-transform: scale(1);
-            transform: scale(1);
-            -webkit-transform: translate3d(0, 10px, 0);
-            transform: translate3d(0, 10px, 0);
-            opacity: 1;
-        }
-
-        .fade {
-            opacity: 0;
-            -webkit-transition: opacity .5s linear;
-            transition: opacity .5s linear;
-        }
-    </style>*@
-
 </body>
-
-
-
 </html>

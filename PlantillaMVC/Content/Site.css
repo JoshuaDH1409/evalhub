@@ -1,86 +1,165 @@
-﻿body {
-    /*padding-top: 50px;*/
-    padding-bottom: 20px;
-    color:#004b8d;
+:root {
+    --eh-primary: #2563eb;
+    --eh-primary-dark: #1e40af;
+    --eh-ink: #0f172a;
+    --eh-muted: #64748b;
+    --eh-surface: #f8fafc;
+    --eh-border: #e2e8f0;
+    --eh-accent: #38bdf8;
 }
-.btn-default .ui{
+
+body,
+.evalhub-body {
+    padding-bottom: 20px;
+    color: var(--eh-ink);
+    background: linear-gradient(180deg, #eff6ff 0%, var(--eh-surface) 220px, #ffffff 100%);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+}
+
+.evalhub-shell {
+    background: #fff;
+    border: 1px solid var(--eh-border);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    padding: 1.25rem 1.5rem 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.evalhub-header {
+    border-bottom: 2px solid var(--eh-primary);
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.evalhub-logo {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+}
+
+.evalhub-header-title {
+    text-align: right;
+    margin-top: 12px;
+}
+
+.evalhub-header-title h2 {
+    color: var(--eh-primary-dark);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.evalhub-subtitle {
+    color: var(--eh-muted);
+    margin: 0.15rem 0 0.35rem;
+    font-size: 0.95rem;
+}
+
+.evalhub-page-title {
+    font-size: 1.35em;
+    color: var(--eh-ink);
+    font-weight: 600;
+}
+
+.evalhub-userbar {
+    color: var(--eh-muted);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.evalhub-main {
+    min-height: 320px;
+}
+
+.btn-default .ui {
     background-color: #e6e6e6;
 }
 
-.fontIcons{
+.fontIcons {
     font-size: 1.3em;
 }
 
 .fontButton a {
-    /*font-family: "Open Sans", sans-serif !important;*/
-    color: #004b8d;
+    color: var(--eh-primary-dark);
     font-size: 18px;
     font-stretch: narrower;
     font-weight: normal;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    /*max-width: 280px;*/
+.head-style {
+    border-bottom-color: var(--eh-primary);
+    background-color: #FEFEFE;
 }
-.head-style{
-    border-bottom-color:#ee2e24;
-    background-color:#FEFEFE;
-}
-.foot-style{
- text-align:center; 
-    min-height:70px; 
-    background-color:#004b8D; 
-    color:#FEFEFE;
-    padding-top: 15px;
-}
-.table-colored{
 
+.foot-style,
+.evalhub-footer {
+    text-align: center;
+    min-height: 78px;
+    background: linear-gradient(90deg, var(--eh-primary-dark), var(--eh-primary));
+    color: #FEFEFE;
+    padding: 18px 12px 14px;
+    margin-top: 28px;
+    border-radius: 12px 12px 0 0;
 }
-.table-colored thead{
-    background: #7fa5c6; 
+
+.evalhub-footer-inner p {
+    color: #fff;
+    margin: 0.15rem 0;
+}
+
+.evalhub-footer-logo img {
+    width: 96px;
+    height: auto;
+    margin-top: 8px;
+    opacity: 0.95;
+}
+
+.table-colored thead {
+    background: var(--eh-primary);
     color: #FEFEFE;
 }
-.table-colored thead tr{
+
+.table-colored thead tr {
     border-bottom: 2px solid #DDDDDD;
 }
-.table-pop{
+
+.table-pop {
     width: 100%;
-    text-align:center;
+    text-align: center;
 }
-.guest{
-    background-color:#004b8D; 
-    position: fixed; 
-    top:0; 
-    left: 0; 
-    width: 100%; 
+
+.guest {
+    background-color: var(--eh-primary-dark);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 30px;
     text-align: center;
 }
-.guest p{
-    color:#FFF;
+
+.guest p {
+    color: #FFF;
 }
+
 .table {
-    color: #004b8d !important;
+    color: var(--eh-ink) !important;
 }
+
 .bg-primary, .bg-info, .bg-success {
-        color: #FEFEFE !important;
-    }
+    color: #FEFEFE !important;
+}
 
 .panel-heading {
     padding: 0;
@@ -104,9 +183,80 @@ textarea {
     -moz-transform: rotate(180deg);
     transform: rotate(180deg);
 }
+
 .alert-info {
-    background-color: #d1ecf1 !important;
+    background-color: #dbeafe !important;
 }
+
 .alert-primary {
-    background-color: #cce5ff !important;
+    background-color: #dbeafe !important;
+}
+
+/* Login */
+.evalhub-login-card {
+    max-width: 480px;
+    margin: 1rem auto 2rem;
+    padding: 1.75rem;
+    border: 1px solid var(--eh-border);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+}
+
+.evalhub-login-hero {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.evalhub-login-logo {
+    width: 200px;
+    max-width: 80%;
+    margin-bottom: 0.75rem;
+}
+
+.evalhub-login-hero h2 {
+    color: var(--eh-primary-dark);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.evalhub-login-hero p {
+    color: var(--eh-muted);
+}
+
+.btn-evalhub {
+    background: var(--eh-primary);
+    border-color: var(--eh-primary);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border-radius: 10px;
+}
+
+.btn-evalhub:hover {
+    background: var(--eh-primary-dark);
+    border-color: var(--eh-primary-dark);
+    color: #fff;
+}
+
+.btn-outline-evalhub {
+    color: var(--eh-primary-dark);
+    border: 1px solid var(--eh-primary);
+    background: transparent;
+    border-radius: 10px;
+}
+
+.btn-outline-evalhub:hover {
+    background: #eff6ff;
+    color: var(--eh-primary-dark);
+}
+
+.evalhub-modal-header {
+    background: #eff6ff;
+    border-bottom: 1px solid var(--eh-border);
+}
+
+.evalhub-login-error {
+    margin-top: 0.75rem;
+    min-height: 1.2em;
 }

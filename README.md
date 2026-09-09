@@ -2,6 +2,12 @@
 
 Sistema web de evaluaciones de desempeño: periodos, objetivos, competencias, dashboard y recordatorios por correo.
 
+<!-- screenshots -->
+## Vista
+
+![EvalHub login](docs/screenshots/login.png)
+
+
 > Repo: `Sistema-de-Evalauciones`. Producto: **EvalHub**.
 
 ## Qué hace

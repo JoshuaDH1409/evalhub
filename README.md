@@ -5,6 +5,17 @@ Sistema web de evaluaciones de desempeño: periodos, objetivos, competencias, da
 <!-- screenshots -->
 ## Vista
 
+![Login](docs/screenshots/login.png)
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+![Evaluación](docs/screenshots/evaluacion.png)
+
+> Repo privado (ASP.NET MVC / Windows). Las capturas muestran el flujo principal.
+
+
+## Vista
+
 ![EvalHub login](docs/screenshots/login.png)
 
 

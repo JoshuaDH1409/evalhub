@@ -1,5 +1,9 @@
 # EvalHub
 
+**Demo UI:** https://joshuadh1409.github.io/evalhub/
+
+> Tip sin credenciales. Si hubo secretos en el historial, **rótalos** (SQL/Azure).
+
 Sistema web de evaluaciones de desempeño: periodos, objetivos, competencias, dashboard y recordatorios por correo.
 
 <!-- screenshots -->
@@ -11,7 +15,7 @@ Sistema web de evaluaciones de desempeño: periodos, objetivos, competencias, da
 
 ![Evaluación](docs/screenshots/evaluacion.png)
 
-> Repo privado (ASP.NET MVC / Windows). Las capturas muestran el flujo principal.
+> ASP.NET MVC / Windows. Las capturas muestran el flujo principal.
 
 
 ## Vista

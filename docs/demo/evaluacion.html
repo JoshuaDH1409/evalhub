@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EvalHub — Evaluación</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,system-ui,sans-serif;background:#f8fafc;color:#0f172a}
+.top{background:#0f172a;color:#fff;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.wrap{max-width:900px;margin:1.5rem auto;padding:0 1rem}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+h1{margin:0 0 .35rem} .meta{color:#64748b;margin-bottom:1rem}
+label{display:block;font-weight:600;margin:.75rem 0 .35rem}
+textarea,select{width:100%;padding:.7rem;border-radius:10px;border:1px solid #cbd5e1}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn{background:#2563eb;color:#fff;border:0;border-radius:10px;padding:.8rem 1.1rem;font-weight:600}
+a{color:#93c5fd;text-decoration:none}
+</style></head>
+<body>
+<div class="top"><strong>EvalHub</strong><a href="dashboard.html">← Dashboard</a></div>
+<div class="wrap">
+  <div class="card">
+    <h1>Evaluación · Ana Ruiz</h1>
+    <div class="meta">Evaluador: María Fernanda · Periodo 2026-H2 · etapa Calibración</div>
+    <div class="row">
+      <div>
+        <label>Competencia: Liderazgo</label>
+        <select><option>4 — Sobresaliente</option><option selected>3 — Cumple</option><option>2 — En desarrollo</option></select>
+      </div>
+      <div>
+        <label>Competencia: Colaboración</label>
+        <select><option selected>4 — Sobresaliente</option><option>3 — Cumple</option></select>
+      </div>
+    </div>
+    <label>Comentarios</label>
+    <textarea rows="4">Consistente en la entrega del OKR de operaciones. Buena coordinación con finanzas.</textarea>
+    <div style="margin-top:1rem"><button class="btn" type="button">Guardar avance</button></div>
+  </div>
+</div>
+</body></html>
